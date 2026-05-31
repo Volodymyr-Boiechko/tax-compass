@@ -212,3 +212,20 @@ All resident individuals must pay social security contributions. (EY p.160)
 - [ ] No specific double tax treaty network for BES-Islands (as part of Kingdom of Netherlands, some Dutch treaties may apply — verify)
 - [ ] Fixed tax credit (USD 21,956) is for residents only; non-residents receive only employment expenses and qualifying charitable donations deduction
 - [ ] Deemed salary (USD 43,912 for 2026) applies to shareholder-employees with >5% interest in their employer — not modelled in standard employment scenario
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 38.4% | N/A — PwC: not covered | N/A |
+| Employee SS rate | 26.8% | N/A — PwC: not covered | N/A |
+| Self-empl. headline rate | 29.4%–38.4% PIT + 26.8% SS | N/A — PwC: not covered | N/A |
+| Tax-free threshold | USD 21,956 fixed tax credit | N/A — PwC: not covered | N/A |
+| Key special regime | Expatriate Facility (tax-free fringe benefits) | N/A — PwC: not covered | N/A |
+
+**Overall verdict:** N/A — PwC: not covered (small territory — BES Islands not in PwC Worldwide Tax Summaries)  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com (BES Islands / Bonaire, Sint Eustatius and Saba — not covered)  
+**Verified:** 2026-05-31
