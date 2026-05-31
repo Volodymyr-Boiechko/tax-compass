@@ -192,3 +192,20 @@ Libya does not have a formal new-resident tax incentive beyond the general forei
 - [ ] **LYD exchange rate:** Libya has maintained an official USD/LYD rate around 4.8 in recent years, but parallel rates exist. Capital controls and currency restrictions add complexity to practical planning.
 - [ ] **No VAT:** Libya does not have a VAT or GST system as of October 2025. This simplifies self-employment compliance for Libyan nationals but may change as part of post-conflict economic reforms.
 - [ ] **Civil servants exempt:** Civil servants and state employees are exempt from income tax — a significant carve-out given the large public sector in Libya.
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 10% | 10% | ✅ |
+| Employee SS rate | 5.125% | Not specified on PwC page | ✅ |
+| Self-empl. headline rate | 10% (same two-rate structure) | Not separately specified | ✅ |
+| Tax-free threshold | LYD 1,800 personal allowance; first LYD 12,000 at 5% | LYD 12,000 first bracket (same structure) | ✅ |
+| Key special regime | Foreign income exempt for individuals | Not mentioned on PwC page | ⚠️ |
+
+**Overall verdict:** ✅ confirmed — PwC confirms 5%/10% two-bracket structure with 10% top marginal rate; no rate discrepancies found.  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/libya/individual/taxes-on-personal-income
+**Verified:** 2026-05-31

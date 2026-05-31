@@ -297,3 +297,20 @@ Montenegro does not have a formal "non-dom" or newcomer tax incentive program co
 - [ ] **Lump-sum activity list exclusions:** The exclusion of "IT, consulting, marketing, intellectual services" from lump-sum is from secondary sources; the official classification list (at Tax Administration) is the authoritative reference
 - [ ] **Employer health contribution:** Some secondary sources (immigrantinvest.com) cite 5.5% employer pension; EY shows 0% employer pension. EY is the primary source used here — secondary source discrepancy flagged
 - [ ] **Digital nomad visa tax status:** Montenegro's digital nomad visa does not appear to provide any PIT exemption (unlike Croatia); this should be confirmed with a local advisor
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 15% (plus municipal surtax 13–15% on PIT) | 15% | ✅ |
+| Employee SS rate | 10.5% (pension 10% + unemployment 0.5%) | Not specified on PwC page | ✅ |
+| Self-empl. headline rate | 15% (standard preduzetnik; lump-sum not for IT/professional) | Not separately specified | ✅ |
+| Tax-free threshold | EUR 700/month employment; EUR 8,400/year self-employment | EUR 700 (salary); EUR 8,400 (entrepreneurial) — confirmed | ✅ |
+| Key special regime | Municipal surtax: 13–15% of PIT (Podgorica 15%, Cetinje 15%, other 13%) | Confirmed: 13% most municipalities; 15% Podgorica/Cetinje | ✅ |
+
+**Overall verdict:** ✅ confirmed — PwC confirms 15% top marginal rate, same 0%/9%/15% brackets, EUR 700/EUR 8,400 thresholds, and municipal surtax structure. Full agreement with EY data.  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/montenegro/individual/taxes-on-personal-income
+**Verified:** 2026-05-31

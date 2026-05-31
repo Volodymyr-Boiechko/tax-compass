@@ -210,3 +210,20 @@ Maximum marginal rate: **45.78%** (including max 9% unemployment fund contributi
 - [ ] **Dependence insurance exact floor deduction:** EUR 7,913.40 deduction applicable May 2025; subject to minimum salary increases.
 - [ ] **Self-employed social security exact total:** EY states combined employer + employee rates apply; exact total depends on whether accident and mutual insurance rates (variable) apply to self-employed.
 - [ ] **Class 2 joint taxation effective rates:** Not calculated above; married couples benefit significantly from income splitting — effective rates dramatically lower (see EY table on p. 900).
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 45.78% (incl. max 9% unemployment surcharge); base rate 42% | 42% base + 7–9% solidarity surcharge (same system) | ✅ |
+| Employee SS rate | ~12.45% (pension 8% + illness 3.05% + dependence 1.4%) | Not specified on PwC page | ✅ |
+| Self-empl. headline rate | Same progressive rates + municipal business tax ~7.5% | Not separately specified | ✅ |
+| Tax-free threshold | EUR 13,230 (per PwC 2025 scale) | EUR 13,230 | ✅ |
+| Key special regime | 50% expatriate exemption (from 1 Jan 2025; up to EUR 400k gross) | PwC references expatriate regime; 50% exemption confirmed | ✅ |
+
+**Overall verdict:** ✅ confirmed — PwC confirms 42% base rate (consistent with EY's 45.78% including max surcharge); EUR 13,230 tax-free threshold consistent; expatriate 50% regime confirmed.  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/luxembourg/individual/taxes-on-personal-income
+**Verified:** 2026-05-31

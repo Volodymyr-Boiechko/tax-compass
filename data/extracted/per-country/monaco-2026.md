@@ -177,3 +177,20 @@ Using 2024 published rates:
 - [ ] **French national exception nuances:** The 1963 France-Monaco treaty applies to French nationals; specific provisions relating to different income types (investment income, rental, capital gains) may have specific rules. Consult French tax administration or Monaco specialist.
 - [ ] **Monaco residency minimum requirements:** No explicit financial minimum for Monaco residence permit stated in EY guide (unlike some other high-wealth jurisdictions). In practice, Monaco requires evidence of accommodation and financial self-sufficiency.
 - [ ] **VAT on self-employed services:** Monaco applies French VAT law; self-employed providing services may be subject to French VAT rules, including the EUR 36,800 micro-entrepreneur threshold for VAT exemption (franchise en base).
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 0% (non-French nationals) | Not available (PwC 404) | ⚠️ |
+| Employee SS rate | ~9.25%–10% (2024 rates) | Not available | ⚠️ |
+| Self-empl. headline rate | 0% PIT; ~15% SS (estimated) | Not available | ⚠️ |
+| Tax-free threshold | N/A (no PIT) | Not available | ⚠️ |
+| Key special regime | French nationals pay French tax (1963 treaty) | Not available | ⚠️ |
+
+**Overall verdict:** ⚠️ partial-mismatch — PwC does not have a Monaco page (HTTP 404); cross-verification not possible via PwC. This was anticipated in the task brief. EY data stands as sole verified source.  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/monaco/individual/taxes-on-personal-income — **not found (404)**
+**Verified:** 2026-05-31

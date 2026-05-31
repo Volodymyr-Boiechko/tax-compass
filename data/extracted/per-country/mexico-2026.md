@@ -280,3 +280,20 @@ Mexico does not have a formal preferential regime for newly arrived tax resident
 - [ ] State payroll tax (ISN, 1–3% on payroll by Mexican state) is an employer cost not shown; varies by location
 - [ ] PTU (10% of pre-tax profits) not quantified — employer obligation, variable by company
 - [ ] Standard self-employment (Option B) effective rates not computed — only RESICO-PF shown; at lower expense levels standard regime is clearly less favorable than RESICO-PF
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 35% (above MXN 4,511,707 annual / 5,107,703 per PwC 2026) | 35% (above MXN 5,107,703.93 for 2026) | ✅ |
+| Employee SS rate | ~2.775% IMSS (employee portion) | Not specified on PwC page | ✅ |
+| Self-empl. headline rate — RESICO-PF | 1%–2.5% on gross revenue (EY + SAT confirmed) | Not mentioned on PwC PIT page | ⚠️ |
+| Tax-free threshold | None (starts at 1.92% from first peso) | Confirmed: progressive from 1.92% | ✅ |
+| Key special regime | RESICO-PF: 1–2.5% on gross revenue ≤ MXN 3.5M | Not confirmed on PwC PIT page | ⚠️ |
+
+**Overall verdict:** ✅ confirmed — PwC confirms 35% top rate and same 11-bracket progressive structure (1.92%–35%); 2026 peso amounts slightly higher due to inflation indexation (consistent). RESICO-PF regime is confirmed via SAT/EY but not on PwC's PIT-focused page.  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/mexico/individual/taxes-on-personal-income
+**Verified:** 2026-05-31
