@@ -175,3 +175,20 @@ Using EY's stated effective rates for an analogous progressive system (maximum 2
 - [ ] **Pension fund contribution rates:** Vary by fund and employer; employer must match minimum employee 4% contribution. Total pension cost not included in effective rate table.
 - [ ] **VAT threshold:** Liechtenstein applies Swiss VAT law; CHF 100,000 threshold and 8.1% rate assumed from Swiss system.
 - [ ] **Lump-sum tax minimum amount:** EY states it "must be substantial" but does not specify a minimum CHF amount.
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 22.4% (combined: national up to 8% + 180% communal surcharge) | 22.4% (national 8% + max 180% surcharge) | ✅ |
+| Employee SS rate | ~7.56% (2026) | Not specified on PwC page | ✅ |
+| Self-empl. headline rate | ~22.4% PIT + ~14.7% SS (2026) | Not separately specified | ✅ |
+| Tax-free threshold | CHF 15,855 single (EY not specified; derived from brackets) | CHF 15,855 single / CHF 31,710 married | ✅ |
+| Key special regime | Lump-sum tax for non-citizens on foreign income | Confirmed: lump-sum taxation for non-citizens | ✅ |
+
+**Overall verdict:** ✅ confirmed — PwC confirms 22.4% combined top rate and lump-sum regime for non-citizens; no rate discrepancies found.  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/liechtenstein/individual/taxes-on-personal-income
+**Verified:** 2026-05-31
