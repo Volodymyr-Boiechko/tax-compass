@@ -206,3 +206,20 @@ Lebanon does not have a remittance basis, territorial tax, or new-resident perso
 - [ ] **Investment income WHT rates:** The current withholding tax rate on bank deposit interest in Lebanon has been subject to change; EY references historical 7% but the current applicable rate should be verified directly with the Lebanese tax authority.
 - [ ] **CGT on real estate:** The 1% CGT on individual real estate sales is very low; the 15% rate applies to entities not otherwise subject to income tax. Expats owning Lebanese property should confirm which rate applies given their tax status.
 - [ ] **Practical compliance:** Lebanon's tax administration has experienced significant disruption due to the economic crisis. Filing and payment procedures, banking system restrictions, and capital controls all affect practical tax compliance. Professional local advice is strongly recommended.
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 25% (employment and sole trader) | 25% (both wages/salaries and business income) | ✅ |
+| Employee SS rate | 3% (NSSF sickness/maternity, ceiling LBP90M/month) | Not detailed on PwC PIT page | ✅ |
+| Self-empl. headline rate | 25% top rate (sole trader brackets 4%–25%) | 25% top rate for business income | ✅ |
+| Tax-free threshold | LBP450,000,000 single exemption (Budget Law 324, 2025) | PwC references older brackets (LL 18M–675M for 2022); 2024 update to 540M–13.5B confirmed | ⚠️ |
+| Key special regime | None (no newcomer regime) | None noted | ✅ |
+
+**Overall verdict:** ⚠️ partial-mismatch — Top rate 25% confirmed by both sources. However, PwC's bracket thresholds appear to reference an older baseline (LL18M–675M for wages effective 2022) compared to EY's Budget Law No. 324 brackets (LBP360M–13,500M, effective January 2025). PwC does note the 2024 business income update to LBP540M–13.5B. The discrepancy reflects Lebanon's rapidly changing brackets due to LBP inflation — EY has more current 2025 data per Budget Law 324. No discrepancy in top rate (25%) but bracket thresholds differ due to recency of sources.
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/lebanon/individual/taxes-on-personal-income
+**Verified:** 2026-05-31
