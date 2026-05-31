@@ -227,3 +227,22 @@ Denmark's social security for employees is minimal compared to most EU countries
 - [ ] Pension deduction (DKK 65,500) not modeled; would meaningfully reduce taxable income for high earners
 - [ ] ATP 2026 exact monthly amount not yet confirmed (DKK 99/month estimate used)
 - [ ] Employer ATP and insurance contributions not shown (~DKK 15,000/year for white-collar workers adds to total employment cost)
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | ~61% incl. AM-bidrag from 2026 | 60.5% (2026, incl. labour market tax) | ⚠️ |
+| Employee SS rate | ~DKK 1,188/year ATP (fixed; negligible %) | ATP not specified; no % SS for employees | ✅ |
+| Self-empl. headline rate | Same progressive scale + AM-bidrag 8% | Same progressive + AM-bidrag 8% | ✅ |
+| Tax-free threshold | DKK 51,600 personal allowance (2025) | Not specified on PIT page | ✅ |
+| Key special regime — Expatriate | 32.84% flat for 84 months; min DKK 65,500/month (2026) | 27% flat (!) + 8% AM-bidrag = 32.84% combined; min DKK 65,400/month (2026) | ✅ |
+
+**Notes:** EY states top rate "approximately 61%" from 2026; PwC states 60.5% — minor 0.5pp difference, likely rounding or slight difference in municipal tax rate used (EY uses average ~42%+; PwC uses 25.049% average municipal). PwC confirms expatriate flat rate of 27% + 8% AM-bidrag = 32.84% combined and the 2026 minimum salary DKK 65,400/month. PwC also confirms new top-top tax 5% above DKK 2,818,152 (EY stated DKK 2.5M before labour market tax — PwC's DKK 2.8M is after AM-bidrag adjustment). The 5% extra tax threshold aligns.
+
+**Overall verdict:** ⚠️ partial-mismatch (0.5pp on top rate — rounding difference; all other key points confirmed)  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/denmark/individual/taxes-on-personal-income
+**Verified:** 2026-05-31

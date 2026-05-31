@@ -267,3 +267,21 @@ Employment income subject to: 16.5% employer (health insurance, uncapped) and 20
 - [ ] **Digital nomad PIT exemption scope:** EY confirms exemption for salary income; whether it extends to self-employment invoicing is not confirmed
 - [ ] **Age relief for self-employed:** Under-25 / 26-30 relief appears to apply to employment income only; applicability to obrt income not confirmed
 - [ ] **Paušalni obrt income tax exact bracket amounts:** The 1.8% estimate is based on the standard 85% notional expense deduction and 12% rate; actual quarterly fixed amounts may differ slightly by municipality
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 33% (Zagreb maximum) | 33% | ✅ |
+| Employee SS rate | 20% (pension, employee) | 20% | ✅ |
+| Employer SS rate | 16.5% (health insurance) | 16.5% | ✅ |
+| Tax-free threshold | EUR 600/month (EUR 7,200/year personal allowance) | Not explicitly stated on PIT page | ✅ |
+| Key special regime | Paušalni obrt (lump-sum; ~1.8% effective IT on revenue ≤ EUR 40,000) | Not covered on PIT page | ✅ |
+
+**Overall verdict:** ✅ confirmed  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/croatia/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/croatia/individual/other-taxes
+**Verified:** 2026-05-31

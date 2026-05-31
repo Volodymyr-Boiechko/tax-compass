@@ -245,3 +245,23 @@ All SBS income points are within the GEL 500,000/year limit (~€169,500 at GEL 
 - [ ] **Foreign-source income exemption scope:** Confirmed in EY exempt income list; the boundary between "foreign-source income" (exempt) and "Georgian-source income via foreign client" (taxable under SBS) is a legal gray area — the SBS is the safe/compliant path.
 - [ ] **No currency information:** GEL/EUR rate not stated in EY guide; 2.95 is an approximation from market rates.
 - [ ] **Micro business status** threshold and prohibited activities not fully verified for 2026; GEL 30k limit assumed unchanged.
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 20% flat | 20% flat | ✅ |
+| Employee SS rate | No SS; mandatory pension 2% employee + 2% employer | No SS; pension 2% employee + 2% employer confirmed | ✅ |
+| Self-empl. headline rate | SBS 1% on gross revenue (≤ GEL 500,000) | SBS 1% confirmed; Micro Business 0% (≤ GEL 30,000) confirmed | ✅ |
+| Tax-free threshold | None for standard PIT; SBS/Micro regimes have own thresholds | None stated | ✅ |
+| Key special regime — SBS 1% | SBS 1% on gross revenue; 3% above GEL 500,000; confirmed valid 2026 | SBS 1% / 3% confirmed; still valid | ✅ |
+
+**Notes:** PwC fully confirms Georgia's flat 20% PIT, the SBS 1%/3% regime, and the Micro Business 0% regime. Also confirms the key Georgian advantage: "Resident individuals are exempt from tax on income that does not have a Georgian source." The mandatory pension system (2%/2%/government portion) confirmed. Self-employed pension is voluntary at 4% per PwC other-taxes page. No social security tax confirmed by PwC. Work permit change from March 2026 not referenced on PwC page but confirmed by EY.
+
+**Overall verdict:** ✅ confirmed — SBS 1% regime confirmed still valid 2026; foreign-source income exemption confirmed  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/georgia/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/georgia/individual/other-taxes
+**Verified:** 2026-05-31

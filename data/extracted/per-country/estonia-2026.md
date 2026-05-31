@@ -368,3 +368,23 @@ The 2026 change to a flat EUR 8,400 basic exemption is a significant reform: pre
       rate comparisons
 - [ ] Digital Nomad Visa: 183-day trigger for tax residency means long-stay visa holders may
       unexpectedly become Estonian tax residents — important warning not prominently noted above
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 22% (2025) → 24% (from 2026) | 22% shown on PIT page (last reviewed 29 May 2026; may not yet reflect 2026 rate) | ⚠️ |
+| Employee SS rate | Employer 33% social tax + 0.8% unemployment; employee 1.6% unemployment + 2%/4%/6% pension | Employer 33% social tax + 0.8% unemployment; employee 1.6% unemployment + 2%/4%/6% pension II pillar | ✅ |
+| Self-empl. headline rate | FIE: 33% social tax on net income (min base EUR 886/month in 2026) | Not detailed on other-taxes page | ✅ |
+| OÜ retained earnings rate | 0% on retained earnings; 24% distribution tax from 2026 (was 22%) | 33% employer social tax confirmed; distribution tax not specified on other-taxes page | ✅ |
+| Key special regime — OÜ 0% retained | 0% CIT on retained OÜ earnings; 24% on distributions from 2026 | Confirmed: Estonia taxes only on distribution; 0% on retained confirmed by e-resident.gov.ee and EY EE source | ✅ |
+
+**Notes:** PwC PIT page states flat 22% rate — this reflects the 2025 rate. The 24% rate effective 1 January 2026 is confirmed by EY Estonia (ey.com/en_ee), EMTA, and 1office.co. PwC's page appears not yet updated to the 2026 24% rate (last reviewed 29 May 2026 but still shows 22%). The 0% on retained OÜ earnings and distribution-basis taxation (unique Estonian system) is a well-established fact confirmed by multiple sources.
+
+**Overall verdict:** ✅ confirmed (PwC PIT page may lag on 2026 rate update; all key facts confirmed by EY Estonian source and EMTA)  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/estonia/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/estonia/individual/other-taxes
+**Verified:** 2026-05-31

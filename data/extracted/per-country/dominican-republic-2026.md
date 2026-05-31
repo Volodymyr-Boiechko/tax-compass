@@ -173,3 +173,23 @@ Residents subject to tax on Dominican Republic-source income AND foreign-source 
 - [ ] Education expense deduction limits relative to "minimum exempt amount under Section 296" not quantified
 - [ ] Labor risk contribution rate (1–3% employer) not specified by activity category
 - [ ] Inflation adjustment mechanism for capital gains tax base not modeled
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 25% (above DOP 867,123) | 25% | ✅ |
+| Employee SS rate | ~5.91% (AFP 2.87% + SFS 3.04%) | 2.87% AFP + 3.04% SFS = 5.91% | ✅ |
+| Self-empl. headline rate | Not specified in EY | Not specified by PwC | ✅ |
+| Tax-free threshold | DOP 416,220/year | DOP 416,220/year | ✅ |
+| Key special regime | Special retirement regime for new residents (3-year foreign income exemption) | New residents exempt from foreign income for first 3 years; confirmed | ✅ |
+
+**Notes:** PwC confirms identical tax brackets and 5.91% employee SS rates. Employer rates confirmed: AFP 7.10%, SFS 7.09%. PwC also confirms monthly salary caps (20× and 10× minimum wages for AFP and SFS respectively). Labour risks insurance (IDSS) 1.2% employer-only also confirmed.
+
+**Overall verdict:** ✅ confirmed  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/dominican-republic/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/dominican-republic/individual/other-taxes
+**Verified:** 2026-05-31

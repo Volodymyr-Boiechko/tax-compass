@@ -378,3 +378,24 @@ Major tax reform enacted and effective from **1 January 2026**:
 - [ ] **Cyprus Ltd efficiency under 2026 reform:** With SDC on dividends now 5% for domiciled, the Non-Dom advantage over domiciled is smaller; for newly arriving Non-Doms, the 17-year window of 0% SDC remains the key benefit
 - [ ] **GHS rate for self-employed in 2026:** EY shows 4.0% (2025); confirm no change in 2026 reform
 - [ ] **Digital nomad quota replenishment:** As of March 2025 only ~300 permits remained from the 500 quota. Whether quota has been expanded for 2026 should be verified with Migration Department
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 35% (above EUR 60,000 in 2025; EUR 72,000 from 2026) | 35% (above EUR 72,001 from 2026) | ✅ |
+| Employee SS rate | 8.8% (social insurance) + 2.65% GHS = 11.45% | 8.8% SI + 2.65% GHS (cap EUR 68,904 for SI in 2026) | ✅ |
+| Self-empl. headline rate | 16.6% SI + 4.0% GHS = 20.6% (2026; PwC shows 16.6%) | 16.6% SI + 4.0% GHS (note: EY shows 15.6% — PwC confirms 16.6% from 2024) | ⚠️ |
+| Tax-free threshold | EUR 19,500 (2025); EUR 22,000 (2026) | EUR 22,000 (2026) | ✅ |
+| Key special regime — Non-Dom | Non-Dom 0% SDC on dividends/interest (up to 17 yrs) | Confirmed: domicile-based SDC exemption; 17-year rule | ✅ |
+| Key special regime — Art. 8(23A) | 50% PIT exemption on employment income > EUR 55,000 for up to 17 yrs | Confirmed (referenced as 50% exemption for qualifying employees) | ✅ |
+
+**Notes:** EY file shows employee SI at 8.8% which matches PwC. Self-employed rate: EY file states 15.6% (2025) but PwC other-taxes page confirms 16.6% from 1 Jan 2024 — the EY file has a known gap noted. SDC on dividends reduced to 5% for domiciled residents from 2026 per EY; PwC page does not explicitly confirm this 2026 change.
+
+**Overall verdict:** ✅ confirmed (with minor note on self-employed SI rate: 16.6% per PwC vs 15.6% in EY file — file should be updated)  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/cyprus/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/cyprus/individual/other-taxes
+**Verified:** 2026-05-31

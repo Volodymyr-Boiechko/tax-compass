@@ -227,3 +227,23 @@ The Social Security Institute (IESS) manages the social security system covering
 - [ ] Temporary fiscal residence: interaction with personal expense deductions not confirmed
 - [ ] 2025 basic basket unit value (USD 798.31) used for discount calculations — updated annually
 - [ ] Capital gains on shares (10% withholding) final vs. creditable treatment not fully specified
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 37% (above USD 108,810 in 2025) | 37% (above USD 109,956 in 2026) | ✅ |
+| Employee SS rate | 9.45% (IESS) | 9.45% | ✅ |
+| Self-empl. headline rate | Not specified (estimated 9.45%) | 17.6% voluntary (confirmed self-employed rate) | ⚠️ |
+| Tax-free threshold | USD 12,081 (2025); USD 12,208 (2026 per PwC) | USD 12,208 (2026) | ✅ |
+| Key special regime | Temporary Fiscal Residence (5-yr, foreign income exempt, min USD 150k investment or USD 2,510/month income) | Not specifically detailed on PIT page | ✅ |
+
+**Notes:** PwC confirms 2026 brackets with slightly updated thresholds (USD 12,208 vs EY's 2025 figure of USD 12,081 — annual index update confirmed). Top rate and structure identical. PwC other-taxes page confirms employee IESS 9.45% and employer 12.15%. Importantly, PwC confirms self-employed/voluntary contributors pay 17.6% — the EY file estimated 9.45% for self-employed which is incorrect; the correct self-employed IESS rate is 17.6% for voluntary contributors.
+
+**Overall verdict:** ⚠️ partial-mismatch (self-employed SS rate: EY file estimated 9.45%, PwC confirms 17.6% for voluntary self-employed contributions — file should be updated)  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/ecuador/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/ecuador/individual/other-taxes
+**Verified:** 2026-05-31
