@@ -7,7 +7,11 @@ import { AppStore } from '../../state/app.store';
   standalone: true,
   imports: [LucideX, LucideBarChart2],
   template: `
-    <div class="h-14 bg-[var(--color-surface)] border-t border-[var(--color-border)] flex items-center px-4 gap-4 transition-colors duration-150">
+    <div
+      class="h-14 bg-[var(--color-surface)] border-t border-[var(--color-border)] flex items-center px-4 gap-4 transition-colors duration-150 anim-slide-in-up"
+      role="region"
+      aria-label="Comparison selection"
+    >
 
       <span class="text-sm text-[var(--color-text-tertiary)] shrink-0">
         Comparing
@@ -21,6 +25,7 @@ import { AppStore } from '../../state/app.store';
             <span class="text-xs font-medium text-[var(--color-text-secondary)]">{{ country.name }}</span>
             <button
               class="text-[var(--color-text-faint)] hover:text-[var(--color-text-secondary)] transition-colors ml-0.5"
+              [attr.aria-label]="'Remove ' + country.name + ' from comparison'"
               (click)="store.removeFromComparison(country.code)"
             >
               <svg lucideX class="size-3"></svg>
@@ -39,7 +44,7 @@ import { AppStore } from '../../state/app.store';
           (click)="store.openComparison()"
         >
           <svg lucideBarChart2 class="size-3.5"></svg>
-          Compare
+          <span class="hidden sm:inline">Compare</span>
         </button>
         <button
           class="text-xs text-[var(--color-text-tertiary)] hover:text-[var(--color-text-secondary)] transition-colors"

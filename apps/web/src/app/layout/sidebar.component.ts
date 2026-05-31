@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, output } from '@angular/core';
 import { LucideX } from '@lucide/angular';
 import { AppStore } from '../state/app.store';
 import { ViewToggleComponent } from '../features/view-toggle/view-toggle.component';
@@ -26,7 +26,18 @@ const EU_REGIONS: Region[] = ['western-europe', 'northern-europe', 'southern-eur
   standalone: true,
   imports: [LucideX, ViewToggleComponent],
   template: `
-    <aside class="w-[260px] h-full bg-[var(--color-surface)] border-r border-[var(--color-border)] overflow-y-auto flex flex-col shrink-0 transition-colors duration-150">
+    <aside class="w-[260px] md:w-[260px] h-full bg-[var(--color-surface)] border-r border-[var(--color-border)] overflow-y-auto flex flex-col shrink-0 transition-colors duration-150">
+
+      <!-- Mobile close button -->
+      <div class="flex justify-end p-2 md:hidden border-b border-[var(--color-border)]">
+        <button
+          class="p-2 rounded-md text-[var(--color-text-tertiary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface-hover)] transition-colors"
+          aria-label="Close navigation"
+          (click)="closeRequest.emit()"
+        >
+          <svg lucideX class="size-5"></svg>
+        </button>
+      </div>
 
       <!-- View -->
       <section class="p-4 border-b border-[var(--color-border)]">
@@ -126,6 +137,7 @@ const EU_REGIONS: Region[] = ['western-europe', 'northern-europe', 'southern-eur
 })
 export class SidebarComponent {
   readonly store = inject(AppStore);
+  readonly closeRequest = output<void>();
   readonly regionLabel = regionLabel;
   readonly confidenceOpts = CONFIDENCE_OPTS;
   readonly quickFilters = QUICK_FILTERS;

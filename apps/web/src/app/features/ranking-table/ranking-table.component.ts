@@ -1,4 +1,5 @@
 import { Component, computed, inject } from '@angular/core';
+import { LucideSearchX } from '@lucide/angular';
 import { AppStore, SortField } from '../../state/app.store';
 import { CalculationService, CalculationResult } from '../../core/services/calculation.service';
 import { Country, Confidence, Region } from '../../core/models/country.model';
@@ -13,7 +14,7 @@ interface Row {
 @Component({
   selector: 'app-ranking-table',
   standalone: true,
-  imports: [],
+  imports: [LucideSearchX],
   template: `
     <div class="overflow-x-auto">
       <table class="w-full text-sm min-w-[900px]">
@@ -44,10 +45,10 @@ interface Row {
             </tr>
           }
           <tr class="border-t border-[var(--color-border)]/50">
-            <th class="px-3 py-2.5 text-left text-[11px] text-[var(--color-text-tertiary)] font-medium w-10">#</th>
-            <th class="px-3 py-2.5 text-left text-[11px] text-[var(--color-text-tertiary)] font-medium min-w-[160px]">Country</th>
-            <th class="px-3 py-2.5 text-left text-[11px] text-[var(--color-text-tertiary)] font-medium min-w-[130px]">Region</th>
-            <th class="px-3 py-2.5 text-center text-[11px] text-[var(--color-text-tertiary)] font-medium w-16">Conf.</th>
+            <th class="px-3 py-2.5 text-left text-[11px] text-[var(--color-text-tertiary)] font-medium w-10" scope="col">#</th>
+            <th class="px-3 py-2.5 text-left text-[11px] text-[var(--color-text-tertiary)] font-medium min-w-[160px]" scope="col">Country</th>
+            <th class="px-3 py-2.5 text-left text-[11px] text-[var(--color-text-tertiary)] font-medium min-w-[130px] hidden md:table-cell" scope="col">Region</th>
+            <th class="px-3 py-2.5 text-center text-[11px] text-[var(--color-text-tertiary)] font-medium w-16" scope="col">Conf.</th>
 
             @if (store.userIncome() !== null) {
               <th class="px-3 py-2.5 text-right text-[11px] text-[var(--color-text-tertiary)] font-medium border-l border-[var(--color-border)] w-28">Net</th>
@@ -55,21 +56,22 @@ interface Row {
               <th class="px-3 py-2.5 text-right text-[11px] text-[var(--color-text-tertiary)] font-medium border-l border-[var(--color-border)] w-28">Net</th>
               <th class="px-3 py-2.5 text-right text-[11px] text-[var(--color-text-tertiary)] font-medium w-20">Rate</th>
             } @else {
-              <th class="px-3 py-2.5 text-right text-[11px] text-[var(--color-text-tertiary)] font-medium border-l border-[var(--color-border)] w-20 cursor-pointer hover:text-[var(--color-text-secondary)] transition-colors" (click)="store.setSort('employment30k')">
+              <th class="px-3 py-2.5 text-right text-[11px] text-[var(--color-text-tertiary)] font-medium border-l border-[var(--color-border)] w-20 cursor-pointer hover:text-[var(--color-text-secondary)] transition-colors" scope="col" [attr.aria-sort]="ariaSortFor('employment30k')" (click)="store.setSort('employment30k')">
                 <span class="flex items-center justify-end gap-1">€30k {{ sortChevron('employment30k') }}</span>
               </th>
-              <th class="px-3 py-2.5 text-right text-[11px] font-medium w-20 cursor-pointer transition-colors"
+              <th class="px-3 py-2.5 text-right text-[11px] font-medium w-20 cursor-pointer transition-colors" scope="col"
                   [style.color]="store.sortField() === 'employment60k' ? 'var(--color-accent)' : 'var(--color-text-tertiary)'"
+                  [attr.aria-sort]="ariaSortFor('employment60k')"
                   (click)="store.setSort('employment60k')">
                 <span class="flex items-center justify-end gap-1">€60k {{ sortChevron('employment60k') }}</span>
               </th>
-              <th class="px-3 py-2.5 text-right text-[11px] text-[var(--color-text-tertiary)] font-medium w-20 cursor-pointer hover:text-[var(--color-text-secondary)] transition-colors" (click)="store.setSort('employment100k')">
+              <th class="px-3 py-2.5 text-right text-[11px] text-[var(--color-text-tertiary)] font-medium w-20 cursor-pointer hover:text-[var(--color-text-secondary)] transition-colors" scope="col" [attr.aria-sort]="ariaSortFor('employment100k')" (click)="store.setSort('employment100k')">
                 <span class="flex items-center justify-end gap-1">€100k {{ sortChevron('employment100k') }}</span>
               </th>
-              <th class="px-3 py-2.5 text-right text-[11px] text-[var(--color-text-tertiary)] font-medium border-l border-[var(--color-border)] w-28 cursor-pointer hover:text-[var(--color-text-secondary)] transition-colors" (click)="store.setSort('bestSE60k')">
+              <th class="px-3 py-2.5 text-right text-[11px] text-[var(--color-text-tertiary)] font-medium border-l border-[var(--color-border)] w-28 cursor-pointer hover:text-[var(--color-text-secondary)] transition-colors" scope="col" [attr.aria-sort]="ariaSortFor('bestSE60k')" (click)="store.setSort('bestSE60k')">
                 <span class="flex items-center justify-end gap-1">Best SE 60k {{ sortChevron('bestSE60k') }}</span>
               </th>
-              <th class="px-3 py-2.5 text-right text-[11px] text-[var(--color-text-tertiary)] font-medium w-20 cursor-pointer hover:text-[var(--color-text-secondary)] transition-colors" (click)="store.setSort('topPIT')">
+              <th class="px-3 py-2.5 text-right text-[11px] text-[var(--color-text-tertiary)] font-medium w-20 cursor-pointer hover:text-[var(--color-text-secondary)] transition-colors hidden lg:table-cell" scope="col" [attr.aria-sort]="ariaSortFor('topPIT')" (click)="store.setSort('topPIT')">
                 <span class="flex items-center justify-end gap-1">Top PIT {{ sortChevron('topPIT') }}</span>
               </th>
             }
@@ -94,28 +96,34 @@ interface Row {
                   ? 'background: var(--color-surface-hover); border-left: 2px solid var(--color-accent)'
                   : ''"
                 [class]="store.selectedCountry()?.code === row.country.code ? '' : 'hover:bg-[var(--color-surface-hover)]/60'"
+                tabindex="0"
+                [attr.data-row-code]="row.country.code"
+                [attr.aria-selected]="store.selectedCountry()?.code === row.country.code"
                 (click)="store.selectCountry(row.country)"
+                (keydown.enter)="store.selectCountry(row.country)"
+                (keydown.space)="$event.preventDefault(); store.selectCountry(row.country)"
               >
                 <td class="px-3 py-2.5 text-[var(--color-text-faint)] tabular-nums text-xs">{{ i + 1 }}</td>
 
-                <td class="px-3 py-2.5">
+                <td class="px-3 py-3 md:py-2.5">
                   <div class="flex items-center gap-2">
                     <span class="text-lg leading-none">{{ row.country.flag ?? '🏳' }}</span>
                     <span class="font-medium text-[var(--color-text-primary)]">{{ row.country.name }}</span>
                   </div>
                 </td>
 
-                <td class="px-3 py-2.5">
-                  <span class="inline-block px-2 py-0.5 rounded text-[11px] bg-[var(--color-surface-hover)] text-[var(--color-text-secondary)] border border-[var(--color-border)]">
+                <td class="px-3 py-2.5 hidden md:table-cell">
+                  <span class="inline-block px-2 py-0.5 rounded text-[11px] bg-[var(--color-surface-hover)] text-[var(--color-text-secondary)] border border-[var(--color-border)] transition-transform hover:scale-[1.02]">
                     {{ regionLabel(row.country.region) }}
                   </span>
                 </td>
 
                 <td class="px-3 py-2.5 text-center">
                   <span
-                    class="inline-block size-2 rounded-full"
+                    class="conf-dot inline-block size-2.5 rounded-full transition-transform"
                     [style.background-color]="confDotColor(row.country.confidence)"
                     [title]="row.country.confidence ?? 'unknown'"
+                    [attr.aria-label]="'Confidence: ' + (row.country.confidence ?? 'unknown')"
                   ></span>
                 </td>
 
@@ -157,15 +165,22 @@ interface Row {
                       <span class="text-[var(--color-text-faint)]">—</span>
                     }
                   </td>
-                  <td class="px-3 py-2.5 text-right font-mono text-sm">
+                  <td class="px-3 py-2.5 text-right font-mono text-sm hidden lg:table-cell">
                     <span [style.color]="rateColor(row.country.personalIncomeTax?.topRate ?? null)">{{ fmtRate(row.country.personalIncomeTax?.topRate ?? null) }}</span>
                   </td>
                 }
               </tr>
             } @empty {
               <tr>
-                <td colspan="10" class="px-4 py-16 text-center text-[var(--color-text-faint)] text-sm italic">
-                  No countries match the current filters.
+                <td colspan="10">
+                  <div class="flex flex-col items-center justify-center py-20 gap-3 anim-fade-in-up">
+                    <svg lucideSearchX class="size-10 text-[var(--color-text-faint)]"></svg>
+                    <p class="text-sm text-[var(--color-text-tertiary)]">No countries match your filters</p>
+                    <button
+                      class="text-xs text-[var(--color-accent)] hover:opacity-80 transition-opacity underline"
+                      (click)="store.clearFilters()"
+                    >Clear all filters</button>
+                  </div>
                 </td>
               </tr>
             }
@@ -197,6 +212,11 @@ export class RankingTableComponent {
   sortChevron(field: SortField): string {
     if (this.store.sortField() !== field) return '↕';
     return this.store.sortDir() === 'asc' ? '↑' : '↓';
+  }
+
+  ariaSortFor(field: SortField): 'ascending' | 'descending' | 'none' {
+    if (this.store.sortField() !== field) return 'none';
+    return this.store.sortDir() === 'asc' ? 'ascending' : 'descending';
   }
 
   rateColor(r: number | null | undefined): string {

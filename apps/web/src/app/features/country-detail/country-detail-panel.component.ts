@@ -1,4 +1,4 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, computed, effect, inject, signal, untracked } from '@angular/core';
 import {
   LucideX, LucidePlus, LucideCheck, LucideExternalLink, LucideTrendingDown
 } from '@lucide/angular';
@@ -23,9 +23,13 @@ type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
     }
 
     <div
-      class="fixed right-0 top-14 bottom-0 w-full md:w-[480px] bg-[var(--color-surface)] border-l border-[var(--color-border)] z-40 flex flex-col transition-transform duration-200 ease-out"
-      [class.translate-x-0]="isVisible()"
-      [class.translate-x-full]="!isVisible()"
+      class="detail-panel"
+      [class.panel-visible]="isVisible()"
+      [class.panel-hidden]="!isVisible()"
+      [attr.inert]="isVisible() ? null : ''"
+      role="dialog"
+      aria-modal="true"
+      [attr.aria-labelledby]="isVisible() ? 'detail-country-name' : null"
     >
       @if (country(); as c) {
 
@@ -33,7 +37,7 @@ type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
         <div class="flex items-start gap-3 p-4 border-b border-[var(--color-border)] shrink-0">
           <span class="text-4xl leading-none mt-0.5">{{ c.flag ?? '🏳' }}</span>
           <div class="flex-1 min-w-0">
-            <h1 class="text-xl font-semibold text-[var(--color-text-primary)] truncate">{{ c.name }}</h1>
+            <h1 id="detail-country-name" class="text-xl font-semibold text-[var(--color-text-primary)] truncate">{{ c.name }}</h1>
             <div class="flex items-center gap-2 mt-1">
               <span class="text-xs bg-[var(--color-surface-hover)] border border-[var(--color-border)] rounded px-2 py-0.5 text-[var(--color-text-secondary)]">{{ regionLabel(c.region) }}</span>
               @if (c.confidence) {
@@ -58,8 +62,13 @@ type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
                 Compare
               }
             </button>
-            <button class="p-1.5 rounded text-[var(--color-text-tertiary)] hover:text-[var(--color-text-primary)] transition-colors" (click)="close()">
-              <svg lucideX class="size-4"></svg>
+            <button
+              class="p-2 md:p-1.5 rounded text-[var(--color-text-tertiary)] hover:text-[var(--color-text-primary)] transition-colors"
+              aria-label="Close country details"
+              data-detail-close
+              (click)="close()"
+            >
+              <svg lucideX class="size-5 md:size-4"></svg>
             </button>
           </div>
         </div>
@@ -298,6 +307,28 @@ export class CountryDetailPanelComponent {
   readonly activeTab = signal<Tab>('overview');
   readonly levels = ['30k', '60k', '100k'] as const;
 
+  private readonly lastOpenedCode = signal<string | null>(null);
+
+  constructor() {
+    effect(() => {
+      const visible = this.isVisible();
+      const code = this.country()?.code ?? null;
+      if (visible && code) {
+        untracked(() => this.lastOpenedCode.set(code));
+        setTimeout(() => {
+          document.querySelector<HTMLButtonElement>('[data-detail-close]')?.focus();
+        }, 230);
+      } else if (!visible) {
+        const prev = untracked(() => this.lastOpenedCode());
+        if (prev && window.innerWidth >= 768) {
+          requestAnimationFrame(() => {
+            document.querySelector<HTMLElement>(`[data-row-code="${prev}"]`)?.focus();
+          });
+        }
+      }
+    });
+  }
+
   readonly tabs: Array<{ id: Tab; label: string }> = [
     { id: 'overview', label: 'Overview' },
     { id: 'brackets', label: 'Tax Brackets' },
@@ -322,7 +353,9 @@ export class CountryDetailPanelComponent {
     };
   });
 
-  close(): void { this.store.selectCountry(null); }
+  close(): void {
+    this.store.selectCountry(null);
+  }
 
   toggleComparison(c: Country): void {
     if (this.store.isInComparison(c.code)) {

@@ -117,6 +117,7 @@ export class AppStore {
   readonly selectedCountry = signal<Country | null>(null);
   readonly activeView = signal<'table' | 'map'>('table');
   readonly showComparison = signal<boolean>(false);
+  readonly sidebarOpen = signal<boolean>(false);
 
   // --- Income ---
   readonly userIncome = signal<number | null>(null);
@@ -175,6 +176,9 @@ export class AppStore {
   selectCountry(country: Country | null): void {
     this.selectedCountry.set(country);
   }
+
+  toggleSidebar(): void { this.sidebarOpen.update(v => !v); }
+  closeSidebar(): void  { this.sidebarOpen.set(false); }
 
   setActiveView(view: 'table' | 'map'): void {
     this.activeView.set(view);
