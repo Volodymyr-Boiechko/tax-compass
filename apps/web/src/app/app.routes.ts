@@ -4,8 +4,6 @@ export const routes: Routes = [
   {
     path: '',
     loadComponent: () =>
-      import('./features/smoke-test/smoke-test.component').then(
-        m => m.SmokeTestComponent
-      ),
+      import('./layout/shell/shell.component').then(m => m.ShellComponent),
   },
 ];
