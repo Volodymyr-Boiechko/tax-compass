@@ -246,3 +246,20 @@ All resident individuals must pay social security. (EY p.317)
 - [ ] Investment allowance (10%) for self-employed not modeled
 - [ ] Penshonado regime effective rate (10% on foreign income) not computed — would be very attractive for retirees with foreign income
 - [ ] E-zone companies and Curaçao investment companies have special regimes not detailed here
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 46.5% (above XCG 162,894) | N/A — PwC returned 404 | ⚠️ |
+| Employee SS rate | ~11.8% (AOV 6% + BVZ 4.3% + AVBZ 1.5%) | N/A — PwC returned 404 | ⚠️ |
+| Self-empl. headline rate | AVBZ 2% only (self-employed) | N/A — PwC returned 404 | ⚠️ |
+| Tax-free threshold | XCG 2,915 tax credit (not a threshold per se) | N/A — PwC returned 404 | ⚠️ |
+| Key special regime | Penshonado 10% flat on foreign income; "At Home in Curaçao" digital nomad permit | N/A — PwC returned 404 | ⚠️ |
+
+**Overall verdict:** ⚠️ partial-mismatch — PwC does not publish a Curaçao page (404); EY data uncontradicted but unconfirmed by PwC  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/curacao/individual/taxes-on-personal-income (404 Not Found)
+**Verified:** 2026-05-31
