@@ -53,3 +53,6 @@ secrets/
 data/raw/
 data/processed/
 data/cache/
+
+
+./claude/

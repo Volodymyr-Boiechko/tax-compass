@@ -113,6 +113,11 @@ export class AppStore {
 
   readonly filteredCount = computed(() => this.filteredCountries().length);
 
+  // --- UI State ---
+  readonly selectedCountry = signal<Country | null>(null);
+  readonly activeView = signal<'table' | 'map'>('table');
+  readonly showComparison = signal<boolean>(false);
+
   // --- Income ---
   readonly userIncome = signal<number | null>(null);
 
@@ -136,6 +141,7 @@ export class AppStore {
   constructor() {
     this.loadComparison();
     this.loadIncome();
+    this.loadActiveView();
   }
 
   // --- Actions ---
@@ -164,6 +170,25 @@ export class AppStore {
     this.searchQuery.set('');
     this.selectedRegions.set([]);
     this.selectedConfidence.set([]);
+  }
+
+  selectCountry(country: Country | null): void {
+    this.selectedCountry.set(country);
+  }
+
+  setActiveView(view: 'table' | 'map'): void {
+    this.activeView.set(view);
+    try { localStorage.setItem('tax-compass-view', view); } catch {}
+  }
+
+  openComparison(): void { this.showComparison.set(true); }
+  closeComparison(): void { this.showComparison.set(false); }
+
+  private loadActiveView(): void {
+    try {
+      const v = localStorage.getItem('tax-compass-view');
+      if (v === 'table' || v === 'map') this.activeView.set(v);
+    } catch {}
   }
 
   setIncome(value: number | null): void {

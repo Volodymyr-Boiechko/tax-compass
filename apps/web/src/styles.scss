@@ -1,4 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #fafafa;
+  font-family: 'Geist', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+::selection {
+  background: rgba(163, 230, 53, 0.25);
+  color: #fff;
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+/* Leaflet overrides for dark theme */
+.leaflet-container { background: #09090b; }
+.leaflet-control-zoom a {
+  background: #18181b !important;
+  color: #a1a1aa !important;
+  border-color: #27272a !important;
+}
+.leaflet-control-zoom a:hover { background: #27272a !important; color: #fff !important; }
+.leaflet-control-attribution {
+  background: rgba(0,0,0,0.7) !important;
+  color: #71717a !important;
+  font-size: 10px !important;
+}
+.leaflet-popup-content-wrapper {
+  background: #18181b !important;
+  color: #fafafa !important;
+  border: 1px solid #27272a !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.6) !important;
+}
+.leaflet-popup-tip { background: #18181b !important; }
