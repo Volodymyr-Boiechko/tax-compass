@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { AppStore } from '../../state/app.store';
 import { Country } from '../../core/models/country.model';
+import { CalculationService, CalculationResult } from '../../core/services/calculation.service';
 import { regionLabel } from '../../core/utils/region.utils';
 
 const LEVELS = ['30k', '60k', '100k'] as const;
@@ -25,6 +26,21 @@ const METRICS: Array<{ key: MetricKey; get: (c: Country) => number | null | unde
   { key: 'topPIT',   get: c => c.personalIncomeTax?.topRate },
 ];
 
+interface IncomeRow {
+  country: Country;
+  employment: CalculationResult;
+  selfEmployment: CalculationResult;
+}
+
+interface IncomeResults {
+  income: number;
+  results: IncomeRow[];
+  maxEmplNet: number;
+  minEmplNet: number;
+  maxSeNet: number;
+  minSeNet: number;
+}
+
 @Component({
   selector: 'app-comparison-view',
   standalone: true,
@@ -43,6 +59,65 @@ const METRICS: Array<{ key: MetricKey; get: (c: Country) => number | null | unde
           Add at least 2 countries to compare.
         </div>
       } @else {
+
+        <!-- ── YOUR INCOME COMPARISON ──────────────────────── -->
+        @if (incomeResults(); as ir) {
+          <section class="ic-section">
+            <h3 class="ic-title" i18n="@@comparison.yourIncome">
+              Your income comparison — {{ fmtEuro(ir.income) }} gross
+            </h3>
+            <table class="ic-table">
+              <thead>
+                <tr>
+                  <th i18n="@@comparison.icMetric">Metric</th>
+                  @for (r of ir.results; track r.country.code) {
+                    <th>{{ r.country.flag ?? '🏳' }} {{ r.country.name }}</th>
+                  }
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="ic-metric" i18n="@@comparison.icEmplNet">Employment net</td>
+                  @for (r of ir.results; track r.country.code) {
+                    <td [class.ic-winner]="r.employment.net === ir.maxEmplNet">
+                      {{ fmtEuro(r.employment.net) }}
+                      <small class="ic-delta">
+                        @if (r.employment.net !== ir.minEmplNet) {
+                          +{{ fmtEuro(r.employment.net - ir.minEmplNet) }} vs worst
+                        } @else {
+                          reference
+                        }
+                      </small>
+                    </td>
+                  }
+                </tr>
+                <tr>
+                  <td class="ic-metric" i18n="@@comparison.icSeNet">Best SE net</td>
+                  @for (r of ir.results; track r.country.code) {
+                    <td [class.ic-winner]="r.selfEmployment.net === ir.maxSeNet">
+                      {{ fmtEuro(r.selfEmployment.net) }}
+                      <small class="ic-delta">
+                        @if (r.selfEmployment.net !== ir.minSeNet) {
+                          +{{ fmtEuro(r.selfEmployment.net - ir.minSeNet) }} vs worst
+                        } @else {
+                          reference
+                        }
+                      </small>
+                    </td>
+                  }
+                </tr>
+                <tr>
+                  <td class="ic-metric" i18n="@@comparison.icSeMethod">SE regime</td>
+                  @for (r of ir.results; track r.country.code) {
+                    <td class="ic-regime">{{ r.selfEmployment.method }}</td>
+                  }
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <mat-divider />
+        }
+
         <div class="cv-grid">
           @for (country of countries(); track country.code) {
             <div class="cv-card">
@@ -132,7 +207,7 @@ const METRICS: Array<{ key: MetricKey; get: (c: Country) => number | null | unde
             </div>
           }
         </div>
-      }
+      } <!-- end @else (countries >= 2) -->
     </mat-dialog-content>
   `,
   styles: [`
@@ -208,15 +283,52 @@ const METRICS: Array<{ key: MetricKey; get: (c: Country) => number | null | unde
     .cv-regimes { margin: 0; padding-left: 16px; display: flex; flex-direction: column; gap: 2px; }
     .cv-regimes li { font-size: 12px; color: #555; }
     mat-divider { margin: 0 !important; }
+
+    /* Income comparison section */
+    .ic-section { padding: 14px 0 10px; }
+    .ic-title { font-size: 14px; font-weight: 600; color: #1565c0; margin: 0 0 10px; }
+    .ic-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .ic-table th {
+      text-align: left; font-weight: 600; color: #555;
+      padding: 6px 10px; border-bottom: 2px solid #e0e0e0; font-size: 12px;
+    }
+    .ic-table td { padding: 8px 10px; border-bottom: 1px solid #f0f0f0; vertical-align: top; }
+    .ic-table tr:last-child td { border-bottom: none; }
+    .ic-metric { font-weight: 600; color: #666; white-space: nowrap; }
+    .ic-regime { font-size: 11px; color: #888; }
+    .ic-winner { background: #e8f5e9 !important; color: #2e7d32; font-weight: 700; }
+    .ic-delta { display: block; font-size: 10px; color: #888; margin-top: 2px; font-weight: 400; }
+    .ic-winner .ic-delta { color: #388e3c; }
   `],
 })
 export class ComparisonViewComponent {
   readonly store = inject(AppStore);
+  readonly calcService = inject(CalculationService);
   readonly dialogRef = inject(MatDialogRef<ComparisonViewComponent>);
   readonly regionLabel = regionLabel;
   readonly levels = LEVELS;
 
   readonly countries = this.store.comparedCountries;
+
+  readonly incomeResults = computed<IncomeResults | null>(() => {
+    const income = this.store.userIncome();
+    if (income === null) return null;
+    const list = this.countries();
+    if (list.length < 2) return null;
+    const results: IncomeRow[] = list.map(c => ({
+      country: c,
+      employment: this.calcService.calculateEmployment(c, income),
+      selfEmployment: this.calcService.calculateBestSelfEmployment(c, income),
+    }));
+    return {
+      income,
+      results,
+      maxEmplNet: Math.max(...results.map(r => r.employment.net)),
+      minEmplNet: Math.min(...results.map(r => r.employment.net)),
+      maxSeNet:   Math.max(...results.map(r => r.selfEmployment.net)),
+      minSeNet:   Math.min(...results.map(r => r.selfEmployment.net)),
+    };
+  });
 
   readonly winners = computed(() => {
     const list = this.countries();
@@ -238,6 +350,10 @@ export class ComparisonViewComponent {
 
     return result;
   });
+
+  fmtEuro(n: number): string {
+    return '€' + Math.round(n).toLocaleString('en-US');
+  }
 
   isWinner(code: string, metric: string): boolean {
     return this.winners().get(code)?.has(metric) ?? false;

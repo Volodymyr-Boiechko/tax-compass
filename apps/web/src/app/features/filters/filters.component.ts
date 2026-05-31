@@ -71,6 +71,26 @@ import { regionLabel } from '../../core/utils/region.utils';
           </mat-button-toggle-group>
         </div>
 
+        <!-- Income calculator -->
+        <mat-form-field appearance="outline" subscriptSizing="dynamic" class="field-income">
+          <mat-label i18n="@@filters.income">Your annual income (€)</mat-label>
+          <input
+            matInput
+            type="number"
+            min="0"
+            step="1000"
+            [value]="store.userIncome() ?? ''"
+            (input)="onIncomeInput($event)"
+            placeholder="e.g. 60000"
+          />
+          <span matSuffix>€</span>
+          @if (store.userIncome() !== null) {
+            <mat-hint i18n="@@filters.incomeActive">Showing exact calculations for your income</mat-hint>
+          } @else {
+            <mat-hint i18n="@@filters.incomeHint">Leave empty to use built-in estimates</mat-hint>
+          }
+        </mat-form-field>
+
         <!-- Status + clear -->
         <div class="filter-actions">
           @if (store.activeFilterCount() > 0) {
@@ -107,6 +127,7 @@ import { regionLabel } from '../../core/utils/region.utils';
     }
     .field-search { width: 230px; }
     .field-region { width: 190px; }
+    .field-income { width: 200px; }
     .conf-group {
       display: flex;
       align-items: center;
@@ -143,6 +164,8 @@ export class FiltersComponent {
   readonly store = inject(AppStore);
   readonly regionLabel = regionLabel;
 
+  private incomeTimer: ReturnType<typeof setTimeout> | null = null;
+
   onSearch(event: Event): void {
     this.store.setSearch((event.target as HTMLInputElement).value);
   }
@@ -153,5 +176,14 @@ export class FiltersComponent {
 
   onConfidenceChange(event: MatButtonToggleChange): void {
     this.store.setConfidence(event.value as Confidence[]);
+  }
+
+  onIncomeInput(event: Event): void {
+    if (this.incomeTimer) clearTimeout(this.incomeTimer);
+    const raw = (event.target as HTMLInputElement).value;
+    this.incomeTimer = setTimeout(() => {
+      const n = Number(raw);
+      this.store.setIncome(!raw || isNaN(n) || n <= 0 ? null : n);
+    }, 300);
   }
 }

@@ -113,6 +113,9 @@ export class AppStore {
 
   readonly filteredCount = computed(() => this.filteredCountries().length);
 
+  // --- Income ---
+  readonly userIncome = signal<number | null>(null);
+
   // --- Comparison ---
   readonly comparedCodes = signal<string[]>([]);
 
@@ -132,6 +135,7 @@ export class AppStore {
 
   constructor() {
     this.loadComparison();
+    this.loadIncome();
   }
 
   // --- Actions ---
@@ -162,6 +166,11 @@ export class AppStore {
     this.selectedConfidence.set([]);
   }
 
+  setIncome(value: number | null): void {
+    this.userIncome.set(value);
+    this.saveIncome();
+  }
+
   addToComparison(code: string): boolean {
     const current = this.comparedCodes();
     if (current.includes(code)) return false;
@@ -187,6 +196,27 @@ export class AppStore {
 
   canAddMore(): boolean {
     return this.comparedCodes().length < 3;
+  }
+
+  private saveIncome(): void {
+    try {
+      const v = this.userIncome();
+      if (v === null) {
+        localStorage.removeItem('tax-compass-income');
+      } else {
+        localStorage.setItem('tax-compass-income', String(v));
+      }
+    } catch { /* ignore */ }
+  }
+
+  private loadIncome(): void {
+    try {
+      const stored = localStorage.getItem('tax-compass-income');
+      if (stored) {
+        const n = Number(stored);
+        if (!isNaN(n) && n > 0) this.userIncome.set(n);
+      }
+    } catch { /* ignore */ }
   }
 
   private saveComparison(): void {

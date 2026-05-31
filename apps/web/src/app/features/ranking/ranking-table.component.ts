@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialog } from '@angular/material/dialog';
@@ -7,6 +7,7 @@ import { AppStore, SortField } from '../../state/app.store';
 import { regionLabel } from '../../core/utils/region.utils';
 import { Confidence, Country, Region } from '../../core/models/country.model';
 import { CountryDetailComponent } from '../country-detail/country-detail.component';
+import { CalculationService, CalculationResult } from '../../core/services/calculation.service';
 
 const CONF_LABEL: Record<string, string> = {
   'high': 'High',
@@ -15,13 +16,19 @@ const CONF_LABEL: Record<string, string> = {
   'low': 'Low',
 };
 
+interface EnhancedRow {
+  country: Country;
+  employment?: CalculationResult;
+  selfEmployment?: CalculationResult;
+}
+
 @Component({
   selector: 'app-ranking-table',
   standalone: true,
   imports: [MatTableModule, MatTooltipModule, SlicePipe],
   template: `
     <div class="table-scroll">
-      <table mat-table [dataSource]="store.filteredCountries()" class="ranking-table">
+      <table mat-table [dataSource]="rows()" class="ranking-table">
 
         <!-- # (rank) -->
         <ng-container matColumnDef="rank">
@@ -37,8 +44,8 @@ const CONF_LABEL: Record<string, string> = {
             </button>
           </th>
           <td mat-cell *matCellDef="let row" class="col-country">
-            <span class="flag">{{ row.flag ?? '🏳' }}</span>
-            <span class="country-name">{{ row.name }}</span>
+            <span class="flag">{{ row.country.flag ?? '🏳' }}</span>
+            <span class="country-name">{{ row.country.name }}</span>
           </td>
         </ng-container>
 
@@ -46,8 +53,8 @@ const CONF_LABEL: Record<string, string> = {
         <ng-container matColumnDef="region">
           <th mat-header-cell *matHeaderCellDef class="col-region">Region</th>
           <td mat-cell *matCellDef="let row" class="col-region">
-            <span class="region-chip" [class]="regionClass(row.region)">
-              {{ regionLabel(row.region) }}
+            <span class="region-chip" [class]="regionClass(row.country.region)">
+              {{ regionLabel(row.country.region) }}
             </span>
           </td>
         </ng-container>
@@ -56,11 +63,13 @@ const CONF_LABEL: Record<string, string> = {
         <ng-container matColumnDef="confidence">
           <th mat-header-cell *matHeaderCellDef class="col-conf">Conf.</th>
           <td mat-cell *matCellDef="let row" class="col-conf">
-            <span class="conf-badge" [class]="confClass(row.confidence)">
-              {{ confLabel(row.confidence) }}
+            <span class="conf-badge" [class]="confClass(row.country.confidence)">
+              {{ confLabel(row.country.confidence) }}
             </span>
           </td>
         </ng-container>
+
+        <!-- ── PRE-COMPUTED COLUMNS (income = null) ─────────────── -->
 
         <!-- Employment 30k -->
         <ng-container matColumnDef="empl30k">
@@ -70,10 +79,9 @@ const CONF_LABEL: Record<string, string> = {
             </button>
           </th>
           <td mat-cell *matCellDef="let row" class="col-rate">
-            <span
-              class="rate-val"
-              [style.color]="rateColor(row.effectiveRates.employment['30k'])"
-            >{{ fmtRate(row.effectiveRates.employment['30k']) }}</span>
+            <span class="rate-val" [style.color]="rateColor(row.country.effectiveRates.employment['30k'])">
+              {{ fmtRate(row.country.effectiveRates.employment['30k']) }}
+            </span>
           </td>
         </ng-container>
 
@@ -85,10 +93,9 @@ const CONF_LABEL: Record<string, string> = {
             </button>
           </th>
           <td mat-cell *matCellDef="let row" class="col-rate">
-            <span
-              class="rate-val"
-              [style.color]="rateColor(row.effectiveRates.employment['60k'])"
-            >{{ fmtRate(row.effectiveRates.employment['60k']) }}</span>
+            <span class="rate-val" [style.color]="rateColor(row.country.effectiveRates.employment['60k'])">
+              {{ fmtRate(row.country.effectiveRates.employment['60k']) }}
+            </span>
           </td>
         </ng-container>
 
@@ -100,10 +107,9 @@ const CONF_LABEL: Record<string, string> = {
             </button>
           </th>
           <td mat-cell *matCellDef="let row" class="col-rate">
-            <span
-              class="rate-val"
-              [style.color]="rateColor(row.effectiveRates.employment['100k'])"
-            >{{ fmtRate(row.effectiveRates.employment['100k']) }}</span>
+            <span class="rate-val" [style.color]="rateColor(row.country.effectiveRates.employment['100k'])">
+              {{ fmtRate(row.country.effectiveRates.employment['100k']) }}
+            </span>
           </td>
         </ng-container>
 
@@ -115,16 +121,14 @@ const CONF_LABEL: Record<string, string> = {
             </button>
           </th>
           <td mat-cell *matCellDef="let row" class="col-rate col-se">
-            @if (row.effectiveRates.bestSelfEmployment['60k'] != null) {
-              <span
-                class="rate-val"
-                [style.color]="rateColor(row.effectiveRates.bestSelfEmployment['60k'])"
-              >{{ fmtRate(row.effectiveRates.bestSelfEmployment['60k']) }}</span>
-              @if (row.effectiveRates.bestSelfEmployment.regime) {
-                <span
-                  class="regime-tag"
-                  [matTooltip]="row.effectiveRates.bestSelfEmployment.regime"
-                >{{ row.effectiveRates.bestSelfEmployment.regime | slice:0:12 }}…</span>
+            @if (row.country.effectiveRates.bestSelfEmployment['60k'] != null) {
+              <span class="rate-val" [style.color]="rateColor(row.country.effectiveRates.bestSelfEmployment['60k'])">
+                {{ fmtRate(row.country.effectiveRates.bestSelfEmployment['60k']) }}
+              </span>
+              @if (row.country.effectiveRates.bestSelfEmployment.regime) {
+                <span class="regime-tag" [matTooltip]="row.country.effectiveRates.bestSelfEmployment.regime">
+                  {{ row.country.effectiveRates.bestSelfEmployment.regime | slice:0:12 }}…
+                </span>
               }
             } @else {
               <span class="na">—</span>
@@ -140,18 +144,72 @@ const CONF_LABEL: Record<string, string> = {
             </button>
           </th>
           <td mat-cell *matCellDef="let row" class="col-rate">
-            <span
-              class="rate-val"
-              [style.color]="rateColor(row.personalIncomeTax?.topRate ?? null)"
-            >{{ fmtRate(row.personalIncomeTax?.topRate ?? null) }}</span>
+            <span class="rate-val" [style.color]="rateColor(row.country.personalIncomeTax?.topRate ?? null)">
+              {{ fmtRate(row.country.personalIncomeTax?.topRate ?? null) }}
+            </span>
           </td>
         </ng-container>
 
-        <tr mat-header-row *matHeaderRowDef="columns; sticky: true"></tr>
-        <tr mat-row *matRowDef="let row; columns: columns;" class="data-row" (click)="openDetail(row)"></tr>
+        <!-- ── INCOME-BASED COLUMNS (income set) ─────────────── -->
+
+        <!-- Employment net -->
+        <ng-container matColumnDef="emplNet">
+          <th mat-header-cell *matHeaderCellDef class="col-calc">
+            <span class="col-calc-title">Employment</span>
+            <span class="col-calc-sub">net income</span>
+          </th>
+          <td mat-cell *matCellDef="let row" class="col-calc">
+            <span class="net-val">{{ fmtEuro(row.employment?.net) }}</span>
+          </td>
+        </ng-container>
+
+        <!-- Employment % -->
+        <ng-container matColumnDef="emplPct">
+          <th mat-header-cell *matHeaderCellDef class="col-rate">
+            <span class="col-calc-title">Empl.</span>
+            <span class="col-calc-sub">eff. rate</span>
+          </th>
+          <td mat-cell *matCellDef="let row" class="col-rate">
+            <span class="rate-val" [style.color]="rateColor(row.employment?.effectiveRate ?? null)">
+              {{ fmtRate(row.employment?.effectiveRate ?? null) }}
+            </span>
+          </td>
+        </ng-container>
+
+        <!-- Best SE net -->
+        <ng-container matColumnDef="seNet">
+          <th mat-header-cell *matHeaderCellDef class="col-calc">
+            <span class="col-calc-title">Best SE</span>
+            <span class="col-calc-sub">net income</span>
+          </th>
+          <td mat-cell *matCellDef="let row" class="col-calc col-se">
+            <span class="net-val">{{ fmtEuro(row.selfEmployment?.net) }}</span>
+            @if (row.selfEmployment?.method) {
+              <span class="regime-tag" [matTooltip]="row.selfEmployment!.method">
+                {{ regimeShort(row.selfEmployment!.method) }}
+              </span>
+            }
+          </td>
+        </ng-container>
+
+        <!-- Best SE % -->
+        <ng-container matColumnDef="sePct">
+          <th mat-header-cell *matHeaderCellDef class="col-rate">
+            <span class="col-calc-title">Best SE</span>
+            <span class="col-calc-sub">eff. rate</span>
+          </th>
+          <td mat-cell *matCellDef="let row" class="col-rate">
+            <span class="rate-val" [style.color]="rateColor(row.selfEmployment?.effectiveRate ?? null)">
+              {{ fmtRate(row.selfEmployment?.effectiveRate ?? null) }}
+            </span>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns(); sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns();" class="data-row" (click)="openDetail(row.country)"></tr>
 
         <tr class="mat-row" *matNoDataRow>
-          <td class="mat-cell no-data" [attr.colspan]="columns.length">
+          <td class="mat-cell no-data" [attr.colspan]="displayedColumns().length">
             No countries match the current filters.
           </td>
         </tr>
@@ -165,24 +223,17 @@ const CONF_LABEL: Record<string, string> = {
       border: 1px solid #e0e0e0;
       border-radius: 4px;
     }
-    .ranking-table {
-      width: 100%;
-      min-width: 900px;
-    }
+    .ranking-table { width: 100%; min-width: 900px; }
 
     /* Sticky header */
     .mat-mdc-header-row {
-      position: sticky;
-      top: 0;
-      z-index: 2;
-      background: #3f51b5;
-      color: white;
+      position: sticky; top: 0; z-index: 2;
+      background: #3f51b5; color: white;
     }
     .mat-mdc-header-cell {
-      color: white !important;
-      font-weight: 600;
-      font-size: 13px;
+      color: white !important; font-weight: 600; font-size: 13px;
       border-bottom-color: rgba(255,255,255,0.2) !important;
+      vertical-align: middle;
     }
 
     /* Rows */
@@ -194,27 +245,24 @@ const CONF_LABEL: Record<string, string> = {
 
     /* Sort buttons */
     .sort-btn {
-      background: none;
-      border: none;
-      color: white;
-      cursor: pointer;
-      font-size: 13px;
-      font-weight: 600;
-      padding: 0;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      white-space: nowrap;
+      background: none; border: none; color: white; cursor: pointer;
+      font-size: 13px; font-weight: 600; padding: 0;
+      display: flex; align-items: center; gap: 4px; white-space: nowrap;
     }
     .sort-btn.active-sort { color: #ffeb3b; }
     .sort-icon { font-size: 14px; }
 
+    /* Income column headers */
+    .col-calc-title { display: block; font-size: 12px; font-weight: 600; color: white; }
+    .col-calc-sub   { display: block; font-size: 10px; color: rgba(255,255,255,0.75); }
+
     /* Column widths */
-    .col-num  { width: 44px;  text-align: center !important; }
+    .col-num     { width: 44px;  text-align: center !important; }
     .col-country { min-width: 160px; }
     .col-region  { min-width: 130px; }
-    .col-conf    { width: 64px; text-align: center !important; }
-    .col-rate    { width: 96px; text-align: right !important; }
+    .col-conf    { width: 64px;  text-align: center !important; }
+    .col-rate    { width: 96px;  text-align: right !important; }
+    .col-calc    { width: 120px; text-align: right !important; }
     .col-se      { min-width: 130px; }
 
     /* Country cell */
@@ -223,66 +271,76 @@ const CONF_LABEL: Record<string, string> = {
 
     /* Region chip */
     .region-chip {
-      display: inline-block;
-      padding: 2px 7px;
-      border-radius: 10px;
-      font-size: 11px;
-      font-weight: 500;
-      white-space: nowrap;
-      background: #e3f2fd;
-      color: #1565c0;
+      display: inline-block; padding: 2px 7px; border-radius: 10px;
+      font-size: 11px; font-weight: 500; white-space: nowrap;
+      background: #e3f2fd; color: #1565c0;
     }
-    .r-europe  { background: #e8eaf6; color: #3949ab; }
-    .r-africa  { background: #fff8e1; color: #f57f17; }
-    .r-americas { background: #e8f5e9; color: #2e7d32; }
-    .r-asia    { background: #fce4ec; color: #880e4f; }
+    .r-europe      { background: #e8eaf6; color: #3949ab; }
+    .r-africa      { background: #fff8e1; color: #f57f17; }
+    .r-americas    { background: #e8f5e9; color: #2e7d32; }
+    .r-asia        { background: #fce4ec; color: #880e4f; }
     .r-middle-east { background: #fff3e0; color: #e65100; }
-    .r-pacific { background: #e0f7fa; color: #006064; }
+    .r-pacific     { background: #e0f7fa; color: #006064; }
 
     /* Confidence badge */
     .conf-badge {
-      display: inline-block;
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-size: 11px;
-      font-weight: 600;
-      white-space: nowrap;
+      display: inline-block; padding: 2px 6px; border-radius: 4px;
+      font-size: 11px; font-weight: 600; white-space: nowrap;
     }
-    .conf-high      { background: #e8f5e9; color: #2e7d32; }
+    .conf-high        { background: #e8f5e9; color: #2e7d32; }
     .conf-medium-high { background: #f1f8e9; color: #558b2f; }
-    .conf-medium    { background: #fff8e1; color: #f57f17; }
-    .conf-low       { background: #ffebee; color: #b71c1c; }
-    .conf-unknown   { background: #f5f5f5; color: #9e9e9e; }
+    .conf-medium      { background: #fff8e1; color: #f57f17; }
+    .conf-low         { background: #ffebee; color: #b71c1c; }
+    .conf-unknown     { background: #f5f5f5; color: #9e9e9e; }
 
     /* Rate values */
     .rate-val { font-weight: 600; font-size: 13px; }
+    .net-val  { font-weight: 700; font-size: 13px; color: #1b5e20; }
     .na { color: #bdbdbd; }
 
     /* SE regime tag */
     .regime-tag {
-      display: block;
-      font-size: 10px;
-      color: #666;
-      margin-top: 1px;
-      max-width: 110px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      display: block; font-size: 10px; color: #666; margin-top: 1px;
+      max-width: 110px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
     }
 
     /* No data */
     .no-data {
-      text-align: center;
-      padding: 48px !important;
-      color: #9e9e9e;
-      font-style: italic;
+      text-align: center; padding: 48px !important;
+      color: #9e9e9e; font-style: italic;
     }
   `],
 })
 export class RankingTableComponent {
   readonly store = inject(AppStore);
   readonly dialog = inject(MatDialog);
+  readonly calc = inject(CalculationService);
   readonly regionLabel = regionLabel;
+
+  readonly rows = computed<EnhancedRow[]>(() => {
+    const income = this.store.userIncome();
+    const countries = this.store.filteredCountries();
+
+    if (income === null) {
+      return countries.map(c => ({ country: c }));
+    }
+
+    const mapped = countries.map(c => ({
+      country: c,
+      employment: this.calc.calculateEmployment(c, income),
+      selfEmployment: this.calc.calculateBestSelfEmployment(c, income),
+    }));
+
+    return [...mapped].sort((a, b) =>
+      (a.selfEmployment?.effectiveRate ?? 1) - (b.selfEmployment?.effectiveRate ?? 1)
+    );
+  });
+
+  readonly displayedColumns = computed<string[]>(() =>
+    this.store.userIncome() !== null
+      ? ['rank', 'country', 'region', 'confidence', 'emplNet', 'emplPct', 'seNet', 'sePct']
+      : ['rank', 'country', 'region', 'confidence', 'empl30k', 'empl60k', 'empl100k', 'bestSE60k', 'topPIT']
+  );
 
   openDetail(country: Country): void {
     this.dialog.open(CountryDetailComponent, {
@@ -293,11 +351,6 @@ export class RankingTableComponent {
     });
   }
 
-  readonly columns = [
-    'rank', 'country', 'region', 'confidence',
-    'empl30k', 'empl60k', 'empl100k', 'bestSE60k', 'topPIT',
-  ];
-
   sortIcon(field: SortField): string {
     if (this.store.sortField() !== field) return '↕';
     return this.store.sortDir() === 'asc' ? '↑' : '↓';
@@ -306,6 +359,11 @@ export class RankingTableComponent {
   fmtRate(rate: number | null | undefined): string {
     if (rate == null) return '—';
     return (rate * 100).toFixed(1) + '%';
+  }
+
+  fmtEuro(n: number | null | undefined): string {
+    if (n == null) return '—';
+    return '€' + Math.round(n).toLocaleString('en-US');
   }
 
   rateColor(rate: number | null | undefined): string {
@@ -332,5 +390,10 @@ export class RankingTableComponent {
     if (r === 'pacific') return 'region-chip r-pacific';
     if (r.includes('asia')) return 'region-chip r-asia';
     return 'region-chip r-americas';
+  }
+
+  regimeShort(method: string): string {
+    const m = method.match(/\((.+)\)$/);
+    return m ? m[1].slice(0, 14) : method.slice(0, 14);
   }
 }

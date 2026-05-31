@@ -11,6 +11,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDividerModule } from '@angular/material/divider';
 import { Country, TaxBracket } from '../../core/models/country.model';
 import { AppStore } from '../../state/app.store';
+import { CalculationService } from '../../core/services/calculation.service';
 import { regionLabel } from '../../core/utils/region.utils';
 
 const LEVELS = ['30k', '60k', '100k'] as const;
@@ -204,6 +205,11 @@ type Level = typeof LEVELS[number];
             <mat-icon>trending_down</mat-icon>
             Effective Tax Burden by Income Level
           </h3>
+          @if (store.userIncome() === null) {
+            <p class="d-calc-hint" i18n="@@detail.calcHint">
+              Enter your income in the filters above to see exact calculations.
+            </p>
+          }
           <table class="d-table rates-table">
             <thead>
               <tr>
@@ -213,6 +219,24 @@ type Level = typeof LEVELS[number];
               </tr>
             </thead>
             <tbody>
+              @if (incomeCalc(); as calc) {
+                <tr class="income-highlight-row">
+                  <td class="income-lv income-lv-user" i18n="@@detail.yourIncome">Your income</td>
+                  <td>
+                    <span [style.color]="rateColor(calc.employment.effectiveRate)">
+                      {{ fmtPct(calc.employment.effectiveRate) }}
+                    </span>
+                    <small class="se-regime">{{ fmtEuro(calc.employment.net) }} net</small>
+                  </td>
+                  <td>
+                    <span [style.color]="rateColor(calc.selfEmployment.effectiveRate)">
+                      {{ fmtPct(calc.selfEmployment.effectiveRate) }}
+                    </span>
+                    <small class="se-regime">{{ fmtEuro(calc.selfEmployment.net) }} net</small>
+                    <small class="se-regime">{{ regimeLabel(calc.selfEmployment.method) }}</small>
+                  </td>
+                </tr>
+              }
               @for (lv of levels; track lv) {
                 <tr>
                   <td class="income-lv">€{{ lv }}</td>
@@ -412,7 +436,10 @@ type Level = typeof LEVELS[number];
     .d-table tr:hover td { background: #f8f9ff; }
     .bracket-rate { font-weight: 700; }
     .rates-table .income-lv { font-weight: 600; color: #555; }
+    .income-lv-user { color: #1565c0; font-style: italic; }
+    .income-highlight-row td { background: #e8f5e9 !important; }
     .se-regime { display: block; font-size: 10px; color: #888; margin-top: 1px; }
+    .d-calc-hint { font-size: 12px; color: #888; font-style: italic; margin: 0 0 8px; }
 
     /* Social security */
     .ss-cards { display: flex; gap: 12px; flex-wrap: wrap; }
@@ -473,6 +500,7 @@ export class CountryDetailComponent {
   readonly country = inject<Country>(MAT_DIALOG_DATA);
   readonly dialogRef = inject(MatDialogRef<CountryDetailComponent>);
   readonly store = inject(AppStore);
+  readonly calcService = inject(CalculationService);
   readonly regionLabel = regionLabel;
 
   readonly levels = LEVELS;
@@ -481,6 +509,15 @@ export class CountryDetailComponent {
     this.store.comparedCodes().includes(this.country.code)
   );
   readonly isFull = computed(() => this.store.comparedCodes().length >= 3);
+
+  readonly incomeCalc = computed(() => {
+    const income = this.store.userIncome();
+    if (income === null) return null;
+    return {
+      employment: this.calcService.calculateEmployment(this.country, income),
+      selfEmployment: this.calcService.calculateBestSelfEmployment(this.country, income),
+    };
+  });
 
   toggleComparison(): void {
     if (this.store.isInComparison(this.country.code)) {
@@ -491,6 +528,15 @@ export class CountryDetailComponent {
   }
 
   // ── Formatters ──────────────────────────────────────────
+
+  fmtEuro(n: number): string {
+    return '€' + Math.round(n).toLocaleString('en-US');
+  }
+
+  regimeLabel(method: string): string {
+    const m = method.match(/\((.+)\)$/);
+    return m ? m[1] : '';
+  }
 
   fmtPct(rate: number | null | undefined): string {
     if (rate == null) return '—';
