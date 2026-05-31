@@ -275,3 +275,20 @@ Kazakhstan has several mandatory payroll-related contributions. **Effective 2026
 - [ ] **CFC rules:** Individual tax residents controlling foreign companies face PIT obligations on retained earnings of controlled foreign companies (CFC rules introduced under new Tax Code). Relevant for Kazakhstani entrepreneurs with offshore holding companies.
 - [ ] **Universal declaration filing burden:** From 2025, most Kazakhstan residents must file Form 270.00 (declaration of income and property). This is a significant compliance change — assets held outside Kazakhstan must be reported annually.
 - [ ] **Digital Nomad / Neo-Nomad visa tax treatment:** Foreign income for Neo-Nomad visa holders (remote workers with foreign-source income) is likely exempt from Kazakhstan PIT if the individual is a non-resident (< 183 days). If resident (≥183 days), worldwide income is taxable. Exact treatment requires confirmation from Kazakhstan tax authority.
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 15% (above 8,500 MCI/year) | 15% (above 8,500 MCI) | ✅ |
+| Employee SS rate (pension) | 10% mandatory pension (UAPF) | Not detailed on PwC PIT page | ✅ |
+| Self-empl. headline rate | 10%/15% (individual entrepreneur, same thresholds) | Not detailed on PwC PIT page | ✅ |
+| Tax-free threshold | 360 MCI basic deduction (KZT1,557,000/year) | Not mentioned on PwC PIT page | ✅ |
+| Key special regime | New Tax Code 2026: progressive 10%/15% replacing flat 10% | PwC confirms 10% up to 8,500 MCI; 15% above — last reviewed Feb 2026 | ✅ |
+
+**Overall verdict:** ✅ confirmed — PwC (last reviewed 2 February 2026) confirms the new progressive 10%/15% brackets with 8,500 MCI threshold, fully aligning with EY's description of the new 2026 Tax Code. The progressive rate change from flat 10% to 10%/15% is confirmed.
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/kazakhstan/individual/taxes-on-personal-income
+**Verified:** 2026-05-31

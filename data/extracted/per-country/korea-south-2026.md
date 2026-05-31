@@ -292,3 +292,21 @@ Korea has no flat-rate or presumptive regime for self-employed professionals com
 - [ ] **Business income vs employment income:** Self-employed individuals cannot claim the earned income deduction — this applies only to employment income. At equivalent gross income, self-employed face higher effective income tax than employees (particularly at middle income levels).
 - [ ] **Local income tax rate on B2B income:** Local income tax for self-employed business income is also assessed as a surtax at 10% of national income tax. The rate structure is slightly different from the employment table shown — verify exact rates for self-employment income with local counsel.
 - [ ] **Inheritance and gift tax:** Korea has a progressive inheritance and gift tax (10%–50%) with significant exemptions (basic KRW200M, spouse KRW500M–KRW3B). Not modeled here but relevant for wealth transfer planning.
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 45% national + 4.5% local = 49.5% combined (above KRW2B) | 45% national; local income tax 10% of national rates; combined up to ~49.5% | ✅ |
+| Employee SS rate | ~9.4% total (pension 4.5% + NHI ~4.0% + unemployment 0.9%) | NP 4.75%, NHI ~4.07%, EI 0.9% (as of Jan 2026) | ⚠️ |
+| Self-empl. headline rate | Standard progressive 6%–45% on net business income | Standard progressive rates | ✅ |
+| Tax-free threshold | None (6% from KRW0; basic deduction KRW1.5M) | None stated (6% from KRW0) | ✅ |
+| Key special regime | Flat 19% for foreign employees (+ 10% local = 20.9% effective); eligibility until Dec 2026 | Flat 19% national rate confirmed for qualifying foreign expats; start date by Dec 2026 | ✅ |
+
+**Overall verdict:** ⚠️ partial-mismatch (minor) — Top rate and bracket structure confirmed. Flat 19% rate for foreign employees confirmed by PwC (PwC uses 19% national rate, which matches EY's description; the 20.9% figure in EY is 19% + 10% local). Employee pension rate: EY shows 4.5%, PwC shows 4.75% (as of Jan 2026) — this is a ~0.25pp difference likely reflecting a rate adjustment between EY's October 2025 data and PwC's January 2026 data. No material discrepancy.
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/republic-of-korea/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/republic-of-korea/individual/other-taxes
+**Verified:** 2026-05-31

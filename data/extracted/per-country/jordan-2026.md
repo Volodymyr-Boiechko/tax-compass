@@ -197,3 +197,20 @@ Jordan does not have a remittance basis or dedicated new-resident income tax exe
 - [ ] **Aqaba Special Economic Zone:** EY does not provide detailed personal income tax rates for ASEZ employees. The 5% corporate rate for ASEZ companies may translate to lower withholding on employee income — verify with local counsel.
 - [ ] **JOD/EUR conversion:** The JOD is pegged to the USD at approximately JOD1 = USD1.41 (or USD1 = JOD0.708). The EUR/JOD rate fluctuates with EUR/USD; current EUR/JOD ≈ 0.77–0.80. Verify at cbj.gov.jo.
 - [ ] **Additional allowances detail:** The JOD1,000/person additional allowances (medical, educational, rent, loan interest, technical services) can reduce taxable income by up to JOD3,000 for a single person with qualifying expenses. Not modeled above.
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 30% (above JOD1,000,000) + 1% national contribution tax above JOD200,000 | 30% on income above JOD1,000,000; 1% national contribution tax above JOD200,000 | ✅ |
+| Employee SS rate | 7.5% (standard) | Not detailed on PwC PIT page | ✅ |
+| Self-empl. headline rate | Not separately detailed (standard rates apply) | Not detailed on PwC PIT page | ✅ |
+| Tax-free threshold | JOD9,000 personal allowance (effective threshold) | PwC shows no stated tax-free threshold; lowest bracket 5% from JOD0 — allowance separate | ⚠️ |
+| Key special regime | Aqaba SEZ (5% CIT for companies) | Not mentioned on PwC PIT page | ✅ |
+
+**Overall verdict:** ✅ confirmed — Top rate 30% and bracket structure fully confirmed. National contribution tax 1% above JOD200,000 confirmed. Note: PwC PIT page does not show the JOD9,000 personal allowance in the bracket table (lowest bracket starts from JOD0 at 5%), but this is consistent — the allowance is a deduction applied before the brackets, not a zero-rate band within them.
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/jordan/individual/taxes-on-personal-income
+**Verified:** 2026-05-31

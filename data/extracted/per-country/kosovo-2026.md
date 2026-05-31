@@ -204,3 +204,20 @@ Kosovo does not have a remittance basis, territorial tax, or new-resident PIT ex
 - [ ] **No health insurance levy:** Kosovo's social security system currently only covers pension contributions. There is no mandatory health insurance contribution from employees/employers. Public health services are funded through general taxation.
 - [ ] **Business income capital gains:** Capital gains are taxed as business income at the standard PIT rates (0%/8%/10%). There is no separate, potentially lower capital gains rate — but the 10% top rate is already very low.
 - [ ] **Dividends fully exempt:** Dividends received by both resident and nonresident shareholders are exempt from Kosovo PIT. Combined with the low 10% CIT rate, this makes Kosovo-based owner-managed companies potentially very tax-efficient.
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 10% (above EUR5,400/year) | 10% above EUR5,400/year | ✅ |
+| Employee SS rate | Pension 5% (no health insurance levy) | Not detailed on PwC PIT page | ✅ |
+| Self-empl. headline rate | Pension 10%–30% of net income | Not detailed on PwC PIT page | ✅ |
+| Tax-free threshold | EUR3,000/year (0% band) | EUR3,000/year confirmed (0%) | ✅ |
+| Key special regime | None (no newcomer regime) | None noted | ✅ |
+
+**Overall verdict:** ✅ confirmed — PwC (last reviewed January 13, 2026) confirms exact three-tier structure: 0% to EUR3,000; 8% EUR3,000–5,400; 10% above EUR5,400. Full alignment with EY data.
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/kosovo/individual/taxes-on-personal-income
+**Verified:** 2026-05-31

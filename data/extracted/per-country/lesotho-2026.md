@@ -131,3 +131,21 @@
 - [ ] VAT registration threshold not specified in EY individual tax section
 - [ ] Limited detail on fringe benefit tax valuation rules for employers
 - [ ] No information on withholding tax rates for nonresidents on employment income
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 30% (above LSL74,040/year) | Not available — Lesotho not covered by PwC Worldwide Tax Summaries | ⚠️ |
+| Employee SS rate | 0% (no social security system) | Not available | ⚠️ |
+| Self-empl. headline rate | Same as employment (20%/30%) | Not available | ⚠️ |
+| Tax-free threshold | None (20% from LSL0; non-refundable tax credit LSL11,640/year) | Not available | ⚠️ |
+| Key special regime | Expatriate partial exemption (no tax on foreign property/investment income) | Not available | ⚠️ |
+
+**Overall verdict:** ⚠️ partial-mismatch — Lesotho is not included in PwC Worldwide Tax Summaries (148 territories covered; Lesotho absent). EY data cannot be cross-verified against PwC for this jurisdiction. No discrepancy found, but independent verification is not possible via this source. EY data (two-bracket 20%/30% system with LSL74,040 threshold) is consistent with Lesotho's known tax structure.
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/lesotho/individual/taxes-on-personal-income — returned 404 (country not in PwC database)
+- https://taxsummaries.pwc.com/quick-charts/personal-income-tax-pit-rates — Lesotho confirmed absent
+**Verified:** 2026-05-31

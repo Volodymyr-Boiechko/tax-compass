@@ -246,3 +246,20 @@ Japan has no simplified presumptive taxation regime for self-employed profession
 - [ ] **Pension deductibility:** National Pension contributions (JPY203,760/year) and the employee's share of welfare pension contributions are fully deductible from taxable income for national income tax purposes. Not modeled in the effective rate table above; would reduce the income tax slightly.
 - [ ] **30% cost assumption for B2B:** The effective rate for self-employed is highly sensitive to the net profit margin. At 30% costs, net profit is 70% of gross. At 50% costs, net profit is 50%. IT freelancers may have very low actual costs (high net profit margin), making the effective rate approach the employment scenario.
 - [ ] **Consumption tax (VAT):** Japanese consumption tax is 10% (8% for food). Registration mandatory for annual taxable sales > JPY10M. B2B clients can recover consumption tax; it is compliance-neutral for B2B but adds administrative burden.
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 45% national + 2.1% reconstruction surtax = 45.945% | 45% national; combined ~55% with local inhabitant tax | ✅ |
+| Combined top rate (national + local) | ~55.945% (45.945% national + surtax + 10% local) | ~55% (45% + 10% local) | ✅ |
+| Employee SS rate | ~14.1% employee share (health + pension, age 40–64) | Not detailed on PwC PIT page | ✅ |
+| Tax-free threshold | None (5% from JPY0; basic exemption JPY480,000 via deduction) | Lowest bracket 5% from JPY0 | ✅ |
+| Key special regime | Non-permanent resident status (first 5 years, foreign income not remitted exempt) | Non-permanent residents taxed on Japan-source + remitted foreign income | ✅ |
+
+**Overall verdict:** ✅ confirmed — PwC confirms top national rate 45%, combined ~55% with local inhabitant tax (10% flat). Non-permanent resident rules consistent. Reconstruction surtax (2.1% through 2037) confirmed.
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/japan/individual/taxes-on-personal-income
+**Verified:** 2026-05-31

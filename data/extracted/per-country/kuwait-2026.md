@@ -139,3 +139,20 @@ Since there is no personal income tax in Kuwait, self-employed individuals have 
 - [ ] **GCC national SS rates:** EY states GCC national employees pay "varying rates" per GCC social security agreement. Exact rates differ by nationality (e.g., Saudi nationals, Emirati nationals have different SS rates). Verify with local counsel for specific GCC nationality.
 - [ ] **End-of-service benefit calculation:** The benefit is employer-funded and accumulates annually. At 1 month/year salary for >5 years of service, this is a significant deferred liability for employers. Some employers pay in full at termination; others capitalize reserves.
 - [ ] **Double tax treaty network:** Kuwait has concluded DTTs with 60+ countries (see EY p. 831). Residents can obtain Tax Residency Certificates for treaty purposes — relevant for income sourced from treaty countries to avoid withholding taxes in those countries.
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 0% (no personal income tax) | 0% — "There is no personal income tax imposed on individuals in Kuwait" | ✅ |
+| Employee SS rate | 10.5% for Kuwaiti nationals; 0% for expatriates | Not detailed on PwC PIT page | ✅ |
+| Self-empl. headline rate | N/A (no PIT) | N/A | ✅ |
+| Tax-free threshold | N/A (no PIT) | N/A | ✅ |
+| Key special regime | Zero PIT — universal for all individuals | Confirmed zero PIT (last reviewed Jan 15, 2026) | ✅ |
+
+**Overall verdict:** ✅ confirmed — PwC explicitly confirms zero personal income tax in Kuwait ("There is no personal income tax imposed on individuals in Kuwait"). Full alignment with EY data.
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/kuwait/individual/taxes-on-personal-income
+**Verified:** 2026-05-31

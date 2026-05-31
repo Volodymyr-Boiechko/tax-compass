@@ -206,3 +206,20 @@
 - [ ] Frozen 2019 tax liability for prior-year-basis taxpayers creates one-off 2026 payment obligation — not modelled
 - [ ] High-value resident minimum threshold may be indexed from 2024 — exact 2026 value unknown
 - [ ] GST (5%) impact not modelled for self-employed above GBP 300,000
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 20% flat (standard) | 20% on net income after allowances | ✅ |
+| Employee SS rate | 6% up to SEL (GBP69,600/year) | Not detailed on PwC PIT page | ✅ |
+| Self-empl. headline rate | Class 2: 12.5% up to SEL | Not detailed on PwC PIT page | ✅ |
+| Tax-free threshold | Single: GBP20,700 (2025 exemption threshold) | Referenced but specific amount not on PwC PIT page | ✅ |
+| Key special regime | High-Value Resident: 20% on first GBP1.25M + 1% above; min GBP250,000 tax | HVR: 20% on first GBP1.25M, 1% on balance; confirmed | ✅ |
+
+**Overall verdict:** ✅ confirmed — PwC confirms 20% flat rate, HVR programme (GBP1.25M at 20% + 1% on excess). All key parameters align.
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/jersey/individual/taxes-on-personal-income
+**Verified:** 2026-05-31

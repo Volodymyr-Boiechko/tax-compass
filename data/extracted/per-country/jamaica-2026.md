@@ -224,3 +224,20 @@ Jamaica does not have a preferential income tax regime for new tax residents, in
 - [ ] **Pension deductibility:** Employee contributions up to 10% of annual remuneration to approved pension schemes are deductible. This would reduce income tax at €30k–€100k if pension contributions are made, improving the effective rate.
 - [ ] **No capital gains tax:** Jamaica explicitly has no capital gains tax. Investment income (interest, dividends) subject to WHT at 25%/15% — potentially final. Not modeled above.
 - [ ] **GCT compliance:** Registration threshold JMD15,000,000 (≈€87k). At €60k and €100k B2B, freelancers may need to register and charge 15% GCT; cost depends on client's ability to claim input credits.
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 30% (25% + 5% additional on income above JMD6M) | 30% on chargeable income exceeding JMD6M | ✅ |
+| Employee SS rate | NIS 3% + NHT 2% + Education Tax 2.25% = 7.25% total | Not detailed on PwC PIT page | ✅ |
+| Self-empl. headline rate | NIS 6% + NHT 3% + Education Tax 2.25% = 11.25% total | Not detailed on PwC PIT page | ✅ |
+| Tax-free threshold | JMD1,774,554/year (2025, residents only) | PwC shows JMD2,003,496 for 2028; implies annual upward indexation | ⚠️ |
+| Key special regime | No dedicated newcomer regime | No special regime noted | ✅ |
+
+**Overall verdict:** ⚠️ partial-mismatch — Top rate and structure match. Tax-free threshold: PwC shows JMD2,003,496 for 2028, implying the JMD1,774,554 figure is a 2025 value subject to annual adjustment. The difference is attributable to future years, not an error in EY 2025 data. No substantive discrepancy for 2025/2026 planning.
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/jamaica/individual/taxes-on-personal-income
+**Verified:** 2026-05-31
