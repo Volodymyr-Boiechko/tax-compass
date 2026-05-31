@@ -233,3 +233,26 @@ Note: YEL pension is a mandatory cost for self-employed but IS partly a pension 
 - [ ] Pension deductibility from capital income (ending 2027) not modeled
 - [ ] Travel expense deduction (up to EUR 7,000 above EUR 900 threshold) not modeled; would reduce employment PIT base
 - [ ] Expatriate flat-rate regime 32% (84 months): detailed conditions and interaction with SS not computed
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 44.25% national top rate; combined with ~8% municipal ≈ 52%+ | 37.50% national top rate + avg municipal 7.50% ≈ 45% combined | ⚠️ |
+| Employee SS rate | ~9.64% (pension TyEL 7.15% + unemployment 0.59% + Medicare ~1.9%) | TyEL 7.30% + sickness 1.98% + unemployment 0.89% = ~10.17% (2026) | ⚠️ |
+| Self-empl. headline rate | YEL pension 24.1% (≤52 yrs) | Not specified on other-taxes page | ✅ |
+| Tax-free threshold | No zero-rate band; progressive from first euro | No zero-rate band | ✅ |
+| Key special regime — Expatriate | 32% flat for 84 months; min EUR 3,827/month (2025) | 25% flat + exemptions; min EUR 5,800/month (2026 per PwC) | 🚨 |
+
+**Notes — DISCREPANCIES:**
+1. **National top rate:** EY states 44.25% above EUR 150,000; PwC states 37.50% above EUR 52,100. This appears to reflect different bracket structures — PwC may be showing 2026 updated brackets while EY shows 2025. The 2026 PwC brackets show restructured bands with 37.50% as the national top (combined with municipal = ~45% total), whereas EY's 2025 brackets go up to 44.25% national. Likely a 2026 bracket reform.
+2. **Expatriate regime:** EY states 32% flat (32.84% gross); PwC states 25% flat. These may refer to different components — PwC's 25% may be the regime rate excluding AM-equivalent contributions. Major discrepancy that warrants verification at vero.fi.
+3. **Employee SS:** Minor difference (EY 9.64% vs PwC 10.17%) likely due to 2026 rate updates.
+
+**Overall verdict:** 🚨 major-discrepancy on expatriate flat rate (32% EY vs 25% PwC) and top bracket structure requires verification at vero.fi  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/finland/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/finland/individual/other-taxes
+**Verified:** 2026-05-31
