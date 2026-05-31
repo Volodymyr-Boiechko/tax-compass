@@ -211,3 +211,23 @@ No specific preferential tax regime for newcomers, expats, or digital nomads is 
 - [ ] CACOBATPH (12.96% employer contribution) applies only to construction/public works/water sectors — not modelled in general employment scenario
 - [ ] No specific 2026 legislative changes confirmed; EY data as of 1 October 2025
 - [ ] No special regime for foreign workers, digital nomads, or expats documented in EY guide
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 35% | 35% | ✅ |
+| Employee SS rate | 9% (CNAS) | 9% (CNAS) | ✅ |
+| Self-empl. headline rate | 15% CASNOS; IFU 12% on services ≤ DZD 8M | CASNOS not detailed by PwC; IFU not confirmed | ⚠️ |
+| Tax-free threshold | DZD 30,000/month (= DZD 360,000/year, 2020 law) | DZD 240,000/year (= DZD 20,000/month bracket) | ⚠️ |
+| Key special regime | IFU — 5%/12% combined tax for revenue ≤ DZD 8M | Not confirmed in PwC page | ⚠️ |
+
+**Note on tax-free threshold:** EY's DZD 30,000/month exemption (Complementary Finance Act 2020) differs from PwC's DZD 240,000/year 0% bracket. These reflect different legal provisions — EY references a specific exemption law while PwC shows the standard IRG bracket table starting at 23%. The difference is ~DZD 120,000/year (10,000/month). This is a structural discrepancy worth noting but both sources agree on the top rate and employee SS.
+
+**Overall verdict:** ⚠️ partial-mismatch (tax-free threshold and IFU self-employment regime not fully confirmed by PwC)  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/algeria/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/algeria/individual/other-taxes
+**Verified:** 2026-05-31

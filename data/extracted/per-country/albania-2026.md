@@ -245,3 +245,23 @@ All Person Fizik income points are within the ALL 14,000,000 gross limit (~€13
 - [ ] **Post-2029 transition planning:** The 0% regime expires 31.12.2029. No extension announced. After expiry, the 15%/23% business income scale applies on net profit. This significantly changes the calculus for those planning multi-year presence in Albania.
 - [ ] **EU single permit implementation:** Law No. 43/2025 entered force 25 July 2025 but EY notes "implementation has not yet started." Practical effect on EU citizen freelancers in Albania unclear until full implementation.
 - [ ] **Alternative deduction scheme for professional services (30%):** Under 0% regime this is irrelevant; after 2029 expiry, the 30% expense deduction (for professional/consulting services under ALL 10M gross) would reduce taxable base from gross to 70% × gross before applying 15% rate. Model this separately for post-2029 planning.
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 23% | 23% | ✅ |
+| Employee SS rate | 11.2% (9.5% pension + 1.7% health) | 11.2% (9.5% + 1.7%) | ✅ |
+| Self-empl. headline rate | 0% until 31 Dec 2029 (Person Fizik, gross ≤ ALL 14M) | 0% until 31 Dec 2029 confirmed | ✅ |
+| Tax-free threshold | ALL 600,000/year (deduction system) | ALL 50,000/month (≈ ALL 600,000/year) | ✅ |
+| Key special regime | Person Fizik 0% regime (until 31 Dec 2029) | Confirmed — 0% for gross ≤ ALL 14M until 31 Dec 2029 | ✅ |
+
+**Note:** PwC cites minimum salary as ALL 50,000/month vs EY ALL 40,000/month — likely a 2026 minimum wage update. This affects the self-employed SS fixed contribution base but does not change the rates.
+
+**Overall verdict:** ✅ confirmed  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/albania/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/albania/individual/other-taxes
+**Verified:** 2026-05-31

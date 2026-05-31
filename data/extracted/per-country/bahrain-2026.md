@@ -158,4 +158,22 @@ Bahrain's social security system has **three different contribution structures**
 - [ ] GCC non-Bahraini nationals: subject to home country SS rates — not modelled; rates vary by GCC member state
 - [ ] End-of-service benefit (4.2%/8.4% employer contributions) not included in employee effective rate calculations as it is an employer obligation
 - [ ] Employer health insurance (BHD 22.5/year per Bahraini employee) not modelled
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 0% (no income tax) | 0% (no income tax confirmed) | ✅ |
+| Employee SS rate | 8% Bahraini nationals; 1% non-GCC expats | 8% Bahraini nationals; 1% non-GCC expats | ✅ |
+| Self-empl. headline rate | 0% income tax | 0% confirmed | ✅ |
+| Tax-free threshold | N/A (no income tax) | N/A confirmed | ✅ |
+| Key special regime | Golden Visa (10-year residency) | Not detailed in PwC PIT page | ⚠️ |
+
+**Overall verdict:** ✅ confirmed  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/bahrain/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/bahrain/individual/other-taxes
+**Verified:** 2026-05-31
 - [ ] VAT (10%) applicable to businesses exceeding BHD 37,500 annual turnover — not a direct income tax but adds compliance cost

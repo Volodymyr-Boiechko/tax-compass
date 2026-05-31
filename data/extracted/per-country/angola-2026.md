@@ -199,3 +199,23 @@ No specific preferential tax regime for newcomers, expats, or digital nomads is 
 - [ ] New Personal Income Tax Code (anticipated 2027) may significantly change the regime; monitor Law No. 28/20 developments
 - [ ] No special regime for expats, digital nomads, or foreign workers documented
 - [ ] Tax treaty network is very limited (China, Portugal, UAE confirmed; others in negotiation)
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 25% | 25% | ✅ |
+| Employee SS rate | 3% | 3% | ✅ |
+| Self-empl. headline rate | 8% SS; 6.5% WHT or 25% flat PIT (Group B) | 8% employer/self-employed SS confirmed | ✅ |
+| Tax-free threshold | AOA 70,000/month (Group A bracket) | AOA 100,000 (PwC shows exempt up to AOA 100,000) | ⚠️ |
+| Key special regime | Group B (6.5% WHT with organized accounting) | Group B/C confirmed at 6.5% WHT | ✅ |
+
+**Note on tax-free threshold:** EY states 0% up to AOA 70,000/month with 10% on AOA 70,001–100,000; PwC states "up to AOA 100,000 is exempt." This difference of AOA 30,000 in the bracket boundary is a minor structural discrepancy — likely PwC is showing the effective zero-tax point rather than the bracket boundary.
+
+**Overall verdict:** ⚠️ partial-mismatch (tax-free threshold boundary differs between EY and PwC by AOA 30,000)  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/angola/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/angola/individual/other-taxes
+**Verified:** 2026-05-31

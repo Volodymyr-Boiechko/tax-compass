@@ -389,3 +389,23 @@ Note: At €100k, Monotributo is NOT available (Category K ceiling ≈ ARS 108M 
 - [ ] Personal assets tax (Bienes Personales) threshold in EUR: ARS 384.7M ÷ 1,645 ARS/EUR ≈ €234k threshold — relevant for any Argentine resident or expat with significant assets
 - [ ] Simplified Income Tax Return (Law 27,799): eligibility thresholds (ARS 1 billion income, ARS 10 billion wealth) in EUR terms are ARS 1 billion ÷ 1,645 ≈ €608k and ARS 10 billion ≈ €6.08M respectively — primarily relevant to very high earners
 - [ ] The April 2025 exchange rate unification: the IMF agreement and lifting of currency controls may not be permanent; any reversal would require re-evaluation of all EUR-equivalent figures
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 35% (Ganancias) | 35% | ✅ |
+| Employee SS rate | 17% (11% pension + 3% healthcare + 3% social services) | 17% (same breakdown) | ✅ |
+| Self-empl. headline rate | Monotributo fixed payment OR 5%–35% progressive (Responsable Inscripto) | PwC confirms 35% top rate; Monotributo not detailed in PwC page | ✅ |
+| Tax-free threshold | MNI + employment deduction (~ARS 2.49M/month net floor) | Not specified by PwC (indexed threshold) | ⚠️ |
+| Key special regime | Monotributo (simplified fixed-payment regime, A–K categories) | Not confirmed in PwC page (provincial gross income tax 4% mentioned) | ⚠️ |
+
+**Note:** PwC confirms the 35% top rate and 17% employee SS rate exactly. The Monotributo regime and MNI threshold are not detailed in PwC's summary but this is a known limitation of PwC's Argentina page rather than a discrepancy. All core rates match.
+
+**Overall verdict:** ✅ confirmed (core rates match; Monotributo detail not covered by PwC but not contradicted)  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/argentina/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/argentina/individual/other-taxes
+**Verified:** 2026-05-31

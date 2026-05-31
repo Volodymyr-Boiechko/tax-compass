@@ -229,3 +229,23 @@ National Insurance Scheme (NIS) — mandatory for employees, employers, and self
 - [ ] Foreign currency earnings credit (from 1 January 2025): the rebate table is new; interaction with standard PIT and NIS not fully modelled
 - [ ] BBD/USD peg confirmed at 2:1 (USD = BBD × 0.5); all EY figures in USD
 - [ ] VAT threshold (BBD 200,000 ≈ USD 100,000) for self-employed service providers — adds compliance cost above this threshold
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 28.5% | 28.5% | ✅ |
+| Employee SS rate | 11.1% (NIS) | 11% (NIS) — PwC shows 11% vs EY 11.1% | ⚠️ |
+| Self-empl. headline rate | 17.1% NIS (self-employed) | 17% (PwC shows 17% vs EY 17.1%) | ⚠️ |
+| Tax-free threshold | USD 12,500 personal allowance (first USD 25,000 at 12.5%) | BBD 50,000 (~USD 25,000) at 12.5% — same | ✅ |
+| Key special regime | Welcome Stamp visa (0% for foreign-employer remote workers) | Not detailed in PwC page | ⚠️ |
+
+**Note on NIS rates:** EY states 11.1% employee / 17.1% self-employed; PwC states 11% employee / 17% self-employed. This is a 0.1pp difference — within the rounding/partial-mismatch range, likely reflecting different effective date of the 2025 NIS rate change (PwC shows April 2025 rate). Also, PwC notes a 0.25% Resilience and Regeneration Fund contribution added in April 2025 not mentioned in EY. NIS ceiling also differs: PwC shows BBD 5,280/month vs EY USD 2,640/month (~BBD 5,280 — actually matching at 2:1 BBD/USD peg).
+
+**Overall verdict:** ⚠️ partial-mismatch (0.1pp NIS rate difference; PwC shows April 2025 rates with additional 0.25% fund not in EY)  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/barbados/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/barbados/individual/other-taxes
+**Verified:** 2026-05-31

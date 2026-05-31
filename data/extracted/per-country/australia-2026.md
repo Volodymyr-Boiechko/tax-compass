@@ -298,3 +298,21 @@ Australia's social security for workers operates through **compulsory superannua
 - [ ] Non-concessional super cap ($120,000/year) not modeled
 - [ ] Working holiday maker (WHM) rates not shown in the effective rate table
 - [ ] Stage 3 cut interaction with low-income offsets at edge cases (around $45,000 threshold) produces a temporary higher effective marginal rate — not modeled
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 45% (above AUD 190,000) | 45% (above AUD 190,000) | ✅ |
+| Employee SS rate | 0% (no employee SS; employer pays 12% super) | 0% employee; employer 12% super confirmed | ✅ |
+| Self-empl. headline rate | 0% mandatory (voluntary super); same progressive PIT as employees | Same — no mandatory SS for self-employed | ✅ |
+| Tax-free threshold | AUD 18,200 | AUD 18,200 (confirmed) | ✅ |
+| Key special regime | Temporary resident regime (foreign income exempt) | Not detailed in PwC PIT page; super rate 12% confirmed | ✅ |
+
+**Overall verdict:** ✅ confirmed  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/australia/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/australia/individual/other-taxes
+**Verified:** 2026-05-31

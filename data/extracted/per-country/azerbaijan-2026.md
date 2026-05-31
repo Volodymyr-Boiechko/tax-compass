@@ -230,3 +230,23 @@ For individuals with monthly gross taxable income above AZN 200:
 - [ ] Self-employed social security rates: EY describes the non-oil sector formula for employees; application to self-employed individuals not explicitly stated
 - [ ] Medical insurance ceiling: 2% applies up to AZN 8,000/month; rate above AZN 8,000 is 0.5% — verify current ceiling
 - [ ] Employer social costs not modelled in effective rate table (employer SS: 15% non-oil + AZN 44; 22% oil; unemployment 0.5%)
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 25% (oil/gas sector above AZN 2,500/month) | 25% (oil/gas sector above AZN 2,500/month) | ✅ |
+| Employee SS rate | Oil: 3%; Non-oil: 10% on salary >AZN 200 | Oil: 3%; Non-oil: 10% | ✅ |
+| Self-empl. headline rate | 20% flat (entrepreneurial activity) | Not detailed in PwC page | ⚠️ |
+| Tax-free threshold | Non-oil sector: AZN 8,000/month (0% up to this level) | AZN 8,000/month (0%) confirmed | ✅ |
+| Key special regime | Non-oil 0%/14% structure (7-year grace from Jan 2019, expiry ~end 2025) | Confirmed — 0% up to AZN 8,000 for non-oil sector | ✅ |
+
+**Note on grace period expiry:** Both EY and PwC describe the non-oil 0%/14% structure as applicable; PwC does not flag the 7-year expiry concern (originally ending ~end 2025) suggesting it may have been extended for 2026. This is a positive data point for continuation.
+
+**Overall verdict:** ✅ confirmed  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/azerbaijan/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/azerbaijan/individual/other-taxes
+**Verified:** 2026-05-31

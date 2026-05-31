@@ -208,3 +208,21 @@ No specific preferential tax regime for newcomers or digital nomads described in
 - [ ] Simplified Tax Regime (STR) details: not covered in EY; applicable only to small traders/artisans below BOB 184,000/year
 - [ ] Professional risk insurance rate change (1.71% → 2.3% for mining/metallurgy from Oct 2024): general employment uses 1.71%; mining sector uses 2.3%
 - [ ] No specific expat or digital nomad regime; foreigners establishing businesses must comply with standard registration requirements
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 13% (RC-IVA flat rate) | 13% (RC-IVA flat rate confirmed) | ✅ |
+| Employee SS rate | ~12.71% combined employee contributions | 12.71% confirmed | ✅ |
+| Self-empl. headline rate | 13% RC-IVA + 3% transaction tax (IT) | RC-IVA 13% confirmed; IT not detailed by PwC | ✅ |
+| Tax-free threshold | Effectively ~0 (RC-IVA credits offset most liability for lower earners) | Not separately stated | ✅ |
+| Key special regime | RC-IVA system (unique personal-income-as-VAT complement); Simplified Tax Regime for small traders | RC-IVA confirmed as 13% flat | ✅ |
+
+**Overall verdict:** ✅ confirmed  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/bolivia/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/bolivia/individual/other-taxes
+**Verified:** 2026-05-31

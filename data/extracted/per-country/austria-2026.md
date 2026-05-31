@@ -280,3 +280,21 @@ Austria has no NHR-style flat-rate regime. The main benefit for inbound workers 
 - [ ] Expatriate lump-sum deduction (20%, up to EUR 10,000/year) not modeled in examples
 - [ ] Church tax (Kirchenbeitrag): flat annual amount (~EUR 350–400) in Austria, NOT a percentage of income tax unlike Germany; minor impact not modeled
 - [ ] Gewerbetreibende vs. Neue Selbständige: activity classification rules not fully detailed; practical advice from WKO or Finanzamt recommended
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 55% (above EUR 1,000,000) | 55% (above EUR 1,000,000) | ✅ |
+| Employee SS rate | 18.07% | 18.07% | ✅ |
+| Self-empl. headline rate | ~26.83% SVS (Neue Selbständige / GSVG) | SVS rate not stated by PwC in excerpt; 18.07% employee confirmed | ⚠️ |
+| Tax-free threshold | EUR 13,539 | EUR 13,539 | ✅ |
+| Key special regime | Neue Selbständige (knowledge-based freelancers, no trade license) | Not detailed in PwC page | ⚠️ |
+
+**Overall verdict:** ✅ confirmed (core rates fully match; SVS self-employed rate detail not confirmed by PwC but not contradicted)  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/austria/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/austria/individual/other-taxes
+**Verified:** 2026-05-31

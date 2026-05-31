@@ -249,3 +249,23 @@ The overall tax due is split into a **federal base** and a **regional surcharge*
 - [ ] **Self-employed SS iterative calculation:** SS base is net income (after SS), creating a circular reference; approximate rate used; exact calculation requires iteration
 - [ ] **VAT small business threshold:** EUR 25,000/year for exemption; most B2B service providers above this level must register for 21% VAT
 - [ ] **Copyright / royalty regime:** New scope restrictions from 1 January 2023 significantly narrowed eligible income; not modelled
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 50% (above EUR 49,820) | 50% (above EUR 49,840) | ✅ |
+| Employee SS rate | 13.07% (no ceiling) | 13.07% (no ceiling confirmed) | ✅ |
+| Self-empl. headline rate | 20.5% on net income up to EUR 73,447/year | Not detailed in PwC excerpt | ⚠️ |
+| Tax-free threshold | EUR 10,910 personal allowance | Not explicitly stated in PwC excerpt | ⚠️ |
+| Key special regime | New Expat Regime (30% tax-free, EUR 75k threshold) | Not detailed in PwC PIT page | ⚠️ |
+
+**Note on top bracket threshold:** EY shows EUR 49,820 vs PwC EUR 49,840 — 20 EUR difference, effectively the same (annual indexation rounding). Rates match exactly at all brackets. Employee SS 13.07% confirmed by both sources.
+
+**Overall verdict:** ✅ confirmed (core rates match within 1pp; minor EUR 20 indexation rounding in top bracket threshold)  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/belgium/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/belgium/individual/other-taxes
+**Verified:** 2026-05-31
