@@ -245,3 +245,20 @@ All resident individuals registered at the Aruba registry office are subject to 
 - [ ] Turnover tax (BBO) rates and thresholds for self-employed not detailed in EY
 - [ ] OV (disability) premium range 0.25%–2.5% — exact rate depends on risk classification; not modelled for employer cost
 - [ ] No specific 2026 PIT rate changes announced; work permit test removal (April 2025) is the primary recent change
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 52% | PwC: not covered | N/A |
+| Employee SS rate | 6.6% (AOV/AWW 5% + AZV 1.6%) | PwC: not covered | N/A |
+| Self-empl. headline rate | 0%–52% progressive (same as employment) | PwC: not covered | N/A |
+| Tax-free threshold | AWG 30,000 fixed tax credit | PwC: not covered | N/A |
+| Key special regime | Expatriate facility (AWG 150,000 minimum salary) | PwC: not covered | N/A |
+
+**Overall verdict:** PwC: not covered (HTTP 404 — Aruba not in PwC Worldwide Tax Summaries)  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/aruba/individual/taxes-on-personal-income (404 Not Found)
+**Verified:** 2026-05-31
