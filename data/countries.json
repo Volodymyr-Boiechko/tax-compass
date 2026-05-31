@@ -12,7 +12,7 @@
       "confidence": "high",
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
-        "topRate": 0.9,
+        "topRate": 0.23,
         "brackets": [
           {
             "from": 0,
@@ -134,8 +134,8 @@
         },
         "bestSelfEmployment": {
           "30k": 0.26899999999999996,
-          "60k": null,
-          "100k": null,
+          "60k": 0.362,
+          "100k": 0.323,
           "regime": "€30,000"
         }
       },
@@ -276,7 +276,7 @@
       "confidence": "medium",
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0.35,
         "brackets": null,
         "currency": "MEP"
       },
@@ -300,15 +300,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.187,
+          "60k": 0.227,
+          "100k": 0.276
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.109,
+          "60k": 0.168,
+          "100k": 0.214,
+          "regime": "Monotributo"
         }
       },
       "changes2026": [
@@ -435,15 +435,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.158,
+          "60k": 0.287,
+          "100k": 0.367
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.155,
+          "60k": 0.283,
+          "100k": 0.362,
+          "regime": "Sole Proprietorship"
         }
       },
       "changes2026": [
@@ -601,15 +601,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.262,
+          "60k": 0.365,
+          "100k": 0.416
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.224,
+          "60k": 0.305,
+          "100k": 0.36,
+          "regime": "Neue Selbständige (no trade license)"
         }
       },
       "changes2026": [
@@ -703,7 +703,7 @@
       "confidence": "high",
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0,
         "brackets": null,
         "currency": "USD"
       },
@@ -749,7 +749,7 @@
       "confidence": "high",
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0,
         "brackets": null,
         "currency": "EUR"
       },
@@ -774,10 +774,10 @@
           "100k": 0.012
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0,
+          "60k": 0,
+          "100k": 0,
+          "regime": "Sole proprietor (0% PIT, 0% income tax)"
         }
       },
       "changes2026": [
@@ -808,7 +808,7 @@
       "confidence": "high",
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
-        "topRate": 0.65,
+        "topRate": 0.285,
         "brackets": [
           {
             "from": 0,
@@ -970,7 +970,7 @@
       "confidence": "high",
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0,
         "brackets": null,
         "currency": "EUR"
       },
@@ -1268,7 +1268,7 @@
       "confidence": "medium",
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0.275,
         "brackets": null,
         "currency": "VAT"
       },
@@ -1293,10 +1293,10 @@
           "100k": 0.271
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.072,
+          "60k": 0.092,
+          "100k": 0.106,
+          "regime": "Simples Nacional Anexo III (SLU)"
         }
       },
       "changes2026": [
@@ -1334,7 +1334,7 @@
       "confidence": "high",
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0,
         "brackets": null,
         "currency": "EUR"
       },
@@ -1385,7 +1385,7 @@
       "confidence": "high",
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0,
         "brackets": null,
         "currency": "BND"
       },
@@ -1663,10 +1663,10 @@
           "100k": 0.284
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.213,
+          "60k": 0.271,
+          "100k": 0.288,
+          "regime": "Sole Proprietor (T1 business)"
         }
       },
       "changes2026": [
@@ -1740,15 +1740,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.288,
+          "60k": 0.32,
+          "100k": 0.336
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.073,
+          "60k": 0.057,
+          "100k": 0.05,
+          "regime": "Simplified Regime (4% on turnover)"
         }
       },
       "changes2026": [
@@ -1782,7 +1782,7 @@
       "confidence": "high",
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0,
         "brackets": null,
         "currency": "KYD"
       },
@@ -1793,9 +1793,9 @@
       "specialRegimes": null,
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.05,
+          "60k": 0.05,
+          "100k": 0.044
         },
         "bestSelfEmployment": {
           "30k": 0,
@@ -2000,15 +2000,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.186,
+          "60k": 0.252,
+          "100k": 0.308
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.154,
+          "60k": 0.204,
+          "100k": 0.262,
+          "regime": "B2B 20% Deduction"
         }
       },
       "changes2026": [
@@ -2046,7 +2046,7 @@
       "confidence": "medium-high",
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0.39,
         "brackets": [
           {
             "from": 0,
@@ -2179,15 +2179,15 @@
       "specialRegimes": null,
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.139,
+          "60k": 0.204,
+          "100k": 0.265
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0,
+          "60k": 0.034,
+          "100k": 0.007,
+          "regime": "Standard Self-Employment (cedular)"
         }
       },
       "changes2026": [
@@ -2268,10 +2268,10 @@
           "100k": 0.38
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.134,
+          "60k": 0.275,
+          "100k": 0.284,
+          "regime": "Paušalni obrt / Standard obrt"
         }
       },
       "changes2026": [
@@ -2358,15 +2358,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.188,
+          "60k": 0.273,
+          "100k": 0.31
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.09,
+          "60k": 0.202,
+          "100k": 0.266,
+          "regime": "B2B Self-employment"
         }
       },
       "changes2026": [
@@ -2468,7 +2468,7 @@
       "confidence": "medium-high",
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
-        "topRate": 0.8,
+        "topRate": 0.23,
         "brackets": null,
         "currency": "PIT"
       },
@@ -2545,15 +2545,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.238,
+          "60k": 0.326,
+          "100k": 0.382
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.238,
+          "60k": 0.326,
+          "100k": 0.382,
+          "regime": "Standard self-employment (same scale as employment)"
         }
       },
       "changes2026": [
@@ -2626,15 +2626,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.221,
+          "60k": 0.257,
+          "100k": 0.262
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.167,
+          "60k": 0.217,
+          "100k": 0.23,
+          "regime": "Standard Self-Employment"
         }
       },
       "changes2026": [
@@ -2738,15 +2738,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.145,
+          "60k": 0.209,
+          "100k": 0.273
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.244,
+          "60k": 0.333,
+          "100k": 0.412,
+          "regime": "Standard Self-Employment (IESS voluntary)"
         }
       },
       "changes2026": [
@@ -2827,15 +2827,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.263,
+          "60k": 0.269,
+          "100k": 0.271
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.253,
+          "60k": 0.264,
+          "100k": 0.269,
+          "regime": "Non-commercial profits (self-employment)"
         }
       },
       "changes2026": [
@@ -2902,15 +2902,15 @@
       "specialRegimes": null,
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.24,
+          "60k": 0.311,
+          "100k": 0.336
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.162,
+          "60k": 0.241,
+          "100k": 0.265,
+          "regime": "Standard Self-Employment"
         }
       },
       "changes2026": [
@@ -2964,10 +2964,10 @@
           "100k": 0.247
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.2,
+          "60k": 0.2,
+          "100k": 0.2,
+          "regime": "Business Income Account (20% flat on gross)"
         }
       },
       "changes2026": [
@@ -3047,15 +3047,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.193,
+          "60k": 0.266,
+          "100k": 0.272
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.113,
+          "60k": 0.186,
+          "100k": 0.192,
+          "regime": "B2B Self-employment"
         }
       },
       "changes2026": [
@@ -3400,7 +3400,7 @@
       "confidence": "high",
       "lastReviewed": "1 October 2025",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0.35,
         "brackets": null,
         "currency": "GHS"
       },
@@ -3416,15 +3416,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.288,
+          "60k": 0.306,
+          "100k": 0.312
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.233,
+          "60k": 0.251,
+          "100k": 0.257,
+          "regime": "B2B Sole Proprietor"
         }
       },
       "changes2026": [],
@@ -3478,15 +3478,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.254,
+          "60k": 0.282,
+          "100k": 0.274
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.28,
+          "60k": 0.295,
+          "100k": 0.282,
+          "regime": "GIB system (effective cap 25%)"
         }
       },
       "changes2026": [
@@ -3589,7 +3589,7 @@
       "confidence": "high",
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0.37,
         "brackets": [
           {
             "from": 0,
@@ -3636,15 +3636,15 @@
       "specialRegimes": null,
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.126,
+          "60k": 0.171,
+          "100k": 0.223
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.213,
+          "60k": 0.259,
+          "100k": 0.307,
+          "regime": "Standard Self-Employment (Schedule C)"
         }
       },
       "changes2026": [
@@ -3705,15 +3705,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.088,
+          "60k": 0.107,
+          "100k": 0.111
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.05,
+          "60k": 0.057,
+          "100k": 0.058,
+          "regime": "Optional Simplified Regime (5%/7% gross)"
         }
       },
       "changes2026": [
@@ -3748,7 +3748,7 @@
       "confidence": "high",
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0.2,
         "brackets": null,
         "currency": "GBP"
       },
@@ -3768,15 +3768,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.157,
+          "60k": 0.216,
+          "100k": 0.239
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.206,
+          "60k": 0.265,
+          "100k": 0.289,
+          "regime": "Standard self-employment (flat 20%)"
         }
       },
       "changes2026": [
@@ -3834,15 +3834,15 @@
       "specialRegimes": null,
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.205,
+          "60k": 0.269,
+          "100k": 0.288
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.249,
+          "60k": 0.294,
+          "100k": 0.303,
+          "regime": "Standard Self-Employment"
         }
       },
       "changes2026": [
@@ -3908,15 +3908,15 @@
       "specialRegimes": null,
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.152,
+          "60k": 0.2,
+          "100k": 0.22
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.135,
+          "60k": 0.195,
+          "100k": 0.217,
+          "regime": "Standard Self-Employment"
         }
       },
       "changes2026": [
@@ -3974,15 +3974,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.069,
+          "60k": 0.12,
+          "100k": 0.14
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.111,
+          "60k": 0.111,
+          "100k": 0.122,
+          "regime": "Profits Tax (7.5%/15%)"
         }
       },
       "changes2026": [
@@ -4019,7 +4019,7 @@
       "confidence": "high",
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0.15,
         "brackets": null,
         "currency": "EUR"
       },
@@ -4039,15 +4039,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.335,
+          "60k": 0.335,
+          "100k": 0.335
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.45,
+          "60k": 0.45,
+          "100k": 0.45,
+          "regime": "Independent activity (10% deduction)"
         }
       },
       "changes2026": [
@@ -4318,7 +4318,7 @@
       "confidence": "high",
       "lastReviewed": "1 October 2025",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0.4,
         "brackets": [
           {
             "from": 0,
@@ -4349,9 +4349,9 @@
           "100k": 0.354
         },
         "bestSelfEmployment": {
-          "30k": null,
+          "30k": 0.11,
           "60k": 0.204,
-          "100k": null,
+          "100k": 0.335,
           "regime": "B2B"
         }
       },
@@ -4384,7 +4384,7 @@
       "confidence": "high",
       "lastReviewed": "1 October 2025",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0.21,
         "brackets": null,
         "currency": "GBP"
       },
@@ -4409,9 +4409,9 @@
           "100k": 0.221
         },
         "bestSelfEmployment": {
-          "30k": null,
+          "30k": 0.082,
           "60k": 0.17,
-          "100k": null,
+          "100k": 0.188,
           "regime": "B2B"
         }
       },
@@ -4550,15 +4550,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.326,
+          "60k": 0.384,
+          "100k": 0.436
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.378,
+          "60k": 0.378,
+          "100k": 0.434,
+          "regime": "Regime Forfettario (15%, 78% coeff.)"
         }
       },
       "changes2026": [
@@ -4707,15 +4707,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.22,
+          "60k": 0.261,
+          "100k": 0.284
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.213,
+          "60k": 0.238,
+          "100k": 0.244,
+          "regime": "Standard SE (30% costs assumed)"
         }
       },
       "changes2026": [
@@ -4785,9 +4785,9 @@
           "100k": 0.261
         },
         "bestSelfEmployment": {
-          "30k": null,
+          "30k": 0.19,
           "60k": 0.255,
-          "100k": null,
+          "100k": 0.298,
           "regime": "B2B"
         }
       },
@@ -4973,7 +4973,7 @@
       "confidence": "high",
       "lastReviewed": "1 October 2025",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0.35,
         "brackets": null,
         "currency": "KES"
       },
@@ -4989,15 +4989,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.288,
+          "60k": 0.3,
+          "100k": 0.317
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.264,
+          "60k": 0.279,
+          "100k": 0.298,
+          "regime": "B2B Sole Proprietor"
         }
       },
       "changes2026": [],
@@ -5206,7 +5206,7 @@
       "confidence": "high",
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0,
         "brackets": null,
         "currency": "USD"
       },
@@ -5496,7 +5496,7 @@
       "confidence": "medium",
       "lastReviewed": "1 October 2025",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0.3,
         "brackets": null,
         "currency": "ZAR"
       },
@@ -5512,15 +5512,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.269,
+          "60k": 0.285,
+          "100k": 0.291
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.269,
+          "60k": 0.285,
+          "100k": 0.291,
+          "regime": "B2B Self-Employment"
         }
       },
       "changes2026": [],
@@ -5654,15 +5654,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.173,
+          "60k": 0.233,
+          "100k": 0.263
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.247,
+          "60k": 0.307,
+          "100k": 0.337,
+          "regime": "Self-employed individual (sole trader)"
         }
       },
       "changes2026": [
@@ -5736,15 +5736,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.375,
+          "60k": 0.423,
+          "100k": 0.403
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.218,
+          "60k": 0.259,
+          "100k": 0.335,
+          "regime": "Individual Activity"
         }
       },
       "changes2026": [
@@ -6068,7 +6068,7 @@
       "confidence": "high",
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0.3,
         "brackets": null,
         "currency": "EUR"
       },
@@ -6105,10 +6105,10 @@
           "100k": 0.321
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.126,
+          "60k": 0.188,
+          "100k": 0.214,
+          "regime": "Sole Proprietor (no EPF)"
         }
       },
       "changes2026": [
@@ -6542,7 +6542,7 @@
       "confidence": "high",
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0,
         "brackets": null,
         "currency": null
       },
@@ -6787,15 +6787,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.287,
+          "60k": 0.304,
+          "100k": 0.302
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.146,
+          "60k": 0.108,
+          "100k": 0.105,
+          "regime": "CPU 10% on turnover"
         }
       },
       "changes2026": [
@@ -6860,10 +6860,10 @@
           "100k": 0.32899999999999996
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.282,
+          "60k": 0.315,
+          "100k": 0.329,
+          "regime": "Standard Self-Employment"
         }
       },
       "changes2026": [
@@ -7522,7 +7522,7 @@
       "confidence": "high",
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0,
         "brackets": null,
         "currency": "LLC"
       },
@@ -7543,10 +7543,10 @@
           "100k": 0
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0,
+          "60k": 0,
+          "100k": 0,
+          "regime": "Sole proprietor (0% PIT for expatriates)"
         }
       },
       "changes2026": [
@@ -8139,8 +8139,8 @@
         },
         "bestSelfEmployment": {
           "30k": 0.098,
-          "60k": null,
-          "100k": null,
+          "60k": 0.146,
+          "100k": 0.15,
           "regime": "€30,000"
         }
       },
@@ -8311,15 +8311,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.272,
+          "60k": 0.382,
+          "100k": 0.459
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.281,
+          "60k": 0.344,
+          "100k": 0.4,
+          "regime": "B2B Simplified (coeff. 0.75)"
         }
       },
       "changes2026": [
@@ -8357,7 +8357,7 @@
       "confidence": "high",
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0.33,
         "brackets": null,
         "currency": "USD"
       },
@@ -8377,15 +8377,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.123,
+          "60k": 0.196,
+          "100k": 0.275
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.201,
+          "60k": 0.201,
+          "100k": 0.201,
+          "regime": "Optional Fixed Rate (services 6-20%)"
         }
       },
       "changes2026": [],
@@ -8415,7 +8415,7 @@
       "confidence": "high",
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0,
         "brackets": [
           {
             "from": 0,
@@ -8456,10 +8456,10 @@
           "100k": 0
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.07,
+          "60k": 0.07,
+          "100k": 0.07,
+          "regime": "Sole trader (10% corporate tax on net profit)"
         }
       },
       "changes2026": [],
@@ -8487,7 +8487,7 @@
       "confidence": "medium-high",
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
-        "topRate": 0.7,
+        "topRate": 0.1,
         "brackets": null,
         "currency": "EUR"
       },
@@ -8553,7 +8553,7 @@
       "confidence": "high",
       "lastReviewed": "1 October 2025",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0.3,
         "brackets": null,
         "currency": "RWF"
       },
@@ -8569,15 +8569,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.363,
+          "60k": 0.366,
+          "100k": 0.367
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.3,
+          "60k": 0.303,
+          "100k": 0.304,
+          "regime": "B2B Individual Business"
         }
       },
       "changes2026": [],
@@ -8605,7 +8605,7 @@
       "confidence": "low",
       "lastReviewed": "1 October 2025",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0.3,
         "brackets": null,
         "currency": "USD"
       },
@@ -8625,15 +8625,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.277,
+          "60k": 0.309,
+          "100k": 0.32
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.237,
+          "60k": 0.269,
+          "100k": 0.28,
+          "regime": "Category B Self-employment"
         }
       },
       "changes2026": [],
@@ -8663,7 +8663,7 @@
       "confidence": "high",
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0,
         "brackets": [
           {
             "from": 0,
@@ -8704,10 +8704,10 @@
           "100k": 0
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.14,
+          "60k": 0.14,
+          "100k": 0.14,
+          "regime": "Sole trader (20% corporate tax on net profit, 30% expenses assumed)"
         }
       },
       "changes2026": [
@@ -8770,10 +8770,10 @@
           "100k": 0.31
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.12,
+          "60k": 0.134,
+          "100k": 0.163,
+          "regime": "Paušalac (IT Belgrade) / Bookkeeping entrepreneur"
         }
       },
       "changes2026": [
@@ -8807,7 +8807,7 @@
       "confidence": "high",
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0.24,
         "brackets": null,
         "currency": "EUR"
       },
@@ -8844,10 +8844,10 @@
           "100k": 0.126
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.122,
+          "60k": 0.207,
+          "100k": 0.231,
+          "regime": "Sole Proprietor + MediSave"
         }
       },
       "changes2026": [
@@ -8884,7 +8884,7 @@
       "confidence": "high",
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0.475,
         "brackets": null,
         "currency": "AOV"
       },
@@ -8908,15 +8908,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.175,
+          "60k": 0.343,
+          "100k": 0.393
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.217,
+          "60k": 0.307,
+          "100k": 0.368,
+          "regime": "B2B (30% expenses)"
         }
       },
       "changes2026": [],
@@ -9006,7 +9006,7 @@
       "confidence": "high",
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0.5,
         "brackets": [
           {
             "from": 0,
@@ -9070,7 +9070,7 @@
       "confidence": "high",
       "lastReviewed": "1 March 2025",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0.45,
         "brackets": null,
         "currency": "UIF"
       },
@@ -9090,15 +9090,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.233,
+          "60k": 0.316,
+          "100k": 0.358
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.29,
+          "60k": 0.305,
+          "100k": 0.306,
+          "regime": "B2B Sole Proprietor"
         }
       },
       "changes2026": [],
@@ -9127,7 +9127,7 @@
       "confidence": "low",
       "lastReviewed": "1 October 2025",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0.2,
         "brackets": null,
         "currency": "NGO"
       },
@@ -9143,15 +9143,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.27,
+          "60k": 0.275,
+          "100k": 0.275
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.19,
+          "60k": 0.195,
+          "100k": 0.195,
+          "regime": "B2B Direct Assessment"
         }
       },
       "changes2026": [],
@@ -9287,15 +9287,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.327,
+          "60k": 0.384,
+          "100k": 0.406
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.139,
+          "60k": 0.196,
+          "100k": 0.218,
+          "regime": "Sole Proprietor 30% Expenses"
         }
       },
       "changes2026": [
@@ -9331,7 +9331,7 @@
       "confidence": "high",
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0.3,
         "brackets": null,
         "currency": "EUR"
       },
@@ -9351,15 +9351,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.189,
+          "60k": 0.245,
+          "100k": 0.267
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.133,
+          "60k": 0.172,
+          "100k": 0.187,
+          "regime": "B2B (30% expenses)"
         }
       },
       "changes2026": [],
@@ -9387,7 +9387,7 @@
       "confidence": "medium",
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0.38,
         "brackets": [
           {
             "from": 0,
@@ -9418,15 +9418,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.373,
+          "60k": 0.384,
+          "100k": 0.402
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.202,
+          "60k": 0.248,
+          "100k": 0.266,
+          "regime": "B2B (30% expenses)"
         }
       },
       "changes2026": [],
@@ -9535,7 +9535,7 @@
       "confidence": "medium-high",
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0.4,
         "brackets": [
           {
             "from": 0,
@@ -9684,7 +9684,7 @@
       "confidence": "high",
       "lastReviewed": "1 October 2025",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0.3,
         "brackets": [
           {
             "from": 0,
@@ -9716,15 +9716,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.387,
+          "60k": 0.393,
+          "100k": 0.396
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.3,
+          "60k": 0.3,
+          "100k": 0.3,
+          "regime": "B2B Flat Rate 30%"
         }
       },
       "changes2026": [],
@@ -9753,7 +9753,7 @@
       "confidence": "medium",
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0.35,
         "brackets": null,
         "currency": "EUR"
       },
@@ -9782,10 +9782,10 @@
           "100k": 0.22699999999999998
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.015,
+          "60k": 0.037,
+          "100k": 0.061,
+          "regime": "Sole Proprietor 60% Deduction"
         }
       },
       "changes2026": [
@@ -9948,10 +9948,10 @@
           "100k": 0.428
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.33,
+          "60k": 0.384,
+          "100k": 0.394,
+          "regime": "Independent professional (liberal profession regime)"
         }
       },
       "changes2026": [
@@ -10047,7 +10047,7 @@
       "confidence": "medium",
       "lastReviewed": "1 October 2025",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0.4,
         "brackets": null,
         "currency": "UGX"
       },
@@ -10063,15 +10063,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.34,
+          "60k": 0.395,
+          "100k": 0.397
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.29,
+          "60k": 0.345,
+          "100k": 0.347,
+          "regime": "B2B Individual Business"
         }
       },
       "changes2026": [],
@@ -10164,7 +10164,7 @@
       "confidence": "high",
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0,
         "brackets": null,
         "currency": "SME"
       },
@@ -10258,15 +10258,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.14,
+          "60k": 0.211,
+          "100k": 0.294
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.123,
+          "60k": 0.172,
+          "100k": 0.229,
+          "regime": "Ltd Co outside IR35"
         }
       },
       "changes2026": [
@@ -10575,15 +10575,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.129,
+          "60k": 0.165,
+          "100k": 0.22
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.171,
+          "60k": 0.223,
+          "100k": 0.274,
+          "regime": "Sole Proprietor (Schedule C)"
         }
       },
       "changes2026": [
@@ -10734,15 +10734,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.355,
+          "60k": 0.348,
+          "100k": 0.34
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.3,
+          "60k": 0.32,
+          "100k": 0.323,
+          "regime": "Independent Business (Tariff No. 1)"
         }
       },
       "changes2026": [
@@ -10849,7 +10849,7 @@
       "confidence": "high",
       "lastReviewed": "1 October 2025",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0.37,
         "brackets": null,
         "currency": "ZMW"
       },
@@ -10865,15 +10865,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.375,
+          "60k": 0.389,
+          "100k": 0.399
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.325,
+          "60k": 0.339,
+          "100k": 0.349,
+          "regime": "Sole Trader"
         }
       },
       "changes2026": [],
@@ -10901,7 +10901,7 @@
       "confidence": "medium",
       "lastReviewed": "1 October 2025",
       "personalIncomeTax": {
-        "topRate": null,
+        "topRate": 0.4,
         "brackets": null,
         "currency": "USD"
       },
@@ -10917,15 +10917,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.303,
+          "60k": 0.355,
+          "100k": 0.378
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.258,
+          "60k": 0.258,
+          "100k": 0.258,
+          "regime": "B2B Trade Income 25.75%"
         }
       },
       "changes2026": [],
