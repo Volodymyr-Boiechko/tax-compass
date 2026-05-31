@@ -3,6 +3,7 @@ import * as L from 'leaflet';
 import { AppStore } from '../../state/app.store';
 import { ThemeService } from '../../core/services/theme.service';
 import { Country } from '../../core/models/country.model';
+import { matchGeoFeature } from './iso-matcher';
 
 type GeoLayer = L.GeoJSON & { feature?: GeoJSON.Feature };
 
@@ -136,7 +137,7 @@ export class WorldMapComponent implements AfterViewInit, OnDestroy {
 
         layer.on('mouseover', (e: L.LeafletMouseEvent) => {
           (e.target as GeoLayer).setStyle({ weight: 1.5, color: '#a3e635', fillOpacity: 0.9 });
-          const name = feature.properties?.['ADMIN'] ?? feature.properties?.['NAME'] ?? 'Unknown';
+          const name: string = feature.properties?.['name'] ?? feature.properties?.['ADMIN'] ?? feature.properties?.['NAME'] ?? 'Unknown';
           const rate = country ? this.bestRate(country) : null;
           const content = country
             ? `<div class="map-popup">
@@ -165,11 +166,9 @@ export class WorldMapComponent implements AfterViewInit, OnDestroy {
 
   private findCountry(feature: GeoJSON.Feature | undefined): Country | undefined {
     if (!feature?.properties) return undefined;
-    const iso2: string = feature.properties['ISO_A2'] ?? '';
-    const iso3: string = feature.properties['ISO_A3'] ?? '';
-    return this.store.countries().find(
-      c => c.code === iso2 || c.code === iso3 || c.code.toLowerCase() === iso2.toLowerCase()
-    );
+    const code = matchGeoFeature(feature.properties as Record<string, unknown>);
+    if (!code) return undefined;
+    return this.store.countries().find(c => c.code === code);
   }
 
   private bestRate(c: Country): number | null {
