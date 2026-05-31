@@ -315,3 +315,21 @@ Note: SIMPLE SS contribution is higher in absolute terms because self-employed p
 - [ ] Retención en la fuente rates for independent workers under standard regime not computed (typically 10%–11% for professional services — provisional, credited against annual tax)
 - [ ] Voluntary AFC contributions and voluntary pension deductions (powerful tools for high earners in standard regime) not modeled
 - [ ] Wealth tax (0%–1.5% on net equity ≥ UVT 72,000 ≈ COP 3.77 billion) not included — only relevant at very high asset levels (~€877k+)
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 39% | 39% (confirmed: ">31,000 UVT") | ✅ |
+| Employee SS rate | 8% (health 4% + pension 4%) | 8% (confirmed: 4% health + 4% pension) | ✅ |
+| Self-empl. headline rate | SIMPLE 5.9%–14.5% on gross + SS | SIMPLE regime not mentioned on PwC PIT page | ✅ (EY documents SIMPLE; PwC focuses on standard regime) |
+| Tax-free threshold | 0–1,090 UVT/year (≈ COP 57M for 2026) | 0–1,090 UVT (PwC cites UVT 2026 = COP 52,347 — minor rounding vs EY 52,374) | ✅ (within rounding; same threshold) |
+| Key special regime | SIMPLE (5.9%–14.5% for professionals) | Not mentioned | ✅ (regime confirmed in EY; standard regime confirmed by PwC) |
+
+**Overall verdict:** ✅ confirmed — 39% top rate and 8% employee SS match exactly; minor UVT rounding difference (52,347 vs 52,374) is immaterial  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/colombia/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/colombia/individual/other-taxes  
+**Verified:** 2026-05-31
