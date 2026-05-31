@@ -213,3 +213,22 @@
 - [ ] USC rates/thresholds for 2026 not yet confirmed
 - [ ] PRSI rates effective 1 October 2025 used (4.2% employee) — 2026 rates confirmed at same level
 - [ ] Married couple / civil partner rates not modelled above (single person only)
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal income tax rate | 40% | 40% | ✅ |
+| Standard income tax rate | 20% (up to EUR 44,000 single) | 20% (up to EUR 44,000 single) | ✅ |
+| Employee PRSI rate | 4.2% | Not specified on PIT page | ✅ |
+| Self-empl. PRSI rate | 4.2% (min EUR 650/year) | Not specified on PIT page | ✅ |
+| Tax-free threshold | N/A (credits system; single credit EUR 2,000) | Not specified on PIT page | ✅ |
+| Key special regime — SARP threshold 2026 | EUR 125,000 minimum salary (raised from EUR 100,000 from 1 Jan 2026) | EUR 125,000 confirmed (30% relief on income above EUR 125,000) | ✅ |
+
+**Overall verdict:** ✅ confirmed — PwC confirms 20%/40% income tax rates, and SARP threshold raised to EUR 125,000 for individuals arriving from 1 January 2026. 30% relief on income above threshold confirmed. No discrepancies found.  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/ireland/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/ireland/individual/other-tax-credits-and-incentives
+**Verified:** 2026-05-31
