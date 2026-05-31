@@ -186,3 +186,21 @@ There are no mandatory employee or employer social security contributions. There
 - [ ] Non-citizen gratuity exemption: applies to contract workers; interaction with PIT at assessment not fully detailed
 - [ ] VAT threshold: BWP 1,000,000 (~€66,700) for mandatory registration — relevant for larger self-employed businesses; standard 14% VAT
 - [ ] Botswana has no social security — confirmed; but private pension/medical insurance obligations for employers may exist under employment law — not tax-related
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 25% | 25% | ✅ |
+| Employee SS rate | 0% (no SS in Botswana) | 0% (confirmed: "no social security taxes or contributions") | ✅ |
+| Self-empl. headline rate | 0%–25% PIT; 0% SS | confirmed — same brackets, no SS | ✅ |
+| Tax-free threshold | BWP 48,000/year (0% band) | BWP 48,000 | ✅ |
+| Key special regime | Territorial system (foreign income not taxed) | confirmed — territorial system | ✅ |
+
+**Overall verdict:** ✅ confirmed — all rates match exactly  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/botswana/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/botswana/individual/other-taxes  
+**Verified:** 2026-05-31
