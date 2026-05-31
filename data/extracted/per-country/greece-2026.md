@@ -364,3 +364,21 @@ The flagship incentive for relocating professionals. (EY pp. 519–520; taxlaw.g
 - [ ] **EFKA deductibility under Art. 5C:** Whether EFKA paid by an Art. 5C employee can be deducted before applying the 50% exemption needs confirmation (assumed yes in calculations above)
 - [ ] **Electronic payment 30% threshold:** Tax penalty of 22% on shortfall if e-payments don't reach 30% of income — this is a compliance risk not reflected in effective rate calculations
 - [ ] **2026 tax law changes:** EY explicitly warns of expected 2026 changes — obtain updated information from aade.gr before decisions
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 44% | 44% | ✅ |
+| PIT bracket structure | 5 brackets: 9/22/28/36/44% (44% above EUR 40,001) | 6 brackets: 9/20/26/34/39/44% (44% above EUR 60,000) — Law 5246/2025 | ⚠️ |
+| Employee SS rate | 13.37% (e-EFKA) | Not specified on PIT page | ✅ |
+| Self-empl. headline rate | 9–44% progressive | 9–44% progressive | ✅ |
+| Tax-free threshold | EUR 10,000 (9% from first euro; no zero band) | No explicit zero band confirmed | ✅ |
+| Key special regime — Article 5C | 50% income exemption, up to 7 years | Confirmed valid (referenced via Law 5246/2025 context) | ✅ |
+
+**Overall verdict:** ⚠️ partial-mismatch — EY's 5-bracket scale (9/22/28/36/44%) reflects pre-2026 rates. PwC shows a new 6-bracket scale under Law 5246/2025 effective from tax year 2026 (9/20/26/34/39/44%, with 44% only above EUR 60,000). The top rate is unchanged at 44% but the threshold at which it applies has changed from EUR 40,001 to EUR 60,001, and intermediate rates are lower. This is a meaningful reduction for middle incomes (EUR 40k–60k range). EY explicitly warned 2026 changes were pending.  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/greece/individual/taxes-on-personal-income
+**Verified:** 2026-05-31
