@@ -4,7 +4,7 @@
 |---|---|
 | Region | Southern Europe (EU / Eurozone) |
 | EY pages (PDF-native) | 515–531 (printed 517–533) |
-| Last reviewed | 2025-10-01 (EY content date; note: EY p.517 states "changes to the tax law were expected as of 2026 — readers should obtain updated information"); Article 5C details from taxlaw.gr, taxsummaries.pwc.com, xpatathens.com; EFKA 2025 amounts from xolo.io, tovima.com |
+| Last reviewed | 2025-10-01 (EY content date; note: EY p.517 states "changes to the tax law were expected as of 2026 — readers should obtain updated information"); PIT brackets updated 2026-05-31 per Law 5246/2025 (PwC confirmed); Article 5C details from taxlaw.gr, taxsummaries.pwc.com, xpatathens.com; EFKA 2025 amounts from xolo.io, tovima.com |
 | Confidence | High — PIT brackets and special regimes well-documented; EFKA self-employed category amounts are Medium confidence (ranges confirmed, exact full table not obtained from official source) |
 
 ---
@@ -13,15 +13,16 @@
 
 Progressive PIT on employment, pension, business/freelancer, and agricultural income. Tax year = calendar year. Annual returns filed **15 March – 15 July** of the following year. A 4% discount applies if paid in lump sum by 31 July and return filed by 30 April. (EY pp. 521, 529)
 
-**Progressive PIT scale — employment, pension, freelancer, business, agricultural income:** (EY p. 521)
+**Progressive PIT scale — employment, pension, freelancer, business, agricultural income:** (Law 5246/2025, effective tax year 2026; PwC confirmed; EY p. 521 reflects pre-2026 scale)
 
 | Taxable income (EUR) | Tax rate | Tax due (EUR) | Cumulative tax due (EUR) |
 |---|---|---|---|
 | 0 – 10,000 | **9%** | 900 | 900 |
-| 10,001 – 20,000 | **22%** | 2,200 | 3,100 |
-| 20,001 – 30,000 | **28%** | 2,800 | 5,900 |
-| 30,001 – 40,000 | **36%** | 3,600 | 9,500 |
-| 40,001 and above | **44%** | — | — |
+| 10,001 – 20,000 | **20%** | 2,000 | 2,900 |
+| 20,001 – 30,000 | **26%** | 2,600 | 5,500 |
+| 30,001 – 40,000 | **34%** | 3,400 | 8,900 |
+| 40,001 – 60,000 | **39%** | 7,800 | 16,700 |
+| 60,001 and above | **44%** | — | — |
 
 **Investment / capital income (flat rates):** (EY pp. 523–524)
 
@@ -99,7 +100,7 @@ Contributions are deductible as business expenses for PIT purposes. Choose highe
 - **Tax base:** Annual net profit (revenue minus documented expenses). Subject to **minimum (imputed) income rule**: tax is levied on the higher of actual or imputed income (imputed = employee minimum wage + 10% of annual labour costs, capped at EUR 50,000). (EY pp. 522–523)
   - Imputed income rule does not apply during first 3 years; reduced (discount) for years 4 and 5
   - 50% reduction of minimum income for rural locations (< 500 inhabitants, < 1,500 in municipal communities outside Attica, islands < 3,100 inhabitants) (EY p. 523 / Law 5162/2024)
-- **Rate / mechanism:** Standard progressive PIT (9%/22%/28%/36%/44%)
+- **Rate / mechanism:** Standard progressive PIT (9%/20%/26%/34%/39%/44%, Law 5246/2025)
 - **Social security:** EFKA insurance category (see above): Category 1 ~EUR 3,056/year; new entrants ~EUR 1,877/year
 - **VAT obligations:** Standard VAT registration; VAT rate 24% (reduced 13% and 6% apply to certain goods/services). Mandatory e-invoicing for B2B from July 2025.
 - **Key limits:** No revenue ceiling. Annual PIT return required.
@@ -161,6 +162,7 @@ The flagship incentive for relocating professionals. (EY pp. 519–520; taxlaw.g
 ## 2026 Changes
 
 - **EY note:** "At the time of updating this chapter, changes to the tax law were expected as of 2026. Readers should obtain updated information before engaging in transactions." (EY p. 517)
+- **PIT bracket reform (Law 5246/2025, effective tax year 2026):** New 6-bracket scale replaces the previous 5-bracket scale. Intermediate rates reduced (22%→20%, 28%→26%, 36%→34%), new 39% bracket added for €40,001–€60,000, and top 44% rate threshold raised from €40,001 to €60,001. Meaningful relief for incomes in the €40k–€60k range; confirmed by PwC Worldwide Tax Summaries 2026.
 - **Article 5C amendment (July 2025):** Requirement that the employment position be "newly created" was abolished; applications pending at amendment date also benefit. Regime is now more accessible.
 - **EFKA cap increase from 1 January 2026:** Maximum monthly social security base for employees raised to EUR 7,761.94 (14 periods) — up from EUR 7,572.62 (EY p. 529 / PwC)
 - **Inheritance law amendments** expected in 2025 or 2026 (EY p. 533 — "important amendments to the Greek inheritance law were expected to be introduced in 2025 or 2026")
@@ -172,7 +174,7 @@ The flagship incentive for relocating professionals. (EY pp. 519–520; taxlaw.g
 
 ## Effective Rate Examples
 
-> Single person, no dependants. Standard PIT brackets (9%/22%/28%/36%/44%).
+> Single person, no dependants. Standard PIT brackets (9%/20%/26%/34%/39%/44%, Law 5246/2025).
 > Employment: employee-side only; employer's 21.79% not included.
 > Self-employed (Category 1 EFKA, ~€3,056/year; after 5-year new entrant period).
 > Article 5C scenario: 50% income exemption applied.
@@ -186,11 +188,11 @@ The flagship incentive for relocating professionals. (EY pp. 519–520; taxlaw.g
 | Employee EFKA (13.37%) | 13.37% × €30,000 | €4,011 |
 | PIT base | €30,000 − €4,011 | €25,989 |
 | PIT: 9% × €10,000 | €900 | |
-| PIT: 22% × €10,000 | €2,200 | |
-| PIT: 28% × €5,989 | €1,677 | |
-| Total PIT | — | €4,777 |
-| **Total employee burden** | €4,011 + €4,777 | **€8,788** |
-| **Effective rate** | €8,788 / €30,000 | **29.3%** |
+| PIT: 20% × €10,000 | €2,000 | |
+| PIT: 26% × €5,989 | €1,557 | |
+| Total PIT | — | €4,457 |
+| **Total employee burden** | €4,011 + €4,457 | **€8,468** |
+| **Effective rate** | €8,468 / €30,000 | **28.2%** |
 
 ### Working: €30,000 Employment — Article 5C (50% exemption)
 
@@ -200,10 +202,10 @@ The flagship incentive for relocating professionals. (EY pp. 519–520; taxlaw.g
 | Employee EFKA (13.37%) | 13.37% × €30,000 | €4,011 |
 | 50% PIT exemption applied | PIT base = 50% × (€30,000 − €4,011) | €12,995 |
 | PIT: 9% × €10,000 | €900 | |
-| PIT: 22% × €2,995 | €659 | |
-| Total PIT | — | €1,559 |
-| **Total employee burden** | €4,011 + €1,559 | **€5,570** |
-| **Effective rate** | €5,570 / €30,000 | **18.6%** |
+| PIT: 20% × €2,995 | €599 | |
+| Total PIT | — | €1,499 |
+| **Total employee burden** | €4,011 + €1,499 | **€5,510** |
+| **Effective rate** | €5,510 / €30,000 | **18.4%** |
 
 ### Working: €30,000 Self-Employed (standard, Cat. 1 EFKA)
 
@@ -213,11 +215,11 @@ The flagship incentive for relocating professionals. (EY pp. 519–520; taxlaw.g
 | EFKA (Category 1, ~€254/month × 12) | — | €3,048 |
 | PIT base (minus EFKA) | €30,000 − €3,048 | €26,952 |
 | PIT: 9% × €10,000 | €900 | |
-| PIT: 22% × €10,000 | €2,200 | |
-| PIT: 28% × €6,952 | €1,947 | |
-| Total PIT | — | €5,047 |
-| **Total burden** | €3,048 + €5,047 | **€8,095** |
-| **Effective rate** | €8,095 / €30,000 | **27.0%** |
+| PIT: 20% × €10,000 | €2,000 | |
+| PIT: 26% × €6,952 | €1,808 | |
+| Total PIT | — | €4,708 |
+| **Total burden** | €3,048 + €4,708 | **€7,756** |
+| **Effective rate** | €7,756 / €30,000 | **25.9%** |
 
 ### Working: €60,000 Employment (standard)
 
@@ -227,13 +229,13 @@ The flagship incentive for relocating professionals. (EY pp. 519–520; taxlaw.g
 | Employee EFKA (13.37%) | 13.37% × €60,000 | €8,022 |
 | PIT base | €60,000 − €8,022 | €51,978 |
 | PIT: 9% × €10,000 | €900 | |
-| PIT: 22% × €10,000 | €2,200 | |
-| PIT: 28% × €10,000 | €2,800 | |
-| PIT: 36% × €10,000 | €3,600 | |
-| PIT: 44% × €11,978 | €5,270 | |
-| Total PIT | — | €14,770 |
-| **Total employee burden** | €8,022 + €14,770 | **€22,792** |
-| **Effective rate** | €22,792 / €60,000 | **38.0%** |
+| PIT: 20% × €10,000 | €2,000 | |
+| PIT: 26% × €10,000 | €2,600 | |
+| PIT: 34% × €10,000 | €3,400 | |
+| PIT: 39% × €11,978 | €4,671 | |
+| Total PIT | — | €13,571 |
+| **Total employee burden** | €8,022 + €13,571 | **€21,593** |
+| **Effective rate** | €21,593 / €60,000 | **36.0%** |
 
 ### Working: €60,000 Employment — Article 5C
 
@@ -243,11 +245,11 @@ The flagship incentive for relocating professionals. (EY pp. 519–520; taxlaw.g
 | Employee EFKA (13.37%) | 13.37% × €60,000 | €8,022 |
 | 50% PIT exemption | PIT base = 50% × (€60,000 − €8,022) | €25,989 |
 | PIT: 9% × €10,000 | €900 | |
-| PIT: 22% × €10,000 | €2,200 | |
-| PIT: 28% × €5,989 | €1,677 | |
-| Total PIT | — | €4,777 |
-| **Total employee burden** | €8,022 + €4,777 | **€12,799** |
-| **Effective rate** | €12,799 / €60,000 | **21.3%** |
+| PIT: 20% × €10,000 | €2,000 | |
+| PIT: 26% × €5,989 | €1,557 | |
+| Total PIT | — | €4,457 |
+| **Total employee burden** | €8,022 + €4,457 | **€12,479** |
+| **Effective rate** | €12,479 / €60,000 | **20.8%** |
 
 ### Working: €60,000 Self-Employed (standard, Cat. 1 EFKA)
 
@@ -257,13 +259,13 @@ The flagship incentive for relocating professionals. (EY pp. 519–520; taxlaw.g
 | EFKA (Category 1) | ~€3,048/year | €3,048 |
 | PIT base | €60,000 − €3,048 | €56,952 |
 | PIT: 9% × €10,000 | €900 | |
-| PIT: 22% × €10,000 | €2,200 | |
-| PIT: 28% × €10,000 | €2,800 | |
-| PIT: 36% × €10,000 | €3,600 | |
-| PIT: 44% × €16,952 | €7,459 | |
-| Total PIT | — | €16,959 |
-| **Total burden** | €3,048 + €16,959 | **€20,007** |
-| **Effective rate** | €20,007 / €60,000 | **33.3%** |
+| PIT: 20% × €10,000 | €2,000 | |
+| PIT: 26% × €10,000 | €2,600 | |
+| PIT: 34% × €10,000 | €3,400 | |
+| PIT: 39% × €16,952 | €6,611 | |
+| Total PIT | — | €15,511 |
+| **Total burden** | €3,048 + €15,511 | **€18,559** |
+| **Effective rate** | €18,559 / €60,000 | **30.9%** |
 
 ### Working: €100,000 Employment (standard)
 
@@ -273,13 +275,14 @@ The flagship incentive for relocating professionals. (EY pp. 519–520; taxlaw.g
 | Employee EFKA (13.37%, cap check ~€7,762/month × 14 = ~€108,668 cap → not capped) | 13.37% × €100,000 | €13,370 |
 | PIT base | €100,000 − €13,370 | €86,630 |
 | PIT: 9% × €10,000 | €900 | |
-| PIT: 22% × €10,000 | €2,200 | |
-| PIT: 28% × €10,000 | €2,800 | |
-| PIT: 36% × €10,000 | €3,600 | |
-| PIT: 44% × €46,630 | €20,517 | |
-| Total PIT | — | €30,017 |
-| **Total employee burden** | €13,370 + €30,017 | **€43,387** |
-| **Effective rate** | €43,387 / €100,000 | **43.4%** |
+| PIT: 20% × €10,000 | €2,000 | |
+| PIT: 26% × €10,000 | €2,600 | |
+| PIT: 34% × €10,000 | €3,400 | |
+| PIT: 39% × €20,000 | €7,800 | |
+| PIT: 44% × €26,630 | €11,717 | |
+| Total PIT | — | €28,417 |
+| **Total employee burden** | €13,370 + €28,417 | **€41,787** |
+| **Effective rate** | €41,787 / €100,000 | **41.8%** |
 
 ### Working: €100,000 Employment — Article 5C
 
@@ -289,13 +292,13 @@ The flagship incentive for relocating professionals. (EY pp. 519–520; taxlaw.g
 | Employee EFKA | 13.37% × €100,000 | €13,370 |
 | 50% PIT exemption | PIT base = 50% × (€100,000 − €13,370) | €43,315 |
 | PIT: 9% × €10,000 | €900 | |
-| PIT: 22% × €10,000 | €2,200 | |
-| PIT: 28% × €10,000 | €2,800 | |
-| PIT: 36% × €10,000 | €3,600 | |
-| PIT: 44% × €3,315 | €1,459 | |
-| Total PIT | — | €10,959 |
-| **Total employee burden** | €13,370 + €10,959 | **€24,329** |
-| **Effective rate** | €24,329 / €100,000 | **24.3%** |
+| PIT: 20% × €10,000 | €2,000 | |
+| PIT: 26% × €10,000 | €2,600 | |
+| PIT: 34% × €10,000 | €3,400 | |
+| PIT: 39% × €3,315 | €1,293 | |
+| Total PIT | — | €10,193 |
+| **Total employee burden** | €13,370 + €10,193 | **€23,563** |
+| **Effective rate** | €23,563 / €100,000 | **23.6%** |
 
 ### Working: €100,000 Self-Employed (standard, Cat. 1 EFKA)
 
@@ -305,34 +308,35 @@ The flagship incentive for relocating professionals. (EY pp. 519–520; taxlaw.g
 | EFKA (Category 1) | ~€3,048/year | €3,048 |
 | PIT base | €100,000 − €3,048 | €96,952 |
 | PIT: 9% × €10,000 | €900 | |
-| PIT: 22% × €10,000 | €2,200 | |
-| PIT: 28% × €10,000 | €2,800 | |
-| PIT: 36% × €10,000 | €3,600 | |
-| PIT: 44% × €56,952 | €25,059 | |
-| Total PIT | — | €34,559 |
-| **Total burden** | €3,048 + €34,559 | **€37,607** |
-| **Effective rate** | €37,607 / €100,000 | **37.6%** |
+| PIT: 20% × €10,000 | €2,000 | |
+| PIT: 26% × €10,000 | €2,600 | |
+| PIT: 34% × €10,000 | €3,400 | |
+| PIT: 39% × €20,000 | €7,800 | |
+| PIT: 44% × €36,952 | €16,259 | |
+| Total PIT | — | €32,959 |
+| **Total burden** | €3,048 + €32,959 | **€36,007** |
+| **Effective rate** | €36,007 / €100,000 | **36.0%** |
 
 ### Summary table
 
 | Gross income | Scenario | Income tax | EFKA / Social | Total burden | **Effective rate** |
 |---|---|---|---|---|---|
-| €30,000 | Employment (standard) | €4,777 | €4,011 | €8,788 | **29.3%** |
-| €30,000 | Employment — Art. 5C (50% exempt) | €1,559 | €4,011 | €5,570 | **18.6%** |
-| €30,000 | Self-employed (Cat. 1 EFKA) | €5,047 | €3,048 | €8,095 | **27.0%** |
-| €60,000 | Employment (standard) | €14,770 | €8,022 | €22,792 | **38.0%** |
-| €60,000 | Employment — Art. 5C (50% exempt) | €4,777 | €8,022 | €12,799 | **21.3%** |
-| €60,000 | Self-employed (Cat. 1 EFKA) | €16,959 | €3,048 | €20,007 | **33.3%** |
-| €100,000 | Employment (standard) | €30,017 | €13,370 | €43,387 | **43.4%** |
-| €100,000 | Employment — Art. 5C (50% exempt) | €10,959 | €13,370 | €24,329 | **24.3%** |
-| €100,000 | Self-employed (Cat. 1 EFKA) | €34,559 | €3,048 | €37,607 | **37.6%** |
+| €30,000 | Employment (standard) | €4,457 | €4,011 | €8,468 | **28.2%** |
+| €30,000 | Employment — Art. 5C (50% exempt) | €1,499 | €4,011 | €5,510 | **18.4%** |
+| €30,000 | Self-employed (Cat. 1 EFKA) | €4,708 | €3,048 | €7,756 | **25.9%** |
+| €60,000 | Employment (standard) | €13,571 | €8,022 | €21,593 | **36.0%** |
+| €60,000 | Employment — Art. 5C (50% exempt) | €4,457 | €8,022 | €12,479 | **20.8%** |
+| €60,000 | Self-employed (Cat. 1 EFKA) | €15,511 | €3,048 | €18,559 | **30.9%** |
+| €100,000 | Employment (standard) | €28,417 | €13,370 | €41,787 | **41.8%** |
+| €100,000 | Employment — Art. 5C (50% exempt) | €10,193 | €13,370 | €23,563 | **23.6%** |
+| €100,000 | Self-employed (Cat. 1 EFKA) | €32,959 | €3,048 | €36,007 | **36.0%** |
 
-**Key insight — Article 5C is transformative:** At €60k, 5C reduces the effective employment rate from 38.0% to 21.3% — a saving of EUR 10,000/year. At €100k, from 43.4% to 24.3% — saving EUR 19,000/year. The 7-year window makes Greece genuinely competitive for relocating professionals.
+**Key insight — Article 5C is transformative:** At €60k, 5C reduces the effective employment rate from 36.0% to 20.8% — a saving of EUR 9,114/year. At €100k, from 41.8% to 23.6% — saving EUR 18,224/year. The 7-year window makes Greece genuinely competitive for relocating professionals.
 
 **Self-employed advantage:** EFKA Category 1 fixed contributions (~€3,048/year) are far lower than 13.37% of salary at high incomes, making the self-employed route significantly cheaper for social security at €60k+ (€3,048 vs. €8,022). However, PIT is similar or higher due to no deduction from the imputed income rule.
 
 **Assumptions:**
-- Standard PIT brackets (9%/22%/28%/36%/44%); no tax allowance for children
+- Standard PIT brackets (9%/20%/26%/34%/39%/44%, Law 5246/2025); no tax allowance for children
 - Employee EFKA: 13.37% of gross; not capped at income levels shown (cap ~€108,668 annual threshold — above all scenarios)
 - Self-employed EFKA: Category 1 ~€254/month = €3,048/year (2025 estimate); deductible from PIT base
 - Article 5C: 50% of (gross minus EFKA) excluded from PIT base; EFKA paid in full
@@ -372,13 +376,13 @@ The flagship incentive for relocating professionals. (EY pp. 519–520; taxlaw.g
 | Field | EY value | PwC value | Match? |
 |---|---|---|---|
 | Top marginal PIT rate | 44% | 44% | ✅ |
-| PIT bracket structure | 5 brackets: 9/22/28/36/44% (44% above EUR 40,001) | 6 brackets: 9/20/26/34/39/44% (44% above EUR 60,000) — Law 5246/2025 | ⚠️ |
+| PIT bracket structure | 6 brackets: 9/20/26/34/39/44% (Law 5246/2025; file updated) | 6 brackets: 9/20/26/34/39/44% (44% above EUR 60,000) — Law 5246/2025 | ✅ |
 | Employee SS rate | 13.37% (e-EFKA) | Not specified on PIT page | ✅ |
 | Self-empl. headline rate | 9–44% progressive | 9–44% progressive | ✅ |
 | Tax-free threshold | EUR 10,000 (9% from first euro; no zero band) | No explicit zero band confirmed | ✅ |
 | Key special regime — Article 5C | 50% income exemption, up to 7 years | Confirmed valid (referenced via Law 5246/2025 context) | ✅ |
 
-**Overall verdict:** ⚠️ partial-mismatch — EY's 5-bracket scale (9/22/28/36/44%) reflects pre-2026 rates. PwC shows a new 6-bracket scale under Law 5246/2025 effective from tax year 2026 (9/20/26/34/39/44%, with 44% only above EUR 60,000). The top rate is unchanged at 44% but the threshold at which it applies has changed from EUR 40,001 to EUR 60,001, and intermediate rates are lower. This is a meaningful reduction for middle incomes (EUR 40k–60k range). EY explicitly warned 2026 changes were pending.  
+**Overall verdict:** ✅ resolved — File updated to reflect Law 5246/2025 (6-bracket scale: 9/20/26/34/39/44%; 44% above EUR 60,001). PwC confirmed the new scale; EY pre-2026 bracket values replaced throughout. All effective rate calculations recomputed.  
 **PwC sources checked:**
 - https://taxsummaries.pwc.com/greece/individual/taxes-on-personal-income
 **Verified:** 2026-05-31
