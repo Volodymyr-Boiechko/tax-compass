@@ -1,10 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatDialog } from '@angular/material/dialog';
 import { SlicePipe } from '@angular/common';
 import { AppStore, SortField } from '../../state/app.store';
 import { regionLabel } from '../../core/utils/region.utils';
-import { Confidence, Region } from '../../core/models/country.model';
+import { Confidence, Country, Region } from '../../core/models/country.model';
+import { CountryDetailComponent } from '../country-detail/country-detail.component';
 
 const CONF_LABEL: Record<string, string> = {
   'high': 'High',
@@ -146,7 +148,7 @@ const CONF_LABEL: Record<string, string> = {
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="columns; sticky: true"></tr>
-        <tr mat-row *matRowDef="let row; columns: columns;" class="data-row"></tr>
+        <tr mat-row *matRowDef="let row; columns: columns;" class="data-row" (click)="openDetail(row)"></tr>
 
         <tr class="mat-row" *matNoDataRow>
           <td class="mat-cell no-data" [attr.colspan]="columns.length">
@@ -184,6 +186,7 @@ const CONF_LABEL: Record<string, string> = {
     }
 
     /* Rows */
+    .data-row { cursor: pointer; }
     .data-row:hover { background: #f3f4ff; }
     .data-row:nth-child(even) { background: #fafafa; }
     .data-row:nth-child(even):hover { background: #f3f4ff; }
@@ -278,7 +281,17 @@ const CONF_LABEL: Record<string, string> = {
 })
 export class RankingTableComponent {
   readonly store = inject(AppStore);
+  readonly dialog = inject(MatDialog);
   readonly regionLabel = regionLabel;
+
+  openDetail(country: Country): void {
+    this.dialog.open(CountryDetailComponent, {
+      data: country,
+      width: '720px',
+      maxWidth: '95vw',
+      maxHeight: '90vh',
+    });
+  }
 
   readonly columns = [
     'rank', 'country', 'region', 'confidence',
