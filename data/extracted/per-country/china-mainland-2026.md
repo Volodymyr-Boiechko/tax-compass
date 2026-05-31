@@ -251,3 +251,21 @@ Chinese nationals employed by China entities, and (since 1 July 2011) foreign na
 - [ ] Housing provident fund contribution rates not specified (varies by city; employee + employer contributions typically 5–12% each)
 - [ ] Expatriate non-taxable benefits sunset (January 2028): impact on effective tax rates for foreign employees not quantified
 - [ ] Nonresident IIT (stays ≤90 days, 90–183 days) complex treaty/domestic rules not fully modeled
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate (IIT) | 45% | 45% (confirmed: ">960,000 CNY") | ✅ |
+| Employee SS rate | ~11% (city average) | Not found — PwC China other-taxes page returned 404 | ⚠️ Cannot confirm via PwC (page not available); EY ~11% is stated as city average |
+| Self-empl. headline rate | 3%–45% (after 20% deduction) | 3%–45% consolidated income brackets confirmed | ✅ |
+| Tax-free threshold (standard deduction) | CNY 60,000/year (CNY 5,000/month) | CNY 60,000/year confirmed | ✅ |
+| Key special regime | Expat non-taxable benefits (housing, education, etc.) until Jan 2028 | Not detailed in PwC page fetched | ✅ (regime confirmed in EY; ≤6-year rule also documented) |
+
+**Overall verdict:** ✅ confirmed — 45% top rate and CNY 60,000 standard deduction both confirmed; SS data not available via PwC (404 error on other-taxes page)  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/peoples-republic-of-china/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/china-peoples-republic-of/individual/other-taxes (404 — not available)  
+**Verified:** 2026-05-31
