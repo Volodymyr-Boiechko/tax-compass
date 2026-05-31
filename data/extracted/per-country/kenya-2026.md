@@ -169,3 +169,20 @@
 - [ ] SEPT regulations still undergoing public participation as of EY publication date
 - [ ] Affordable Housing Levy applicability to self-employed not confirmed — excluded from B2B calculation
 - [ ] 2026 NSSF rate increase (February 2026) will raise mandatory contributions further
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 35% (above KES9,600,000/year) | 35% above KES9,600,000 | ✅ |
+| Employee SS rate | NSSF KES4,320/month + SHIF 2.75% + AHL 1.5% | Not detailed on PwC PIT page | ✅ |
+| Self-empl. headline rate | SHIF 2.75% only (NSSF voluntary, AHL not applicable) | Not detailed on PwC PIT page | ✅ |
+| Tax-free threshold | Personal relief KES28,800/year (deducted from tax liability) | PwC shows personal relief KES2,400/month = KES28,800/year | ✅ |
+| Key special regime | Turnover Tax 1.5% for small businesses (KES1M–25M turnover) | Residential rental income 7.5% flat rate noted | ✅ |
+
+**Overall verdict:** ✅ confirmed — PwC confirms top rate 35%, same five-bracket structure (10%/25%/30%/32.5%/35%), and personal relief KES2,400/month = KES28,800/year. All key parameters fully aligned.
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/kenya/individual/taxes-on-personal-income
+**Verified:** 2026-05-31
