@@ -24,33 +24,30 @@ interface IncomeRow { country: Country; employment: CalculationResult; selfEmplo
   standalone: true,
   imports: [LucideX],
   template: `
-    <div class="bg-zinc-950 border border-zinc-800 rounded-xl overflow-hidden">
+    <div class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl overflow-hidden">
 
-      <!-- Header -->
-      <div class="flex items-center justify-between px-5 py-4 border-b border-zinc-800">
-        <h2 class="text-base font-semibold text-zinc-100">Side-by-side comparison</h2>
-        <button class="p-1.5 rounded text-zinc-500 hover:text-zinc-100 transition-colors" (click)="store.closeComparison()">
+      <div class="flex items-center justify-between px-5 py-4 border-b border-[var(--color-border)]">
+        <h2 class="text-base font-semibold text-[var(--color-text-primary)]">Side-by-side comparison</h2>
+        <button class="p-1.5 rounded text-[var(--color-text-tertiary)] hover:text-[var(--color-text-primary)] transition-colors" (click)="store.closeComparison()">
           <svg lucideX class="size-4"></svg>
         </button>
       </div>
 
       @if (countries().length < 2) {
-        <div class="py-16 text-center text-zinc-600 text-sm italic">Add at least 2 countries to compare.</div>
+        <div class="py-16 text-center text-[var(--color-text-faint)] text-sm italic">Add at least 2 countries to compare.</div>
       } @else {
         <div class="overflow-x-auto">
           <table class="w-full text-sm border-collapse">
-
-            <!-- Country headers -->
             <thead>
-              <tr class="border-b border-zinc-800">
-                <th class="px-4 py-3 text-left text-xs text-zinc-500 font-medium w-36">Metric</th>
+              <tr class="border-b border-[var(--color-border)]">
+                <th class="px-4 py-3 text-left text-xs text-[var(--color-text-tertiary)] font-medium w-36">Metric</th>
                 @for (c of countries(); track c.code) {
                   <th class="px-4 py-3 text-left">
                     <div class="flex items-center gap-2">
                       <span class="text-xl">{{ c.flag ?? '🏳' }}</span>
                       <div>
-                        <p class="text-sm font-semibold text-zinc-100">{{ c.name }}</p>
-                        <p class="text-[10px] text-zinc-500">{{ regionLabel(c.region) }}</p>
+                        <p class="text-sm font-semibold text-[var(--color-text-primary)]">{{ c.name }}</p>
+                        <p class="text-[10px] text-[var(--color-text-tertiary)]">{{ regionLabel(c.region) }}</p>
                       </div>
                     </div>
                   </th>
@@ -59,52 +56,51 @@ interface IncomeRow { country: Country; employment: CalculationResult; selfEmplo
             </thead>
 
             <tbody>
-              <!-- Your income section -->
               @if (incomeResults(); as ir) {
-                <tr class="bg-zinc-900/50">
-                  <td class="px-4 py-2.5 text-[10px] text-zinc-500 uppercase tracking-wider font-medium" colspan="999">
+                <tr class="bg-[var(--color-surface-hover)]/50">
+                  <td class="px-4 py-2.5 text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-wider font-medium" colspan="999">
                     Your income · €{{ fmtNum(ir.income) }}
                   </td>
                 </tr>
-                <tr class="border-b border-zinc-800/40">
-                  <td class="px-4 py-2.5 text-xs text-zinc-500">Employment net</td>
+                <tr class="border-b border-[var(--color-border)]/40">
+                  <td class="px-4 py-2.5 text-xs text-[var(--color-text-tertiary)]">Employment net</td>
                   @for (r of ir.results; track r.country.code) {
-                    <td class="px-4 py-2.5 font-mono text-sm" [class.bg-lime-400__10]="r.employment.net === ir.maxEmplNet">
-                      <span [class]="r.employment.net === ir.maxEmplNet ? 'text-lime-400 font-semibold' : 'text-zinc-300'">
+                    <td class="px-4 py-2.5 font-mono text-sm"
+                        [style]="r.employment.net === ir.maxEmplNet ? 'background: color-mix(in srgb, var(--color-accent) 8%, transparent)' : ''">
+                      <span [style.color]="r.employment.net === ir.maxEmplNet ? 'var(--color-accent)' : 'var(--color-text-secondary)'" class="font-semibold">
                         {{ fmtEuro(r.employment.net) }}
                       </span>
-                      <span class="block text-[10px] text-zinc-600" [style.color]="rateColor(r.employment.effectiveRate)">
+                      <span class="block text-[10px]" [style.color]="rateColor(r.employment.effectiveRate)">
                         {{ fmtRate(r.employment.effectiveRate) }}
                       </span>
                     </td>
                   }
                 </tr>
-                <tr class="border-b border-zinc-800/40">
-                  <td class="px-4 py-2.5 text-xs text-zinc-500">Best SE net</td>
+                <tr class="border-b border-[var(--color-border)]/40">
+                  <td class="px-4 py-2.5 text-xs text-[var(--color-text-tertiary)]">Best SE net</td>
                   @for (r of ir.results; track r.country.code) {
                     <td class="px-4 py-2.5 font-mono text-sm">
-                      <span [class]="r.selfEmployment.net === ir.maxSeNet ? 'text-lime-400 font-semibold' : 'text-zinc-300'">
+                      <span [style.color]="r.selfEmployment.net === ir.maxSeNet ? 'var(--color-accent)' : 'var(--color-text-secondary)'" class="font-semibold">
                         {{ fmtEuro(r.selfEmployment.net) }}
                       </span>
-                      <span class="block text-[10px] text-zinc-600">{{ r.selfEmployment.method }}</span>
+                      <span class="block text-[10px] text-[var(--color-text-faint)]">{{ r.selfEmployment.method }}</span>
                     </td>
                   }
                 </tr>
               }
 
-              <!-- Pre-computed rates -->
-              <tr class="bg-zinc-900/50">
-                <td class="px-4 py-2.5 text-[10px] text-zinc-500 uppercase tracking-wider font-medium" colspan="999">
+              <tr class="bg-[var(--color-surface-hover)]/50">
+                <td class="px-4 py-2.5 text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-wider font-medium" colspan="999">
                   Pre-computed effective rates
                 </td>
               </tr>
 
               @for (row of rateRows; track row.label) {
-                <tr class="border-b border-zinc-800/40 hover:bg-zinc-900/30 transition-colors">
-                  <td class="px-4 py-2.5 text-xs text-zinc-500">{{ row.label }}</td>
+                <tr class="border-b border-[var(--color-border)]/40 hover:bg-[var(--color-surface-hover)]/30 transition-colors">
+                  <td class="px-4 py-2.5 text-xs text-[var(--color-text-tertiary)]">{{ row.label }}</td>
                   @for (c of countries(); track c.code) {
                     <td class="px-4 py-2.5 font-mono text-sm"
-                        [class]="isWinner(c.code, row.metric) ? 'bg-lime-400/5' : ''">
+                        [style]="isWinner(c.code, row.metric) ? 'background: color-mix(in srgb, var(--color-accent) 6%, transparent)' : ''">
                       <span [style.color]="rateColor(row.get(c))" [class]="isWinner(c.code, row.metric) ? 'font-semibold' : ''">
                         {{ fmtRate(row.get(c)) }}
                       </span>
@@ -113,19 +109,17 @@ interface IncomeRow { country: Country; employment: CalculationResult; selfEmplo
                 </tr>
               }
 
-              <!-- Confidence -->
-              <tr class="border-b border-zinc-800/40">
-                <td class="px-4 py-2.5 text-xs text-zinc-500">Confidence</td>
+              <tr class="border-b border-[var(--color-border)]/40">
+                <td class="px-4 py-2.5 text-xs text-[var(--color-text-tertiary)]">Confidence</td>
                 @for (c of countries(); track c.code) {
-                  <td class="px-4 py-2.5 text-xs text-zinc-400">{{ confLabel(c.confidence) }}</td>
+                  <td class="px-4 py-2.5 text-xs text-[var(--color-text-secondary)]">{{ confLabel(c.confidence) }}</td>
                 }
               </tr>
 
-              <!-- Best regime -->
-              <tr class="border-b border-zinc-800/40">
-                <td class="px-4 py-2.5 text-xs text-zinc-500">Best SE regime</td>
+              <tr class="border-b border-[var(--color-border)]/40">
+                <td class="px-4 py-2.5 text-xs text-[var(--color-text-tertiary)]">Best SE regime</td>
                 @for (c of countries(); track c.code) {
-                  <td class="px-4 py-2.5 text-xs text-zinc-400">
+                  <td class="px-4 py-2.5 text-xs text-[var(--color-text-secondary)]">
                     {{ c.effectiveRates.bestSelfEmployment.regime ?? '—' }}
                   </td>
                 }
@@ -190,25 +184,22 @@ export class ComparisonViewComponent {
     return this.winners().get(code)?.has(metric) ?? false;
   }
 
+  rateColor(r: number | null | undefined): string {
+    if (r == null) return 'var(--rate-na)';
+    if (r < 0.10) return 'var(--rate-low)';
+    if (r < 0.20) return 'var(--rate-low-mid)';
+    if (r < 0.30) return 'var(--rate-mid)';
+    if (r < 0.40) return 'var(--rate-high-mid)';
+    return 'var(--rate-high)';
+  }
+
   fmtRate(r: number | null | undefined): string {
     if (r == null) return '—';
     return (r * 100).toFixed(1) + '%';
   }
 
-  fmtEuro(n: number): string {
-    return '€' + Math.round(n).toLocaleString('en-US');
-  }
-
-  fmtNum(n: number): string { return n.toLocaleString('en-US'); }
-
-  rateColor(r: number | null | undefined): string {
-    if (r == null) return '#52525b';
-    if (r < 0.10) return '#a3e635';
-    if (r < 0.20) return '#84cc16';
-    if (r < 0.30) return '#facc15';
-    if (r < 0.40) return '#fb923c';
-    return '#f87171';
-  }
+  fmtEuro(n: number): string { return '€' + Math.round(n).toLocaleString('en-US'); }
+  fmtNum(n: number): string  { return n.toLocaleString('en-US'); }
 
   confLabel(c: string | null): string {
     const MAP: Record<string, string> = { high: 'High', 'medium-high': 'Med+', medium: 'Medium', low: 'Low' };

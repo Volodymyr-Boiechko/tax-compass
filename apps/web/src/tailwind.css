@@ -5,12 +5,4 @@
 @theme {
   --font-sans: 'Geist', system-ui, sans-serif;
   --font-mono: 'Geist Mono', 'JetBrains Mono', monospace;
-
-  --color-accent:         #a3e635;
-  --color-warning:        #facc15;
-  --color-danger:         #f87171;
-  --color-surface:        #09090b;
-  --color-surface-hover:  #18181b;
-  --color-border:         #27272a;
-  --color-border-bright:  #3f3f46;
 }

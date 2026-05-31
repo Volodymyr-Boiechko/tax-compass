@@ -19,7 +19,6 @@ const CONFIDENCE_OPTS: Array<{ value: Confidence; label: string }> = [
   { value: 'low', label: 'Low' },
 ];
 
-const MY_LIST: Region[] = [];
 const EU_REGIONS: Region[] = ['western-europe', 'northern-europe', 'southern-europe', 'eastern-europe'];
 
 @Component({
@@ -27,25 +26,25 @@ const EU_REGIONS: Region[] = ['western-europe', 'northern-europe', 'southern-eur
   standalone: true,
   imports: [LucideX, ViewToggleComponent],
   template: `
-    <aside class="w-[260px] h-full bg-zinc-950 border-r border-zinc-800 overflow-y-auto flex flex-col shrink-0">
+    <aside class="w-[260px] h-full bg-[var(--color-surface)] border-r border-[var(--color-border)] overflow-y-auto flex flex-col shrink-0 transition-colors duration-150">
 
       <!-- View -->
-      <section class="p-4 border-b border-zinc-800">
-        <p class="text-[10px] text-zinc-500 uppercase tracking-widest font-medium mb-3">View</p>
+      <section class="p-4 border-b border-[var(--color-border)]">
+        <p class="text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-widest font-medium mb-3">View</p>
         <app-view-toggle />
       </section>
 
       <!-- Regions -->
-      <section class="p-4 border-b border-zinc-800">
-        <p class="text-[10px] text-zinc-500 uppercase tracking-widest font-medium mb-3">Regions</p>
+      <section class="p-4 border-b border-[var(--color-border)]">
+        <p class="text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-widest font-medium mb-3">Regions</p>
         <div class="flex flex-col gap-1.5">
           @for (r of store.allRegions(); track r) {
             <label class="flex items-center gap-2.5 cursor-pointer group">
               <div
                 class="w-4 h-4 rounded border flex items-center justify-center shrink-0 transition-colors"
                 [class]="isRegionSelected(r)
-                  ? 'bg-lime-400 border-lime-400'
-                  : 'border-zinc-700 group-hover:border-zinc-500'"
+                  ? 'bg-[var(--color-accent)] border-[var(--color-accent)]'
+                  : 'border-[var(--color-border-bright)] group-hover:border-[var(--color-text-tertiary)]'"
                 (click)="toggleRegion(r)"
               >
                 @if (isRegionSelected(r)) {
@@ -56,7 +55,9 @@ const EU_REGIONS: Region[] = ['western-europe', 'northern-europe', 'southern-eur
               </div>
               <span
                 class="text-sm transition-colors"
-                [class]="isRegionSelected(r) ? 'text-zinc-100' : 'text-zinc-400 group-hover:text-zinc-300'"
+                [class]="isRegionSelected(r)
+                  ? 'text-[var(--color-text-primary)]'
+                  : 'text-[var(--color-text-secondary)] group-hover:text-[var(--color-text-primary)]'"
                 (click)="toggleRegion(r)"
               >{{ regionLabel(r) }}</span>
             </label>
@@ -65,15 +66,15 @@ const EU_REGIONS: Region[] = ['western-europe', 'northern-europe', 'southern-eur
       </section>
 
       <!-- Confidence -->
-      <section class="p-4 border-b border-zinc-800">
-        <p class="text-[10px] text-zinc-500 uppercase tracking-widest font-medium mb-3">Confidence</p>
+      <section class="p-4 border-b border-[var(--color-border)]">
+        <p class="text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-widest font-medium mb-3">Confidence</p>
         <div class="flex flex-wrap gap-1.5">
           @for (c of confidenceOpts; track c.value) {
             <button
               class="px-2.5 py-1 rounded text-xs font-medium border transition-colors"
               [class]="isConfSelected(c.value)
-                ? 'bg-lime-400/10 border-lime-400 text-lime-400'
-                : 'border-zinc-800 text-zinc-500 hover:border-zinc-600 hover:text-zinc-300'"
+                ? 'bg-[var(--color-accent)]/10 border-[var(--color-accent)] text-[var(--color-accent)]'
+                : 'border-[var(--color-border)] text-[var(--color-text-tertiary)] hover:border-[var(--color-border-bright)] hover:text-[var(--color-text-secondary)]'"
               (click)="toggleConfidence(c.value)"
             >{{ c.label }}</button>
           }
@@ -81,12 +82,12 @@ const EU_REGIONS: Region[] = ['western-europe', 'northern-europe', 'southern-eur
       </section>
 
       <!-- Quick filters -->
-      <section class="p-4 border-b border-zinc-800">
-        <p class="text-[10px] text-zinc-500 uppercase tracking-widest font-medium mb-3">Quick Filters</p>
+      <section class="p-4 border-b border-[var(--color-border)]">
+        <p class="text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-widest font-medium mb-3">Quick Filters</p>
         <div class="flex flex-col gap-1">
           @for (f of quickFilters; track f.action) {
             <button
-              class="text-left px-2 py-1.5 rounded text-sm text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900 transition-colors"
+              class="text-left px-2 py-1.5 rounded text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface-hover)] transition-colors"
               (click)="applyQuickFilter(f.action)"
             >{{ f.label }}</button>
           }
@@ -97,9 +98,11 @@ const EU_REGIONS: Region[] = ['western-europe', 'northern-europe', 'southern-eur
       @if (store.activeFilterCount() > 0) {
         <section class="p-4">
           <div class="flex items-center justify-between">
-            <span class="text-xs text-zinc-500">{{ store.activeFilterCount() }} filter{{ store.activeFilterCount() === 1 ? '' : 's' }} active</span>
+            <span class="text-xs text-[var(--color-text-tertiary)]">
+              {{ store.activeFilterCount() }} filter{{ store.activeFilterCount() === 1 ? '' : 's' }} active
+            </span>
             <button
-              class="text-xs text-zinc-400 hover:text-red-400 transition-colors flex items-center gap-1"
+              class="text-xs text-[var(--color-text-secondary)] hover:text-[var(--color-danger)] transition-colors flex items-center gap-1"
               (click)="store.clearFilters()"
             >
               <svg lucideX class="size-3"></svg>
@@ -109,13 +112,12 @@ const EU_REGIONS: Region[] = ['western-europe', 'northern-europe', 'southern-eur
         </section>
       }
 
-      <!-- Spacer -->
       <div class="flex-1"></div>
 
       <!-- Count -->
-      <div class="p-4 border-t border-zinc-800">
-        <p class="text-xs text-zinc-500">
-          <span class="text-zinc-100 font-medium">{{ store.filteredCount() }}</span>
+      <div class="p-4 border-t border-[var(--color-border)]">
+        <p class="text-xs text-[var(--color-text-tertiary)]">
+          <span class="text-[var(--color-text-primary)] font-medium">{{ store.filteredCount() }}</span>
           / {{ store.countryCount() }} countries
         </p>
       </div>
@@ -128,50 +130,25 @@ export class SidebarComponent {
   readonly confidenceOpts = CONFIDENCE_OPTS;
   readonly quickFilters = QUICK_FILTERS;
 
-  isRegionSelected(r: Region): boolean {
-    return this.store.selectedRegions().includes(r);
-  }
+  isRegionSelected(r: Region): boolean { return this.store.selectedRegions().includes(r); }
 
   toggleRegion(r: Region): void {
-    const current = this.store.selectedRegions();
-    if (current.includes(r)) {
-      this.store.setRegions(current.filter(x => x !== r));
-    } else {
-      this.store.setRegions([...current, r]);
-    }
+    const cur = this.store.selectedRegions();
+    this.store.setRegions(cur.includes(r) ? cur.filter(x => x !== r) : [...cur, r]);
   }
 
-  isConfSelected(c: Confidence): boolean {
-    return this.store.selectedConfidence().includes(c);
-  }
+  isConfSelected(c: Confidence): boolean { return this.store.selectedConfidence().includes(c); }
 
   toggleConfidence(c: Confidence): void {
-    const current = this.store.selectedConfidence();
-    if (current.includes(c)) {
-      this.store.setConfidence(current.filter(x => x !== c));
-    } else {
-      this.store.setConfidence([...current, c]);
-    }
+    const cur = this.store.selectedConfidence();
+    this.store.setConfidence(cur.includes(c) ? cur.filter(x => x !== c) : [...cur, c]);
   }
 
   applyQuickFilter(action: string): void {
+    this.store.clearFilters();
     switch (action) {
-      case 'zero-tax':
-        this.store.clearFilters();
-        this.store.setConfidence(['high', 'medium-high', 'medium']);
-        break;
-      case 'eu':
-        this.store.clearFilters();
-        this.store.setRegions(EU_REGIONS);
-        break;
-      case 'my-list':
-        this.store.clearFilters();
-        this.store.setSearch('');
-        break;
-      case 'tax-havens':
-        this.store.clearFilters();
-        this.store.setRegions(['caribbean', 'pacific']);
-        break;
+      case 'eu':         this.store.setRegions(EU_REGIONS); break;
+      case 'tax-havens': this.store.setRegions(['caribbean', 'pacific']); break;
     }
   }
 }

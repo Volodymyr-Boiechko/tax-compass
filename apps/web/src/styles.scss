@@ -1,41 +1,144 @@
+/* ── Dark theme (default) ──────────────────────────────── */
+:root,
+:root.dark {
+  --color-bg:              #000000;
+  --color-surface:         #09090b;
+  --color-surface-hover:   #18181b;
+  --color-border:          #27272a;
+  --color-border-bright:   #3f3f46;
+  --color-text-primary:    #fafafa;
+  --color-text-secondary:  #a1a1aa;
+  --color-text-tertiary:   #71717a;
+  --color-text-faint:      #52525b;
+  --color-accent:          #a3e635;
+  --color-warning:         #facc15;
+  --color-danger:          #f87171;
+  --color-selection:       rgba(163, 230, 53, 0.3);
+  --color-scrollbar-track: #000;
+  --color-scrollbar-thumb: #27272a;
+  --color-scrollbar-hover: #3f3f46;
+  /* Data rate colors */
+  --rate-na:       #52525b;
+  --rate-low:      #a3e635;
+  --rate-low-mid:  #84cc16;
+  --rate-mid:      #facc15;
+  --rate-high-mid: #fb923c;
+  --rate-high:     #f87171;
+}
+
+/* ── Light theme ───────────────────────────────────────── */
+:root.light {
+  --color-bg:              #fafafa;
+  --color-surface:         #ffffff;
+  --color-surface-hover:   #f4f4f5;
+  --color-border:          #e4e4e7;
+  --color-border-bright:   #d4d4d8;
+  --color-text-primary:    #18181b;
+  --color-text-secondary:  #52525b;
+  --color-text-tertiary:   #71717a;
+  --color-text-faint:      #a1a1aa;
+  --color-accent:          #65a30d;
+  --color-warning:         #ca8a04;
+  --color-danger:          #dc2626;
+  --color-selection:       rgba(101, 163, 13, 0.2);
+  --color-scrollbar-track: #f4f4f5;
+  --color-scrollbar-thumb: #d4d4d8;
+  --color-scrollbar-hover: #a1a1aa;
+  /* Data rate colors — darker for readability on white */
+  --rate-na:       #a1a1aa;
+  --rate-low:      #4d7c0f;
+  --rate-low-mid:  #65a30d;
+  --rate-mid:      #b45309;
+  --rate-high-mid: #c2410c;
+  --rate-high:     #b91c1c;
+}
+
+/* ── Global base ───────────────────────────────────────── */
 html, body {
   margin: 0;
   padding: 0;
-  background: #000;
-  color: #fafafa;
+  background: var(--color-bg);
+  color: var(--color-text-primary);
   font-family: 'Geist', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   height: 100%;
+  transition: background-color 150ms ease, color 150ms ease;
 }
 
 ::selection {
-  background: rgba(163, 230, 53, 0.25);
-  color: #fff;
+  background: var(--color-selection);
+  color: var(--color-text-primary);
 }
 
 ::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+::-webkit-scrollbar-track { background: var(--color-scrollbar-track); }
+::-webkit-scrollbar-thumb { background: var(--color-scrollbar-thumb); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-scrollbar-hover); }
 
-/* Leaflet overrides for dark theme */
-.leaflet-container { background: #09090b; }
+/* ── Leaflet theme overrides ───────────────────────────── */
+.leaflet-container { background: var(--color-surface); }
+
 .leaflet-control-zoom a {
-  background: #18181b !important;
-  color: #a1a1aa !important;
-  border-color: #27272a !important;
+  background: var(--color-surface-hover) !important;
+  color: var(--color-text-secondary) !important;
+  border-color: var(--color-border) !important;
 }
-.leaflet-control-zoom a:hover { background: #27272a !important; color: #fff !important; }
+.leaflet-control-zoom a:hover {
+  background: var(--color-border) !important;
+  color: var(--color-text-primary) !important;
+}
 .leaflet-control-attribution {
-  background: rgba(0,0,0,0.7) !important;
-  color: #71717a !important;
+  background: color-mix(in srgb, var(--color-bg) 80%, transparent) !important;
+  color: var(--color-text-faint) !important;
   font-size: 10px !important;
 }
-.leaflet-popup-content-wrapper {
-  background: #18181b !important;
-  color: #fafafa !important;
-  border: 1px solid #27272a !important;
-  border-radius: 8px !important;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.6) !important;
+
+/* Map tooltip / legend use these CSS classes */
+.map-popup {
+  background: var(--color-surface-hover);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 8px 10px;
+  color: var(--color-text-primary);
+  font-size: 12px;
+  min-width: 130px;
+  font-family: 'Geist', system-ui, sans-serif;
+  line-height: 1.5;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4);
 }
-.leaflet-popup-tip { background: #18181b !important; }
+.map-popup-secondary { color: var(--color-text-secondary); font-size: 11px; }
+.map-popup-muted     { color: var(--color-text-tertiary); font-size: 11px; }
+
+.map-legend {
+  background: var(--color-surface-hover);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: var(--color-text-primary);
+  font-size: 11px;
+  font-family: 'Geist', system-ui, sans-serif;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+.map-legend-label {
+  margin: 0 0 6px;
+  color: var(--color-text-tertiary);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.map-legend-scale {
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-text-tertiary);
+  margin-top: 4px;
+  font-size: 10px;
+}
+
+/* Suppress Leaflet's popup wrapper styling (we use .map-popup directly) */
+.leaflet-tooltip {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+.leaflet-tooltip::before { display: none !important; }
