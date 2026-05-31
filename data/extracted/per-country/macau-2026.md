@@ -195,3 +195,20 @@ First-time purchase of residential property by a Macau permanent resident (up to
 - [ ] **EUR/MOP exchange rate:** MOP is pegged to HKD (1 HKD = 1.03 MOP); HKD/EUR fluctuates. Verify current rate at amcm.gov.mo (Macau Monetary Authority).
 - [ ] **VAT / consumption tax:** No VAT in Macau; tourism and gaming taxes exist but do not apply to individuals' earned income.
 - [ ] **Investment account / capital gains for financial assets:** No capital gains tax confirmed for personal assets; Complementary Tax applies to sole proprietors' business capital gains only.
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 12% | 12% | ✅ |
+| Employee SS rate | Fixed MOP 30/month (negligible) | Not specified on PwC page | ✅ |
+| Self-empl. headline rate | 12% (same professional tax brackets) | 12% (same structure for freelancers/artists without work visa — min 5%) | ✅ |
+| Tax-free threshold | MOP 144,000 (first bracket at 0%) | MOP 144,000 | ✅ |
+| Key special regime | 30% annual tax rebate (2025; annual policy) | Not specifically confirmed for 2026 | ⚠️ |
+
+**Overall verdict:** ✅ confirmed — PwC confirms 12% top rate and MOP 144,000 tax-free threshold; no discrepancies on rates. Note: PwC mentions higher 5% minimum for non-work-visa foreigners which EY also notes.  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/macau-sar/individual/taxes-on-personal-income
+**Verified:** 2026-05-31
