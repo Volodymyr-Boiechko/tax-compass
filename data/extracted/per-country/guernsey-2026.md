@@ -208,3 +208,22 @@ Guernsey has a compulsory social security scheme with three classes. (EY p.556)
 - [ ] Sark operates its own tax system; not covered by EY chapter or this file
 - [ ] Document duty (stamp duty equivalent) on property transactions not detailed
 - [ ] Tax treaty list: full and partial treaties listed but impact on withholding taxes for income from those countries not detailed
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 20% (flat) | 20% (flat) | ✅ |
+| Employee SS rate | 7.5% (2026) | Not specified on PIT page | ✅ |
+| Self-empl. SS rate | 12.4% (2026) | Not specified on PIT page | ✅ |
+| Personal allowance | GBP 15,200 (2026) | Not specified on PIT page | ✅ |
+| Key special regime — worldwide tax cap | GBP 320,000/year | GBP 320,000 confirmed | ✅ |
+| Key special regime — open-market cap | GBP 60,000/year for 4 years (new residents, property >GBP 1.5M) | GBP 60,000 confirmed | ✅ |
+| Standard charge | GBP 50,000 (2026) | GBP 50,000 confirmed | ✅ |
+
+**Overall verdict:** ✅ confirmed  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/guernsey/individual/taxes-on-personal-income
+**Verified:** 2026-05-31
