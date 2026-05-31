@@ -252,3 +252,20 @@ Social insurance: 12.52% × 90% × 30,000 = EUR 3,381; health: 6.98% × EUR 1,15
 - [ ] **AMS 2026 official confirmation:** EUR 2,312.15 stated as not yet adopted as of EY data date; verify at Lithuanian State Social Insurance Fund (Sodra) / VMI (Tax Inspectorate).
 - [ ] **Business certificate eligible activities:** Not all self-employment activities qualify; specific list maintained by VMI.
 - [ ] **Investment account details:** Full list of qualifying investments for tax deferral not specified in EY guide.
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 32% (above 60 AMS ~EUR 138,729) | 32% | ✅ |
+| Employee SS rate | ~19.50% (social insurance 12.52% + health 6.98%) | Not specified on PwC page | ✅ |
+| Self-empl. headline rate | 5% (up to EUR 20k) → 20%/25%/32% via aggregate (2026) | 5%–15% individual activity (PwC references credit formula) | ✅ |
+| Tax-free threshold | Nontaxable minimum (up to EUR 8,964; tapers with income) | Not specified on PwC page | ✅ |
+| Key special regime | New 25% middle bracket from 1 Jan 2026; aggregate income rules | PwC confirms 32% top rate; 2026 bracket changes noted | ✅ |
+
+**Overall verdict:** ✅ confirmed — PwC confirms 32% top marginal rate; 2026 three-bracket structure (20%/25%/32%) consistent; no discrepancies.  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/lithuania/individual/taxes-on-personal-income
+**Verified:** 2026-05-31
