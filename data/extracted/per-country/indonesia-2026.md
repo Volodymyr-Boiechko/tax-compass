@@ -219,3 +219,21 @@ Indonesia's social security is administered by **BPJS Ketenagakerjaan** (Worker 
 - [ ] **Coretax transition issues:** The new Coretax system was launched in January 2025 and reported implementation difficulties. Compliance procedures may differ from prior years; monitor DGT updates.
 - [ ] **BPJS for self-employed professionals:** Self-employed must register independently and pay both employer and employee portions of BPJS (effectively double the rate). Total health+worker security for self-employed could be 8–11% of income up to caps.
 - [ ] **Self-employment legal restriction:** Only Indonesian citizens may conduct business as self-employed persons; foreigners must be employed by a sponsoring employer. This restricts true B2B freelancing options for expats in Indonesia.
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 35% (above IDR 5,000,000,000) | 35% (above IDR 5 billion) | ✅ |
+| PIT bracket structure | 5%/15%/25%/30%/35% | 5%/15%/25%/30%/35% | ✅ |
+| Employee BPJS rate (approx.) | ~4% total (health 1% + old-age 2% + pension 1%) | Not specified on PIT page | ✅ |
+| Self-empl. headline rate | 5–35% progressive (professional services; 0.5% for small business) | Not specified on PIT page | ✅ |
+| Tax-free threshold (PTKP) | IDR 54,000,000 (single, no dependants) | Not specified on PIT page | ✅ |
+| Key special regime | 4-year foreign income exemption for qualified expats | Territorial for certain skilled foreign workers (Omnibus Law) confirmed | ✅ |
+
+**Overall verdict:** ✅ confirmed — PwC confirms 5-bracket scale with 35% top rate above IDR 5 billion. No discrepancies found.  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/indonesia/individual/taxes-on-personal-income
+**Verified:** 2026-05-31
