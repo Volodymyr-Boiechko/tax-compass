@@ -145,3 +145,20 @@ No income tax means there is no preferential tax regime needed for newcomers —
 - [ ] Business license fee: rate range 0.5%–2.25% depends on business type/nature not specified; 0.5% used as minimum estimate
 - [ ] VAT registration threshold and compliance requirements for self-employed service providers: BSD 100,000/year
 - [ ] No permanent residency / digital nomad visa tax implications — the Bahamas offers the Extended Access Travel Stay (BEATS) program for remote workers; no income tax impact
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 0% (no income tax) | PwC: not covered | N/A |
+| Employee SS rate | 4.65% (National Insurance) | PwC: not covered | N/A |
+| Self-empl. headline rate | 0% income tax; NIS applies | PwC: not covered | N/A |
+| Tax-free threshold | N/A (no income tax) | PwC: not covered | N/A |
+| Key special regime | N/A (no income tax) | PwC: not covered | N/A |
+
+**Overall verdict:** PwC: not covered (HTTP 404 — Bahamas not in PwC Worldwide Tax Summaries)  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/bahamas/individual/taxes-on-personal-income (404 Not Found)
+**Verified:** 2026-05-31
