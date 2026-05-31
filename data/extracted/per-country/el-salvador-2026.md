@@ -185,3 +185,23 @@ No specific preferential tax regime for newcomers or expats identified in EY sou
 - [ ] FEPADE 1% contribution: whether it applies to self-employed not specified
 - [ ] Tax treaty with Spain: specific provisions not detailed in EY source
 - [ ] The 30% top bracket is reached at only USD 22,857/year — very low by international standards; high marginal rate may discourage formal employment at moderate incomes
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 30% (above USD 22,857.14) | 30% | ✅ |
+| Employee SS rate | 3% health (cap USD 1,000/month) + 7.25% AFP = ~10.25% | 3% ISSS (cap USD 1,000/month) + 7.25% AFP | ✅ |
+| Self-empl. headline rate | Not specified | Not specified | ✅ |
+| Tax-free threshold | USD 6,600/year | USD 6,600/year | ✅ |
+| Key special regime | None identified | None identified | ✅ |
+
+**Notes:** PwC confirms identical brackets (USD 6,600 exempt; 10% on USD 6,600–9,142.86; 20% on USD 9,142.86–22,857.14; 30% above USD 22,857.14). Employee ISSS 3% with USD 1,000/month ceiling confirmed. AFP 7.25%/8.75% (employee/employer) confirmed. No special expat regime.
+
+**Overall verdict:** ✅ confirmed  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/el-salvador/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/el-salvador/individual/other-taxes
+**Verified:** 2026-05-31
