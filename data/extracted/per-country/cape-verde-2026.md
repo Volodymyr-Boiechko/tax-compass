@@ -198,3 +198,21 @@ Contributions payable on salaries, wages, bonuses, subsidies and other regular i
 - [ ] Non-habitual resident regime: exact list of qualifying "high-value-added activities" not provided in EY source
 - [ ] VAT rate and registration threshold not specified in EY source
 - [ ] 2026 property tax and real estate transfer tax effective rate impact not modeled
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 27.5% | 27.5% | ✅ |
+| Employee SS rate | 8.5% | 8.5% (confirmed) | ✅ |
+| Self-empl. headline rate | 11% (restricted) or 19.5% (extended) | 19.5% (PwC cites fixed rate — may be the extended regime only) | ⚠️ PwC cites 19.5% only; EY documents both 11% and 19.5% options |
+| Tax-free threshold | CVE 220,000/year | CVE 220,000/year | ✅ |
+| Key special regime | NHR regime (10% for high-value activities; foreign income exempt) | Not mentioned in PwC summary | ⚠️ PwC does not reference NHR; EY documents it |
+
+**Overall verdict:** ✅ confirmed — top rate 27.5% and employee SS 8.5% match exactly; self-employed SS range vs. single rate is an EY vs PwC detail difference  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/cabo-verde/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/cabo-verde/individual/other-taxes  
+**Verified:** 2026-05-31
