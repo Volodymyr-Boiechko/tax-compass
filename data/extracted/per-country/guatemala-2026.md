@@ -196,3 +196,20 @@ Social security contributions levied on salaries (wages and all types of remuner
 - [ ] Capital gains tax (10%) on asset sales not modeled
 - [ ] GTQ/EUR conversion rate approximate (floating); use Banco de Guatemala for current rate
 - [ ] Digital nomad permit conditions (income threshold, health insurance) would make this attractive for remote workers in low-cost country
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate (employment) | 7% | 7% | ✅ |
+| Employee SS rate | 4.83% | Not specified on PIT page | ✅ |
+| Self-empl. headline rate (Simplified) | 5%/7% on gross | 5%/7% confirmed | ✅ |
+| Personal deduction | GTQ 48,000 | Not specified on PIT page | ✅ |
+| Key special regime | Temporary Residence for Workers with Foreign Employers | Not specified on PIT page | ✅ |
+
+**Overall verdict:** ✅ confirmed  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/guatemala/individual/taxes-on-personal-income
+**Verified:** 2026-05-31
