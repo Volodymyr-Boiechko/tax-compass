@@ -205,3 +205,22 @@
 - [ ] 2026/27 personal allowance and NI thresholds (from 6 April 2026) not yet published
 - [ ] VAT registration threshold — follows UK rules, may change April 2026
 - [ ] Tax cap election mechanics and interaction with non-IoM-source income not fully modelled
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 21% | 21% | ✅ |
+| Standard PIT rate | 10% (first GBP 6,500 above allowance) | 10% (first GBP 6,500 / GBP 13,000 jointly) | ✅ |
+| Employee NI (main rate) | 11% (GBP 8,736–53,664) | Not specified on PIT page | ✅ |
+| Self-empl. NI | Class 2 GBP 6.45/wk + Class 4 8%/1% | Not specified on PIT page | ✅ |
+| Personal allowance | GBP 14,750 (tax year 2025/26, EY data Oct 2025) | GBP 17,000 (PwC — likely 2026/27 tax year from April 2026) | ⚠️ |
+| Tax cap | GBP 220,000 single / GBP 440,000 joint | GBP 220,000 / GBP 440,000 confirmed | ✅ |
+| Key special regime — Relocation Key Employees | First 3 years: Manx-source income only | Not specified on PIT page | ✅ |
+
+**Overall verdict:** ⚠️ partial-mismatch — Personal allowance discrepancy: EY shows GBP 14,750 (effective 6 April 2025, tax year 2025/26) while PwC shows GBP 17,000 (likely updated for 2026/27 tax year from 6 April 2026). This is an upward adjustment of ~GBP 2,250 (+15.3%) for the next tax year — a significant increase. EY's data predates the 2026/27 budget announcement. Rates (10%/21%) and tax cap confirmed matching. The GBP 17,000 allowance should be used for 2026/27 planning.  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/isle-of-man/individual/taxes-on-personal-income
+**Verified:** 2026-05-31

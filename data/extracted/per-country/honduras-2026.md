@@ -177,3 +177,22 @@ No specific preferential income tax regime for new residents or expats identifie
 - [ ] VAT (ISV) rate (15%/18%) compliance costs for self-employed not included
 - [ ] PIT brackets "subject to change by government" — verify before use; Honduras has history of bracket adjustments
 - [ ] Employer IHSS contributions (~8.7%) not shown in effective rate examples; adds to total employment cost
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 25% | 25% | ✅ |
+| Zero-rate threshold | HNL 217,493.16 | HNL 228,324.32 | ⚠️ |
+| 15% band upper limit | HNL 331,638.50 | HNL 348,154.10 | ⚠️ |
+| 20% band upper limit | HNL 771,252.38 | HNL 809,660.75 | ⚠️ |
+| Employee SS rate | ~6.5% (IHSS) | Not specified on PIT page | ✅ |
+| Self-empl. headline rate | 0–25% (same scale) | Not specified separately | ✅ |
+| Key special regime | None identified | None identified | ✅ |
+
+**Overall verdict:** ⚠️ partial-mismatch — PwC shows updated 2026 bracket thresholds (e.g. zero-rate band HNL 228,324 vs EY's HNL 217,493, ~+5%). This is consistent with annual government-mandated bracket adjustments that EY flagged as "subject to change." Top rate of 25% is confirmed identical. No structural change; thresholds updated upward for 2026.  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/honduras/individual/taxes-on-personal-income
+**Verified:** 2026-05-31

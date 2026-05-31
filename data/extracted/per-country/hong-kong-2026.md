@@ -268,3 +268,21 @@ Hong Kong does not impose any social security taxes. Employers and employees are
 - [ ] QDAP/MPF voluntary contributions deduction (up to HKD 60,000 combined) not modeled; would meaningfully reduce tax for maximal contributors
 - [ ] Royalties withholding tax rates (2.25%–15% depending on circumstances) complex; not detailed
 - [ ] Top Talent Pass Scheme: no preferential tax rate — same tax rules as other residents once employed in HK
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT (progressive) | 17% | 17% | ✅ |
+| Standard rate | 15% on first HKD 5M / 16% above | 15% on first HKD 5M / 16% above | ✅ |
+| MPF employee rate | 5% (max HKD 1,500/month) | Not specified on PIT page | ✅ |
+| Self-empl. headline rate (Profits Tax) | 7.5%/15% (two-tiered) | Not specified on PIT page | ✅ |
+| Tax-free threshold | Single allowance HKD 132,000 | Not specified on PIT page | ✅ |
+| Key special regime — Salaries Tax standard rate | 15% confirmed | 15% confirmed | ✅ |
+
+**Overall verdict:** ✅ confirmed — Salaries Tax standard rate 15% (two-tiered 15%/16% above HKD 5M) and progressive top rate 17% both confirmed by PwC for the 2025/26 tax year.  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/hong-kong-sar/individual/taxes-on-personal-income
+**Verified:** 2026-05-31

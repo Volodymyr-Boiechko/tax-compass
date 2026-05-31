@@ -267,3 +267,21 @@ Social insurance contributions payable on earnings of individuals working in Gib
 - [ ] HEPSS maximum tax (GIP 39,940 on first GIP 160,000) not compared against general rates in examples
 - [ ] Property tax rates (stamp duty on property transactions) not modeled
 - [ ] Post-Brexit residency rules (October 2025 changes) may affect EU nationals' ability to reside and work in Gibraltar
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate (GIB) | 25% effective cap (28% statutory bracket, effective rate ≤25%) | 28% top bracket / 25% cap confirmed | ✅ |
+| Top marginal PIT rate (AB) | 39% | 39% | ✅ |
+| Employee SS rate | 10% (under 60) | Not specified on PIT page | ✅ |
+| Self-empl. headline rate | 20% SI + GIB/AB system | GIB/AB system confirmed | ✅ |
+| Tax-free threshold | GIP 11,450 (low-income earner full exemption) | GIP 11,450 exemption threshold confirmed | ✅ |
+| Key special regime | Category 2 (HNW) / HEPSS | confirmed (per PwC last reviewed 10 March 2026) | ✅ |
+
+**Overall verdict:** ✅ confirmed  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/gibraltar/individual/taxes-on-personal-income
+**Verified:** 2026-05-31

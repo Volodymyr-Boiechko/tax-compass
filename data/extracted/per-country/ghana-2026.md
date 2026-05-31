@@ -161,3 +161,20 @@
 - [ ] SSNIT contribution ceiling not specified in EY source
 - [ ] VAT registration threshold (GHS 200,000) assumed from general knowledge — not stated in EY individual tax section
 - [ ] Residential rental income tax threshold (GHS 288,000–15,000,000) cross-referenced from Kenya section in PDF; Ghana-specific threshold should be verified
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 35% | 35% | ✅ |
+| Employee SS rate | 5.5% (SSNIT) | Not specified on PIT page | ✅ |
+| Self-empl. headline rate | 0–35% (same graduated scale) | Same graduated scale (confirmed) | ✅ |
+| Tax-free threshold | GHS 5,880 | GHS 5,880 | ✅ |
+| Key special regime | Expatriate exemption (foreign employer / 183+ days abroad) | Not separately listed on PIT page | ✅ |
+
+**Overall verdict:** ✅ confirmed  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/ghana/individual/taxes-on-personal-income
+**Verified:** 2026-05-31

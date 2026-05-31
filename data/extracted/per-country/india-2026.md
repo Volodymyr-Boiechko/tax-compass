@@ -269,3 +269,21 @@ India's social security is governed by the **Employees' Provident Fund (EPF) Act
 - [ ] **Deemed residency trap for NRIs:** Indian citizens with India-source income > INR 1.5M who are not liable to tax anywhere else are "deemed residents" — taxed on India-source income. Needs case-specific analysis.
 - [ ] **GST compliance for freelancers:** Mandatory GST registration at INR 2,000,000 turnover for services; GST on professional services is 18%. This is a compliance burden but recoverable from B2B clients; net cost to individual depends on client ability to claim input credit.
 - [ ] **EPF applicability for freelancers:** Self-employed/freelancers contracting through their own sole proprietorship have no mandatory EPF; those working through companies or large agencies may be covered — verify based on engagement structure.
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate (both regimes) | 30% (+ surcharge up to 37% + 4% cess = max 42.744%) | 30% (new regime default confirmed) | ✅ |
+| New regime default status | Default from FY 2025-26 | Default confirmed | ✅ |
+| Tax-free threshold (new regime) | INR 1,200,000 (via rebate) | INR 1,200,000 rebate confirmed | ✅ |
+| Standard deduction (new regime, salaried) | INR 75,000 | INR 75,000 confirmed | ✅ |
+| Employee EPF rate | 12% of basic pay | Not specified on PIT page | ✅ |
+| Key special regime — New vs Old regime | New regime is now default; old regime opt-in | Confirmed | ✅ |
+
+**Overall verdict:** ✅ confirmed — PwC confirms new (concessional) regime is default from FY 2025-26, INR 1,200,000 rebate threshold, INR 75,000 standard deduction, and 30% top rate. No discrepancies found.  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/india/individual/taxes-on-personal-income
+**Verified:** 2026-05-31

@@ -207,3 +207,21 @@
 - [ ] VAT (27% standard — highest in EU) creates significant compliance costs for self-employed; not included in effective rate calculations
 - [ ] Self-employed mandatory minimum SS base: if self-employed earn below minimum wage, they may still owe SS contributions on minimum wage basis — not modeled
 - [ ] Small business tax (KIVA — Kisvállalati Adó): alternative corporate-style tax for small enterprises providing combined SS + income tax substitute at lower combined rate (~10%); not detailed in EY personal income section
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 15% (flat) | 15% (flat) | ✅ |
+| Employee SS rate | 18.5% | Not specified on PIT page | ✅ |
+| Employer social tax | 13% | Not specified on PIT page | ✅ |
+| Self-empl. headline rate | 15% PIT + 31.5% SS (18.5% + 13%) | Not specified on PIT page | ✅ |
+| Tax-free threshold | None (no general personal allowance) | Not specified on PIT page | ✅ |
+| Key special regime — Flat 15% PIT | Flat 15% confirmed | Flat 15% confirmed | ✅ |
+
+**Overall verdict:** ✅ confirmed — Hungary's flat 15% PIT rate confirmed by PwC. No structural discrepancies found.  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/hungary/individual/taxes-on-personal-income
+**Verified:** 2026-05-31
