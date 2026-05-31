@@ -338,3 +338,21 @@ Note: MEI comparison at €30k: MEI ceiling is BRL 81,000/year (only ~€13,500)
 - [ ] CSLL (9%) and PIS/Cofins (3.65% cumulative or 9.25% non-cumulative) within Simples DAS not separately broken out — all embedded in the single Simples rate shown
 - [ ] Lucro Presumido (Assumed Profit) regime for companies with revenue BRL 4.8M–78M not computed — would show effective corporate rate of ~18–19% on gross revenue for services, but relevant only above Simples Nacional ceiling
 - [ ] Brazilian states levy ICMS differently; ISS varies by municipality 2%–5%; the Simples DAS distributes taxes to municipalities/states automatically
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 27.5% | 27.5% | ✅ |
+| Employee SS rate (INSS) | Progressive 7.5%–14%; max BRL 951.62/month (2025) | Progressive 7.5%–14%; max monthly contribution BRL 908.85 cited (older figure) | ✅ (same progressive structure; minor difference in cited ceiling likely reflects different reference year) |
+| Self-empl. headline rate | 20% of declared base (INSS); MEI 5% of min wage | 5%, 11%, or 20% depending on conditions | ✅ |
+| Tax-free threshold | Monthly BRL 2,428.80 (from May 2025); effectively BRL 5,000 via 2026 redutor | Monthly BRL 2,259.20 exempt (PwC data may be slightly behind 2026 update) | ⚠️ PwC shows older BRL 2,259.20 threshold; EY reflects updated May 2025 table at BRL 2,428.80 |
+| Key special regime | MEI (BRL 81k ceiling; fixed DAS); Simples Nacional Anexo III | confirmed — Simples Nacional/MEI structure exists | ✅ |
+
+**Overall verdict:** ✅ confirmed — top rate and structure match; minor threshold difference reflects data vintage (PwC may not reflect May 2025 table update)  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/brazil/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/brazil/individual/other-taxes  
+**Verified:** 2026-05-31

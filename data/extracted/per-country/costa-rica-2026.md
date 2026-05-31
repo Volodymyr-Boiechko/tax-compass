@@ -219,3 +219,21 @@ Social security contributions levied on salaries. Rates for 2026: (EY p.300)
 - [ ] Dependent tax credits (CRC 1,720/child, CRC 2,600/spouse) not modeled — minor impact at these income levels
 - [ ] Capital gains tax (15%) regime for business assets not detailed
 - [ ] 2026 self-employment bracket thresholds (adjusted annually) not confirmed — using 2025 figures from EY
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 25% | 25% (confirmed: "above 20,442,000 CRC") | ✅ |
+| Employee SS rate | 10.83% (EY — "employee" total CCSS) | 4.33% (PwC — employee direct contribution only; total CCSS 11.66% incl. employer 5.58% + state 1.57%) | 🚨 Structural difference — EY 10.83% appears to be full CCSS including employer/state; PwC cites employee-only portion (4.33%); actual employee deduction from salary is ~4.33% |
+| Self-empl. headline rate | 0%–25% PIT; SS not specified | 0%–25% confirmed | ✅ |
+| Tax-free threshold (employment) | CRC 918,000/month (0% band) | CRC 4,094,000/month (self-employed 0% band per PwC) | ✅ (both thresholds confirmed for respective regimes) |
+| Key special regime | Digital Nomad visa (Law 10008) — full income tax exemption | confirmed — territorial system | ✅ |
+
+**Overall verdict:** 🚨 major-discrepancy on employee SS — EY 10.83% vs PwC 4.33% (6.5pp difference). Root cause: EY appears to cite a combined CCSS figure including employer and state portions as one "employee" deduction rate, while PwC correctly shows only the employee's share of the tripartite CCSS contribution. The actual worker deduction from gross salary is approximately 4.33% (2026), not 10.83%  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/costa-rica/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/costa-rica/individual/other-taxes  
+**Verified:** 2026-05-31

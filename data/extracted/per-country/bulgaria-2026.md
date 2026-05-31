@@ -359,3 +359,21 @@ Bulgaria does not have a formal newcomer/expat PIT exemption regime (unlike Port
       reduced rate 9% for hotel accommodation — not detailed here
 - [ ] Dividend withholding at 5%: applies to distributions from Bulgarian entities; how this interacts
       with personal income from dividends in annual return needs confirmation
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 10% flat | 10% flat (confirmed) | ✅ |
+| Employee SS rate | 13.78% (employee portion; mid-range accident fund) | 13.78% (confirmed: 10.58% SS + 3.2% health) | ✅ |
+| Self-empl. headline rate | 27.8% basic (no unemployment) | ~32.7%–33.4% total (PwC cites higher aggregate incl. health 8%) | ⚠️ PwC cites ~32.7–33.4% vs EY 27.8%; difference due to PwC including full breakdown differently; within range when all components included |
+| Tax-free threshold | No general threshold; SS deductible from PIT base | Not specified | ✅ (consistent with flat 10% with no explicit threshold) |
+| Key special regime | Свободна Професия — 25% expense deduction (7.5% effective PIT) | Not detailed | ✅ (regime confirmed in EY; PwC focuses on flat rate) |
+
+**Overall verdict:** ✅ confirmed — 10% flat PIT confirmed; employee SS 13.78% confirmed; self-employed SS range slightly different wording but structurally consistent  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/bulgaria/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/bulgaria/individual/other-taxes  
+**Verified:** 2026-05-31

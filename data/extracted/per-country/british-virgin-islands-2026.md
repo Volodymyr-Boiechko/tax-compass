@@ -185,3 +185,20 @@ No income tax means there is no preferential tax regime needed. The BVI imposes 
 - [ ] Double tax treaty: BVI has only one treaty (with UK); very limited treaty protection for other jurisdictions
 - [ ] Work permit requirements for foreign nationals working in BVI: not detailed in EY; required for employment by foreign nationals
 - [ ] BVI is a British Overseas Territory — UK has oversight but BVI has full fiscal autonomy; 0% income tax confirmed and stable
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 0% (no income tax) | N/A — PwC: not covered | N/A |
+| Employee SS rate | 4% National Insurance + 3.75% NHI = 7.75% | N/A — PwC: not covered | N/A |
+| Self-empl. headline rate | 0% income tax; 10%–14% payroll tax total | N/A — PwC: not covered | N/A |
+| Tax-free threshold | USD 10,000 payroll tax exemption/year | N/A — PwC: not covered | N/A |
+| Key special regime | No income tax — Payroll Tax Act (0% PAYE) | N/A — PwC: not covered | N/A |
+
+**Overall verdict:** N/A — PwC: not covered (small territory — British Virgin Islands not in PwC Worldwide Tax Summaries)  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com (British Virgin Islands — not covered)  
+**Verified:** 2026-05-31

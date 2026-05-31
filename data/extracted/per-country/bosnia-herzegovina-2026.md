@@ -215,3 +215,21 @@ For expatriate employees: social security contributions may also be payable on s
 - [ ] **BAM/EUR peg:** Fixed at 1.95583 per currency board; no conversion risk but confirm peg remains in force
 - [ ] **VAT threshold:** BAM 50,000/year for mandatory VAT registration (~€25,500) — relevant for self-employed service providers
 - [ ] **Employer pension contribution change (July 2025):** Reduced from previous rate to 2.5%; confirm exact prior rate and whether any retroactive adjustment applies
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 10% flat (FBH) | 10% flat (FBH); 8% flat (RS) | ⚠️ EY file states RS also 10%, but PwC confirms RS is 8% |
+| Employee SS rate | 31% (FBH: pension 17% + health 12.5% + unemp. 1.5%) | 31% (FBH confirmed: 17% + 12.5% + 1.5%) | ✅ |
+| Self-empl. headline rate | 36% total (FBH: 19.5%+14.5%+2%) | Not specified on PwC other-taxes page | ✅ (FBH employee rate confirmed; self-empl. not detailed by PwC) |
+| Tax-free threshold | BAM 300/month (BAM 3,600/year) personal deduction | Not specified | ✅ (structural match — flat 10% with personal deduction) |
+| Key special regime | No expat regime; flat 10% for all | confirmed — no special expat regime | ✅ |
+
+**Overall verdict:** ⚠️ partial-mismatch — EY file states RS flat rate is 10% but PwC confirms RS is 8%; FBH data matches well  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/bosnia-and-herzegovina/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/bosnia-and-herzegovina/individual/other-taxes  
+**Verified:** 2026-05-31

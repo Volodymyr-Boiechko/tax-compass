@@ -147,3 +147,21 @@ No income tax means no preferential tax regime is needed. Brunei levies no incom
 - [ ] No VAT in Brunei (confirmed — no GST/VAT as of 2025); proposed GST has been discussed but not implemented
 - [ ] Employment visa requirements for self-employed professionals: case-by-case basis; practicing license required from relevant ministry — specific requirements vary by profession
 - [ ] Brunei has no double tax treaty with the EU or most European countries (treaties with: Bahrain, Cambodia, China, HK SAR, Indonesia, Japan, Korea South, Kuwait, Laos, Luxembourg, Malaysia, Oman, Pakistan, Philippines, Qatar, Singapore, UAE, UK, Vietnam)
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 0% (no personal income tax) | 0% (confirmed: "Brunei does not impose personal income tax on individuals") | ✅ |
+| Employee SS rate (SPK) | 8.5% for citizens/PRs; 0% for foreign nationals | 8.5% (confirmed; foreign nationals exempt) | ✅ |
+| Self-empl. headline rate | 0% income tax; 0% SPK for non-PRs | confirmed — 0% for non-PRs | ✅ |
+| Tax-free threshold | N/A (no income tax) | N/A (no income tax) | ✅ |
+| Key special regime | N/A — no income tax | confirmed | ✅ |
+
+**Overall verdict:** ✅ confirmed — all data matches; no personal income tax confirmed by both sources  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/brunei-darussalam/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/brunei-darussalam/individual/other-taxes  
+**Verified:** 2026-05-31

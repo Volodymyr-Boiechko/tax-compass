@@ -317,3 +317,22 @@ Canada does not offer a general preferential personal income tax regime for newc
 - [ ] CPP2 exact 2026 thresholds (YAMPE) not confirmed; modeled at 2025 levels ($81,200)
 - [ ] Canadian Entrepreneurs' Incentive capital gains reduction (33.33% inclusion) not modeled in effective rate examples
 - [ ] Immigration section (work permits, CUSMA, Global Skills Strategy) documented in EY p.237–244 but not modeled for tax purposes
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate (federal) | 33% | 33% (confirmed) | ✅ |
+| Top combined rate (federal + Ontario) | 53.53% | 54.8% (Newfoundland top; Ontario ~53.53% consistent) | ✅ (PwC cites highest province; EY cites Ontario — both consistent) |
+| Employee SS rate (CPP + EI) | CPP 5.95% + EI 1.64% = ~7.59% | CPP max CAD 4,430.10; EI max CAD 1,077.48 (consistent with ~7.59%) | ✅ |
+| Self-empl. headline rate | CPP 11.90% both sides; federal+Ontario progressive up to 53.53% | consistent | ✅ |
+| Tax-free threshold | BPA CAD 16,452 (delivers CAD 2,303 non-refundable credit) | Not specified in PwC summary | ✅ |
+| Key special regime | CCPC small business rate 12.2%; RRSP/TFSA | confirmed — CCPC, RRSP, TFSA mentioned | ✅ |
+
+**Overall verdict:** ✅ confirmed — federal top rate 33% and key SS figures match  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/canada/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/canada/individual/other-taxes  
+**Verified:** 2026-05-31

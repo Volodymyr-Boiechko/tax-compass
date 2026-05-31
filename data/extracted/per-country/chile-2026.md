@@ -354,3 +354,21 @@ Progressive system (Impuesto Único de Segunda Categoría for employees; Impuest
 - [ ] The 30% standard deduction cap of 15 ATUs is roughly €12.8k — for the €100k boleta scenario, the cap limits the deduction to 12.8% of gross rather than 30%; actual deductible business expenses (computer, software, office) could exceed the 15 ATU cap if documented
 - [ ] Global Complementario calculation uses annual ATU — monthly bracket calculations shown are for employment; the annual reconciliation for boleta workers is the operative final calculation
 - [ ] Health ISAPRE (private insurance) top-up above 7% not modeled; many professionals pay ISAPRE premiums of 7%+ CLP amounts
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 40% (>310 MTU/month ≈ CLP 21.9M/month) | 35.50% (PwC — reviewed Dec 2025; uses June 2017 USD base) | 🚨 EY shows 40% top bracket; PwC shows 35.50% — 4.5pp difference |
+| Employee SS rate | ~17.6%–18.45% (pension 10% + health 7% + AFC 0.6% + AFP commission) | 20% pension+disability on capped salary (UF 75.7) + 0.6% unemployment | ⚠️ PwC cites "20% pension" which appears to bundle employer+employee pension sides; employee-only is ~10%+commission |
+| Self-empl. headline rate | 10% AFP + 7% health + ~1.49% SIS on 80% of gross; PIT 0%–40% | Non-resident flat 15%; self-employed rates not explicitly detailed | ✅ (structural match for boleta mechanism) |
+| Tax-free threshold | 0–13.5 MTU/month (≈ CLP 952,938/month ≈ USD 953) | USD 11,368.06/year (≈ CLP 952k/month equivalent) | ✅ |
+| Key special regime | Three-year foreign income exemption for new residents | confirmed — foreigners taxed on Chilean source only for first 3 years | ✅ |
+
+**Overall verdict:** 🚨 major-discrepancy — top PIT rate: EY 40% vs PwC 35.50% (4.5pp difference). Note: EY's 40% bracket (>310 MTU) was introduced by Law 21,210 (2020 tax reform, effective from 2020); PwC page (reviewed December 2025) still shows 35.50% as top rate and may not reflect this bracket, OR the 40% bracket has not yet taken effect for the Global Complementario as of 2025–26 — requires verification with SII  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/chile/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/chile/individual/other-taxes  
+**Verified:** 2026-05-31

@@ -117,3 +117,20 @@ No special tax regimes exist for newcomers or expats, as there is no income tax 
 - [ ] Whether self-employed individuals must contribute to the mandatory pension plan not explicitly confirmed
 - [ ] KYD/EUR conversion rate approximate; KYD is pegged to USD at 1 KYD = 1.20 USD
 - [ ] Work permit fees for foreign workers not detailed in EY source (one page only)
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 0% (no income tax) | N/A — PwC: not covered | N/A |
+| Employee SS rate | 0% (no social security taxes) | N/A — PwC: not covered | N/A |
+| Self-empl. headline rate | 0% income tax; 0% mandatory SS | N/A — PwC: not covered | N/A |
+| Tax-free threshold | N/A (no income tax) | N/A — PwC: not covered | N/A |
+| Key special regime | N/A — no income tax | N/A — PwC: not covered | N/A |
+
+**Overall verdict:** N/A — PwC: not covered (small territory — Cayman Islands not in PwC Worldwide Tax Summaries)  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com (Cayman Islands — not covered)  
+**Verified:** 2026-05-31
