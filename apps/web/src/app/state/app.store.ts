@@ -113,6 +113,15 @@ export class AppStore {
 
   readonly filteredCount = computed(() => this.filteredCountries().length);
 
+  // --- Comparison ---
+  readonly comparedCodes = signal<string[]>([]);
+
+  readonly comparedCountries = computed(() =>
+    this.comparedCodes()
+      .map(code => this.countries().find(c => c.code === code))
+      .filter((c): c is Country => c !== undefined)
+  );
+
   readonly activeFilterCount = computed(() => {
     let n = 0;
     if (this.searchQuery().trim()) n++;
@@ -120,6 +129,10 @@ export class AppStore {
     if (this.selectedConfidence().length) n++;
     return n;
   });
+
+  constructor() {
+    this.loadComparison();
+  }
 
   // --- Actions ---
   setSearch(q: string): void {
@@ -147,6 +160,55 @@ export class AppStore {
     this.searchQuery.set('');
     this.selectedRegions.set([]);
     this.selectedConfidence.set([]);
+  }
+
+  addToComparison(code: string): boolean {
+    const current = this.comparedCodes();
+    if (current.includes(code)) return false;
+    if (current.length >= 3) return false;
+    this.comparedCodes.set([...current, code]);
+    this.saveComparison();
+    return true;
+  }
+
+  removeFromComparison(code: string): void {
+    this.comparedCodes.set(this.comparedCodes().filter(c => c !== code));
+    this.saveComparison();
+  }
+
+  clearComparison(): void {
+    this.comparedCodes.set([]);
+    this.saveComparison();
+  }
+
+  isInComparison(code: string): boolean {
+    return this.comparedCodes().includes(code);
+  }
+
+  canAddMore(): boolean {
+    return this.comparedCodes().length < 3;
+  }
+
+  private saveComparison(): void {
+    try {
+      localStorage.setItem('tax-compass-comparison', JSON.stringify(this.comparedCodes()));
+    } catch {
+      // ignore quota errors
+    }
+  }
+
+  private loadComparison(): void {
+    try {
+      const stored = localStorage.getItem('tax-compass-comparison');
+      if (stored) {
+        const codes = JSON.parse(stored);
+        if (Array.isArray(codes)) {
+          this.comparedCodes.set(codes.filter(c => typeof c === 'string').slice(0, 3));
+        }
+      }
+    } catch {
+      // ignore parse errors
+    }
   }
 
   async loadAll(): Promise<void> {
