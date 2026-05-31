@@ -200,3 +200,20 @@ Maximum marginal rate: **15%** (EY p. 947)
 - [ ] **Social security beyond pension:** No other social security mentioned; confirm no additional health or unemployment contributions exist.
 - [ ] **Remittance basis / worldwide income for residents:** Whether Maldivian residents pay tax on worldwide income or only Maldivian-source income is not fully clarified in EY; assumed worldwide for residents based on text.
 - [ ] **No capital gains tax details:** EY confirms no capital gains tax levy; whether foreign-source capital gains of residents are taxable is not addressed.
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 15% | Not available (PwC 404) | ⚠️ |
+| Employee SS rate | Pension 7% (fixed; not percentage-based SS) | Not available | ⚠️ |
+| Self-empl. headline rate | 15% (same brackets; MVR 720,000 threshold) | Not available | ⚠️ |
+| Tax-free threshold | MVR 720,000/year (MVR 60,000/month) | Not available | ⚠️ |
+| Key special regime | Income Tax Act 2020; tourism GST 17% from 1 Jul 2025 | Not available | ⚠️ |
+
+**Overall verdict:** ⚠️ partial-mismatch — PwC does not have a Maldives page (HTTP 404); cross-verification not possible via PwC. EY data stands as sole verified source. This was anticipated in the task brief.  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/maldives/individual/taxes-on-personal-income — **not found (404)**
+**Verified:** 2026-05-31
