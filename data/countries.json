@@ -3130,15 +3130,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.27,
+          "60k": 0.31,
+          "100k": 0.35
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.35,
+          "60k": 0.38,
+          "100k": 0.41,
+          "regime": "Toiminimi (sole trader)"
         }
       },
       "changes2026": [
@@ -3221,15 +3221,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.28,
+          "60k": 0.32,
+          "100k": 0.4
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.37,
+          "60k": 0.4,
+          "100k": 0.43,
+          "regime": "Micro-entrepreneur BNC"
         }
       },
       "changes2026": [
@@ -3354,15 +3354,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.33,
+          "60k": 0.36,
+          "100k": 0.39
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.32,
+          "60k": 0.35,
+          "100k": 0.38,
+          "regime": "Freiberufler (no Gewerbesteuer)"
         }
       },
       "changes2026": [
@@ -5855,15 +5855,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.25,
+          "60k": 0.32,
+          "100k": 0.4
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.35,
+          "60k": 0.38,
+          "100k": 0.41,
+          "regime": "Indépendant / Selbständig"
         }
       },
       "changes2026": [
@@ -7000,15 +7000,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.25,
+          "60k": 0.3,
+          "100k": 0.36
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.32,
+          "60k": 0.35,
+          "100k": 0.38,
+          "regime": "ZZP with zelfstandigenaftrek"
         }
       },
       "changes2026": [
@@ -9492,15 +9492,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.29,
+          "60k": 0.35,
+          "100k": 0.42
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.39,
+          "60k": 0.42,
+          "100k": 0.45,
+          "regime": "Egenanställd / sole trader"
         }
       },
       "changes2026": [
@@ -9581,15 +9581,15 @@
       ],
       "effectiveRates": {
         "employment": {
-          "30k": null,
-          "60k": null,
-          "100k": null
+          "30k": 0.17,
+          "60k": 0.21,
+          "100k": 0.26
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.22,
+          "60k": 0.25,
+          "100k": 0.28,
+          "regime": "Selbständig (Zurich canton)"
         }
       },
       "changes2026": [

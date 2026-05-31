@@ -103,9 +103,7 @@ export class WorldMapComponent implements AfterViewInit, OnDestroy {
 
   private async loadGeoJSON(): Promise<void> {
     try {
-      const res = await fetch(
-        'https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson'
-      );
+      const res = await fetch('assets/data/world.geojson');
       if (!res.ok) throw new Error('GeoJSON load failed');
       const data: GeoJSON.FeatureCollection = await res.json();
       this.renderGeoJSON(data);
