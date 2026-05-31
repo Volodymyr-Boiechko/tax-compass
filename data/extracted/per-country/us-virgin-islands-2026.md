@@ -204,3 +204,22 @@ US Social Security (FICA) and self-employment taxes are imposed in the USVI. **P
 - [ ] **2026 federal brackets:** Will be issued by IRS in late 2025; modest inflation adjustment expected
 - [ ] **NIIT and Additional Medicare Tax:** Not modeled in scenarios above; relevant at income > USD 200,000
 - [ ] **USVI-specific credits and incentives:** EY chapter is very brief; full USVI tax code has additional local provisions beyond EDP
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 37% (mirrors US federal) | N/A — USVI not covered as separate territory | N/A |
+| Employee SS rate | 7.65% FICA (mirrors US federal) | N/A | N/A |
+| Self-empl. headline rate | 15.3% SECA (mirrors US federal) | N/A | N/A |
+| Tax-free threshold | Standard deduction $15,000 (single, 2025) / ~$16,100 (2026) | N/A | N/A |
+| Key special regime | EDP — up to 90% USVI income tax reduction for qualifying businesses | N/A | N/A |
+
+**PwC coverage note:** The US Virgin Islands is a US territory and is not listed as a separate jurisdiction on PwC Worldwide Tax Summaries (148 territories covered; USVI not among them). Cross-verification against PwC is not possible. USVI tax rates mirror US federal IRC by statute; the United States PwC page indirectly confirms the underlying federal rate structure (37% top rate, TCJA/OBBBA permanent) which flows through to USVI.
+
+**Overall verdict:** N/A — US territory not covered on PwC as a separate jurisdiction; underlying US federal rates confirmed via PwC United States page  
+**PwC sources checked:**
+- N/A (USVI not listed on PwC Worldwide Tax Summaries)
+**Verified:** 2026-05-31
