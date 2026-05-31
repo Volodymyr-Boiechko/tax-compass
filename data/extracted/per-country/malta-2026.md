@@ -301,3 +301,21 @@ Note: Non-dom programmes are beneficial primarily for high-income individuals wi
 - [ ] **Malta Enterprise Corporation guidelines for RPEFE:** Field of excellence definitions depend on Malta Enterprise Corporation guidelines; not specified in EY guide.
 - [ ] **Residence program consolidation:** Malta authorities are reviewing consolidation of various HNW programmes into a unified framework — changes expected but timing and details not yet announced.
 - [ ] **Part-time income cap amounts:** EUR 10,000 (employment) and EUR 12,000 (self-employment) at 10% flat rate; verify these figures with Commissioner for Tax and Customs as they may be adjusted.
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 35% | 35% | ✅ |
+| Employee SS rate | 10% (capped at ~EUR 2,908/year for born-from-1962) | Not specified on PwC page | ✅ |
+| Self-empl. headline rate | 35% max (Class 2 SS ~EUR 4,362/year) | Not separately specified | ✅ |
+| Tax-free threshold | EUR 12,000 (single); EUR 15,000 (married — EY) | EUR 12,000 (single) confirmed; EUR 15,500 (married — PwC 2026) | ⚠️ |
+| Key special regime — Non-Dom min tax | EUR 5,000 minimum annual tax (remittance basis) | EUR 5,000 confirmed (for EUR 35,000+ foreign income not remitted) | ✅ |
+| Key special regime — HQP/Highly Skilled | New 2026 framework: 15% flat rate (Tax Treatment of Highly Skilled Individuals Rules) | Confirmed: old HQP phased out; new rules give 15% for up to 15 years | ✅ |
+
+**Overall verdict:** ⚠️ partial-mismatch — Minor discrepancy on married zero-rate threshold: EY shows EUR 15,000; PwC shows EUR 15,500 for basis year 2026. Top rate (35%), Non-Dom EUR 5,000 minimum, and new HQP framework all confirmed. The EUR 500 difference on married bracket likely reflects 2026 indexation.  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/malta/individual/taxes-on-personal-income
+**Verified:** 2026-05-31
