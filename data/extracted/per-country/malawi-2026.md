@@ -194,3 +194,20 @@ Malawi has DTTs with: France, Norway, South Africa, Sweden, Switzerland, United 
 - [ ] **2026 bracket adjustments:** No 2026 changes mentioned in EY guide; however, Malawi regularly adjusts thresholds in annual budgets. Verify with MRA for 2026/27 fiscal year rates.
 - [ ] **VAT registration threshold:** MWK 25,000,000 assumed; verify with MRA for current threshold.
 - [ ] **Withholding taxes on self-employment payments:** Many payments (fees, rents, royalties, services) are subject to withholding tax (20% in most cases); these are advance tax payments credited against final liability.
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 40% | Not available (PwC 404) | ⚠️ |
+| Employee SS rate | None (Malawi has no SS) | Not available | ⚠️ |
+| Self-empl. headline rate | 40% (same progressive schedule) | Not available | ⚠️ |
+| Tax-free threshold | MWK 170,000/month (MWK 2,040,000/year) | Not available | ⚠️ |
+| Key special regime | Presumptive tax for small businesses (up to MWK 12.5M) | Not available | ⚠️ |
+
+**Overall verdict:** ⚠️ partial-mismatch — PwC does not have a Malawi page (HTTP 404); cross-verification not possible via PwC. EY data stands as sole verified source.  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/malawi/individual/taxes-on-personal-income — **not found (404)**
+**Verified:** 2026-05-31
