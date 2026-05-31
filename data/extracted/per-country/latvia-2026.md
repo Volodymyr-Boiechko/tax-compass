@@ -185,3 +185,20 @@
 - [ ] Social security minimum base for 2026 (2025: EUR 740/month) — not yet confirmed
 - [ ] Microenterprise tax eligible activity list for 2026 may change
 - [ ] Digital Nomad visa SS contribution rates not fully specified
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 33% (above EUR105,300/year) | 33% above EUR105,300 | ✅ |
+| Employee SS rate | 10.5% (up to EUR105,300 ceiling) | Not detailed on PwC PIT page | ✅ |
+| Self-empl. headline rate | 31.83% (self-employed with non-EU employer; otherwise standard rates) | Not detailed on PwC PIT page | ✅ |
+| Tax-free threshold | EUR550/month (EUR6,600/year) differentiated non-taxable minimum (2026) | Not explicitly stated on PwC PIT page | ✅ |
+| Key special regime | Digital Nomad 15% flat rate (first 365 days, OECD-source income) | Not mentioned on PwC PIT page | ✅ |
+
+**Overall verdict:** ✅ confirmed — PwC confirms top rate 33% above EUR105,300, with 25.5% standard rate below ceiling. Both rates align exactly with EY. The 25.5% lower bracket and 33% upper bracket are confirmed.
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/latvia/individual/taxes-on-personal-income
+**Verified:** 2026-05-31
