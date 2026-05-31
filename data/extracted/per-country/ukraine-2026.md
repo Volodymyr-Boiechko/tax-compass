@@ -67,7 +67,7 @@ Exchange rate reference: UAH 42.0295 = USD 1 as of 1 January 2025 (EY p. 1580).
 | Unified Social Tax (ЄСВ) | **0%** | **22%** |
 | **Total** | **0%** | **22%** |
 
-- Base cap: 20 × minimum monthly wage = 20 × UAH 8,647 = **UAH 172,940/month** (from 1 January 2026)
+- Base cap: **15 × minimum monthly wage = 15 × UAH 8,647 = UAH 129,705/month** (2026; the 20× cap was enacted in the State Budget Law for 2026 but POSTPONED for 2026 — PwC other-taxes confirmed; EY file incorrectly stated 20×)
 - Employer pays 22% on gross salary up to cap; above cap no ЄСВ
 - **Employees pay no ЄСВ** — employer-only obligation
 - Foreign employers domiciled outside Ukraine and paying salary from abroad do NOT pay Ukrainian ЄСВ (EY p. 1585–1586)
@@ -77,7 +77,7 @@ Exchange rate reference: UAH 42.0295 = USD 1 as of 1 January 2025 (EY p. 1580).
 | | Per month | Per quarter | Annual |
 |---|---|---|---|
 | Minimum ЄСВ | UAH 1,902.34 (= 22% × UAH 8,647) | UAH 5,707.02 | UAH 22,828 |
-| Maximum ЄСВ | UAH 38,046.80 (= 22% × UAH 172,940) | UAH 114,140 | UAH 456,562 |
+| Maximum ЄСВ | UAH 28,535.10 (= 22% × UAH 129,705) | UAH 85,605 | UAH 342,421 |
 
 ФОП are required to pay at least the minimum ЄСВ regardless of whether they had any income.
 In practice, the overwhelming majority of ФОП pay only the minimum.
@@ -153,7 +153,7 @@ Ukraine does not currently offer a general remittance-basis or territorial-tax r
 - **Military levy 5%** (from 1.5%) in effect from 1 December 2024 for all PIT-subject income; continues through 2026 (EY p. 1585; Law 4015-IX)
 - **Minimum wage raised to UAH 8,647/month** from 1 January 2026 (from UAH 8,000 in 2025), triggering:
   - ЄСВ minimum for ФОП: raised to **UAH 1,902.34/month** (from ~UAH 1,760)
-  - ЄСВ cap base: raised to **UAH 172,940/month** (from UAH 160,000)
+  - ЄСВ cap base: **UAH 129,705/month** (15× UAH 8,647; the 20× cap enacted in 2026 State Budget Law was POSTPONED — remains at 15× per PwC confirmed 2026-05-31; EY file stated 20× which was incorrect)
   - ФОП Group 3 income limit: raised to **UAH 10,091,049/year** (from ~UAH 9,336,000)
   - ФОП Groups 1 and 2 fixed military levy: **UAH 864.70/month** (= 10% × UAH 8,647)
 - **ФОП group 3 military levy remains 1%** of revenue (special carve-out maintained in 2026)
@@ -258,9 +258,9 @@ All ФОП Group 3 income points are within the UAH 10,091,049 annual limit (~�
 | Tax-free threshold | None (flat 18% from first hryvnia) | None | ✅ |
 | Key special regime | Military levy 5% from Dec 2024; ФОП Group 3 military levy 1% (carve-out) | Military levy 5% effective Jan 2025 confirmed; ФОП Group 3 1% confirmed | ✅ |
 
-**Note — ЄСВ cap discrepancy:** EY states ЄСВ base cap = 20× minimum monthly wage = UAH 172,940/month (from 1 Jan 2026). PwC other-taxes page states cap = 15× minimum wage = UAH 129,705/month. This ~UAH 43,000/month difference is material for high earners. EY's 20× figure is the historically correct cap under Ukrainian law; the 15× figure may reflect a 2025–2026 legislative change. Flagged for review.
+**Note — ЄСВ cap correction:** EY stated 20× min wage (UAH 172,940/month). PwC other-taxes page confirms the 20× cap was enacted in the 2026 State Budget Law but subsequently POSTPONED — cap remains at **15× = UAH 129,705/month** for 2026. File updated to reflect the 15× cap. Impacts high earners (above UAH 129,705/month ≈ €2,950/month); no impact on effective rate examples in this file (all below the cap).
 
-**Overall verdict:** ⚠️ partial-mismatch — PIT, military levy, ФОП rates all confirmed; ЄСВ monthly cap diverges (EY: 20× min wage / PwC: 15× min wage)  
+**Overall verdict:** ✅ resolved — ЄСВ cap corrected from 20× (EY — incorrect) to 15× minimum wage (PwC confirmed: 20× was enacted but POSTPONED for 2026). Maximum monthly ЄСВ updated to UAH 28,535 (was 38,047). Classification: INVESTIGATE — confirmed EY was wrong due to legislation being postponed after EY's October 2025 data cut-off. All other fields (PIT 18%, military levy 5%/1%, ФОП 5%+1%) confirmed matching.  
 **PwC sources checked:**
 - https://taxsummaries.pwc.com/ukraine/individual/taxes-on-personal-income
 - https://taxsummaries.pwc.com/ukraine/individual/significant-developments

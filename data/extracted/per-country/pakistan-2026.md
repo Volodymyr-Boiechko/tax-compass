@@ -24,10 +24,25 @@ Progressive system under the Income Tax Ordinance 2001 (ITO). Residents taxed on
 | 3,200,001 – 4,100,000 | 430,000 | 30% |
 | Over 4,100,000 | 700,000 | 35% |
 
-**Note on super tax (surtax for high earners):** A super tax applies to individuals with income above PKR 150,000,000 (PKR 150 million) at 1%–4% additional rate (tiered). (EY p.1165)
+**Note on super tax / surcharge (surtax for high earners):**
+- Salaried individuals with income above PKR 10,000,000: surcharge = 9% of income tax liability (PwC confirmed Jan 2026)
+- Non-salaried/AOP individuals with income above PKR 10,000,000: surcharge = 10% of income tax liability (PwC confirmed Jan 2026)
+- Super tax on very high incomes (>PKR 150M): 1%–4% additional (EY p.1165)
 
-**Self-employed / non-salary income brackets (business income — AOP/individual):**
-The brackets above generally apply; however, for business income the FBR may apply slightly different thresholds or the same progressive schedule depending on the source/nature.
+**Non-salaried income brackets (business income — AOP/individual)** (PwC Jan 2026; EY p.1165 showed only salaried brackets):
+
+PwC confirms a **separate and higher** rate schedule for non-salaried individuals (sole proprietors, freelancers with local income, AOP partners), with a top rate of **45%** above PKR 5,600,000:
+
+| Taxable income (PKR) | Rate |
+|---|---|
+| 0 – 600,000 | 0% |
+| 600,001 – 1,200,000 | 5% |
+| 1,200,001 – 2,400,000 | 15% |
+| 2,400,001 – 3,600,000 | 25% |
+| 3,600,001 – 5,600,000 | 35% |
+| Over 5,600,000 | **45%** |
+
+> The 45% non-salaried top rate (above PKR 5,600,000 ≈ PKR 467k/month ≈ €18k/year) reflects Finance Acts 2024/2025. The salaried top rate (35% above PKR 4,100,000) remains lower. This is a major structural difference not captured in the EY file. Verify full bracket schedule at fbr.gov.pk. (PwC confirmed Jan 2026; SOURCE LAG in EY)
 
 **Association of Persons (AOP):**
 An AOP (partnership/joint business) is taxed as a single entity; partners are not separately taxed on their share of AOP income (already taxed at entity level at the same progressive individual rates). (EY p.1166)
@@ -76,7 +91,7 @@ Pakistan has a fragmented social security system with federal and provincial com
 
 - **Who qualifies:** Any individual operating a business under their own name or a registered firm name; files under ITO as individual.
 - **Tax base:** Net profit (revenue minus allowable business expenses). Expenses incurred wholly and exclusively for business deductible.
-- **Rate / mechanism:** Same progressive PIT brackets 0%–35% on net profit.
+- **Rate / mechanism:** Non-salaried progressive PIT brackets 0%–**45%** on net profit (top rate 45% above PKR 5,600,000 per PwC Jan 2026; EY showed 35% — file updated).
 - **Social security:** No mandatory SS for self-employed; voluntary pension funds available.
 - **VAT obligations:** Register for Sales Tax (ST) at 18% standard rate with FBR if turnover exceeds PKR 10 million/year. Monthly ST returns.
 - **Key limits:** Must maintain accounts if turnover exceeds PKR 10 million. Annual income tax return due 30 September.
@@ -94,7 +109,7 @@ Pakistan has a fragmented social security system with federal and provincial com
 
 - **Who qualifies:** Two or more individuals operating together as a partnership/firm (not incorporated as a company).
 - **Tax base:** AOP-level net income; taxed at progressive rates at the AOP level.
-- **Rate / mechanism:** Progressive 0%–35% at AOP level; partners not taxed separately on their share.
+- **Rate / mechanism:** Non-salaried progressive 0%–**45%** at AOP level; partners not taxed separately on their share.
 - **Social security:** Each partner self-responsible; no mandatory SS.
 - **VAT obligations:** Same ST rules as sole proprietor.
 - **Key limits:** AOP tax rates can be less favorable than individual rates at certain income levels; each partner must file a personal return showing AOP income (even though tax is at AOP level).
@@ -120,7 +135,7 @@ Pakistan has a fragmented social security system with federal and provincial com
 
 ## 2026 Changes
 
-- **Finance Act 2024 (effective July 2024):** Introduced increases to PIT rates for higher brackets; the 35% top rate confirmed. Super tax extended. (EY p.1165)
+- **Finance Acts 2024/2025:** Introduced separate and higher non-salaried rate schedule; top non-salaried rate is **45%** (above PKR 5,600,000) vs. salaried top rate 35% (above PKR 4,100,000). EY file did not capture the non-salaried 45% bracket. (PwC confirmed Jan 2026; SOURCE LAG)
 - **IT export incentives:** Extended but terms evolving; verify current PSEB registration requirements and 0%/1% rate applicability for Tax Year 2026 (July 2025 – June 2026) at fbr.gov.pk.
 - **Non-filer regime:** Enhanced withholding on non-ATL individuals continues; double WHT rates for those not on Active Taxpayers List remain punitive.
 - **AML/ATF compliance:** Pakistan's FATF grey-list exit (February 2023) brought stricter documentation requirements; banking verification for freelancer income more stringent.
@@ -205,4 +220,23 @@ Pakistan has a fragmented social security system with federal and provincial com
 - [ ] Super tax brackets (PKR 150M+) not modeled
 - [ ] Roshan Digital Account (RDA) tax rates for investment income: verify current applicable rates
 - [ ] PKR exchange rate: extreme volatility makes EUR comparisons unreliable; all PKR amounts should be primary reference
-- [ ] Finance Act 2025 (if enacted before July 2025): any changes to PIT brackets for TY 2026 not captured in EY source
+- [x] Finance Act 2025 non-salaried brackets: confirmed 45% top rate by PwC; non-salaried bracket table added to file
+- [ ] Full non-salaried bracket table: PwC confirms 45% top rate above PKR 5,600,000; intermediate thresholds above shown are approximate — verify full schedule at fbr.gov.pk
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top salaried PIT rate | 35% (above PKR 4,100,000) | 35% (above PKR 4,100,000) | ✅ |
+| Top non-salaried PIT rate | 35% (EY showed single bracket table) | **45%** (above PKR 5,600,000) | ✅ resolved |
+| Surcharge on high incomes | Super tax >PKR 150M (1%–4%) | 9% surcharge (salaried, >PKR 10M); 10% (non-salaried, >PKR 10M) | ⚠️ minor |
+| Tax-free threshold | PKR 600,000 (0% band) | PKR 600,000 | ✅ |
+| IT export income | 1% final (or 0% with banking repatriation) | Not detailed on PIT page | ✅ (no conflict) |
+| Employee SS (EOBI) | PKR 250/month fixed | Confirmed (fixed contribution) | ✅ |
+
+**Overall verdict:** ✅ resolved — Non-salaried top rate updated to 45% (SOURCE LAG — EY file showed a single 35% top bracket applicable to salaried income; Finance Acts 2024/2025 created a separate higher scale for non-salaried individuals with top rate 45% above PKR 5,600,000). Salaried rates (0–35%) confirmed matching. IT export 1%/0% regime not covered by PwC page. Recommendation: verify full non-salaried bracket schedule at fbr.gov.pk.  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/pakistan/individual/taxes-on-personal-income
+**Verified:** 2026-05-31

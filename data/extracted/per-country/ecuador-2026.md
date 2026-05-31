@@ -100,8 +100,8 @@ The Social Security Institute (IESS) manages the social security system covering
 
 | Contribution | Employee | Employer | Self-employed |
 |---|---|---|---|
-| Social security (IESS) | 9.45% | 12.15% | varies |
-| **Total** | **9.45%** | **12.15%** | — |
+| Social security (IESS) | 9.45% | 12.15% | **17.6%** (voluntary IESS) |
+| **Total** | **9.45%** | **12.15%** | **17.6%** |
 
 **Notes:**
 - Employee SS contributions ARE deductible for income tax purposes. (EY p.372)
@@ -117,7 +117,7 @@ The Social Security Institute (IESS) manages the social security system covering
 - **Who qualifies:** Sole proprietors, active members of partnerships, independent professionals conducting business activities in Ecuador.
 - **Tax base:** Net income from business activities; all deductible business expenses: directly incurred costs, business debt interest (up to Central Bank rate), taxes levied on the business (excluding income tax), SS contributions, pension/savings fund contributions, depreciation, amortization of losses, salaries/wages and fringe benefits, profit-sharing (15%), severance, insurance premiums, provisions for uncollectible receivables, income tax and SS if assumed by employer, expenses at contract/invoice completion. (EY p.372–373)
 - **Rate / mechanism:** Progressive annual rates 0%–37% (same scale as employment).
-- **Social security:** Self-employed register with IESS; contribution rates not specified in EY source.
+- **Social security:** Self-employed register with IESS as voluntary contributors; rate **17.6%** of income (PwC confirmed 2026-05-31; EY source did not specify self-employed rate).
 - **VAT obligations:** VAT (IVA) applies; standard rate 15% (reduced 5% for certain goods). Must register and file.
 - **Key limits:** 5-year loss carryforward. Filing between 10 March and 28 March (depending on 9th digit of tax ID). (EY p.374)
 
@@ -184,11 +184,11 @@ The Social Security Institute (IESS) manages the social security system covering
 | Gross income | Scenario | Income tax | Social security | Total burden | **Effective rate** |
 |---|---|---|---|---|---|
 | USD 30,000 | Employment | USD 1,508 | USD 2,835 | USD 4,343 | **~14.5%** |
-| USD 30,000 | B2B self-employment | USD 2,032 | est. USD 2,835 | USD ~4,867 | **~16.2%** |
+| USD 30,000 | B2B self-employment | USD 2,032 | USD 5,280 (17.6% IESS) | USD ~7,312 | **~24.4%** |
 | USD 60,000 | Employment | USD 7,866 | USD 5,670 | USD 13,536 | **~22.6%** |
-| USD 60,000 | B2B self-employment | USD 9,416 | est. USD 5,670 | USD ~15,086 | **~25.1%** |
+| USD 60,000 | B2B self-employment | USD 9,416 | USD 10,560 (17.6% IESS) | USD ~19,976 | **~33.3%** |
 | USD 100,000 | Employment | USD 21,166 | USD 9,450 | USD 30,616 | **~30.6%** |
-| USD 100,000 | B2B self-employment | USD 23,566 | est. USD 9,450 | USD ~33,016 | **~33.0%** |
+| USD 100,000 | B2B self-employment | USD 23,566 | USD 17,600 (17.6% IESS) | USD ~41,166 | **~41.2%** |
 
 **Working — USD 60,000 Employment:**
 - SS: 9.45% × 60,000 = USD 5,670
@@ -208,7 +208,7 @@ The Social Security Institute (IESS) manages the social security system covering
 - Zero-rate band USD 12,081 applied
 - Personal expense discounts not modeled (require documented receipts)
 - Exempt bonuses (13th/14th salary) excluded from gross income
-- B2B SS estimated at same 9.45% as employee (self-employed IESS rate not specified in EY source)
+- B2B SS: 17.6% IESS voluntary contributor rate (PwC confirmed; corrected from 9.45% estimate)
 
 ---
 
@@ -220,7 +220,7 @@ The Social Security Institute (IESS) manages the social security system covering
 
 ## Known Gaps
 
-- [ ] Self-employed IESS contribution rate not specified in EY source; 9.45% employee rate used as estimate
+- [x] Self-employed IESS rate: 17.6% voluntary contributor rate confirmed by PwC 2026-05-31; file updated
 - [ ] Personal expense discount documentation requirements not modeled; would reduce effective rates meaningfully
 - [ ] VAT (IVA) rate confirmed as 15% standard (reduced from 12% in 2024 as temporary measure; verify current rate)
 - [ ] Micro-enterprise special regimes (RIMPE — Régimen RIMPE) for small businesses not detailed in EY personal income section
@@ -242,7 +242,7 @@ The Social Security Institute (IESS) manages the social security system covering
 
 **Notes:** PwC confirms 2026 brackets with slightly updated thresholds (USD 12,208 vs EY's 2025 figure of USD 12,081 — annual index update confirmed). Top rate and structure identical. PwC other-taxes page confirms employee IESS 9.45% and employer 12.15%. Importantly, PwC confirms self-employed/voluntary contributors pay 17.6% — the EY file estimated 9.45% for self-employed which is incorrect; the correct self-employed IESS rate is 17.6% for voluntary contributors.
 
-**Overall verdict:** ⚠️ partial-mismatch (self-employed SS rate: EY file estimated 9.45%, PwC confirms 17.6% for voluntary self-employed contributions — file should be updated)  
+**Overall verdict:** ✅ resolved — Self-employed IESS rate updated from estimated 9.45% to confirmed 17.6% (PRESENTATION — EY source didn't specify SE rate; PwC other-taxes confirms 17.6% for voluntary contributors). B2B effective rates recomputed: €30k 24.4% (was 16.2%), €60k 33.3% (was 25.1%), €100k 41.2% (was 33.0%). Employee rate 9.45% confirmed matching. Classification: PRESENTATION/SOURCE LAG.  
 **PwC sources checked:**
 - https://taxsummaries.pwc.com/ecuador/individual/taxes-on-personal-income
 - https://taxsummaries.pwc.com/ecuador/individual/other-taxes
