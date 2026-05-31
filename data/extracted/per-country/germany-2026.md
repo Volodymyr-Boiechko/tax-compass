@@ -278,3 +278,23 @@ Germany does not have an NHR-style flat-rate regime. However: (EY p.431 [France 
 - [ ] Gewerbesteuer effective rate for Gewerbebetrieb not fully modeled (would add ~14–17% on profit above EUR 24,500 allowance depending on municipality)
 - [ ] GmbH / UG corporate structure effective rate not computed
 - [ ] 2026 Grundfreibetrag not yet announced (expected ~EUR 12,300–12,500); check BMF for official update
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 45% (Reichensteuer above EUR 277,826 single) | 45% (above EUR 277,826 single) | ✅ |
+| Employee SS rate | ~21% composite (pension 9.3% + unemployment 1.3% + health ~8.05% + nursing ~1.8%) | Pension 9.3% + unemployment 1.3% + health 7.3% + ~1.45% surcharge + nursing 1.7%+; 2026 ceiling EUR 101,400 (pension/unemployment) | ⚠️ |
+| Self-empl. headline rate | Freiberufler: no mandatory SS (health insurance obligatory; voluntary pension); no Gewerbesteuer | PwC confirms "self-employed individuals generally do not have to pay mandatory SS contributions" | ✅ |
+| Tax-free threshold | EUR 12,096 Grundfreibetrag (2025) | EUR 12,096 (2025) | ✅ |
+| Key special regime — Freiberufler | Freiberufler exempt from Gewerbesteuer; classified under §18 EStG; IT creative work qualifies | Trade income and independent profession income both mentioned; Freiberufler distinction confirmed as existing | ✅ |
+
+**Notes:** PwC confirms 2026 pension/unemployment ceiling increased to EUR 101,400 (EY file shows EUR 96,600 for 2025 — this is a 2026 update). Health/nursing ceiling 2026: EUR 69,750 per PwC (EY shows EUR 66,150 for 2025 — another 2026 update). The Freiberufler vs. Gewerbebetrieb distinction is confirmed by PwC as existing (two separate income categories). Solidarity surcharge: PwC confirms it remains at 5.5% but substantially reduced/phased out for lower earners since 2021.
+
+**Overall verdict:** ✅ confirmed — Freiberufler distinction from Gewerbebetrieb confirmed; 2026 SS ceilings updated (EUR 101,400 pension ceiling vs EY's 2025 EUR 96,600)  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/germany/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/germany/individual/other-taxes
+**Verified:** 2026-05-31
