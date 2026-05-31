@@ -81,7 +81,7 @@ Administered by the Social Insurance Department and General Healthcare System (G
 
 | Contribution | Employee | Employer | Self-employed |
 |---|---|---|---|
-| Social insurance | **8.8%** | **8.8%** | **15.6%** |
+| Social insurance | **8.8%** | **8.8%** | **16.6%** |
 | Redundancy Fund | — | 1.2% | — |
 | Human Resource Dev. Authority | — | 0.5% | — |
 | Social Cohesion Fund | — | 2.0% | — |
@@ -105,7 +105,7 @@ GHS cap: **EUR 180,000** annual income (all sources combined) (EY p. 329–330)
 
 **Total employee burden (2025):** Social insurance 8.8% + GHS 2.65% = **11.45%** (capped at EUR 66,612 for social insurance; EUR 180,000 for GHS)
 
-**Total self-employed burden (2025):** Social insurance 15.6% + GHS 4.0% = **19.6%** (subject to profession-specific minimum and maximum bases)
+**Total self-employed burden (2026):** Social insurance **16.6%** + GHS 4.0% = **20.6%** (subject to profession-specific minimum and maximum bases; SI rate updated from 15.6% per PwC 2026-05-31)
 
 ---
 
@@ -116,7 +116,7 @@ GHS cap: **EUR 180,000** annual income (all sources combined) (EY p. 329–330)
 - **Who qualifies:** Any individual registered as self-employed with the Tax Department and Social Insurance.
 - **Tax base:** Net taxable income (revenue minus allowable business expenses). Fully deductible: all expenses incurred wholly and exclusively for business. Depreciation allowances: plant/machinery 10%/year; industrial buildings 4%/year.
 - **Rate / mechanism:** Standard PIT brackets (2026: 0%/20%/25%/30%/35%). Annual PIT return by 31 July (self-employed without audited statements) or 31 March of second following year (with audited statements). (EY p. 330)
-- **Social security:** 15.6% social insurance + 4.0% GHS = **19.6%** on net income. Subject to profession-specific minimum annual base and maximum base (linked to occupation type). (EY p. 328)
+- **Social security:** **16.6%** social insurance + 4.0% GHS = **20.6%** on net income. Subject to profession-specific minimum annual base and maximum base (linked to occupation type). (EY p. 328; SI rate corrected to 16.6% per PwC 2026)
 - **VAT obligations:** VAT registration required if annual taxable turnover > EUR 15,600 (Cyprus threshold). Standard VAT rate: 19%.
 - **Key limits:** No income ceiling. Audited financial statements required if annual turnover > EUR 70,000.
 
@@ -232,15 +232,15 @@ Major tax reform enacted and effective from **1 January 2026**:
 | Step | Calculation | Result |
 |---|---|---|
 | Gross revenue/income | — | €30,000 |
-| Social insurance (15.6%) | 15.6% × €30,000 | €4,680 |
+| Social insurance (16.6%) | 16.6% × €30,000 | €4,980 |
 | GHS (4.0%) | 4.0% × €30,000 | €1,200 |
-| Total self-employed contributions | — | €5,880 |
-| PIT base | €30,000 − €5,880 | €24,120 |
+| Total self-employed contributions | — | €6,180 |
+| PIT base | €30,000 − €6,180 | €23,820 |
 | PIT: 0% on €22,000 | €0 | |
-| PIT: 20% on €2,120 | €424 | |
-| Total PIT | — | €424 |
-| **Total burden** | €5,880 + €424 | **€6,304** |
-| **Effective rate** | €6,304 / €30,000 | **21.0%** |
+| PIT: 20% on €1,820 | €364 | |
+| Total PIT | — | €364 |
+| **Total burden** | €6,180 + €364 | **€6,544** |
+| **Effective rate** | €6,544 / €30,000 | **21.8%** |
 
 ### Working: €60,000 Employment (standard, 2026 brackets)
 
@@ -264,17 +264,17 @@ Major tax reform enacted and effective from **1 January 2026**:
 | Step | Calculation | Result |
 |---|---|---|
 | Gross revenue/income | — | €60,000 |
-| Social insurance (15.6%) | 15.6% × €60,000 | €9,360 |
+| Social insurance (16.6%) | 16.6% × €60,000 | €9,960 |
 | GHS (4.0%) | 4.0% × €60,000 | €2,400 |
-| Total contributions | — | €11,760 |
-| PIT base | €60,000 − €11,760 | €48,240 |
+| Total contributions | — | €12,360 |
+| PIT base | €60,000 − €12,360 | €47,640 |
 | PIT: 0% on €22,000 | €0 | |
 | PIT: 20% on €10,000 | €2,000 | |
 | PIT: 25% on €10,000 | €2,500 | |
-| PIT: 30% on €6,240 | €1,872 | |
-| Total PIT | — | €6,372 |
-| **Total burden** | €11,760 + €6,372 | **€18,132** |
-| **Effective rate** | €18,132 / €60,000 | **30.2%** |
+| PIT: 30% on €5,640 (€42k–€47,640) | €1,692 | |
+| Total PIT | — | €6,192 |
+| **Total burden** | €12,360 + €6,192 | **€18,552** |
+| **Effective rate** | €18,552 / €60,000 | **30.9%** |
 
 ### Working: €100,000 Employment (standard, 2026 brackets)
 
@@ -314,30 +314,30 @@ Major tax reform enacted and effective from **1 January 2026**:
 | Step | Calculation | Result |
 |---|---|---|
 | Gross revenue/income | — | €100,000 |
-| Social insurance (15.6%, max cap applies) | 15.6% × €66,612 (cap) | €10,391 |
+| Social insurance (16.6%, max cap applies) | 16.6% × €66,612 (cap) | €11,058 |
 | GHS (4.0%) | 4.0% × €100,000 | €4,000 |
-| Total contributions | — | €14,391 |
-| PIT base | €100,000 − €14,391 | €85,609 |
+| Total contributions | — | €15,058 |
+| PIT base | €100,000 − €15,058 | €84,942 |
 | PIT: 0% on €22,000 | €0 | |
 | PIT: 20% on €10,000 | €2,000 | |
 | PIT: 25% on €10,000 | €2,500 | |
-| PIT: 30% on €30,000 | €9,000 | |
-| PIT: 35% on €13,609 | €4,763 | |
-| Total PIT | — | €18,263 |
-| **Total burden** | €14,391 + €18,263 | **€32,654** |
-| **Effective rate** | €32,654 / €100,000 | **32.7%** |
+| PIT: 30% on €30,000 (€42k–€72k) | €9,000 | |
+| PIT: 35% on €12,942 (above €72k) | €4,530 | |
+| Total PIT | — | €18,030 |
+| **Total burden** | €15,058 + €18,030 | **€33,088** |
+| **Effective rate** | €33,088 / €100,000 | **33.1%** |
 
 ### Summary table (2026 brackets)
 
 | Gross income | Scenario | Income tax | Social (employee/self) | Total burden | **Effective rate** |
 |---|---|---|---|---|---|
 | €30,000 | Employment (standard) | €913 | €3,435 | €4,348 | **14.5%** |
-| €30,000 | Self-employed (standard) | €424 | €5,880 | €6,304 | **21.0%** |
+| €30,000 | Self-employed (standard) | €364 | €6,180 | €6,544 | **21.8%** |
 | €60,000 | Employment (standard) | €7,839 | €6,870 | €14,709 | **24.5%** |
-| €60,000 | Self-employed (standard) | €6,372 | €11,760 | €18,132 | **30.2%** |
+| €60,000 | Self-employed (standard) | €6,192 | €12,360 | €18,552 | **30.9%** |
 | €100,000 | Employment (standard) | €20,321 | €8,512 | €28,833 | **28.8%** |
 | €100,000 | Employment — Art. 8(23A) 50% exempt | €5,623 | €8,512 | €14,135 | **14.1%** |
-| €100,000 | Self-employed (standard) | €18,263 | €14,391 | €32,654 | **32.7%** |
+| €100,000 | Self-employed (standard) | €18,030 | €15,058 | €33,088 | **33.1%** |
 
 **Key insights:**
 - **Employment at €30k is very competitive (14.5%)** due to the €22,000 zero-rate band
@@ -348,7 +348,8 @@ Major tax reform enacted and effective from **1 January 2026**:
 
 **Assumptions:**
 - 2026 PIT brackets (0%/20%/25%/30%/35% at €22k/€32k/€42k/€72k)
-- Social insurance cap: €66,612/year (2025 rate; 2026 cap may be updated)
+- Self-employed social insurance: **16.6%** (updated from 15.6% per PwC 2026; classification: INDEXATION)
+- Social insurance cap: €66,612/year (2025 rate; 2026 cap may be updated — see Known Gaps)
 - Self-employed social insurance cap applied at same level (profession-specific minimums not applied — actual minimum base may raise effective contribution for very low income)
 - Art. 8(23A): 50% exemption applied; income €100k exceeds EUR 55,000 threshold
 - Non-Dom: dividend/interest income not included in scenarios above
@@ -387,14 +388,14 @@ Major tax reform enacted and effective from **1 January 2026**:
 |---|---|---|---|
 | Top marginal PIT rate | 35% (above EUR 60,000 in 2025; EUR 72,000 from 2026) | 35% (above EUR 72,001 from 2026) | ✅ |
 | Employee SS rate | 8.8% (social insurance) + 2.65% GHS = 11.45% | 8.8% SI + 2.65% GHS (cap EUR 68,904 for SI in 2026) | ✅ |
-| Self-empl. headline rate | 16.6% SI + 4.0% GHS = 20.6% (2026; PwC shows 16.6%) | 16.6% SI + 4.0% GHS (note: EY shows 15.6% — PwC confirms 16.6% from 2024) | ⚠️ |
+| Self-empl. headline rate | 16.6% SI + 4.0% GHS = 20.6% (2026; corrected from EY 15.6%) | 16.6% SI + 4.0% GHS (PwC confirms 16.6% from 2024) | ✅ |
 | Tax-free threshold | EUR 19,500 (2025); EUR 22,000 (2026) | EUR 22,000 (2026) | ✅ |
 | Key special regime — Non-Dom | Non-Dom 0% SDC on dividends/interest (up to 17 yrs) | Confirmed: domicile-based SDC exemption; 17-year rule | ✅ |
 | Key special regime — Art. 8(23A) | 50% PIT exemption on employment income > EUR 55,000 for up to 17 yrs | Confirmed (referenced as 50% exemption for qualifying employees) | ✅ |
 
 **Notes:** EY file shows employee SI at 8.8% which matches PwC. Self-employed rate: EY file states 15.6% (2025) but PwC other-taxes page confirms 16.6% from 1 Jan 2024 — the EY file has a known gap noted. SDC on dividends reduced to 5% for domiciled residents from 2026 per EY; PwC page does not explicitly confirm this 2026 change.
 
-**Overall verdict:** ✅ confirmed (with minor note on self-employed SI rate: 16.6% per PwC vs 15.6% in EY file — file should be updated)  
+**Overall verdict:** ✅ resolved — Self-employed SI rate corrected from 15.6% to 16.6% (INDEXATION; PwC confirms 16.6% from 2024). All SE effective rates recomputed: €30k 21.8% (was 21.0%), €60k 30.9% (was 30.2%), €100k 33.1% (was 32.7%). All other fields confirmed matching.  
 **PwC sources checked:**
 - https://taxsummaries.pwc.com/cyprus/individual/taxes-on-personal-income
 - https://taxsummaries.pwc.com/cyprus/individual/other-taxes

@@ -26,14 +26,16 @@ Malta levies income tax (*taxxa fuq l-income*) under the Income Tax Act (ITA). P
 
 Maximum marginal rate: **35%** (EY p. 966)
 
-### Progressive tax rates — Married couples filing jointly (standard rates, 2025 basis year)
+### Progressive tax rates — Married couples filing jointly (standard rates, 2026 basis year)
 
 | Taxable income (EUR) | Tax rate | Tax due (EUR) | Cumulative tax due (EUR) |
 |---|---|---|---|
-| First 15,000 | 0% | 0 | 0 |
-| Next 8,000 (15,001–23,000) | 15% | 1,200 | 1,200 |
-| Next 37,000 (23,001–60,000) | 25% | 9,250 | 10,450 |
+| First 15,500 | 0% | 0 | 0 |
+| Next 7,500 (15,501–23,000) | 15% | 1,125 | 1,125 |
+| Next 37,000 (23,001–60,000) | 25% | 9,250 | 10,375 |
 | Above 60,000 | 35% | — | — |
+
+> Zero-rate threshold updated from EUR 15,000 (EY 2025) to EUR 15,500 (PwC 2026 — INDEXATION). (PwC confirmed 2026-05-31)
 
 ### New married rates (from 1 January 2026) — one child (not over 18, or 23 in full-time education)
 
@@ -315,7 +317,7 @@ Note: Non-dom programmes are beneficial primarily for high-income individuals wi
 | Key special regime — Non-Dom min tax | EUR 5,000 minimum annual tax (remittance basis) | EUR 5,000 confirmed (for EUR 35,000+ foreign income not remitted) | ✅ |
 | Key special regime — HQP/Highly Skilled | New 2026 framework: 15% flat rate (Tax Treatment of Highly Skilled Individuals Rules) | Confirmed: old HQP phased out; new rules give 15% for up to 15 years | ✅ |
 
-**Overall verdict:** ⚠️ partial-mismatch — Minor discrepancy on married zero-rate threshold: EY shows EUR 15,000; PwC shows EUR 15,500 for basis year 2026. Top rate (35%), Non-Dom EUR 5,000 minimum, and new HQP framework all confirmed. The EUR 500 difference on married bracket likely reflects 2026 indexation.  
+**Overall verdict:** ✅ resolved — Married zero-rate threshold updated from EUR 15,000 to EUR 15,500 (INDEXATION, 2026 basis year per PwC). Top rate (35%), Non-Dom EUR 5,000 minimum, and new HQP framework all confirmed matching. Classification: INDEXATION — minor annual threshold adjustment.  
 **PwC sources checked:**
 - https://taxsummaries.pwc.com/malta/individual/taxes-on-personal-income
 **Verified:** 2026-05-31

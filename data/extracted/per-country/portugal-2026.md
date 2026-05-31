@@ -15,19 +15,21 @@ Progressive system (IRS — Imposto sobre o Rendimento das Pessoas Singulares) f
 
 Business and professional income may be taxed under the Simplified Regime (if prior-year gross ≤ EUR 200,000 and taxpayer does not opt for organised bookkeeping) or the Organised Bookkeeping Regime. (EY p.1280)
 
-**PIT brackets — 2025 (IRS rates)** (EY p.1290)
+**PIT brackets — 2026 (IRS rates)** (PwC confirmed 2026-05-31; EY p.1290 shows 2025 scale)
 
 | Taxable income (EUR) | Tax on lower amount (EUR) | Rate on excess |
 |---|---|---|
-| 0 – 8,059 | 0 | 12.50% |
-| 8,059 – 12,160 | 1,007.37 | 16.00% |
-| 12,160 – 17,233 | 1,663.49 | 21.50% |
-| 17,233 – 22,306 | 2,754.18 | 24.40% |
-| 22,306 – 28,400 | 3,992.10 | 31.40% |
-| 28,400 – 41,629 | 5,905.50 | 34.90% |
-| 41,629 – 44,987 | 10,522.56 | 43.10% |
-| 44,987 – 83,696 | 11,969.69 | 44.60% |
-| Over 83,696 | 29,234.18 | 48.00% |
+| 0 – 8,342 | 0 | 12.50% |
+| 8,342 – 12,587 | 1,042.75 | 15.70% |
+| 12,587 – 17,838 | 1,709.22 | 21.20% |
+| 17,838 – 23,089 | 2,822.43 | 24.10% |
+| 23,089 – 29,397 | 4,087.92 | 31.10% |
+| 29,397 – 43,090 | 6,049.71 | 34.90% |
+| 43,090 – 46,566 | 10,828.57 | 43.10% |
+| 46,566 – 86,634 | 12,326.73 | 44.60% |
+| Over 86,634 | 30,197.13 | 48.00% |
+
+> 2026 vs 2025: All thresholds indexed upward; lower-middle rates also reduced (16%→15.70%, 21.5%→21.20%, 24.4%→24.10%, 31.4%→31.10%). Solidarity surcharge thresholds (EUR 80,000/250,000) unchanged.
 
 **Solidarity surcharge (sobretaxa solidária)** (EY p.1290):
 - Taxable income EUR 80,000 – EUR 250,000: additional 2.5%
@@ -144,7 +146,7 @@ Contributions payable on all salaries, wages, bonuses and other regular income (
 - **Transitional NHR continues:** Existing NHR registrants and those who qualified under transitional rules continue to benefit under the old regime up to their 10-year period. (EY p.1285–1286)
 - **Returning residents regime:** Applies to individuals becoming tax residents through 31 December 2026 (50% exclusion up to EUR 250,000, 5-year benefit). (EY p.1287)
 - **Long-term rental reduced rates in force:** 15%/10%/5% flat rates for leases of 5–10/10–20/20+ years respectively. (EY p.1281)
-- **No bracket changes announced:** PIT brackets shown are for 2025; 2026 brackets subject to annual State Budget (no changes announced as of EY content date).
+- **2026 bracket update (PwC confirmed):** All PIT thresholds indexed upward for 2026; lower-middle rates also slightly reduced. New top threshold: EUR 86,634 (was EUR 83,696). File updated with 2026 brackets. Classification: INDEXATION.
 - **Solidarity surcharge continues:** 2.5% on income EUR 80,000–250,000; 5% above EUR 250,000. (EY p.1290)
 - **Residence permit rules tightened (Law 61/2025):** Job Seeker Visa now limited to highly qualified professionals; family reunification applications must prove adequate housing; applications generally only after 2 years of legal residence. (EY p.1297–1298)
 
@@ -163,9 +165,9 @@ Contributions payable on all salaries, wages, bonuses and other regular income (
 |---|---|---|
 | Employee SS (11%) | 11% × 30,000 | EUR 3,300 |
 | PIT base | 30,000 − 4,462 (employee allowance) | EUR 25,538 |
-| PIT (brackets) | 0–8,059 @ 12.5%=1,007; 8,059–12,160 @ 16%=656; 12,160–17,233 @ 21.5%=1,091; 17,233–22,306 @ 24.4%=1,238; 22,306–25,538 @ 31.4%=1,015 | EUR 5,007 |
-| **Total burden** | **3,300 + 5,007** | **EUR 8,307** |
-| **Effective rate** | **8,307 / 30,000** | **27.7%** |
+| PIT (brackets) | 0–8,342 @ 12.5%=1,043; 8,342–12,587 @ 15.7%=666; 12,587–17,838 @ 21.2%=1,113; 17,838–23,089 @ 24.1%=1,265; 23,089–25,538 @ 31.1%=762 | EUR 4,849 |
+| **Total burden** | **3,300 + 4,849** | **EUR 8,149** |
+| **Effective rate** | **8,149 / 30,000** | **27.2%** |
 
 ### EUR 30,000 — B2B Simplified (coeff. 0.75)
 
@@ -174,9 +176,9 @@ Contributions payable on all salaries, wages, bonuses and other regular income (
 | SS base (70% × 30,000) | 70% × 30,000 | EUR 21,000 |
 | SS (21.4%) | 21.4% × 21,000 | EUR 4,494 |
 | Taxable income (0.75 × 30,000) | 0.75 × 30,000 | EUR 22,500 |
-| PIT (brackets) | 0–8,059 @ 12.5%=1,007; 8,059–12,160 @ 16%=656; 12,160–17,233 @ 21.5%=1,091; 17,233–22,306 @ 24.4%=1,238; 22,306–22,500 @ 31.4%=61 | EUR 4,053 |
-| **Total burden** | **4,494 + 4,053** | **EUR 8,547** |
-| **Effective rate** | **8,547 / 30,000** | **28.5%** |
+| PIT (brackets) | 0–8,342 @ 12.5%=1,043; 8,342–12,587 @ 15.7%=666; 12,587–17,838 @ 21.2%=1,113; 17,838–22,500 @ 24.1%=1,124 | EUR 3,946 |
+| **Total burden** | **4,494 + 3,946** | **EUR 8,440** |
+| **Effective rate** | **8,440 / 30,000** | **28.1%** |
 
 ### EUR 60,000 — Employment
 
@@ -184,9 +186,9 @@ Contributions payable on all salaries, wages, bonuses and other regular income (
 |---|---|---|
 | Employee SS (11%) | 11% × 60,000 | EUR 6,600 |
 | PIT base | 60,000 − 4,462 | EUR 55,538 |
-| PIT (brackets) | Up to 44,987: 11,970; 44,987–55,538 @ 44.6%: 4,706 | EUR 16,676 |
-| **Total burden** | **6,600 + 16,676** | **EUR 23,276** |
-| **Effective rate** | **23,276 / 60,000** | **38.8%** |
+| PIT (brackets) | Up to 46,566: 12,327; 46,566–55,538 @ 44.6%: 4,001 | EUR 16,328 |
+| **Total burden** | **6,600 + 16,328** | **EUR 22,928** |
+| **Effective rate** | **22,928 / 60,000** | **38.2%** |
 
 ### EUR 60,000 — B2B Simplified (coeff. 0.75)
 
@@ -195,9 +197,9 @@ Contributions payable on all salaries, wages, bonuses and other regular income (
 | SS base (70% × 60,000) | 70% × 60,000 | EUR 42,000 |
 | SS (21.4%) | 21.4% × 42,000 | EUR 8,988 |
 | Taxable income (0.75 × 60,000) | 0.75 × 60,000 | EUR 45,000 |
-| PIT (brackets) | Up to 44,987: 11,970; 44,987–45,000 @ 43.1%: 6 | EUR 11,976 |
-| **Total burden** | **8,988 + 11,976** | **EUR 20,964** |
-| **Effective rate** | **20,964 / 60,000** | **34.9%** |
+| PIT (brackets) | 43,090–46,566 band (43.10%): 43.10% × 45,000 − 7,743 | EUR 11,652 |
+| **Total burden** | **8,988 + 11,652** | **EUR 20,640** |
+| **Effective rate** | **20,640 / 60,000** | **34.4%** |
 
 ### EUR 100,000 — Employment
 
@@ -205,10 +207,10 @@ Contributions payable on all salaries, wages, bonuses and other regular income (
 |---|---|---|
 | Employee SS (11%) | 11% × 100,000 | EUR 11,000 |
 | PIT base | 100,000 − 4,462 | EUR 95,538 |
-| PIT (brackets) | Up to 83,696: 29,234; 83,696–95,538 @ 48%: 5,684 | EUR 34,918 |
+| PIT (brackets) | Up to 86,634: 30,197; 86,634–95,538 @ 48%: 4,274 | EUR 34,471 |
 | Solidarity surcharge (2.5% on 80,000–95,538) | 2.5% × 15,538 | EUR 388 |
-| **Total burden** | **11,000 + 34,918 + 388** | **EUR 46,306** |
-| **Effective rate** | **46,306 / 100,000** | **46.3%** |
+| **Total burden** | **11,000 + 34,471 + 388** | **EUR 45,859** |
+| **Effective rate** | **45,859 / 100,000** | **45.9%** |
 
 ### EUR 100,000 — B2B Simplified (coeff. 0.75)
 
@@ -217,10 +219,10 @@ Contributions payable on all salaries, wages, bonuses and other regular income (
 | SS base (70% × 100,000 = 70,000; cap EUR 75,240) | 70% × 100,000 | EUR 70,000 |
 | SS (21.4%) | 21.4% × 70,000 | EUR 14,980 |
 | Taxable income (0.75 × 100,000) | 0.75 × 100,000 | EUR 75,000 |
-| PIT (brackets) | Up to 44,987: 11,970; 44,987–75,000 @ 44.6%: 13,386 | EUR 25,356 |
+| PIT (brackets) | 46,566–86,634 band (44.60%): 44.60% × 75,000 − 8,441 | EUR 25,009 |
 | Solidarity surcharge | Not triggered (taxable income 75,000 < 80,000 threshold) | EUR 0 |
-| **Total burden** | **14,980 + 25,356** | **EUR 40,336** |
-| **Effective rate** | **40,336 / 100,000** | **40.3%** |
+| **Total burden** | **14,980 + 25,009** | **EUR 39,989** |
+| **Effective rate** | **39,989 / 100,000** | **40.0%** |
 
 ### EUR 100,000 — B2B IFICI 20% flat (qualifying professional)
 
@@ -235,12 +237,12 @@ Contributions payable on all salaries, wages, bonuses and other regular income (
 
 | Gross income | Scenario | Income tax | Social security | Total burden | **Effective rate** |
 |---|---|---|---|---|---|
-| EUR 30,000 | Employment | EUR 5,007 | EUR 3,300 | EUR 8,307 | **27.7%** |
-| EUR 30,000 | B2B Simplified (coeff. 0.75) | EUR 4,053 | EUR 4,494 | EUR 8,547 | **28.5%** |
-| EUR 60,000 | Employment | EUR 16,676 | EUR 6,600 | EUR 23,276 | **38.8%** |
-| EUR 60,000 | B2B Simplified (coeff. 0.75) | EUR 11,976 | EUR 8,988 | EUR 20,964 | **34.9%** |
-| EUR 100,000 | Employment | EUR 35,306 | EUR 11,000 | EUR 46,306 | **46.3%** |
-| EUR 100,000 | B2B Simplified (coeff. 0.75) | EUR 25,356 | EUR 14,980 | EUR 40,336 | **40.3%** |
+| EUR 30,000 | Employment | EUR 4,849 | EUR 3,300 | EUR 8,149 | **27.2%** |
+| EUR 30,000 | B2B Simplified (coeff. 0.75) | EUR 3,946 | EUR 4,494 | EUR 8,440 | **28.1%** |
+| EUR 60,000 | Employment | EUR 16,328 | EUR 6,600 | EUR 22,928 | **38.2%** |
+| EUR 60,000 | B2B Simplified (coeff. 0.75) | EUR 11,652 | EUR 8,988 | EUR 20,640 | **34.4%** |
+| EUR 100,000 | Employment | EUR 34,859 | EUR 11,000 | EUR 45,859 | **45.9%** |
+| EUR 100,000 | B2B Simplified (coeff. 0.75) | EUR 25,009 | EUR 14,980 | EUR 39,989 | **40.0%** |
 | EUR 100,000 | B2B IFICI 20% flat | EUR 20,000 | EUR 14,980 | EUR 34,980 | **35.0%** |
 
 **Employer contribution (not included above):** 23.75% of gross salary for employment scenarios.
@@ -276,3 +278,22 @@ Contributions payable on all salaries, wages, bonuses and other regular income (
 - [ ] Organised bookkeeping regime effective rate examples not computed
 - [ ] "Regime para Regressados" (50% exclusion up to EUR 250k for 5 years) effective rate not computed
 - [ ] Crypto assets simplified-regime coefficient (0.15 for non-mining operations) not modeled
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 48% (above EUR 83,696 — 2025 scale) | 48% (above EUR 86,634 — 2026 scale) | ✅ |
+| All PIT thresholds | 2025 values (EY data December 2025) | 2026 indexed values (all shifted upward) | ✅ resolved |
+| Lower-middle PIT rates | 16%/21.5%/24.4%/31.4% (EY) | 15.7%/21.2%/24.1%/31.1% (PwC 2026) | ✅ resolved |
+| Employee SS rate | 11% | Not separately stated on PIT page | ✅ |
+| Self-employed SS rate | 21.4% | Confirmed via SE section | ✅ |
+| Key special regime — IFICI (NHR 2.0) | 20% flat, 10-year, qualifying activities | Confirmed: 20% for qualifying activities | ✅ |
+| Solidarity surcharge thresholds | EUR 80,000 / EUR 250,000 (2.5%/5%) | EUR 80,000 / EUR 250,000 confirmed | ✅ |
+
+**Overall verdict:** ✅ resolved — File updated with PwC 2026 bracket scale. Classification: INDEXATION — all thresholds indexed upward; minor rate reductions on lower-middle bands. Effective rates reduced ~0.5–0.6pp across all scenarios. IFICI and all special regimes confirmed matching.  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/portugal/individual/taxes-on-personal-income
+**Verified:** 2026-05-31

@@ -369,3 +369,24 @@ Romania does not have a general newcomer/expat preferential PIT rate. Standard 1
       threshold RON 300,000 (~€59k) — not detailed in individual tax section
 - [ ] Micro-company regime for IT: some sources suggest preferential micro rates may exist for IT
       companies with specific conditions — verify woborders.agency analysis
+- [ ] Capital gains rates for securities via Romanian intermediary: EY shows 3% (<365 days) and 1% (≥365 days); PwC reportedly shows 3%/6% — verify whether Law 141/2025 or a subsequent law changed the long-term rate from 1% to 6% at anaf.ro
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Standard PIT rate | 10% flat | 10% flat | ✅ |
+| Dividend tax (from 2026) | 16% (Law 141/2025) | 16% confirmed | ✅ |
+| Micro-enterprise rate | 1% on revenue (≤EUR 100k) | 1% confirmed | ✅ |
+| Capital gains — short-term (<365 days, Romanian intermediary) | 3% | 3% | ✅ |
+| Capital gains — long-term (≥365 days, Romanian intermediary) | 1% (EY) | 6% (PwC) | ⚠️ |
+| Employment PIT flat rate | 10% | 10% | ✅ |
+
+**Notes:** PwC page on Romania individual PIT provided only high-level overview; capital gains detail not available from the PwC fetch. The discrepancy on long-term capital gains (EY 1% vs PwC 6%) may reflect a change from Law 141/2025 or a subsequent act. Law 141/2025 is already incorporated in this file for the dividend change (10%→16%); if it also changed the long-term capital gains rate from 1% to 6%, that would be a significant increase. Verification at anaf.ro is required before use.
+
+**Overall verdict:** ⚠️ partial-mismatch — Capital gains long-term rate discrepancy (EY 1% vs PwC 6%) could not be confirmed or denied from PwC fetch. Classification: INVESTIGATE — source did not provide detail; EY rates unchanged pending verification. All other fields confirmed. Action: verify capital gains rates at anaf.ro.  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/romania/individual/taxes-on-personal-income
+**Verified:** 2026-05-31

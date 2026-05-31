@@ -71,13 +71,13 @@ Five pillars: old-age pension, unemployment, health, nursing care, accident insu
 | Accident insurance (UV) | 0% | ~1–2% | — |
 | **Total (approx., with health surcharge)** | **~21.0–21.5%** | **~21.0–21.5%** | **Varies** |
 
-**Contribution ceilings 2025** (EY p.480):
-- Old-age pension + unemployment: EUR 96,600/year (West Germany) = EUR 8,050/month. No contributions on income above this ceiling.
-- Health + nursing care: EUR 66,150/year = EUR 5,512.50/month
+**Contribution ceilings 2026** (PwC confirmed; EY p.480 shows 2025 values: EUR 96,600 pension/unemployment, EUR 66,150 health):
+- Old-age pension + unemployment: **EUR 101,400/year** (West Germany) = EUR 8,450/month. No contributions on income above this ceiling.
+- Health + nursing care: **EUR 69,750/year** = EUR 5,812.50/month
 - Health insurance compulsory if income ≤ EUR 73,800/year; above this, can opt for private insurance (PKV)
 
 **Health insurance detail** (EY p.480):
-- Statutory health insurance (GKV): 14.6% total (7.3% employee + 7.3% employer) + average individual surcharge ~2.5% split equally → ~16%–17% total; capped at EUR 66,150
+- Statutory health insurance (GKV): 14.6% total (7.3% employee + 7.3% employer) + average individual surcharge ~2.5% split equally → ~16%–17% total; capped at EUR 69,750
 - Private health insurance (PKV): available if income > EUR 73,800; employer reimburses up to EUR 471.32/month
 
 **Nursing care** (EY p.480):
@@ -213,12 +213,12 @@ Germany does not have an NHR-style flat-rate regime. However: (EY p.431 [France 
 
 | Step | Calculation | Result |
 |---|---|---|
-| Employee SS | Pension/unemployment capped: pension contribution stops at 96,600 (≈EUR 8,984); health/nursing capped at 66,150 (≈EUR 5,615 + nursing EUR 1,791); total approx. | EUR 16,300 |
-| Taxable income | 100,000 − 16,300 − 1,230 | EUR 82,470 |
-| Income tax | From EY table: EUR 100,000 taxable → EUR 31,088 (31.09%); adjust for deductions: ~82,470 taxable → approx. | EUR 24,400 |
-| Soli | 5.5% × income tax if liability > EUR 18,130: 5.5% × 24,400 | EUR 1,342 |
-| **Total burden** | **16,300 + 24,400 + 1,342** | **EUR 42,042** |
-| **Effective rate** | **42,042 / 100,000** | **42.0%** |
+| Employee SS | Pension/unemployment ceiling EUR 101,400 (income €100k is below ceiling → full 9.3% + 1.3% applies); health/nursing capped at EUR 69,750; total approx. | EUR 17,900 |
+| Taxable income | 100,000 − 17,900 − 1,230 | EUR 80,870 |
+| Income tax | Marginal rate 42% above EUR 68,481; ~80,870 taxable → approx. | EUR 23,600 |
+| Soli | 5.5% × income tax if liability > EUR 18,130: 5.5% × 23,600 | EUR 1,298 |
+| **Total burden** | **17,900 + 23,600 + 1,298** | **EUR 42,798** |
+| **Effective rate** | **42,798 / 100,000** | **~42.8%** |
 
 ### EUR 100,000 — Freiberufler (15% expenses)
 
@@ -242,7 +242,7 @@ Germany does not have an NHR-style flat-rate regime. However: (EY p.431 [France 
 | EUR 30,000 | Freiberufler (15% expenses) | EUR 1,000 | EUR 4,200 | EUR 5,200 | **17.3%** |
 | EUR 60,000 | Employment | EUR 9,200 | EUR 12,600 | EUR 21,800 | **36.3%** |
 | EUR 60,000 | Freiberufler (15% expenses) | EUR 7,800 | EUR 7,200 | EUR 15,000 | **25.0%** |
-| EUR 100,000 | Employment | EUR 25,742 | EUR 16,300 | EUR 42,042 | **42.0%** |
+| EUR 100,000 | Employment | EUR 24,898 | EUR 17,900 | EUR 42,798 | **~42.8%** |
 | EUR 100,000 | Freiberufler (15% expenses, with pension) | EUR 11,605 | EUR 23,400 | EUR 35,005 | **35.0%** |
 
 **Employer contribution (not included above):** ~21% of gross salary for employment scenarios (additional cost to employer).
@@ -293,7 +293,7 @@ Germany does not have an NHR-style flat-rate regime. However: (EY p.431 [France 
 
 **Notes:** PwC confirms 2026 pension/unemployment ceiling increased to EUR 101,400 (EY file shows EUR 96,600 for 2025 — this is a 2026 update). Health/nursing ceiling 2026: EUR 69,750 per PwC (EY shows EUR 66,150 for 2025 — another 2026 update). The Freiberufler vs. Gewerbebetrieb distinction is confirmed by PwC as existing (two separate income categories). Solidarity surcharge: PwC confirms it remains at 5.5% but substantially reduced/phased out for lower earners since 2021.
 
-**Overall verdict:** ✅ confirmed — Freiberufler distinction from Gewerbebetrieb confirmed; 2026 SS ceilings updated (EUR 101,400 pension ceiling vs EY's 2025 EUR 96,600)  
+**Overall verdict:** ✅ resolved — SS ceilings updated to 2026 values (pension/unemployment EUR 101,400; health/nursing EUR 69,750); Freiberufler distinction confirmed. Classification: INDEXATION — annual ceiling adjustment. Effective rate at €100k revised to ~42.8% (was 42.0% with 2025 ceilings).  
 **PwC sources checked:**
 - https://taxsummaries.pwc.com/germany/individual/taxes-on-personal-income
 - https://taxsummaries.pwc.com/germany/individual/other-taxes
