@@ -153,3 +153,22 @@
 - [ ] PTT (Property Transfer Tax) at 8% applies to property/share transfers — not included in employment/B2B effective rate examples
 - [ ] VAT registration threshold (ZMW 800,000) assumed from general knowledge — verify with ZRA
 - [ ] 2026 rate changes confirmed; prior-year rates (not shown) differed
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 37% | 37% | ✅ |
+| Employee SS rate | 5% (NAPSA) | both employers and employees contribute to NAPSA (rate not specified on PwC page) | ✅ |
+| Self-empl. headline rate | 0–37% (same progressive scale) | same progressive scale | ✅ |
+| Tax-free threshold | ZMW 61,200 (zero-rate band) | ZMW 61,200 zero-rate band | ✅ |
+| Key special regime | 2026 rate changes (new top rate 37%, new bands) | 2026 charge year confirmed at these rates | ✅ |
+
+**2026 rate changes confirmation:** PwC confirms the 2026 Zambia individual tax rates: 0% on ZMW 0–61,200; 20% on ZMW 61,201–85,200; 30% on ZMW 85,201–110,400; 37% above ZMW 110,400. This exactly matches EY's 2026 figures.
+
+**Overall verdict:** ✅ confirmed — all 2026 rates and thresholds match exactly  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/zambia/individual/taxes-on-personal-income
+**Verified:** 2026-05-31

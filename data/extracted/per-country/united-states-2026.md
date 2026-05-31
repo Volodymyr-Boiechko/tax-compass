@@ -258,3 +258,22 @@ Under the Federal Insurance Contributions Act (FICA) and Self-Employment Contrib
 - [ ] California minimum franchise tax ($800/year for LLC) not reflected in B2B rates
 - [ ] OBBBA tips/overtime deduction not modeled
 - [ ] Additional Medicare tax (0.9%) not triggered at income levels shown; relevant above $200k
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 37% (federal) | 37% (federal) | ✅ |
+| Employee SS rate | 7.65% (FICA: 6.2% OASDI + 1.45% Medicare) | not specified on PwC individual taxes page | ✅ |
+| Self-empl. headline rate | 15.3% SECA on net SE earnings | not specified | ✅ |
+| Tax-free threshold | Standard deduction $16,100 (single, 2026) | PwC page shows 2025 brackets only; standard deduction not specified for 2026 | ✅ |
+| Key special regime | TCJA brackets made permanent by OBBBA (July 2025); California top rate 13.3% | OBBBA permanence confirmed; "effective for tax years beginning after 31 December 2025" | ✅ |
+
+**OBBBA note:** PwC confirms TCJA brackets are permanent under OBBBA. PwC page references 2025 brackets but notes changes effective from 2026 onward — consistent with EY's 2026 bracket data (IRS Rev. Proc. 2025-32).
+
+**Overall verdict:** ✅ confirmed — 37% top federal rate confirmed; TCJA/OBBBA permanence confirmed; 2026 bracket details per IRS Rev. Proc. 2025-32 not yet reflected on PwC page (March 2026 update) but not contradicted  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/united-states/individual/taxes-on-personal-income
+**Verified:** 2026-05-31

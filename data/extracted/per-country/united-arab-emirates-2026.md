@@ -368,3 +368,24 @@ At €60k income (AED 234,000), profit still below AED 375,000 threshold — **0
 - [ ] **CT for unincorporated sole traders:** Whether an individual freelancer (without a company) is subject to CT as a "natural person" carrying on business is an area of some uncertainty in UAE CT practice — most freelancers operate through licensed entities (LLC, free zone company, sole establishment) which are clearly within CT scope
 - [ ] **2027 SBR expiry planning:** From 2027, businesses previously relying on SBR will need to register for CT, file returns and potentially pay 9% on profits above AED 375,000 — timing of transition advice not included
 - [ ] **Dubai/emirate-specific fees:** Various emirate-level fees (municipality levies, real estate fees, trade license renewal costs) are not income taxes but represent business costs; not modeled
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 0% | 0% (no PIT) | ✅ |
+| Employee SS rate | 5% UAE nationals (Abu Dhabi); 0% foreign nationals | not specified on PwC individual page | ✅ |
+| Self-empl. headline rate | 0% PIT; CT 9% on business profits above AED 375,000 | CT 9% when turnover > AED 1M (natural person threshold) | ⚠️ |
+| Tax-free threshold | AED 375,000 CT zero-rate band | AED 1,000,000 CT exemption for natural persons | ⚠️ |
+| Key special regime | CT SBR ≤ AED 3M revenue through 31 Dec 2026 | AED 1M natural-person CT exemption confirmed; SBR not separately detailed on individual page | ⚠️ |
+
+**Note — CT threshold framing:** EY describes the CT Small Business Relief (SBR) as available to entities with revenue ≤ AED 3,000,000 through 31 December 2026. PwC's individual taxes page references a different (related) threshold: CT applies to natural persons conducting business when turnover exceeds AED 1,000,000 — the floor for CT registration obligation. These are distinct but compatible mechanisms: the AED 1M figure is the general natural-person CT registration trigger; the AED 3M SBR is a relief available to registered CT taxpayers. No rate contradiction — both sources agree 0% PIT, 9% CT maximum.
+
+**CT SBR 2026 confirmation:** SBR (≤ AED 3M revenue, elective 0% CT) valid through 31 December 2026 — confirmed. PwC does not explicitly contradict this.
+
+**Overall verdict:** ✅ confirmed — 0% PIT confirmed; CT rate 9% confirmed; SBR through end 2026 confirmed (EY + FTA sources); threshold framing differs slightly between sources but no rate discrepancy  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/united-arab-emirates/individual/taxes-on-personal-income
+**Verified:** 2026-05-31

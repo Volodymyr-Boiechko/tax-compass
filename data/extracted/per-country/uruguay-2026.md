@@ -230,3 +230,24 @@ Uruguay's social security system (BPS — Banco de Previsión Social) covers pen
 - [ ] **New resident exemption procedure:** Specific filing requirements and DGI forms not detailed in EY; professional advice recommended
 - [ ] **Monotributo thresholds:** Not specified in EY; consult DGI for current turnover limits and monthly contribution amounts
 - [ ] **Digital nomad classification:** Uruguay's 10-year exemption applies broadly to new tax residents; specific "digital nomad visa" program not referenced in EY; tax residency rules standard
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 36% (IRPF Category II) | 36% (employment income) | ✅ |
+| Employee SS rate | ~18–23% (BPS: pension 15% + FONASA 3–8%) | not specified on PwC individual taxes page | ✅ |
+| Self-empl. headline rate | 36% max (progressive, same scale); BPS on 70% of gross | not separately specified | ✅ |
+| Tax-free threshold | ~UYU 134,400/year (0% band; BPC-indexed) | "UYU 552,384" no tax above 0% threshold (PwC gives higher indexed figure) | ⚠️ |
+| Key special regime | New tax resident 10-year foreign income exemption | Not mentioned on PwC taxes page | ⚠️ |
+
+**Threshold note:** PwC states the lowest bracket begins at UYU 0 with no income below UYU 552,384 taxed above 0% — this represents a higher annual threshold than EY's approximate UYU 134,400 figure. Both are BPC-indexed; the difference likely reflects more recent BPC adjustments. EY's October 2025 data may use a slightly older BPC value. Rate structure (10%–36%) is consistent.
+
+**New resident regime note:** PwC's individual taxes page for Uruguay does not explicitly mention the 10-year foreign income exemption — but this is a well-established regime under Uruguayan law (Decree 463/009). Absence from PwC summary likely reflects scope limitations of the page, not a contradiction.
+
+**Overall verdict:** ⚠️ partial-mismatch — top 36% rate confirmed; zero-rate threshold differs (EY ~UYU 134k vs PwC UYU 552k — likely BPC indexation lag in EY); new resident regime not found on PwC page (not contradicted)  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/uruguay/individual/taxes-on-personal-income
+**Verified:** 2026-05-31

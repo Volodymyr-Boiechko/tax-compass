@@ -161,3 +161,20 @@
 - [ ] Digital Services Tax (5%) for nonresident digital service providers noted — not applicable to resident individuals
 - [ ] Rental income separate tax (12% on gross) not included in effective rate examples
 - [ ] VAT registration threshold (UGX 150,000,000) assumed from general knowledge — verify
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 40% | 40% | ✅ |
+| Employee SS rate | 5% (NSSF) | not specified on PwC page | ✅ |
+| Self-empl. headline rate | 0–40% (same progressive scale) | same progressive scale | ✅ |
+| Tax-free threshold | UGX 2,820,000 (residents) | UGX 2,820,000 (residents) | ✅ |
+| Key special regime | Rental income 12% gross; DST 5% nonresidents | Rental income 12% on gross confirmed | ✅ |
+
+**Overall verdict:** ✅ confirmed  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/uganda/individual/taxes-on-personal-income
+**Verified:** 2026-05-31

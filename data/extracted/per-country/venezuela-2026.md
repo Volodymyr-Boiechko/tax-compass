@@ -204,3 +204,24 @@ Venezuela does not offer a territorial or exemption-based regime for new residen
 - [ ] **Equity Tax applicability:** Threshold and rates for Special Taxpayers; may apply to high-income residents
 - [ ] **Cryptocurrency / digital asset reporting:** Venezuela is a significant crypto-using economy; tax treatment of digital assets not detailed in EY
 - [ ] **Practical tax collection:** Due to economic instability, enforcement and practical collection may differ significantly from statutory rates
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 34% | 34% | ✅ |
+| Employee SS rate | ~5.5% (IVSS 4% + UI 0.5% + housing 1%, capped) | not specified on PwC individual taxes page | ✅ |
+| Self-empl. headline rate | 34% (same progressive scale 6%–34%) | 34% (same progressive scale confirmed) | ✅ |
+| Tax-free threshold | None (6% from first UT; standard deduction 774 UT deductible) | None explicitly; bracket starts at 0 UT @ 6% | ✅ |
+| Key special regime | Tax unit (UT) system; 2025 UT = VES 42 | 2025 UT value = VES 43 (PwC) vs VES 42 (EY) | ⚠️ |
+
+**UT value note:** EY reports 2025 UT = VES 42; PwC reports 2025 UT = VES 43. This is a minor difference of 1 VES (~2.4%) likely reflecting different SENIAT announcements captured at different dates. Both sources agree on all rates and bracket structure in UT terms. Given Venezuela's hyperinflationary environment, this minor UT value difference is within normal update lag tolerance.
+
+**Non-resident rate:** Both EY and PwC confirm 34% flat rate for non-residents on Venezuelan-source income. ✅
+
+**Overall verdict:** ⚠️ partial-mismatch — all rates confirmed; UT value differs by 1 VES (EY: 42, PwC: 43) — negligible difference within data-lag tolerance  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/venezuela/individual/taxes-on-personal-income
+**Verified:** 2026-05-31

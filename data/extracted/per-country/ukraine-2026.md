@@ -246,3 +246,23 @@ All ФОП Group 3 income points are within the UAH 10,091,049 annual limit (~�
 - [ ] **Currency risk:** UAH/EUR assumption (44) directly affects all EUR-denominated rate calculations; significant devaluation would change the picture materially
 - [ ] **Non-resident taxation:** EY notes different rules for non-residents (Ukrainian-source income only, different withholding rates) — not detailed here
 - [ ] **Currency control:** EY notes annual limit EUR 200,000 for transfers abroad by Ukrainian currency control residents (citizens + permanent residents); relevant for cross-border freelancers
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 18% (flat) | 18% (flat) | ✅ |
+| Employee SS rate | 0% (ЄСВ employee = 0%; employer 22%) | 0% employee; employer 22% confirmed | ✅ |
+| Self-empl. headline rate | ФОП Group 3: 5% single tax + 1% military levy = 6% total | ФОП Group 3 1% military levy confirmed; 5% single tax confirmed | ✅ |
+| Tax-free threshold | None (flat 18% from first hryvnia) | None | ✅ |
+| Key special regime | Military levy 5% from Dec 2024; ФОП Group 3 military levy 1% (carve-out) | Military levy 5% effective Jan 2025 confirmed; ФОП Group 3 1% confirmed | ✅ |
+
+**Note — ЄСВ cap discrepancy:** EY states ЄСВ base cap = 20× minimum monthly wage = UAH 172,940/month (from 1 Jan 2026). PwC other-taxes page states cap = 15× minimum wage = UAH 129,705/month. This ~UAH 43,000/month difference is material for high earners. EY's 20× figure is the historically correct cap under Ukrainian law; the 15× figure may reflect a 2025–2026 legislative change. Flagged for review.
+
+**Overall verdict:** ⚠️ partial-mismatch — PIT, military levy, ФОП rates all confirmed; ЄСВ monthly cap diverges (EY: 20× min wage / PwC: 15× min wage)  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/ukraine/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/ukraine/individual/significant-developments
+- https://taxsummaries.pwc.com/ukraine/individual/other-taxes
+**Verified:** 2026-05-31

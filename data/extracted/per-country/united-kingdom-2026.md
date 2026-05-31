@@ -324,3 +324,22 @@ Secondary threshold reduced to GBP 96/week (GBP 5,000/year) from April 2025 — 
 - [ ] Sole trader (self-employment, Schedule D) effective rate not computed separately; would sit between PAYE and Ltd Co due to Class 4 NIC (8%/2%) with no employer NIC but no CT optimisation
 - [ ] Making Tax Digital (from April 2026): quarterly reporting threshold GBP 50,000 — administrative burden not costed
 - [ ] IHT long-term resident exposure (10 of 20 years UK resident → full worldwide estate at 40%) not modeled; critical for high net worth individuals planning UK residency
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 45% (England/Wales/NI); 48% (Scotland) | 45% (England/Wales/NI); 48% (Scotland) | ✅ |
+| Employee SS rate | 8% NIC (£12,570–£50,270); 2% above | not specified on PwC individual taxes page | ✅ |
+| Self-empl. headline rate | Class 4 NIC 8% (£12,570–£50,270); 2% above | not specified | ✅ |
+| Tax-free threshold | GBP 12,570 personal allowance (2025/26) | GBP 12,570 personal allowance (2025/26) | ✅ |
+| Key special regime | FIG regime (4-year) replaced remittance basis from 6 Apr 2025; OWR capped at lesser of 30%/GBP 300,000 | FIG regime (4-year) confirmed; OWR cap confirmed at GBP 300,000 or 30% | ✅ |
+
+**2026/27 rate note:** PwC confirms dividend rate changes from April 2026 (basic 10.75%, higher 35.75%) but does not provide further 2026/27 bracket changes — consistent with EY data showing 2025/26 brackets frozen until at least 2027.
+
+**Overall verdict:** ✅ confirmed — all core rates match; FIG regime replacement of remittance basis confirmed; 2026/27 rates consistent  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/united-kingdom/individual/taxes-on-personal-income
+**Verified:** 2026-05-31

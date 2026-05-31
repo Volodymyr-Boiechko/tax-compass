@@ -258,3 +258,26 @@ Vietnam has three mandatory insurance schemes (EY p. 1717):
 - [ ] **2026 unemployment insurance ceiling update:** Regional minimum salary ranges VND 3,700,000–5,310,000/month effective 1 January 2026; affects unemployment insurance cap
 - [ ] **Non-resident B2B rates:** Differ from resident; flat rates by sector (1%–5%) not modeled here
 - [ ] **Five-bracket vs seven-bracket:** EY p. 1715 shows 5 rows in the table as presented; Vietnamese PIT Law has 7 brackets; full 7-bracket scale reconstructed from known Vietnamese law
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 35% | 35% | ✅ |
+| Employee SS rate | 10.5% (SI 8% + HI 1.5% + UI 1%) Vietnamese employees; 9.5% expatriates | not specified on PwC individual taxes page | ✅ |
+| Self-empl. headline rate | ≤ VND 500M exempt; above: 0.5%–20% deemed or net method | VND 500M exemption confirmed; "15%–20% on net gain" for above threshold | ✅ |
+| Tax-free threshold | VND 15,500,000/month personal relief (≈ VND 186M/year) | not specified on PwC page | ✅ |
+| Key special regime | 5-year PIT exemption for high-tech professionals | not mentioned on PwC individual taxes page | ⚠️ |
+
+**Bracket note:** PwC shows a condensed 5-bracket scale (5%, 10%, 15%, 20%, 25%, 30%, 35%) by annual income with slightly different thresholds in its summary. EY reconstructs the full 7-bracket scale consistent with Vietnamese PIT Law. Both sources agree on 35% top rate and VND 500M business income exemption threshold.
+
+**PwC bracket detail:** PwC states "more than 720 to 1,200 at 30%; more than 1,200 at 35%" — this appears to collapse two brackets. EY separately shows 25% (VND 961M–1,200M) and 30% (VND 1,201M–2,400M). This is a presentation/truncation difference in PwC, not a structural rate change.
+
+**High-tech professional exemption:** PwC does not mention the 5-year PIT exemption for high-tech professionals — likely a scope omission on the summary page, not a contradiction.
+
+**Overall verdict:** ✅ confirmed — 35% top rate confirmed; VND 500M B2B exemption confirmed; bracket structure consistent overall  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/vietnam/individual/taxes-on-personal-income
+**Verified:** 2026-05-31

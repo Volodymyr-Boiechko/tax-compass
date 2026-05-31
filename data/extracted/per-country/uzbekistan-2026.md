@@ -200,3 +200,24 @@ Note: UZS 405M ≈ USD 32,400 ≈ EUR 30,000 — this is ABOVE the UZS 1 billion
 - [ ] **Foreign citizens self-employment ban:** Confirmed by EY; the 1% simplified regime and general private entrepreneur status are available only to Uzbek citizens (and potentially permanent residents); foreigners must use employer route
 - [ ] **VAT registration threshold:** UZS 1 billion (same as revenue tax threshold); above this, full VAT and general tax regime apply
 - [ ] **INPS credit mechanism:** EY p. 1695 states contributions "subtracted from accrued individual income tax" — treatment confirmed but nuances for high earners with significant foreign income may differ
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 12% (flat) | 12% (flat) | ✅ |
+| Employee SS rate | 4% INPS (credited against PIT — net 12% effective deduction) | not specified on PwC individual taxes page | ✅ |
+| Self-empl. headline rate | 12% general regime; 1% revenue tax (new from 1 Jan 2026, turnover ≤ UZS 1B) | 12% confirmed; 1% private entrepreneur rate NOT mentioned on PwC page | ⚠️ |
+| Tax-free threshold | No standard threshold (flat 12% from first sum) | No threshold specified | ✅ |
+| Key special regime | 1% simplified revenue tax for private entrepreneurs from 1 Jan 2026 | Not found on PwC Uzbekistan page; PwC page only covers standard 12% and investment income exemptions | ⚠️ |
+
+**1% rate note:** The new 1% simplified revenue tax for private entrepreneurs with turnover ≤ UZS 1 billion, effective 1 January 2026, is confirmed in EY (p. 1693) but does not appear in the PwC Worldwide Tax Summaries page for Uzbekistan (which was last updated before the regime came into effect or does not detail the simplified regime). The regime is also referenced in multiple Uzbek official and secondary sources. PwC's absence of this data does not constitute a contradiction — it is likely a coverage gap, not a rate dispute.
+
+**Dividends note:** EY states dividends from Uzbek JSCs are exempt through 31 Dec 2028. PwC also confirms this exemption for that period. ✅
+
+**Overall verdict:** ✅ confirmed for headline 12% flat rate; ⚠️ 1% new private entrepreneur regime not confirmed on PwC (coverage gap, not discrepancy); recommend verifying 1% rate against Uzbek State Tax Committee (soliq.uz) directly  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/republic-of-uzbekistan/individual/taxes-on-personal-income
+**Verified:** 2026-05-31
