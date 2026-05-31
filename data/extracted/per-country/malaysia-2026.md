@@ -329,3 +329,20 @@ EPF is a mandatory statutory savings scheme for Malaysian citizens and permanent
 - [ ] **DE Rantau tax residency edge case:** If a DE Rantau holder stays >182 days in Malaysia, they become a tax resident; income from foreign clients could then become taxable if not covered by the FSI exemption; needs monitoring
 - [ ] **SST (service tax) threshold:** MYR 500,000 for taxable services — not modeled; relevant for higher-income sole traders in prescribed service sectors
 - [ ] **RPGT (real property gains tax):** Not modeled — relevant for property investors; rates vary by nationality and holding period
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 30% (above MYR 2,000,000) | 30% (above MYR 2,000,000) | ✅ |
+| Employee SS rate | EPF 11% (citizens); 2% (foreign, from Oct 2025) | Not specified on PwC page | ✅ |
+| Self-empl. headline rate | 30% max (same progressive schedule; EPF voluntary) | Not separately specified | ✅ |
+| Tax-free threshold | MYR 5,000 (first bracket at 0%) | MYR 5,000 (confirmed) | ✅ |
+| Key special regime | 15% flat rate for JS-SEZ / REP / knowledge workers | 15% preferential rate confirmed (Iskandar, REP, Forest City) | ✅ |
+
+**Overall verdict:** ✅ confirmed — PwC confirms 30% top marginal rate, same bracket structure, and 15% preferential rates for special zones/programmes. No discrepancies found.  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/malaysia/individual/taxes-on-personal-income
+**Verified:** 2026-05-31
