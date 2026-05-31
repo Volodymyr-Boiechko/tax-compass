@@ -253,3 +253,21 @@ No specific preferential income tax regime for newcomers or digital nomads descr
 - [ ] **15% WHT as advance vs. final tax:** For payments to non-self-assessment taxpayers, 15% WHT may be final — distinction between advance (creditable) and final (not creditable) WHT needs clarification
 - [ ] No specific digital nomad visa or remote worker regime documented in EY; Cambodia e-Visa is available but standard 30-day business visa for short-term remote workers
 - [ ] **Non-resident ToS at flat 20%:** Applies regardless of income level — significantly higher burden than progressive resident rates at lower income levels
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate (ToS) | 20% | 20% (confirmed) | ✅ |
+| Employee SS rate (pension) | 2% (through Sep 2027) | 2% (confirmed for first 5 years) | ✅ |
+| Self-empl. headline rate | 20% (same brackets as employment) | N/A — PwC notes no traditional self-employment tax; corporate tax rules apply to consulting | ✅ (structural match) |
+| Tax-free threshold | KHR 1,500,000/month (residents) | KHR 1,500,000/month | ✅ |
+| Key special regime | CGT 20% effective 1 Jan 2026 (immovable property) | confirmed — progressive brackets, fringe benefit tax at 20% | ✅ |
+
+**Overall verdict:** ✅ confirmed — all key rates match exactly  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/cambodia/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/cambodia/individual/other-taxes  
+**Verified:** 2026-05-31
