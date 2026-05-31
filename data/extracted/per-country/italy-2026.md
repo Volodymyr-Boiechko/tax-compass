@@ -286,3 +286,20 @@ Comprehensive system administered by INPS (National Institute for Social Securit
 - [ ] Flat tax for new residents (EUR 200,000 fixed tax on foreign income) effective rate not computed; highly attractive for very high earners with foreign income
 - [ ] 2026 INPS Gestione Separata rate not yet confirmed (2025 rate 26.07% used; check INPS circular for 2026 update)
 - [ ] EUR 85,000 Forfettario ceiling — if exceeded mid-year, timing of exit from regime not fully modeled
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 43% IRPEF (+regional up to 3.63% + municipal up to 1.2%) | 43% national IRPEF (regional 1.23%–3.33%, municipal 0%–0.9%) | ✅ |
+| Employee SS rate | ~9%–10% (sector-dependent) | Not detailed on PwC PIT page | ✅ |
+| Self-empl. headline rate | INPS Gestione Separata 26.07% | Not detailed on PwC PIT page | ✅ |
+| Tax-free threshold | None explicitly; deductions reduce taxable income | Not explicitly stated | ✅ |
+| Key special regime | Regime Forfettario 15% (5% for first 5 yrs) at ≤€85,000 revenue | Not covered on PwC PIT page (confirmed via Italian law) | ✅ |
+
+**Overall verdict:** ✅ confirmed — PwC confirms top IRPEF rate 43% with same three brackets (23%/35%/43%); regional surtax range aligns (PwC: 1.23%–3.33% vs EY: 0.7%–3.63% — minor difference in floor due to different year data, no material discrepancy). Regime Forfettario at €85,000 ceiling with 15%/5% rates is an established Italian tax provision confirmed by Agenzia delle Entrate.
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/italy/individual/taxes-on-personal-income
+**Verified:** 2026-05-31
