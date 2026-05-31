@@ -237,3 +237,23 @@ Armenia operates a mandatory funded (accumulative) pension system. There is no t
 - [ ] AMD 100,000/year social expenses tax credit: requires documentary evidence; not modelled in effective rate calculations
 - [ ] IT/high-tech 10% reduced PIT rate: qualifying occupations list and professional commission process not detailed in EY
 - [ ] State pension co-contribution cap not stated precisely in EY — modelled as state matching up to AMD 500,000/month; verify at pensia.am
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 20% (flat) | 20% (flat) | ✅ |
+| Employee SS rate | 2.5%/5% pension (mandatory accumulative) | 5%/10% pension (PwC shows different rate structure) | ⚠️ |
+| Self-empl. headline rate | 23% CIT (IE standard); 5% turnover tax (qualifying) | Not detailed in PwC page | ⚠️ |
+| Tax-free threshold | None (flat 20% from first ARS; exempt income categories apply) | None stated | ✅ |
+| Key special regime | High-tech/IT 10% reduced rate (approved occupations) | Royalties/property lease 10%; high-tech not confirmed | ⚠️ |
+
+**Note on employee pension rate discrepancy:** EY states 2.5% on salary ≤ AMD 500,000/month and 5% above (employee portion); PwC states 5% on salary < AMD 500,000 and 10% above AMD 500,000. This is a significant structural discrepancy — EY and PwC show different rates for the same regime. PwC adds health insurance (AMD 4,800/10,800 flat) and stamp duty not mentioned in EY. This warrants review. PwC's 5%/10% may reflect the total employee+state combined contribution whereas EY's 2.5%/5% is the employee-only portion (state co-contributes matching amount).
+
+**Overall verdict:** ⚠️ partial-mismatch (pension contribution rates differ between EY employee-only vs PwC combined figure)  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/armenia/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/armenia/individual/other-taxes
+**Verified:** 2026-05-31
