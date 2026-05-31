@@ -5,6 +5,7 @@ import { AppStore } from '../../state/app.store';
 import { HeaderComponent } from '../header/header.component';
 import { FiltersComponent } from '../../features/filters/filters.component';
 import { RankingTableComponent } from '../../features/ranking/ranking-table.component';
+import { ComparisonDrawerComponent } from '../../features/comparison/comparison-drawer.component';
 
 @Component({
   selector: 'app-shell',
@@ -13,6 +14,7 @@ import { RankingTableComponent } from '../../features/ranking/ranking-table.comp
     HeaderComponent,
     FiltersComponent,
     RankingTableComponent,
+    ComparisonDrawerComponent,
     MatProgressSpinnerModule,
     MatCardModule,
   ],
@@ -36,6 +38,8 @@ import { RankingTableComponent } from '../../features/ranking/ranking-table.comp
         <app-ranking-table />
       </main>
     }
+
+    <app-comparison-drawer />
   `,
   styles: [`
     .loading-state {
@@ -50,7 +54,7 @@ import { RankingTableComponent } from '../../features/ranking/ranking-table.comp
     }
     .error-wrap { padding: 32px; max-width: 600px; margin: 0 auto; }
     .error-card { border-left: 4px solid #f44336; }
-    .main-content { padding: 12px 16px 40px; }
+    .main-content { padding: 12px 16px 72px; }
   `],
 })
 export class ShellComponent implements OnInit {
