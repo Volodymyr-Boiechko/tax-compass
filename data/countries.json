@@ -28,6 +28,10 @@
       },
       "specialRegimes": [
         {
+          "name": "Person Fizik (small business) 0% on turnover up to ALL 14M (~€130k)",
+          "rate": 0.0
+        },
+        {
           "name": "EU Citizens — Single Permit (Law No. 43/2025)",
           "rate": null
         },
@@ -43,10 +47,10 @@
           "100k": 0.225
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.0,
+          "60k": 0.0,
+          "100k": 0.0,
+          "regime": "Person Fizik 0% (turnover up to ALL 14M)"
         }
       },
       "changes2026": [
@@ -1470,6 +1474,10 @@
       },
       "specialRegimes": [
         {
+          "name": "Free Professional (25% normative deduction + 10% PIT = 7.5% effective)",
+          "rate": 0.075
+        },
+        {
           "name": "Non-EU Resident Capital Investment",
           "rate": null
         }
@@ -1481,10 +1489,10 @@
           "100k": 0.131
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.075,
+          "60k": 0.075,
+          "100k": 0.075,
+          "regime": "Free Professional 25% normative deduction"
         }
       },
       "changes2026": [
@@ -3269,6 +3277,10 @@
       },
       "specialRegimes": [
         {
+          "name": "Individual Entrepreneur (Small Business Status) 1% on turnover up to GEL 500k",
+          "rate": 0.01
+        },
+        {
           "name": "High Net-Worth Individual (HNWI) Status",
           "rate": null
         },
@@ -3284,10 +3296,10 @@
           "100k": 0.22
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.01,
+          "60k": 0.01,
+          "100k": 0.01,
+          "regime": "Individual Entrepreneur SBS 1%"
         }
       },
       "changes2026": [
@@ -10098,6 +10110,10 @@
       },
       "specialRegimes": [
         {
+          "name": "ФОП Group 3 — 5% unified tax + 1% war surcharge + fixed ESV",
+          "rate": 0.06
+        },
+        {
           "name": "Diia City (for IT workers — residents and non-residents)",
           "rate": null
         }
@@ -10109,10 +10125,10 @@
           "100k": 0.23
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.075,
+          "60k": 0.068,
+          "100k": 0.065,
+          "regime": "ФОП Group 3 (5%+1%+ESV)"
         }
       },
       "changes2026": [
@@ -10158,6 +10174,10 @@
       },
       "specialRegimes": [
         {
+          "name": "Small Business Relief — 0% Corporate Tax up to AED 3M turnover",
+          "rate": 0.0
+        },
+        {
           "name": "Golden Visa (10-Year Residency)",
           "rate": null
         },
@@ -10177,10 +10197,10 @@
           "100k": 0
         },
         "bestSelfEmployment": {
-          "30k": null,
-          "60k": null,
-          "100k": null,
-          "regime": null
+          "30k": 0.0,
+          "60k": 0.0,
+          "100k": 0.0,
+          "regime": "Small Business Relief 0% (up to AED 3M turnover)"
         }
       },
       "changes2026": [
