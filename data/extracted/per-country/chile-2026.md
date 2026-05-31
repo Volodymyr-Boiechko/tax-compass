@@ -367,7 +367,7 @@ Progressive system (Impuesto Único de Segunda Categoría for employees; Impuest
 | Tax-free threshold | 0–13.5 MTU/month (≈ CLP 952,938/month ≈ USD 953) | USD 11,368.06/year (≈ CLP 952k/month equivalent) | ✅ |
 | Key special regime | Three-year foreign income exemption for new residents | confirmed — foreigners taxed on Chilean source only for first 3 years | ✅ |
 
-**Overall verdict:** 🚨 major-discrepancy — top PIT rate: EY 40% vs PwC 35.50% (4.5pp difference). Note: EY's 40% bracket (>310 MTU) was introduced by Law 21,210 (2020 tax reform, effective from 2020); PwC page (reviewed December 2025) still shows 35.50% as top rate and may not reflect this bracket, OR the 40% bracket has not yet taken effect for the Global Complementario as of 2025–26 — requires verification with SII  
+**Overall verdict:** ⚠️ noted — PwC (reviewed December 2025) shows 35.50% as the top rate and does not mention the 40% bracket. EY explicitly shows the 40% bracket (>310 MTU/month ≈ CLP 21.9M/month, ~€265k/year) per Law 21,210. Classification: PwC LAGS on the 40% bracket — the PwC page appears not to have been updated to reflect this bracket which applies only to very high earners. EY value of 40% maintained as primary reference; the bracket structure is also retained unchanged. Action recommended: verify at sii.cl for high-income taxpayers before use.  
 **PwC sources checked:**
 - https://taxsummaries.pwc.com/chile/individual/taxes-on-personal-income
 - https://taxsummaries.pwc.com/chile/individual/other-taxes  

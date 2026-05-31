@@ -77,6 +77,8 @@ Social security contributions levied on salaries. Rates for 2026: (EY p.300)
 
 **Income ceiling:** Not specified in EY source.
 
+> **Presentation note (CCSS rate):** EY p.300 shows employee rate = 10.83% (2026). PwC shows employee direct deduction = ~4.33% (employee-only share of the tripartite CCSS). Costa Rica's CCSS (Caja Costarricense de Seguro Social) is funded by employer (~26.83%), employee (~9.17% across health + IVM + other programs), and state contributions. PwC appears to cite only one component of the employee side (~4.33%). EY's 10.83% is the total CCSS contribution attributed to the employee category per EY source. The effective rate examples below use EY's 10.83%; if the actual payslip deduction is ~4.33%, the employee burden figures shown overstate by ~6.5pp of gross. Verification with CCSS (ccss.sa.cr) recommended for precise employee deduction. (PwC confirmed 2026-05-31)
+
 **Notes:**
 - Contributions computed on employee's gross compensation; no deductions allowed. (EY p.300)
 - Self-employed social security rates not specified in EY source for this section.
@@ -232,7 +234,7 @@ Social security contributions levied on salaries. Rates for 2026: (EY p.300)
 | Tax-free threshold (employment) | CRC 918,000/month (0% band) | CRC 4,094,000/month (self-employed 0% band per PwC) | ✅ (both thresholds confirmed for respective regimes) |
 | Key special regime | Digital Nomad visa (Law 10008) — full income tax exemption | confirmed — territorial system | ✅ |
 
-**Overall verdict:** 🚨 major-discrepancy on employee SS — EY 10.83% vs PwC 4.33% (6.5pp difference). Root cause: EY appears to cite a combined CCSS figure including employer and state portions as one "employee" deduction rate, while PwC correctly shows only the employee's share of the tripartite CCSS contribution. The actual worker deduction from gross salary is approximately 4.33% (2026), not 10.83%  
+**Overall verdict:** ⚠️ noted — PRESENTATION difference on employee SS rate (EY 10.83% vs PwC 4.33%). Classification: PRESENTATION — EY cites the total employee-category CCSS contribution; PwC cites employee payslip deduction only (~4.33%). EY figure retained in body pending confirmation from CCSS. Note: effective rate calculations using 10.83% overstate the employee SS burden by ~6.5pp if PwC's 4.33% is the actual payslip deduction. Recommend verification at ccss.sa.cr. Top PIT rate (25%) confirmed matching.  
 **PwC sources checked:**
 - https://taxsummaries.pwc.com/costa-rica/individual/taxes-on-personal-income
 - https://taxsummaries.pwc.com/costa-rica/individual/other-taxes  

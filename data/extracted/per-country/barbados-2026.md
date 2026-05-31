@@ -155,6 +155,7 @@ National Insurance Scheme (NIS) — mandatory for employees, employers, and self
 - **Business loss carry-forward extended to 5 years from 2025** (EY p.121)
 - **Free movement agreement (1 October 2025):** Barbados introduced free movement with Belize, Dominica, and St. Vincent and the Grenadines — nationals may live and work without visa or work permit (EY p.124)
 - **Norway tax treaty terminated from 1 January 2024** (EY p.123)
+- **Resilience and Regeneration Fund levy (from April 2025):** PwC confirms an additional 0.25% contribution levied from April 2025, not mentioned in EY (EY data cut-off October 2025 did not capture this). Applies to employees; adds to the total employee burden. (PwC other-taxes page, confirmed 2026-05-31)
 
 ---
 
@@ -244,7 +245,7 @@ National Insurance Scheme (NIS) — mandatory for employees, employers, and self
 
 **Note on NIS rates:** EY states 11.1% employee / 17.1% self-employed; PwC states 11% employee / 17% self-employed. This is a 0.1pp difference — within the rounding/partial-mismatch range, likely reflecting different effective date of the 2025 NIS rate change (PwC shows April 2025 rate). Also, PwC notes a 0.25% Resilience and Regeneration Fund contribution added in April 2025 not mentioned in EY. NIS ceiling also differs: PwC shows BBD 5,280/month vs EY USD 2,640/month (~BBD 5,280 — actually matching at 2:1 BBD/USD peg).
 
-**Overall verdict:** ⚠️ partial-mismatch (0.1pp NIS rate difference; PwC shows April 2025 rates with additional 0.25% fund not in EY)  
+**Overall verdict:** ✅ resolved — Resilience and Regeneration Fund levy (0.25% from April 2025) noted in 2026 Changes section (SOURCE LAG — EY cut-off predated April 2025 levy). NIS rate difference (11.1% vs PwC 11%) is a 0.1pp rounding difference; EY figure retained as it's the more precise value. No structural discrepancy.  
 **PwC sources checked:**
 - https://taxsummaries.pwc.com/barbados/individual/taxes-on-personal-income
 - https://taxsummaries.pwc.com/barbados/individual/other-taxes

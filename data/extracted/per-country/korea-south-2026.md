@@ -48,9 +48,11 @@ Local income tax is a **surtax** on national income tax at approximately **10% o
 
 (EY p. 805)
 
-### Flat Tax Rate Option for Foreign Employees (20.9%)
+### Flat Tax Rate Option for Foreign Employees (20.9% combined; 19% national)
 
-Foreign employees and executive officers who do not have a special relationship with the company per TILL and who began working in Korea between 1 January 2014 and 31 December 2026 may elect a **flat 20.9%** rate (including local income tax) on employment income — **without any exemptions, deductions, or credits**. This is beneficial if the flat rate produces a lower tax than the progressive rate system. Available for 20 years from the first day of work in Korea; elected per tax year. (EY pp. 805–806)
+Foreign employees and executive officers who do not have a special relationship with the company per TILL and who began working in Korea between 1 January 2014 and 31 December 2026 may elect a **flat 19% national income tax rate** on employment income, which becomes **20.9% effective combined rate** (19% + 10% local income tax surtax = 19% × 1.1 = 20.9%) — **without any exemptions, deductions, or credits**. This is beneficial if the flat rate produces a lower tax than the progressive rate system. Available for 20 years from the first day of work in Korea; elected per tax year. (EY pp. 805–806)
+
+> **Rate presentation note:** EY states 20.9% (combined national + local); PwC states 19% (national only). These are the same regime — the 10% local income tax surtax accounts for the difference. No discrepancy in substance. Classification: PRESENTATION.
 
 ### Earned Income Deduction
 
@@ -305,7 +307,7 @@ Korea has no flat-rate or presumptive regime for self-employed professionals com
 | Tax-free threshold | None (6% from KRW0; basic deduction KRW1.5M) | None stated (6% from KRW0) | ✅ |
 | Key special regime | Flat 19% for foreign employees (+ 10% local = 20.9% effective); eligibility until Dec 2026 | Flat 19% national rate confirmed for qualifying foreign expats; start date by Dec 2026 | ✅ |
 
-**Overall verdict:** ⚠️ partial-mismatch (minor) — Top rate and bracket structure confirmed. Flat 19% rate for foreign employees confirmed by PwC (PwC uses 19% national rate, which matches EY's description; the 20.9% figure in EY is 19% + 10% local). Employee pension rate: EY shows 4.5%, PwC shows 4.75% (as of Jan 2026) — this is a ~0.25pp difference likely reflecting a rate adjustment between EY's October 2025 data and PwC's January 2026 data. No material discrepancy.
+**Overall verdict:** ✅ resolved — Flat rate presentation difference confirmed as PRESENTATION: EY 20.9% = 19% national + 10% local income tax surtax; PwC 19% = national only. Same regime, same rate. File updated with clarifying note. Employee pension rate minor diff (4.5% EY vs 4.75% PwC Jan 2026) is a ~0.25pp INDEXATION update; noting but not changing body. Classification: PRESENTATION (flat rate) + minor INDEXATION (pension).
 **PwC sources checked:**
 - https://taxsummaries.pwc.com/republic-of-korea/individual/taxes-on-personal-income
 - https://taxsummaries.pwc.com/republic-of-korea/individual/other-taxes
