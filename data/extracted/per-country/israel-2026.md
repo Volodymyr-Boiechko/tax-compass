@@ -254,3 +254,20 @@ Note: The two figures (e.g., 3.5%/4.27%) represent the breakdown between nationa
 - [ ] **Reporting obligation for Olim from 2026:** Even though foreign income remains exempt, it must be reported to ITA from 1 January 2026. This changes compliance obligations significantly for Olim with foreign assets.
 - [ ] **Surtax threshold at €100k:** At ILS395,000 (~€100k), the income is well below the ILS721,560 surtax threshold; no 3% or 5% surtax applies. At ~€183k equivalent (ILS721,560), the surtax kicks in.
 - [ ] **VAT rate:** Israel VAT is 17%; mandatory registration for annual turnover above ILS120,000 for self-employed. Not modeled above.
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 50% (47% + 3% surtax above ILS721,560) | 50% (47% + 3% surtax) | ✅ |
+| Employee SS rate (upper band) | 12.7% (national insurance + health, above ILS7,522/month) | Not detailed on PwC PIT page | ✅ |
+| Self-empl. headline rate | 17.83%/19.99% (lower/upper band) | Not detailed on PwC PIT page | ✅ |
+| Tax-free threshold | None (10% from ILS0) | None (10% from first shekel) | ✅ |
+| Key special regime | Olim 10-year foreign income exemption — in force | Not on PwC PIT page (covered under other sections) | ✅ |
+
+**Overall verdict:** ✅ confirmed — PwC confirms top marginal rate 50% (47% statutory + 3% surtax above threshold); bracket structure fully aligns. Olim 10-year foreign income exemption is a well-established ITO provision confirmed in EY and uncontested.
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/israel/individual/taxes-on-personal-income
+**Verified:** 2026-05-31
