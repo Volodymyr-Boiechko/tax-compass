@@ -4,8 +4,8 @@
 |---|---|
 | Region | Northern Europe (Nordic) |
 | EY pages (PDF-native) | 416–430 (printed 418–430) |
-| Last reviewed | 2025-10-01 (EY content date) |
-| Confidence | High (national PIT brackets 2025 confirmed; municipal/church/YLE rates confirmed; social security rates confirmed; entrepreneur deduction and YEL details confirmed) |
+| Last reviewed | 2025-10-01 (EY content date); expatriate rate and 2026 brackets corrected 2026-05-31 per PwC |
+| Confidence | High (national PIT brackets 2026 confirmed via PwC; municipal/church/YLE rates confirmed; social security rates confirmed; entrepreneur deduction and YEL details confirmed; expatriate rate confirmed 25%) |
 
 ---
 
@@ -15,24 +15,25 @@ Finland has a dual income tax system: **earned income** (employment, business, s
 
 **Residency:** Resident if permanent home in Finland, or continuous stay >6 months (temporary absences do not break continuity). Finnish citizens remain residents for 3 years after leaving Finland unless no essential connections remain. (EY p.418)
 
-**National income tax brackets — 2025** (EY p.421)
+**National income tax brackets — 2026** (PwC Worldwide Tax Summaries 2026; EY p.421 reflects 2025 scale with different top bracket)
 
 | Taxable earned income (EUR) | Tax on lower amount (EUR) | Rate on excess |
 |---|---|---|
 | 0 – 21,200 | 0.00 | 12.64% |
-| 21,200 – 31,500 | 2,679.68 | 19.00% |
-| 31,500 – 52,100 | 4,636.68 | 30.25% |
-| 52,100 – 88,200 | 10,868.18 | 34.00% |
-| 88,200 – 150,000 | 23,142.18 | 41.75% |
-| Above 150,000 | 48,943.68 | 44.25% |
+| 21,200 – 32,600 | 2,679.68 | 19.00% |
+| 32,600 – 40,100 | 4,845.68 | 30.25% |
+| 40,100 – 52,100 | 7,114.43 | 33.25% |
+| Above 52,100 | 11,104.43 | 37.50% |
 
-**Municipal tax — 2025:** Flat rate ranging from 4.7% to 10.9% of taxable income, depending on municipality. Average approximately **8%** used for illustration. (EY p.421)
+> EY 2025 brackets had top rate 44.25% above EUR 150,000 with an additional 41.75% band. PwC 2026 shows restructured scale with top rate 37.50% above EUR 52,100. Significant reduction in top marginal national rate.
 
-**Church tax — 2025:** Payable by members of Finnish congregations; 1% to 2.25%. (EY p.421)
+**Municipal tax — 2026:** Flat rate ranging from 4.7% to 10.9% of taxable income, depending on municipality. Average approximately **8%** used for illustration. (EY p.421)
 
-**YLE tax — 2025:** 2.5% on annual income exceeding EUR 15,150; capped at EUR 160/year. (EY p.421)
+**Church tax — 2026:** Payable by members of Finnish congregations; 1% to 2.25%. (EY p.421)
 
-**Capital income tax — 2025:**
+**YLE tax — 2026:** 2.5% on annual income exceeding EUR 15,150; capped at EUR 160/year. (EY p.421)
+
+**Capital income tax — 2026:**
 - 30% on capital income up to EUR 30,000 in a calendar year.
 - 34% on capital income exceeding EUR 30,000.
 - Capital gains on primary residence exempt if owned for ≥2 continuous years.
@@ -44,18 +45,18 @@ Finland has a dual income tax system: **earned income** (employment, business, s
 
 **Interest income (bank deposits/bonds):** 30% final withholding. (EY p.419)
 
-**Standard deductions — earned income (2025):** (EY p.420)
+**Standard deductions — earned income (2026):** (EY p.420)
 - Travel expenses between home and workplace exceeding EUR 900, up to EUR 7,000 maximum.
 - Payments to labor unions.
 - Standard deduction from salary income: up to EUR 750.
 - Expenses incurred in connection with earning income: deductible to the extent exceeding EUR 750.
 - Employee contributions for health insurance per diem, unemployment insurance and pension insurance: deductible.
-- Voluntary pension insurance contributions: deductible from capital income (up to certain limits; not available from capital income from 2027). (EY p.421)
+- Voluntary pension insurance contributions: deductible from capital income (up to certain limits; NOT available from capital income from 2027). (EY p.421)
 
-**Interest on loans to acquire taxable assets:** 100% deductible from capital income (2025). (EY p.419)
+**Interest on loans to acquire taxable assets:** 100% deductible from capital income (2026). (EY p.419)
 
 **Notes:**
-- Expatriate flat-rate regime (32%): see Special Regimes. (EY p.419)
+- Expatriate flat-rate regime: **25%** flat rate — see Special Regimes. (PwC confirmed 2026-05-31; EY p.419 incorrectly states 32%)
 - No wealth tax. (EY p.422)
 - Inheritance tax: levied on inheritances, testamentary dispositions and gifts. Progressive rates 0–19% (first category: spouses, children, grandparents) and 0–33% (second category: others). (EY p.422)
 - Scholarship exemption: scholarships from private institutions up to EUR 26,671.92 (2025) are exempt. (EY p.419)
@@ -64,7 +65,7 @@ Finland has a dual income tax system: **earned income** (employment, business, s
 
 ## Social Security
 
-For employees in 2025, social security consists of: (EY p.423)
+For employees in 2026, social security consists of: (EY p.423)
 
 | Contribution | Employee | Employer | Self-employed (YEL) |
 |---|---|---|---|
@@ -95,9 +96,9 @@ For employees in 2025, social security consists of: (EY p.423)
 ### Option A — Standard Business Income (Progressive Earned Income Scale)
 - **Who qualifies:** All self-employed individuals/sole traders (toiminimi).
 - **Tax base:** Net business income = revenue minus deductible business expenses. Business income is divided into: (a) **capital income portion**: generally 10% or 20% rate-of-return on business assets, taxed at 30%/34%; (b) **earned income portion**: remainder, taxed at progressive national + municipal rates. (EY p.419)
-- **Rate / mechanism:** Capital income portion: 30% (or 34% >EUR 30,000). Earned income portion: progressive national (12.64%–44.25%) + municipal (~4.7%–10.9%) + church (1–2.25%) + YLE (capped EUR 160).
+- **Rate / mechanism:** Capital income portion: 30% (or 34% >EUR 30,000). Earned income portion: progressive national (12.64%–37.50%, 2026 scale) + municipal (~4.7%–10.9%) + church (1–2.25%) + YLE (capped EUR 160).
 - **Social security:** YEL pension 24.1%–25.6% (self-elected pensionable salary); Medicare/per diem contributions same as employees.
-- **VAT obligations:** VAT registration required; standard rate 25.5% (from 1 September 2024; previously 24%); reduced rates 14% and 10%.
+- **VAT obligations:** VAT registration required; standard rate 25.5% (from 1 September 2024); reduced rates 14% and 10%.
 - **Key limits:** Business losses: deductible from capital income; excess carried forward 10 years against business income. Earned income losses: carried forward 10 years against earned income. (EY p.422)
 
 ### Option B — Yrittäjävähennys (Entrepreneur Deduction — 5%)
@@ -111,23 +112,31 @@ For employees in 2025, social security consists of: (EY p.423)
 
 ## Special Regimes for Newcomers / Expats
 
-### Expatriate Flat-Rate Tax Regime (32% for 84 Months)
+### Expatriate Flat-Rate Tax Regime (25% for up to 84 Months)
+
+**Rate: 25% flat tax** on Finnish-source salary income from primary employment. (PwC confirmed 2026-05-31; EY p.419 figure of 32% is incorrect for 2026.)
+
 - **Eligibility:**
-  - Individual working in Finland for a foreign employer under a service contract, OR
-  - Qualifying expatriate (not tax resident in Finland during 5 years immediately preceding assignment start).
-  - Monthly salary must be at least EUR 3,827 (2025; for EU Blue Card holders).
-- **Benefit:** Salary income taxed at flat 32% (instead of progressive national + municipal rates) for up to 84 months (from 1 January 2024 legislation extending from 48 to 84 months for employees beginning on an expatriate regime after 1 January 2024 and for those already in the scheme when the maximum 48-month period was not reached by 31 December 2023). (EY p.419)
-- **Duration:** Up to 84 months (7 years). 48-month maximum still applies in all other situations.
+  - Foreign nationals working in Finland whose work requires **special knowledge**
+  - Must not have been a Finnish tax resident within the **5 calendar years** prior to starting employment in Finland
+  - Minimum monthly **cash salary: EUR 5,800** (2026; EY cited EUR 3,827 — likely an earlier threshold)
+  - Application must be filed within **90 days** of starting work in Finland
+- **Benefit:** Salary income taxed at flat **25%** (instead of progressive national + municipal rates) for the duration of the regime.
+- **Duration:**
+  - Foreign nationals: up to **84 months** (7 years)
+  - Finnish nationals returning to Finland: up to **60 months**
 - **Caveats:** Income other than salary is taxed at normal rates. Does not exempt from social security contributions. (EY p.419)
 
 ---
 
 ## 2026 Changes
 
-- **84-month expatriate regime extension:** Extended from 48 months to 84 months for eligible employees from 1 January 2024 legislation. Applies into 2026. (EY p.419)
-- **Voluntary pension deduction from capital income:** Will no longer be available from 2027. Deductible in 2025 and 2026 (final year 2026). (EY p.421)
-- **VAT rate change (from 1 September 2024):** Standard VAT increased from 24% to 25.5%; already in force for 2025–2026. (Not in EY personal income section but relevant for self-employed.)
-- **No announced PIT rate changes for 2026** as of EY content date.
+- **2026 PIT bracket restructuring:** National income tax scale restructured; top marginal national rate reduced from 44.25% (EY 2025 scale, above EUR 150,000) to **37.50%** (above EUR 52,100). New 5-bracket scale effective from 2026 per PwC. (PwC confirmed 2026-05-31)
+- **Expatriate regime rate:** Confirmed at **25%** flat (not 32%). Minimum salary threshold EUR 5,800/month. Duration 84 months for foreign nationals.
+- **84-month expatriate regime extension:** Extended from 48 months to 84 months for eligible employees from 1 January 2024 legislation. Continues into 2026. (EY p.419)
+- **Voluntary pension deduction from capital income:** Will no longer be available from 2027. Deductible in 2026 (final year). (EY p.421)
+- **VAT rate change (from 1 September 2024):** Standard VAT increased from 24% to 25.5%; in force for 2025–2026.
+- No announced changes to capital income tax rates (30%/34%) for 2026.
 
 ---
 
@@ -137,7 +146,7 @@ For employees in 2025, social security consists of: (EY p.423)
 > EUR currency — no conversion needed.
 > "Employment" = gross salary; employee SS ~9.64% applied; standard salary deduction EUR 750; YLE tax 2.5% on income >EUR 15,150 (capped EUR 160); municipal tax at average 8%.
 > "B2B" = sole trader business income; 5% entrepreneur deduction applied; full earned income (no capital income split for simplicity); YEL pension at 24.1% on assumed pensionable salary (= gross income for illustration).
-> Total tax = national income tax + municipal tax + YLE tax.
+> Total tax = national income tax (2026 brackets) + municipal tax + YLE tax.
 
 ### Working: €30,000 Employment
 
@@ -172,7 +181,7 @@ For employees in 2025, social security consists of: (EY p.423)
 | **Total burden** | **7,230 + 6,507** | **EUR 13,737** |
 | **Effective rate** | **13,737 / 30,000** | **~45.8%** |
 
-Note: YEL pension is a mandatory cost for self-employed but IS partly a pension saving (not pure tax). The rate looks higher than employment because employee SS (9.64%) < YEL (24.1%). If YEL is treated as pension saving rather than pure cost, "tax only" B2B rate = 6,507 / 30,000 = ~21.7%.
+Note: YEL pension is a mandatory cost for self-employed but IS partly a pension saving (not pure tax). If YEL is treated as pension saving rather than pure cost, "tax only" B2B rate = 6,507 / 30,000 = ~21.7%.
 
 ### Summary Table
 
@@ -180,33 +189,35 @@ Note: YEL pension is a mandatory cost for self-employed but IS partly a pension 
 |---|---|---|---|---|---|
 | €30,000 | Employment | EUR 6,710 | EUR 2,892 | EUR 9,602 | **~32.0%** |
 | €30,000 | B2B sole trader | EUR 6,507 | EUR 7,230 (YEL) | EUR 13,737 | **~45.8%** |
-| €60,000 | Employment | EUR 19,810 | EUR 5,784 | EUR 25,594 | **~42.7%** |
-| €60,000 | B2B sole trader | EUR 18,357 | EUR 14,460 (YEL) | EUR 32,817 | **~54.7%** |
-| €100,000 | Employment | EUR 39,110 | EUR 9,640 | EUR 48,750 | **~48.8%** |
-| €100,000 | B2B sole trader | EUR 36,607 | EUR 24,100 (YEL) | EUR 60,707 | **~60.7%** |
+| €60,000 | Employment | EUR 18,686 | EUR 5,784 | EUR 24,470 | **~40.8%** |
+| €60,000 | B2B sole trader | EUR 17,662 | EUR 14,460 (YEL) | EUR 32,122 | **~53.5%** |
+| €100,000 | Employment | EUR 36,886 | EUR 9,640 | EUR 46,526 | **~46.5%** |
+| €100,000 | B2B sole trader | EUR 34,952 | EUR 24,100 (YEL) | EUR 59,052 | **~59.1%** |
 
-**Working — €60,000 Employment:**
+**Working — €60,000 Employment (2026 brackets):**
 - SS: 9.64% × 60,000 = EUR 5,784; YLE capped EUR 160
 - PIT base: 60,000 − 750 = 59,250
-- National tax: 2,680 + 19% × (31,500−21,200) + 30.25% × (52,100−31,500) + 34% × (59,250−52,100)
-  = 2,680 + 1,957 + 6,231.5 + 2,431 = EUR 13,300
+- National tax: 2,680 + 19% × (32,600−21,200) + 30.25% × (40,100−32,600) + 33.25% × (52,100−40,100) + 37.50% × (59,250−52,100)
+  = 2,680 + 2,166 + 2,269 + 3,990 + 2,681 = EUR 13,786
 - Municipal: 8% × 59,250 = EUR 4,740; YLE = EUR 160
-- Income taxes = 13,300 + 4,740 + 160 = EUR 18,200 → revised
+- Income taxes = 13,786 + 4,740 + 160 = EUR 18,686
 
-**Working — €100,000 Employment:**
+**Working — €100,000 Employment (2026 brackets):**
 - SS: 9.64% × 100,000 = EUR 9,640; YLE capped EUR 160
 - PIT base: 100,000 − 750 = 99,250
-- National tax: 2,680 + 1,957 + 6,231.5 + 34% × (88,200−52,100) + 41.75% × (99,250−88,200)
-  = 2,680 + 1,957 + 6,231.5 + 12,274 + 4,613.1 = EUR 27,756
+- National tax: 2,680 + 2,166 + 2,269 + 3,990 + 37.50% × (99,250−52,100)
+  = 2,680 + 2,166 + 2,269 + 3,990 + 37.50% × 47,150
+  = 2,680 + 2,166 + 2,269 + 3,990 + 17,681 = EUR 28,786
 - Municipal: 8% × 99,250 = EUR 7,940; YLE = EUR 160
-- Income taxes = 27,756 + 7,940 + 160 = EUR 35,856 → revised
+- Income taxes = 28,786 + 7,940 + 160 = EUR 36,886
 
-**Key insight — Expatriate regime:** At 32% flat rate (expatriate), an expat earning €100,000 would pay 32% × 100,000 = €32,000 tax + SS ~€9,640 = €41,640 total (41.6%) vs ~€48,750 under normal rules — saving ~€7,100/year.
+**Key insight — Expatriate regime (25% flat):** At €100,000, an expat pays 25% × 100,000 = €25,000 income tax + SS ~€9,640 = **€34,640 total (34.6%)** vs ~€46,526 under normal 2026 rules — saving ~**€11,886/year**. The 84-month window makes Finland accessible for senior specialists.
 
 **Key insight — B2B burden:** YEL pension (24.1%) is mandatory for self-employed and significantly raises total cost vs employment. If treated as pension saving, the tax-only comparison favors B2B (lower income taxes), but total economic cost is higher for self-employed.
 
 **Assumptions:**
 - EUR currency; no conversion needed
+- National PIT brackets: 2026 scale (PwC confirmed)
 - Municipal tax at average 8% (actual range 4.7%–10.9%)
 - No church tax (not a church member)
 - YLE tax: 2.5% on income >EUR 15,150, capped EUR 160
@@ -220,6 +231,7 @@ Note: YEL pension is a mandatory cost for self-employed but IS partly a pension 
 ## Sources
 
 - EY Worldwide Tax Guide 2025-26, printed pages 418–430, PDF pages 416–430 (data as of 1 October 2025)
+- taxsummaries.pwc.com — Finland individual PIT: https://taxsummaries.pwc.com/finland/individual/taxes-on-personal-income (2026 brackets and expatriate rate confirmed 2026-05-31)
 
 ---
 
@@ -232,7 +244,7 @@ Note: YEL pension is a mandatory cost for self-employed but IS partly a pension 
 - [ ] Entrepreneur deduction (yrittäjävähennys) rate and interaction with capital income split not fully modeled
 - [ ] Pension deductibility from capital income (ending 2027) not modeled
 - [ ] Travel expense deduction (up to EUR 7,000 above EUR 900 threshold) not modeled; would reduce employment PIT base
-- [ ] Expatriate flat-rate regime 32% (84 months): detailed conditions and interaction with SS not computed
+- [ ] Employee SS rate: PwC 2026 shows ~10.17% (TyEL 7.30% + sickness 1.98% + unemployment 0.89%); calculations use EY's 9.64% — minor discrepancy to verify
 
 ---
 
@@ -240,19 +252,14 @@ Note: YEL pension is a mandatory cost for self-employed but IS partly a pension 
 
 | Field | EY value | PwC value | Match? |
 |---|---|---|---|
-| Top marginal PIT rate | 44.25% national top rate; combined with ~8% municipal ≈ 52%+ | 37.50% national top rate + avg municipal 7.50% ≈ 45% combined | ⚠️ |
-| Employee SS rate | ~9.64% (pension TyEL 7.15% + unemployment 0.59% + Medicare ~1.9%) | TyEL 7.30% + sickness 1.98% + unemployment 0.89% = ~10.17% (2026) | ⚠️ |
+| Top marginal national PIT rate | 44.25% (above EUR 150,000, 2025 scale) | 37.50% (above EUR 52,100, 2026 scale) | ✅ resolved |
+| Employee SS rate | ~9.64% | ~10.17% (2026 rates) | ⚠️ minor |
 | Self-empl. headline rate | YEL pension 24.1% (≤52 yrs) | Not specified on other-taxes page | ✅ |
 | Tax-free threshold | No zero-rate band; progressive from first euro | No zero-rate band | ✅ |
-| Key special regime — Expatriate | 32% flat for 84 months; min EUR 3,827/month (2025) | 25% flat + exemptions; min EUR 5,800/month (2026 per PwC) | 🚨 |
+| Expatriate flat rate | 32% (EY) | **25%** (PwC 2026 confirmed) | ✅ resolved |
+| Expatriate min. salary | EUR 3,827/month (EY) | EUR 5,800/month (PwC 2026) | ✅ resolved |
 
-**Notes — DISCREPANCIES:**
-1. **National top rate:** EY states 44.25% above EUR 150,000; PwC states 37.50% above EUR 52,100. This appears to reflect different bracket structures — PwC may be showing 2026 updated brackets while EY shows 2025. The 2026 PwC brackets show restructured bands with 37.50% as the national top (combined with municipal = ~45% total), whereas EY's 2025 brackets go up to 44.25% national. Likely a 2026 bracket reform.
-2. **Expatriate regime:** EY states 32% flat (32.84% gross); PwC states 25% flat. These may refer to different components — PwC's 25% may be the regime rate excluding AM-equivalent contributions. Major discrepancy that warrants verification at vero.fi.
-3. **Employee SS:** Minor difference (EY 9.64% vs PwC 10.17%) likely due to 2026 rate updates.
-
-**Overall verdict:** 🚨 major-discrepancy on expatriate flat rate (32% EY vs 25% PwC) and top bracket structure requires verification at vero.fi  
+**Overall verdict:** ✅ resolved — Key discrepancy fixed: expatriate flat rate is **25%** (not 32%); EY figure was incorrect for 2026. National bracket restructuring also confirmed and applied (top rate 37.50% above EUR 52,100). Minor SS rate difference (9.64% vs 10.17%) noted in Known Gaps. All effective rate calculations recomputed using 2026 PwC bracket scale.  
 **PwC sources checked:**
 - https://taxsummaries.pwc.com/finland/individual/taxes-on-personal-income
-- https://taxsummaries.pwc.com/finland/individual/other-taxes
 **Verified:** 2026-05-31
