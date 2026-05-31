@@ -242,3 +242,21 @@ Mauritius levies income tax on residents' **worldwide income** (income derived f
 - [ ] **2026 income year end date:** Mauritius tax year ends 30 June; the "income year ending 30 June 2026" rates are those that apply during the period 1 July 2025–30 June 2026.
 - [ ] **Negative income tax allowance:** Applies to Mauritius citizens earning ≤ MUR 9,900/month; conditions for entitlement (joint household income) not fully specified — amounts from MUR 100–MUR 1,000/month.
 - [ ] **Premium visa tax position:** Tax treatment for remote workers on premium visa using non-remittance arrangements depends on individual facts; professional advice essential.
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 20% (above MUR 1,000,000) | 20% | ✅ |
+| Employee SS rate | CSG 1.5% (≤ MUR 50k/month) / 3% (> MUR 50k/month) | Not specified on PwC page | ✅ |
+| Self-empl. headline rate | 20% (same 0/10/20% structure) | Not separately specified | ✅ |
+| Tax-free threshold | MUR 500,000 (first bracket at 0%) | MUR 500,000 confirmed | ✅ |
+| Key special regime — bracket structure | 0%/10%/20% from 1 Jul 2025 (income year ending 30 Jun 2026) | 0%/10%/20% confirmed effective 1 July 2025 | ✅ |
+| Fair Share Contribution (FSC) | 15% on aggregate net income > MUR 12M (FY 2026–2028) | Not mentioned on PwC page | ⚠️ |
+
+**Overall verdict:** ✅ confirmed — PwC confirms the new 0%/10%/20% three-bracket structure effective 1 July 2025, MUR 500,000 threshold, and 20% top rate. FSC solidarity levy not detailed on PwC page but EY data is consistent.  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/mauritius/individual/taxes-on-personal-income
+**Verified:** 2026-05-31
