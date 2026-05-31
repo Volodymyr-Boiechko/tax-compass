@@ -201,3 +201,23 @@ Note: EGP 1,650,000 annual income exceeds EGP 1,200,000 threshold → 27.5% top 
 - [ ] VAT rate for self-employed professionals not specified in EY source
 - [ ] Free zone project tax rules mentioned (withhold and remit) but not detailed
 - [ ] Employer social insurance contribution (11%) included in SS table but total employment cost to employer not computed in examples
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 27.5% (above EGP 1,200,000) | 27.5% | ✅ |
+| Employee SS rate | 18.75% (employee on base up to EGP 14,500/month) | 11% employee (!) | 🚨 |
+| Employer SS rate | 11% | 18.75% employer (!) | 🚨 |
+| Tax-free threshold | EGP 20,000 annual personal deduction; 0% band up to EGP 40,000 | 0% on EGP 0–40,000; EGP 20,000 annual exemption | ✅ |
+| Key special regime | None noted for self-employed/freelancers | None noted | ✅ |
+
+**Notes — CRITICAL DISCREPANCY:** EY and PwC state the same total employee+employer SS rates but **swap** which party pays which rate. EY states employee=18.75% and employer=11%; PwC states employee=11% and employer=18.75%. This is a significant difference that needs resolution. PwC also confirms the 2026 SS ceiling is EGP 16,700/month (EY file states EGP 14,500/month for 2025 — the ceiling has been increased for 2026). The effective rate calculations in the EY file used employee=18.75% which may be incorrect if PwC is right.
+
+**Overall verdict:** 🚨 major-discrepancy on employee vs employer SS rates (EY and PwC swap 11% and 18.75%); SS ceiling updated to EGP 16,700 for 2026 per PwC  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/egypt/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/egypt/individual/other-taxes
+**Verified:** 2026-05-31
