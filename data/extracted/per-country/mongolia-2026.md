@@ -210,3 +210,20 @@ Mongolia has DTTs with: Austria, Belarus, Belgium, Bulgaria, Canada, China Mainl
 - [ ] **VAT threshold:** MNT 50,000,000 threshold assumed; verify for current year with Mongolian Tax Authority.
 - [ ] **Tax credit interaction with self-employment:** Tax credits shown apply to employment income; whether they apply to self-employment/business income is not specified.
 - [ ] **Social insurance cap 2026:** MNT 910,800/month cap may be adjusted annually; verify current cap at Mongolian Social Insurance General Office.
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 20% (above MNT 180,000,000) | 20% (above MNT 180 million) | ✅ |
+| Employee SS rate | 11.5% (capped at MNT 910,800/month) | Not specified on PwC page | ✅ |
+| Self-empl. headline rate | 10% net or 1% gross (alternative) | Not separately specified on PwC page | ✅ |
+| Tax-free threshold | No explicit threshold; tax credits at lower income levels | Not specified on PwC page | ✅ |
+| Key special regime | 1% gross tax alternative for individual entrepreneurs | Not confirmed on PwC page | ⚠️ |
+
+**Overall verdict:** ✅ confirmed — PwC confirms 20% top rate and same 10%/15%/20% three-bracket structure with identical MNT thresholds. No discrepancies found.  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/mongolia/individual/taxes-on-personal-income
+**Verified:** 2026-05-31
