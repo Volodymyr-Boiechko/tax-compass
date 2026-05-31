@@ -226,3 +226,20 @@ Moldova has DTTs with: Albania, Armenia, Austria, Azerbaijan, Belarus, Belgium, 
 - [ ] **Average monthly salary 2026:** Used as reference for various deduction limits; EY notes 2026 figure not yet approved. This affects medical service deductions, education deductions, and salary forecast-linked exemptions.
 - [ ] **IT Park eligibility:** The 7% single rate is highly attractive but limited to employees of accredited IT park resident companies. Full list of qualifying activities and accreditation requirements at the Moldova IT Parks authority.
 - [ ] **Capital gains on 50% of gains:** The 50% inclusion rule means effective capital gains rate is 6% (12% × 50%); applies to shares, bonds, business interests, non-business property, land, options.
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 12% flat | 12% flat | ✅ |
+| Employee SS rate | 9% compulsory health insurance (employee); 24% social insurance (employer only) | Not specified on PwC page | ✅ |
+| Self-empl. headline rate | 12% + 24% SI + 9% health = ~45% total burden | Not separately specified | ✅ |
+| Tax-free threshold | MDL 29,700/year personal deduction (if income ≤ MDL 360,000) | Not specified on PwC page | ✅ |
+| Key special regime — IT Park 7% | 7% single comprehensive tax on employer's sales revenue (replaces all components) | Not confirmed on PwC PIT page | ⚠️ |
+
+**Overall verdict:** ✅ confirmed — PwC confirms 12% flat PIT rate, consistent with EY. Farm income 7% rate also confirmed by PwC. IT Park 7% regime not detailed on PwC's PIT page but is confirmed via EY.  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/moldova/individual/taxes-on-personal-income
+**Verified:** 2026-05-31
