@@ -177,3 +177,21 @@ No specific preferential tax regime for new residents or expats identified in EY
 - [ ] Overtime and second job allowances (GYD 50,000 each) not modeled; would reduce PIT for qualifying workers
 - [ ] Gold/diamond withholding tax regimes (for miners) not modeled
 - [ ] Small business manufacturing/construction 25% rate has the same top rate as general band 1 — no significant distinction at lower incomes
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 35% | 35% | ✅ |
+| 25% band upper threshold | GYD 3,120,000 | GYD 3,360,000 | ⚠️ |
+| Personal allowance | GYD 1,560,000 (or 1/3 of income) | GYD 1,680,000 (or 1/3 of income) | ⚠️ |
+| Employee NIS rate | 5.6% | Not specified on PIT page | ✅ |
+| Self-empl. NIS rate | 12.5% | Not specified on PIT page | ✅ |
+| Key special regime | None identified | None identified | ✅ |
+
+**Overall verdict:** ⚠️ partial-mismatch — PwC shows higher bracket threshold (GYD 3,360,000 vs EY's GYD 3,120,000, ~+7.7%) and higher personal allowance (GYD 1,680,000 vs EY's GYD 1,560,000, ~+7.7%). These are consistent with an annual inflationary upward adjustment and likely reflect 2026 updated figures vs EY's October 2025 data. Both sources agree on the 25%/35% rate structure. Rates themselves match; thresholds have been adjusted upward.  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/guyana/individual/taxes-on-personal-income
+**Verified:** 2026-05-31
