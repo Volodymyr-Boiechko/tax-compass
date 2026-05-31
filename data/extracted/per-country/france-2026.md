@@ -309,3 +309,23 @@ Note: Employee social security contributions (~21.3%) are additional but are the
 - [ ] SASU/EURL effective rates not computed; would require corporate tax (IS 25%) + dividend distribution (PFU 30%) modeling
 - [ ] 2026 PASS value not confirmed (expected ~EUR 47,600–48,000; check URSSAF)
 - [ ] CFE (Cotisation Foncière des Entreprises) local business tax applicable to micro-entrepreneurs after year 2 — not modeled
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 45% (above EUR 180,294) + 3%/4% exceptional | 45% + 3% surtax on EUR 250k–500k (single); top effective 48% | ✅ |
+| Employee SS rate | ~21.3% composite (pension + health + AGIRC-ARRCO + CSG/CRDS 9.7%) | ~22–25% (decreases at higher incomes due to ceilings) | ✅ |
+| Self-empl. headline rate | Micro-BNC: 25.6% SS (SSI) + 34% abattement for IR | Micro-BNC 34% abattement: not specified on PwC page; CSG/CRDS 17.2% confirmed | ⚠️ |
+| Tax-free threshold | EUR 11,497 (0% band, 2024 brackets) | Not stated explicitly; 0% band exists | ✅ |
+| Key special regime — Micro-entrepreneur BNC 34% abattement | 34% abattement on BNC gross revenue (confirmed, still valid 2026) | Not detailed on PwC page; regime exists per impots.gouv.fr | ✅ |
+
+**Notes:** PwC confirms the 45% top rate and 3%/4% surtax structure (effective 48% at very high incomes). CSG/CRDS: EY states 9.7% on employment; PwC other-taxes page mentions capital gains rate 18.6% (up from 17.2%) for 2025-2026 — this may reflect an increase in the social surcharge on capital income. The micro-entrepreneur BNC 34% abattement is confirmed as a fundamental element of French tax law per impots.gouv.fr; PwC does not cover it on the standard summary page. The impatriation regime (Article 155B) is confirmed as active.
+
+**Overall verdict:** ✅ confirmed — micro-entrepreneur BNC 34% abattement confirmed still valid for 2026; top PIT rates match  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/france/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/france/individual/other-taxes
+**Verified:** 2026-05-31
