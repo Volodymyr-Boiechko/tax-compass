@@ -178,3 +178,21 @@ No personal income tax means there is no preferential tax regime needed. Bermuda
 - [ ] Work From Bermuda Certificate (digital nomad program): not covered in EY; allows remote workers for 12 months; no income tax implications but residency and SS implications should be verified at gov.bm
 - [ ] Employer payroll tax at higher salary levels (> BMD 200,000): applies at 2.5%–10%; significantly raises total employment cost for high earners — not included in employee burden table but relevant for total cost of engagement
 - [ ] Estate tax rates (5%–20% on estates > BMD 100,000) apply at death; not relevant for income planning but noted for completeness
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 0% (no income tax) | 0% (no income tax confirmed) | ✅ |
+| Employee SS rate | BMD 37.65/week flat (not income-based) | BMD 37.65/week confirmed | ✅ |
+| Self-empl. headline rate | 0% income tax; flat social insurance | 0% confirmed | ✅ |
+| Tax-free threshold | N/A (no income tax) | N/A confirmed | ✅ |
+| Key special regime | Payroll tax (employer-side, 1%–10%; employee 0.5%–12.5%) | Confirmed — payroll tax exists (details in corporate section) | ✅ |
+
+**Overall verdict:** ✅ confirmed  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/bermuda/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/bermuda/individual/other-taxes
+**Verified:** 2026-05-31
