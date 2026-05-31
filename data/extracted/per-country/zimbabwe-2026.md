@@ -206,3 +206,22 @@
 - [ ] Presumptive tax regime now inapplicable to professionals from 1 January 2025 — self-assessment required
 - [ ] Estate tax (5% on dutiable assets above USD 100,000) not included
 - [ ] NSSA treatment for self-employed not specified — excluded from B2B scenario
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 40% + 3% AIDS levy = 41.2% (employment) | N/A — Zimbabwe not covered on PwC Worldwide Tax Summaries | N/A |
+| Employee SS rate | 4.5% NSSA (capped at USD 700/month) | N/A | N/A |
+| Self-empl. headline rate | 25% + 3% AIDS levy = 25.75% (flat) | N/A | N/A |
+| Tax-free threshold | USD 1,200/year (0% band) | N/A | N/A |
+| Key special regime | Multi-currency system (ZWG/USD) extended to 2030 | N/A | N/A |
+
+**PwC coverage note:** Zimbabwe does not appear in the PwC Worldwide Tax Summaries directory (148 territories; list ends at Zambia in the Z section). Cross-verification against PwC is not possible for this jurisdiction.
+
+**Overall verdict:** N/A — Zimbabwe not covered on PwC Worldwide Tax Summaries; EY data stands unchallenged  
+**PwC sources checked:**
+- N/A (Zimbabwe not listed on PwC Worldwide Tax Summaries)
+**Verified:** 2026-05-31
