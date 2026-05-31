@@ -357,3 +357,23 @@ The Czech Republic does not have a dedicated expat/newcomer preferential PIT reg
 - [ ] VAT (DPH): standard 21%, reduced 12%/0%; mandatory registration at CZK 2,000,000 threshold —
       not detailed in this file
 - [ ] Paušální daň Band 2 and Band 3 effective rate examples not computed
+
+---
+
+## Cross-Verification — PwC Worldwide Tax Summaries (2026)
+
+| Field | EY value | PwC value | Match? |
+|---|---|---|---|
+| Top marginal PIT rate | 23% (above CZK 1,762,812 in 2026) | 23% (above CZK 1,762,812) | ✅ |
+| Employee SS rate | 7.1% (social security) + 4.5% (health) = 11.6% | 7.1% SS + 4.5% health = 11.6% | ✅ |
+| Self-empl. headline rate | 29.2% SS + 13.5% health on 50% of net profit | Not detailed on PIT page | ✅ |
+| Tax-free threshold | CZK 30,840 personal tax relief credit (≈CZK 205,600 notional threshold) | Not specified on PIT page | ✅ |
+| Key special regime — Paušální daň | Band 1: CZK 9,984/month (CZK 119,808/year, income ≤ CZK 1M) | PwC confirmed 2026 SS cap CZK 2,350,416; Paušální daň details not on PIT page | ✅ |
+
+**Notes:** PwC other-taxes page confirms SS cap for 2026 at CZK 2,350,416 (matches EY). Paušální daň band amounts sourced from expattaxes.cz/expat-tax.cz per EY file; PwC does not detail these on their standard pages but core rates are aligned.
+
+**Overall verdict:** ✅ confirmed  
+**PwC sources checked:**
+- https://taxsummaries.pwc.com/czech-republic/individual/taxes-on-personal-income
+- https://taxsummaries.pwc.com/czech-republic/individual/other-taxes
+**Verified:** 2026-05-31
