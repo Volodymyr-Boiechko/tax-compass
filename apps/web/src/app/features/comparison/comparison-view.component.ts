@@ -1,5 +1,6 @@
 import { Component, computed, inject } from '@angular/core';
 import { LucideX } from '@lucide/angular';
+import { TranslatePipe } from '@ngx-translate/core';
 import { AppStore } from '../../state/app.store';
 import { RegimeCalculationService } from '../../core/services/regime-calculation.service';
 import { Country } from '../../core/models/country.model';
@@ -14,32 +15,32 @@ interface IncomeRow {
 @Component({
   selector: 'app-comparison-view',
   standalone: true,
-  imports: [LucideX],
+  imports: [LucideX, TranslatePipe],
   template: `
     <div class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl overflow-hidden">
 
       <div class="flex items-center justify-between px-5 py-4 border-b border-[var(--color-border)]">
-        <h2 class="text-base font-semibold text-[var(--color-text-primary)]">Side-by-side comparison</h2>
+        <h2 class="text-base font-semibold text-[var(--color-text-primary)]">{{ 'comparison.title' | translate }}</h2>
         <button class="p-1.5 rounded text-[var(--color-text-tertiary)] hover:text-[var(--color-text-primary)] transition-colors" aria-label="Close comparison" (click)="store.closeComparison()">
           <svg lucideX class="size-4" aria-hidden="true"></svg>
         </button>
       </div>
 
       @if (countries().length < 2) {
-        <div class="py-16 text-center text-[var(--color-text-faint)] text-sm italic">Add at least 2 countries to compare.</div>
+        <div class="py-16 text-center text-[var(--color-text-faint)] text-sm italic">{{ 'comparison.addAtLeast2' | translate }}</div>
       } @else {
         <div class="overflow-x-auto">
           <table class="w-full text-sm border-collapse">
             <thead>
               <tr class="border-b border-[var(--color-border)]">
-                <th class="px-4 py-3 text-left text-xs text-[var(--color-text-tertiary)] font-medium w-36">Metric</th>
+                <th class="px-4 py-3 text-left text-xs text-[var(--color-text-tertiary)] font-medium w-36">{{ 'comparison.metric' | translate }}</th>
                 @for (c of countries(); track c.code) {
                   <th class="px-4 py-3 text-left">
                     <div class="flex items-center gap-2">
                       <span class="text-xl">{{ c.flag ?? '🏳' }}</span>
                       <div>
                         <p class="text-sm font-semibold text-[var(--color-text-primary)]">{{ c.name }}</p>
-                        <p class="text-[10px] text-[var(--color-text-tertiary)]">{{ regionLabel(c.region) }}</p>
+                        <p class="text-[10px] text-[var(--color-text-tertiary)]">{{ regionLabel(c.region) | translate }}</p>
                       </div>
                     </div>
                   </th>
@@ -51,11 +52,11 @@ interface IncomeRow {
               @if (incomeResults(); as ir) {
                 <tr class="bg-[var(--color-surface-hover)]/50">
                   <td class="px-4 py-2.5 text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-wider font-medium" colspan="999">
-                    Your income · €{{ fmtNum(ir.income) }}
+                    {{ 'comparison.yourIncome' | translate }} · €{{ fmtNum(ir.income) }}
                   </td>
                 </tr>
                 <tr class="border-b border-[var(--color-border)]/40">
-                  <td class="px-4 py-2.5 text-xs text-[var(--color-text-tertiary)]">Employment net</td>
+                  <td class="px-4 py-2.5 text-xs text-[var(--color-text-tertiary)]">{{ 'comparison.employmentNet' | translate }}</td>
                   @for (r of ir.results; track r.country.code) {
                     <td class="px-4 py-2.5 font-mono text-sm"
                         [style]="r.employment?.net === ir.maxEmplNet ? 'background: color-mix(in srgb, var(--color-accent) 8%, transparent)' : ''">
@@ -70,7 +71,7 @@ interface IncomeRow {
                   }
                 </tr>
                 <tr class="border-b border-[var(--color-border)]/40">
-                  <td class="px-4 py-2.5 text-xs text-[var(--color-text-tertiary)]">Best SE net</td>
+                  <td class="px-4 py-2.5 text-xs text-[var(--color-text-tertiary)]">{{ 'comparison.bestSeNet' | translate }}</td>
                   @for (r of ir.results; track r.country.code) {
                     <td class="px-4 py-2.5 font-mono text-sm">
                       <span [style.color]="r.selfEmployment?.net === ir.maxSeNet ? 'var(--color-accent)' : 'var(--color-text-secondary)'" class="font-semibold">
@@ -87,7 +88,7 @@ interface IncomeRow {
 
               <tr class="bg-[var(--color-surface-hover)]/50">
                 <td class="px-4 py-2.5 text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-wider font-medium" colspan="999">
-                  Effective rates at standard income levels
+                  {{ 'comparison.effectiveRates' | translate }}
                 </td>
               </tr>
 
@@ -107,7 +108,7 @@ interface IncomeRow {
               }
 
               <tr class="border-b border-[var(--color-border)]/40">
-                <td class="px-4 py-2.5 text-xs text-[var(--color-text-tertiary)]">Top PIT rate</td>
+                <td class="px-4 py-2.5 text-xs text-[var(--color-text-tertiary)]">{{ 'comparison.topPitRate' | translate }}</td>
                 @for (c of countries(); track c.code) {
                   <td class="px-4 py-2.5 font-mono text-sm">
                     <span [style.color]="rateColor(c.personalIncomeTax?.topRate ?? null)">{{ fmtRate(c.personalIncomeTax?.topRate ?? null) }}</span>
@@ -116,9 +117,9 @@ interface IncomeRow {
               </tr>
 
               <tr class="border-b border-[var(--color-border)]/40">
-                <td class="px-4 py-2.5 text-xs text-[var(--color-text-tertiary)]">Confidence</td>
+                <td class="px-4 py-2.5 text-xs text-[var(--color-text-tertiary)]">{{ 'comparison.confidenceLabel' | translate }}</td>
                 @for (c of countries(); track c.code) {
-                  <td class="px-4 py-2.5 text-xs text-[var(--color-text-secondary)]">{{ confLabel(c.confidence) }}</td>
+                  <td class="px-4 py-2.5 text-xs text-[var(--color-text-secondary)]">{{ confKey(c.confidence) | translate }}</td>
                 }
               </tr>
             </tbody>
@@ -219,8 +220,13 @@ export class ComparisonViewComponent {
   fmtEuro(n: number | null | undefined): string { return n != null ? '€' + Math.round(n).toLocaleString('en-US') : '—'; }
   fmtNum(n: number): string  { return n.toLocaleString('en-US'); }
 
-  confLabel(c: string | null): string {
-    const MAP: Record<string, string> = { high: 'High', 'medium-high': 'Med+', medium: 'Medium', low: 'Low' };
-    return c ? (MAP[c] ?? c) : 'Unknown';
+  confKey(c: string | null): string {
+    const MAP: Record<string, string> = {
+      high: 'confidence.high',
+      'medium-high': 'confidence.medPlus',
+      medium: 'confidence.med',
+      low: 'confidence.low',
+    };
+    return c ? (MAP[c] ?? c) : 'confidence.low';
   }
 }

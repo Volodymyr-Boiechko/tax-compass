@@ -2,6 +2,7 @@ import { Component, computed, effect, inject, signal, untracked } from '@angular
 import {
   LucideX, LucidePlus, LucideCheck, LucideExternalLink, LucideTrendingDown
 } from '@lucide/angular';
+import { TranslatePipe } from '@ngx-translate/core';
 import { AppStore } from '../../state/app.store';
 import { CalculationResult } from '../../core/services/calculation.service';
 import { RegimeCalculationService } from '../../core/services/regime-calculation.service';
@@ -14,7 +15,7 @@ type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
 @Component({
   selector: 'app-country-detail-panel',
   standalone: true,
-  imports: [LucideX, LucidePlus, LucideCheck, LucideExternalLink, LucideTrendingDown, RegimeCalculatorComponent],
+  imports: [LucideX, LucidePlus, LucideCheck, LucideExternalLink, LucideTrendingDown, RegimeCalculatorComponent, TranslatePipe],
   template: `
     @if (isVisible()) {
       <div
@@ -41,9 +42,9 @@ type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
           <div class="flex-1 min-w-0">
             <h1 id="detail-country-name" class="text-xl font-semibold text-[var(--color-text-primary)] truncate">{{ c.name }}</h1>
             <div class="flex items-center gap-2 mt-1">
-              <span class="text-xs bg-[var(--color-surface-hover)] border border-[var(--color-border)] rounded px-2 py-0.5 text-[var(--color-text-secondary)]">{{ regionLabel(c.region) }}</span>
+              <span class="text-xs bg-[var(--color-surface-hover)] border border-[var(--color-border)] rounded px-2 py-0.5 text-[var(--color-text-secondary)]">{{ regionLabel(c.region) | translate }}</span>
               @if (c.confidence) {
-                <span class="text-xs text-[var(--color-text-tertiary)]">{{ confLabel(c.confidence) }} confidence</span>
+                <span class="text-xs text-[var(--color-text-tertiary)]">{{ confKey(c.confidence) | translate }} {{ 'detail.confidence' | translate }}</span>
               }
               @if (c.computableRegimes?.length) {
                 <button
@@ -52,7 +53,7 @@ type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
                   (click)="activeTab.set('overview')"
                   [attr.aria-label]="c.computableRegimes!.length + ' live regime calculators available'"
                   title="Live regime calculator available"
-                >⚡ {{ c.computableRegimes!.length }} regimes</button>
+                >⚡ {{ 'detail.regimesCount' | translate:{ count: c.computableRegimes!.length } }}</button>
               }
             </div>
           </div>
@@ -67,15 +68,15 @@ type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
             >
               @if (isAdded()) {
                 <svg lucideCheck class="size-3.5" aria-hidden="true"></svg>
-                Added
+                {{ 'detail.added' | translate }}
               } @else {
                 <svg lucidePlus class="size-3.5" aria-hidden="true"></svg>
-                Compare
+                {{ 'detail.compare' | translate }}
               }
             </button>
             <button
               class="p-2 md:p-1.5 rounded text-[var(--color-text-tertiary)] hover:text-[var(--color-text-primary)] transition-colors"
-              aria-label="Close country details"
+              [attr.aria-label]="'detail.close' | translate"
               data-detail-close
               (click)="close()"
             >
@@ -95,7 +96,7 @@ type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
                 ? 'border-[var(--color-accent)] text-[var(--color-text-primary)]'
                 : 'border-transparent text-[var(--color-text-tertiary)] hover:text-[var(--color-text-secondary)]'"
               (click)="activeTab.set(tab.id)"
-            >{{ tab.label }}</button>
+            >{{ tab.labelKey | translate }}</button>
           }
         </div>
 
@@ -108,34 +109,34 @@ type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
             @if (incomeCalc(); as calc) {
               <div class="mb-4 p-3 bg-[var(--color-surface-hover)] rounded-lg border border-[var(--color-border)]">
                 <p class="text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-wider font-medium mb-2">
-                  Your income · €{{ fmtNum(store.userIncome()!) }}
+                  {{ 'detail.yourIncome' | translate }} · €{{ fmtNum(store.userIncome()!) }}
                 </p>
                 <div class="grid grid-cols-2 gap-3">
                   <div>
-                    <p class="text-[10px] text-[var(--color-text-faint)] mb-1">Employment</p>
+                    <p class="text-[10px] text-[var(--color-text-faint)] mb-1">{{ 'detail.employment' | translate }}</p>
                     @if (calc.employment; as emp) {
                       <p class="text-lg font-semibold font-mono" [style.color]="rateColor(emp.effectiveRate)">{{ fmtRate(emp.effectiveRate) }}</p>
-                      <p class="text-xs text-[var(--color-text-secondary)] font-mono">{{ fmtEuro(emp.net) }} net</p>
+                      <p class="text-xs text-[var(--color-text-secondary)] font-mono">{{ fmtEuro(emp.net) }} {{ 'detail.effectiveRate' | translate }}</p>
                       @if (emp.isApproximation) {
-                        <p class="text-[10px] text-[var(--color-text-faint)] mt-0.5">~ rough estimate</p>
+                        <p class="text-[10px] text-[var(--color-text-faint)] mt-0.5">{{ 'detail.roughEstimate' | translate }}</p>
                       }
                     } @else {
                       <p class="text-lg font-semibold text-[var(--color-text-faint)]">—</p>
-                      <p class="text-xs text-[var(--color-text-faint)]">No data</p>
+                      <p class="text-xs text-[var(--color-text-faint)]">{{ 'detail.noData' | translate }}</p>
                     }
                   </div>
                   <div>
-                    <p class="text-[10px] text-[var(--color-text-faint)] mb-1">Best SE</p>
+                    <p class="text-[10px] text-[var(--color-text-faint)] mb-1">{{ 'detail.bestSe' | translate }}</p>
                     @if (calc.selfEmployment; as se) {
                       <p class="text-lg font-semibold font-mono" [style.color]="rateColor(se.effectiveRate)">{{ fmtRate(se.effectiveRate) }}</p>
-                      <p class="text-xs text-[var(--color-text-secondary)] font-mono">{{ fmtEuro(se.net) }} net</p>
+                      <p class="text-xs text-[var(--color-text-secondary)] font-mono">{{ fmtEuro(se.net) }} {{ 'detail.effectiveRate' | translate }}</p>
                       <p class="text-[10px] text-[var(--color-text-faint)] mt-0.5">{{ regimeLabel(se.method) }}</p>
                       @if (se.isApproximation) {
-                        <p class="text-[10px] text-[var(--color-text-faint)]">~ rough estimate</p>
+                        <p class="text-[10px] text-[var(--color-text-faint)]">{{ 'detail.roughEstimate' | translate }}</p>
                       }
                     } @else {
                       <p class="text-lg font-semibold text-[var(--color-text-faint)]">—</p>
-                      <p class="text-xs text-[var(--color-text-faint)]">No data</p>
+                      <p class="text-xs text-[var(--color-text-faint)]">{{ 'detail.noData' | translate }}</p>
                     }
                   </div>
                 </div>
@@ -146,7 +147,7 @@ type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
             <div class="grid grid-cols-2 gap-3 mb-4">
               @if (c.personalIncomeTax?.topRate != null) {
                 <div class="p-3 bg-[var(--color-surface-hover)] rounded-lg border border-[var(--color-border)]">
-                  <p class="text-[10px] text-[var(--color-text-faint)] mb-1">Top PIT rate</p>
+                  <p class="text-[10px] text-[var(--color-text-faint)] mb-1">{{ 'detail.topPitRate' | translate }}</p>
                   <p class="text-2xl font-semibold font-mono" [style.color]="rateColor(c.personalIncomeTax!.topRate!)">
                     {{ fmtRate(c.personalIncomeTax!.topRate) }}
                   </p>
@@ -154,27 +155,27 @@ type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
               }
               @if (c.socialSecurity?.employeeRate != null) {
                 <div class="p-3 bg-[var(--color-surface-hover)] rounded-lg border border-[var(--color-border)]">
-                  <p class="text-[10px] text-[var(--color-text-faint)] mb-1">Employee SS</p>
+                  <p class="text-[10px] text-[var(--color-text-faint)] mb-1">{{ 'detail.employeeSs' | translate }}</p>
                   <p class="text-2xl font-semibold font-mono text-[var(--color-text-secondary)]">
                     {{ fmtRate(c.socialSecurity!.employeeRate) }}
                   </p>
                   @if (c.socialSecurity!.annualCap) {
-                    <p class="text-[10px] text-[var(--color-text-tertiary)] mt-0.5">Cap: {{ fmtEuro(c.socialSecurity!.annualCap) }}</p>
+                    <p class="text-[10px] text-[var(--color-text-tertiary)] mt-0.5">{{ 'detail.cap' | translate }}: {{ fmtEuro(c.socialSecurity!.annualCap) }}</p>
                   }
                 </div>
               }
             </div>
 
-            <!-- Regime Calculator — all countries now have at least one regime -->
+            <!-- Regime Calculator -->
             <div class="mb-4">
               <h3 class="text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-wider font-medium mb-2 flex items-center gap-1.5">
                 <svg lucideTrendingDown class="size-3" aria-hidden="true"></svg>
-                Regime Calculator
+                {{ 'detail.regimeCalculator' | translate }}
               </h3>
               @if (hasIncompleteRegimes(c)) {
                 <div class="mb-2 px-3 py-2 rounded-md text-[11px]"
                      style="background: color-mix(in srgb, var(--color-warning) 8%, transparent); border: 1px solid color-mix(in srgb, var(--color-warning) 25%, transparent); color: var(--color-warning)">
-                  ~ Rough estimate — detailed regime data pending
+                  {{ 'detail.roughEstimateFull' | translate }}
                 </div>
               }
               <app-regime-calculator [country]="c" />
@@ -182,7 +183,7 @@ type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
 
             @if (c.changes2026?.length) {
               <div class="mb-4">
-                <h3 class="text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-wider font-medium mb-2">What Changed in 2026</h3>
+                <h3 class="text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-wider font-medium mb-2">{{ 'detail.changesTitle' | translate }}</h3>
                 <ul class="space-y-1.5">
                   @for (change of c.changes2026; track $index) {
                     <li class="text-xs text-[var(--color-text-secondary)] flex gap-2">
@@ -199,14 +200,14 @@ type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
           @if (activeTab() === 'brackets') {
             @if (c.personalIncomeTax?.brackets?.length) {
               <h3 class="text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-wider font-medium mb-3">
-                PIT Brackets ({{ c.personalIncomeTax!.currency ?? 'local currency' }})
+                {{ 'detail.pitBrackets' | translate }} ({{ c.personalIncomeTax!.currency ?? ('detail.localCurrency' | translate) }})
               </h3>
               <div class="bg-[var(--color-surface-hover)] rounded-lg border border-[var(--color-border)] overflow-hidden">
                 <table class="w-full text-xs">
                   <thead>
                     <tr class="border-b border-[var(--color-border)]">
-                      <th class="px-3 py-2 text-left text-[var(--color-text-tertiary)] font-medium">Income range</th>
-                      <th class="px-3 py-2 text-right text-[var(--color-text-tertiary)] font-medium">Rate</th>
+                      <th class="px-3 py-2 text-left text-[var(--color-text-tertiary)] font-medium">{{ 'detail.incomeRange' | translate }}</th>
+                      <th class="px-3 py-2 text-right text-[var(--color-text-tertiary)] font-medium">{{ 'detail.rate' | translate }}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -220,7 +221,7 @@ type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
                 </table>
               </div>
             } @else {
-              <p class="text-sm text-[var(--color-text-faint)] italic py-8 text-center">No bracket data available</p>
+              <p class="text-sm text-[var(--color-text-faint)] italic py-8 text-center">{{ 'detail.noBracketData' | translate }}</p>
             }
           }
 
@@ -243,7 +244,7 @@ type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
                 }
               </div>
             } @else {
-              <p class="text-sm text-[var(--color-text-faint)] italic py-8 text-center">No special regimes available</p>
+              <p class="text-sm text-[var(--color-text-faint)] italic py-8 text-center">{{ 'detail.noSpecialRegimes' | translate }}</p>
             }
           }
 
@@ -251,31 +252,31 @@ type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
           @if (activeTab() === 'sources') {
             <div class="space-y-3">
               <div class="p-3 bg-[var(--color-surface-hover)] rounded-lg border border-[var(--color-border)]">
-                <p class="text-xs font-medium text-[var(--color-text-primary)] mb-1">EY Worldwide Personal Tax Guide 2025-26</p>
+                <p class="text-xs font-medium text-[var(--color-text-primary)] mb-1">{{ 'detail.eySource' | translate }}</p>
                 @if (c.sources?.ey) {
                   <p class="text-xs text-[var(--color-text-tertiary)]">{{ c.sources!.ey }}</p>
                 }
               </div>
               @if (c.sources?.pwc) {
                 <div class="p-3 bg-[var(--color-surface-hover)] rounded-lg border border-[var(--color-border)]">
-                  <p class="text-xs font-medium text-[var(--color-text-primary)] mb-2">PwC Worldwide Tax Summaries</p>
+                  <p class="text-xs font-medium text-[var(--color-text-primary)] mb-2">{{ 'detail.pwcSource' | translate }}</p>
                   <a [href]="c.sources!.pwc" target="_blank" rel="noopener"
                      class="inline-flex items-center gap-1.5 text-xs text-[var(--color-accent)] hover:opacity-80 transition-opacity">
                     <svg lucideExternalLink class="size-3" aria-hidden="true"></svg>
-                    Open source
+                    {{ 'detail.openSource' | translate }}
                   </a>
                 </div>
               }
               @if (c.crossVerification) {
                 <div class="p-3 bg-[var(--color-surface-hover)] rounded-lg border border-[var(--color-border)]">
-                  <p class="text-xs font-medium text-[var(--color-text-primary)] mb-1">Cross-verification</p>
+                  <p class="text-xs font-medium text-[var(--color-text-primary)] mb-1">{{ 'detail.crossVerification' | translate }}</p>
                   <p class="text-xs text-[var(--color-text-tertiary)]">{{ c.crossVerification.status }}</p>
                 </div>
               }
               @if (c.knownGaps?.length) {
                 <div class="p-3 rounded-lg border"
                      style="background: color-mix(in srgb, var(--color-warning) 6%, transparent); border-color: color-mix(in srgb, var(--color-warning) 30%, transparent)">
-                  <p class="text-xs font-medium mb-2" style="color: var(--color-warning)">Known gaps ({{ c.knownGaps.length }})</p>
+                  <p class="text-xs font-medium mb-2" style="color: var(--color-warning)">{{ 'detail.knownGaps' | translate:{ count: c.knownGaps.length } }}</p>
                   <ul class="space-y-1">
                     @for (g of c.knownGaps; track $index) {
                       <li class="text-xs text-[var(--color-text-tertiary)]">• {{ g }}</li>
@@ -322,11 +323,11 @@ export class CountryDetailPanelComponent {
     });
   }
 
-  readonly tabs: Array<{ id: Tab; label: string }> = [
-    { id: 'overview', label: 'Overview' },
-    { id: 'brackets', label: 'Tax Brackets' },
-    { id: 'regimes', label: 'SE Regimes' },
-    { id: 'sources', label: 'Sources' },
+  readonly tabs: Array<{ id: Tab; labelKey: string }> = [
+    { id: 'overview',  labelKey: 'detail.tabs.overview' },
+    { id: 'brackets',  labelKey: 'detail.tabs.brackets' },
+    { id: 'regimes',   labelKey: 'detail.tabs.regimes' },
+    { id: 'sources',   labelKey: 'detail.tabs.sources' },
   ];
 
   readonly isAdded = computed(() => {
@@ -383,9 +384,14 @@ export class CountryDetailPanelComponent {
     return 'var(--rate-high)';
   }
 
-  confLabel(c: string | null): string {
-    const MAP: Record<string, string> = { high: 'High', 'medium-high': 'Med+', medium: 'Medium', low: 'Low' };
-    return c ? (MAP[c] ?? c) : 'Unknown';
+  confKey(c: string | null): string {
+    const MAP: Record<string, string> = {
+      high: 'confidence.high',
+      'medium-high': 'confidence.medPlus',
+      medium: 'confidence.med',
+      low: 'confidence.low',
+    };
+    return c ? (MAP[c] ?? c) : 'confidence.low';
   }
 
   fmtRate(r: number | null | undefined): string {

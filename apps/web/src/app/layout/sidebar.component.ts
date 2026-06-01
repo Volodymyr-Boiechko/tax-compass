@@ -1,28 +1,29 @@
 import { Component, inject, output } from '@angular/core';
 import { LucideX } from '@lucide/angular';
+import { TranslatePipe } from '@ngx-translate/core';
 import { AppStore } from '../state/app.store';
 import { ViewToggleComponent } from '../features/view-toggle/view-toggle.component';
 import { Confidence, Region } from '../core/models/country.model';
 import { regionLabel } from '../core/utils/region.utils';
 
-const QUICK_FILTERS: Array<{ label: string; action: string }> = [
-  { label: 'Zero Tax', action: 'zero-tax' },
-  { label: 'EU Only', action: 'eu' },
-  { label: 'My List', action: 'my-list' },
-  { label: 'Tax Havens', action: 'tax-havens' },
+const QUICK_FILTERS: Array<{ labelKey: string; action: string }> = [
+  { labelKey: 'sidebar.zeroTax',   action: 'zero-tax' },
+  { labelKey: 'sidebar.euOnly',    action: 'eu' },
+  { labelKey: 'sidebar.myList',    action: 'my-list' },
+  { labelKey: 'sidebar.taxHavens', action: 'tax-havens' },
 ];
 
-const CONFIDENCE_OPTS: Array<{ value: Confidence; label: string }> = [
-  { value: 'high', label: 'High' },
-  { value: 'medium-high', label: 'Med+' },
-  { value: 'medium', label: 'Med' },
-  { value: 'low', label: 'Low' },
+const CONFIDENCE_OPTS: Array<{ value: Confidence; labelKey: string }> = [
+  { value: 'high',        labelKey: 'confidence.high' },
+  { value: 'medium-high', labelKey: 'confidence.medPlus' },
+  { value: 'medium',      labelKey: 'confidence.med' },
+  { value: 'low',         labelKey: 'confidence.low' },
 ];
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [LucideX, ViewToggleComponent],
+  imports: [LucideX, ViewToggleComponent, TranslatePipe],
   template: `
     <aside class="w-[260px] md:w-[260px] h-full bg-[var(--color-surface)] border-r border-[var(--color-border)] overflow-y-auto flex flex-col shrink-0 transition-colors duration-150">
 
@@ -39,13 +40,13 @@ const CONFIDENCE_OPTS: Array<{ value: Confidence; label: string }> = [
 
       <!-- View -->
       <section class="p-4 border-b border-[var(--color-border)]">
-        <p class="text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-widest font-medium mb-3">View</p>
+        <p class="text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-widest font-medium mb-3">{{ 'sidebar.view' | translate }}</p>
         <app-view-toggle />
       </section>
 
       <!-- Regions -->
       <section class="p-4 border-b border-[var(--color-border)]">
-        <p class="text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-widest font-medium mb-3">Regions</p>
+        <p class="text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-widest font-medium mb-3">{{ 'sidebar.regions' | translate }}</p>
         <div class="flex flex-col gap-1.5">
           @for (r of store.allRegions(); track r) {
             <label class="flex items-center gap-2.5 cursor-pointer group">
@@ -68,7 +69,7 @@ const CONFIDENCE_OPTS: Array<{ value: Confidence; label: string }> = [
                   ? 'text-[var(--color-text-primary)]'
                   : 'text-[var(--color-text-secondary)] group-hover:text-[var(--color-text-primary)]'"
                 (click)="toggleRegion(r)"
-              >{{ regionLabel(r) }}</span>
+              >{{ regionLabel(r) | translate }}</span>
             </label>
           }
         </div>
@@ -76,7 +77,7 @@ const CONFIDENCE_OPTS: Array<{ value: Confidence; label: string }> = [
 
       <!-- Confidence -->
       <section class="p-4 border-b border-[var(--color-border)]">
-        <p class="text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-widest font-medium mb-3">Confidence</p>
+        <p class="text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-widest font-medium mb-3">{{ 'sidebar.confidence' | translate }}</p>
         <div class="flex flex-wrap gap-1.5">
           @for (c of confidenceOpts; track c.value) {
             <button
@@ -85,14 +86,14 @@ const CONFIDENCE_OPTS: Array<{ value: Confidence; label: string }> = [
                 ? 'bg-[var(--color-accent)]/10 border-[var(--color-accent)] text-[var(--color-accent)]'
                 : 'border-[var(--color-border)] text-[var(--color-text-tertiary)] hover:border-[var(--color-border-bright)] hover:text-[var(--color-text-secondary)]'"
               (click)="toggleConfidence(c.value)"
-            >{{ c.label }}</button>
+            >{{ c.labelKey | translate }}</button>
           }
         </div>
       </section>
 
       <!-- Quick filters -->
       <section class="p-4 border-b border-[var(--color-border)]">
-        <p class="text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-widest font-medium mb-3">Quick Filters</p>
+        <p class="text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-widest font-medium mb-3">{{ 'sidebar.quickFilters' | translate }}</p>
         <div class="flex flex-col gap-1">
           @for (f of quickFilters; track f.action) {
             <button
@@ -102,7 +103,7 @@ const CONFIDENCE_OPTS: Array<{ value: Confidence; label: string }> = [
                 : 'text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface-hover)] border border-transparent'"
               [attr.aria-pressed]="store.quickFilter() === f.action"
               (click)="applyQuickFilter(f.action)"
-            >{{ f.label }}</button>
+            >{{ f.labelKey | translate }}</button>
           }
         </div>
       </section>
@@ -112,7 +113,7 @@ const CONFIDENCE_OPTS: Array<{ value: Confidence; label: string }> = [
         <section class="p-4">
           <div class="flex items-center justify-between">
             <span class="text-xs text-[var(--color-text-tertiary)]">
-              {{ store.activeFilterCount() }} filter{{ store.activeFilterCount() === 1 ? '' : 's' }} active
+              {{ (store.activeFilterCount() === 1 ? 'sidebar.filterActive' : 'sidebar.filtersActive') | translate:{ count: store.activeFilterCount() } }}
             </span>
             <button
               class="text-xs text-[var(--color-text-secondary)] hover:text-[var(--color-danger)] transition-colors flex items-center gap-1"
@@ -120,7 +121,7 @@ const CONFIDENCE_OPTS: Array<{ value: Confidence; label: string }> = [
               (click)="store.clearFilters()"
             >
               <svg lucideX class="size-3" aria-hidden="true"></svg>
-              Reset all
+              {{ 'sidebar.resetAll' | translate }}
             </button>
           </div>
         </section>
@@ -132,7 +133,7 @@ const CONFIDENCE_OPTS: Array<{ value: Confidence; label: string }> = [
       <div class="p-4 border-t border-[var(--color-border)]">
         <p class="text-xs text-[var(--color-text-tertiary)]">
           <span class="text-[var(--color-text-primary)] font-medium">{{ store.filteredCount() }}</span>
-          / {{ store.countryCount() }} countries
+          / {{ store.countryCount() }} {{ 'sidebar.countries' | translate }}
         </p>
       </div>
     </aside>

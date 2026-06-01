@@ -1,5 +1,6 @@
 import { Component, computed, inject } from '@angular/core';
 import { LucideSearchX } from '@lucide/angular';
+import { TranslatePipe } from '@ngx-translate/core';
 import { AppStore, SortField } from '../../state/app.store';
 import { CalculationService, CalculationResult } from '../../core/services/calculation.service';
 import { Country, Confidence, Region } from '../../core/models/country.model';
@@ -15,7 +16,7 @@ interface Row {
 @Component({
   selector: 'app-ranking-table',
   standalone: true,
-  imports: [LucideSearchX],
+  imports: [LucideSearchX, TranslatePipe],
   template: `
     <div class="overflow-x-auto">
       <table class="w-full text-sm min-w-[900px]">
@@ -27,35 +28,35 @@ interface Row {
             <tr>
               <th class="px-3 py-2 text-left" colspan="4"></th>
               <th class="px-3 py-2 text-center text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-wider border-l border-[var(--color-border)]" colspan="2">
-                Employment · €{{ fmtNum(store.userIncome()!) }}
+                {{ 'table.employment' | translate }} · €{{ fmtNum(store.userIncome()!) }}
               </th>
               <th class="px-3 py-2 text-center text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-wider border-l border-[var(--color-border)]" colspan="2">
-                Best Self-Employment · €{{ fmtNum(store.userIncome()!) }}
+                {{ 'table.bestSe' | translate }} · €{{ fmtNum(store.userIncome()!) }}
               </th>
             </tr>
           } @else {
             <tr>
               <th class="px-3 py-2 text-left" colspan="4"></th>
               <th class="px-3 py-2 text-center text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-wider border-l border-[var(--color-border)]" colspan="3">
-                Employment (effective rate)
+                {{ 'table.employment' | translate }} ({{ 'table.effectiveRate' | translate }})
               </th>
               <th class="px-3 py-2 text-center text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-wider border-l border-[var(--color-border)]" colspan="2">
-                Best Self-Employment
+                {{ 'table.bestSe' | translate }}
               </th>
               <th class="px-3 py-2 text-center" colspan="1"></th>
             </tr>
           }
           <tr class="border-t border-[var(--color-border)]/50">
-            <th class="px-3 py-2.5 text-left text-[11px] text-[var(--color-text-tertiary)] font-medium w-10" scope="col">#</th>
-            <th class="px-3 py-2.5 text-left text-[11px] text-[var(--color-text-tertiary)] font-medium min-w-[160px]" scope="col">Country</th>
-            <th class="px-3 py-2.5 text-left text-[11px] text-[var(--color-text-tertiary)] font-medium min-w-[130px] hidden md:table-cell" scope="col">Region</th>
-            <th class="px-3 py-2.5 text-center text-[11px] text-[var(--color-text-tertiary)] font-medium w-16" scope="col">Conf.</th>
+            <th class="px-3 py-2.5 text-left text-[11px] text-[var(--color-text-tertiary)] font-medium w-10" scope="col">{{ 'table.rank' | translate }}</th>
+            <th class="px-3 py-2.5 text-left text-[11px] text-[var(--color-text-tertiary)] font-medium min-w-[160px]" scope="col">{{ 'table.country' | translate }}</th>
+            <th class="px-3 py-2.5 text-left text-[11px] text-[var(--color-text-tertiary)] font-medium min-w-[130px] hidden md:table-cell" scope="col">{{ 'table.region' | translate }}</th>
+            <th class="px-3 py-2.5 text-center text-[11px] text-[var(--color-text-tertiary)] font-medium w-16" scope="col">{{ 'table.conf' | translate }}</th>
 
             @if (store.userIncome() !== null) {
-              <th class="px-3 py-2.5 text-right text-[11px] text-[var(--color-text-tertiary)] font-medium border-l border-[var(--color-border)] w-28">Net</th>
-              <th class="px-3 py-2.5 text-right text-[11px] text-[var(--color-text-tertiary)] font-medium w-20">Rate</th>
-              <th class="px-3 py-2.5 text-right text-[11px] text-[var(--color-text-tertiary)] font-medium border-l border-[var(--color-border)] w-28">Net</th>
-              <th class="px-3 py-2.5 text-right text-[11px] text-[var(--color-text-tertiary)] font-medium w-20">Rate</th>
+              <th class="px-3 py-2.5 text-right text-[11px] text-[var(--color-text-tertiary)] font-medium border-l border-[var(--color-border)] w-28">{{ 'table.net' | translate }}</th>
+              <th class="px-3 py-2.5 text-right text-[11px] text-[var(--color-text-tertiary)] font-medium w-20">{{ 'table.rate' | translate }}</th>
+              <th class="px-3 py-2.5 text-right text-[11px] text-[var(--color-text-tertiary)] font-medium border-l border-[var(--color-border)] w-28">{{ 'table.net' | translate }}</th>
+              <th class="px-3 py-2.5 text-right text-[11px] text-[var(--color-text-tertiary)] font-medium w-20">{{ 'table.rate' | translate }}</th>
             } @else {
               <th class="px-3 py-2.5 text-right text-[11px] text-[var(--color-text-tertiary)] font-medium border-l border-[var(--color-border)] w-20 cursor-pointer hover:text-[var(--color-text-secondary)] transition-colors" scope="col" [attr.aria-sort]="ariaSortFor('employment30k')" (click)="store.setSort('employment30k')">
                 <span class="flex items-center justify-end gap-1">€30k {{ sortChevron('employment30k') }}</span>
@@ -140,7 +141,7 @@ interface Row {
 
                 <td class="px-3 py-2.5 hidden md:table-cell">
                   <span class="inline-block px-2 py-0.5 rounded text-[11px] bg-[var(--color-surface-hover)] text-[var(--color-text-secondary)] border border-[var(--color-border)] transition-transform hover:scale-[1.02]">
-                    {{ regionLabel(row.country.region) }}
+                    {{ regionLabel(row.country.region) | translate }}
                   </span>
                 </td>
 
@@ -199,21 +200,21 @@ interface Row {
                   @if (store.quickFilter() === 'my-list' && store.myList().length === 0) {
                     <div class="flex flex-col items-center justify-center py-20 gap-3 anim-fade-in-up">
                       <span class="text-4xl" aria-hidden="true">⭐</span>
-                      <p class="text-sm text-[var(--color-text-tertiary)]">Your list is empty</p>
-                      <p class="text-xs text-[var(--color-text-faint)]">Click ★ on any country row to add it to My List</p>
+                      <p class="text-sm text-[var(--color-text-tertiary)]">{{ 'table.yourListEmpty' | translate }}</p>
+                      <p class="text-xs text-[var(--color-text-faint)]">{{ 'table.emptyMyList' | translate }}</p>
                       <button
                         class="text-xs text-[var(--color-accent)] hover:opacity-80 transition-opacity underline"
                         (click)="store.setQuickFilter(null)"
-                      >Show all countries</button>
+                      >{{ 'table.showAll' | translate }}</button>
                     </div>
                   } @else {
                     <div class="flex flex-col items-center justify-center py-20 gap-3 anim-fade-in-up">
                       <svg lucideSearchX class="size-10 text-[var(--color-text-faint)]" aria-hidden="true"></svg>
-                      <p class="text-sm text-[var(--color-text-tertiary)]">No countries match your filters</p>
+                      <p class="text-sm text-[var(--color-text-tertiary)]">{{ 'table.noResults' | translate }}</p>
                       <button
                         class="text-xs text-[var(--color-accent)] hover:opacity-80 transition-opacity underline"
                         (click)="store.clearFilters()"
-                      >Clear all filters</button>
+                      >{{ 'table.clearFilters' | translate }}</button>
                     </div>
                   }
                 </td>

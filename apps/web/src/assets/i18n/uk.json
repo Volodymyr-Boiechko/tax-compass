@@ -1,0 +1,142 @@
+{
+  "app": {
+    "name": "TaxCompass",
+    "tagline": "Порівняй податок на дохід у 147 країнах"
+  },
+  "topNav": {
+    "searchPlaceholder": "Шукати серед {{count}} країн…",
+    "incomeLabel": "Річний дохід",
+    "themeToggleDark": "Перейти до світлої теми",
+    "themeToggleLight": "Перейти до темної теми",
+    "shortcuts": "Гарячі клавіші (?)"
+  },
+  "sidebar": {
+    "regions": "Регіони",
+    "confidence": "Достовірність",
+    "view": "Вигляд",
+    "table": "Таблиця",
+    "map": "Мапа",
+    "quickFilters": "Швидкі фільтри",
+    "zeroTax": "0% податку",
+    "euOnly": "Лише ЄС",
+    "myList": "Мій список",
+    "taxHavens": "Податкові гавані",
+    "resetAll": "Скинути все",
+    "filterActive": "{{count}} фільтр активний",
+    "filtersActive": "{{count}} фільтрів активно",
+    "countries": "країн"
+  },
+  "regions": {
+    "africa": "Африка",
+    "caribbean": "Карибський басейн",
+    "centralAmerica": "Центральна Америка",
+    "centralAsia": "Центральна Азія",
+    "eastAsia": "Східна Азія",
+    "easternEurope": "Східна Європа",
+    "middleEast": "Близький Схід",
+    "northAmerica": "Північна Америка",
+    "northernEurope": "Північна Європа",
+    "pacific": "Тихий океан",
+    "southAmerica": "Південна Америка",
+    "southAsia": "Південна Азія",
+    "southeastAsia": "Південно-Східна Азія",
+    "southernEurope": "Південна Європа",
+    "westernEurope": "Західна Європа"
+  },
+  "confidence": {
+    "high": "Висока",
+    "medPlus": "Серед+",
+    "med": "Серед",
+    "low": "Низька"
+  },
+  "table": {
+    "rank": "#",
+    "country": "Країна",
+    "region": "Регіон",
+    "conf": "Дост.",
+    "employment": "Найманий",
+    "bestSe": "Найкращий ФОП",
+    "effectiveRate": "ефективна ставка",
+    "net": "Чистий",
+    "rate": "Ставка",
+    "noResults": "Жодна країна не відповідає фільтрам",
+    "clearFilters": "Скинути всі фільтри",
+    "emptyMyList": "Натисни ★ на будь-якій країні щоб додати в Мій список",
+    "showAll": "Показати всі країни",
+    "yourListEmpty": "Ваш список порожній"
+  },
+  "detail": {
+    "tabs": {
+      "overview": "Огляд",
+      "brackets": "Шкали",
+      "regimes": "Режими ФОП",
+      "sources": "Джерела"
+    },
+    "yourIncome": "Ваш дохід",
+    "employment": "Найманий",
+    "bestSe": "Найкращий ФОП",
+    "noData": "Даних немає",
+    "roughEstimate": "~ орієнтовна оцінка",
+    "roughEstimateFull": "~ Орієнтовна оцінка — детальні дані режимів відсутні",
+    "effectiveRate": "ефективна",
+    "gross": "брутто",
+    "topPitRate": "Найвища ставка ПДФО",
+    "employeeSs": "Соц. внесок",
+    "cap": "Ліміт",
+    "regimeCalculator": "Калькулятор режимів",
+    "changesTitle": "Що змінилось у 2026",
+    "pitBrackets": "Шкали ПДФО",
+    "localCurrency": "місцева валюта",
+    "incomeRange": "Діапазон доходу",
+    "rate": "Ставка",
+    "noBracketData": "Даних про шкали немає",
+    "noSpecialRegimes": "Спеціальних режимів немає",
+    "eySource": "EY Worldwide Personal Tax Guide 2025-26",
+    "pwcSource": "PwC Worldwide Tax Summaries",
+    "openSource": "Відкрити джерело",
+    "crossVerification": "Перехресна перевірка",
+    "knownGaps": "Відомі прогалини ({{count}})",
+    "compare": "Порівняти",
+    "added": "Додано",
+    "close": "Закрити деталі країни",
+    "confidence": "достовірність",
+    "regimesCount": "{{count}} режим(ів)",
+    "negativeRateWarning": "⚠ Від'ємна ефективна ставка — пільги перевищують дохід; відображено як 0%.",
+    "breakdownNote": "Розраховано за параметрами EY/PwC 2026. Незначні наближення — див. вкладку Джерела."
+  },
+  "comparison": {
+    "title": "Порівняння поряд",
+    "comparing": "Порівнюємо",
+    "addAtLeast2": "Додайте щонайменше 2 країни для порівняння.",
+    "compare": "Порівняти",
+    "clear": "Очистити",
+    "metric": "Показник",
+    "yourIncome": "Ваш дохід",
+    "employmentNet": "Чистий (найманий)",
+    "bestSeNet": "Чистий (найкращий ФОП)",
+    "effectiveRates": "Ефективні ставки при стандартних рівнях доходу",
+    "topPitRate": "Найвища ставка ПДФО",
+    "confidenceLabel": "Достовірність"
+  },
+  "regimeCard": {
+    "best": "НАЙКРАЩИЙ",
+    "employed": "Найманий",
+    "selfEmpl": "Самозайнятий",
+    "showBreakdown": "Показати покроковий розрахунок",
+    "hideBreakdown": "Сховати покроковий розрахунок",
+    "enterIncomePrompt": "Введіть ваш річний дохід у верхній панелі, щоб побачити розрахунки для всіх {{count}} режимів."
+  },
+  "shortcuts": {
+    "title": "Гарячі клавіші",
+    "search": "Фокус пошуку",
+    "table": "Вигляд таблиці",
+    "map": "Вигляд мапи",
+    "theme": "Перемкнути тему",
+    "close": "Закрити панелі",
+    "shortcuts": "Показати підказки",
+    "closeBtn": "Закрити"
+  },
+  "map": {
+    "loading": "Завантаження мапи…"
+  }
+}

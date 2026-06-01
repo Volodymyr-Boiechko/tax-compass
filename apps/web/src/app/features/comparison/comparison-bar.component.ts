@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { LucideX, LucideBarChart2 } from '@lucide/angular';
+import { TranslatePipe } from '@ngx-translate/core';
 import { AppStore } from '../../state/app.store';
 
 @Component({
   selector: 'app-comparison-bar',
   standalone: true,
-  imports: [LucideX, LucideBarChart2],
+  imports: [LucideX, LucideBarChart2, TranslatePipe],
   template: `
     <div
       class="h-14 bg-[var(--color-surface)] border-t border-[var(--color-border)] flex items-center px-4 gap-4 transition-colors duration-150 anim-slide-in-up"
@@ -14,7 +15,7 @@ import { AppStore } from '../../state/app.store';
     >
 
       <span class="text-sm text-[var(--color-text-tertiary)] shrink-0">
-        Comparing
+        {{ 'comparison.comparing' | translate }}
         <span class="text-[var(--color-text-primary)] font-medium">{{ store.comparedCodes().length }}/3</span>
       </span>
 
@@ -44,13 +45,13 @@ import { AppStore } from '../../state/app.store';
           (click)="store.openComparison()"
         >
           <svg lucideBarChart2 class="size-3.5" aria-hidden="true"></svg>
-          <span class="hidden sm:inline">Compare</span>
+          <span class="hidden sm:inline">{{ 'comparison.compare' | translate }}</span>
         </button>
         <button
           class="text-xs text-[var(--color-text-tertiary)] hover:text-[var(--color-text-secondary)] transition-colors"
           aria-label="Clear all countries from comparison"
           (click)="store.clearComparison()"
-        >Clear</button>
+        >{{ 'comparison.clear' | translate }}</button>
       </div>
     </div>
   `,
