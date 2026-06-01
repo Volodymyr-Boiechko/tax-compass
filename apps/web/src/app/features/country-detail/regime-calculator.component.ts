@@ -1,4 +1,5 @@
 import { Component, computed, effect, inject, input, signal, untracked } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { AppStore } from '../../state/app.store';
 import { RegimeCalculationService, RegimeCalculationResult, CalculationStep } from '../../core/services/regime-calculation.service';
 import { Country } from '../../core/models/country.model';
@@ -6,14 +7,13 @@ import { Country } from '../../core/models/country.model';
 @Component({
   selector: 'app-regime-calculator',
   standalone: true,
-  imports: [],
+  imports: [TranslatePipe],
   template: `
     @if (!income()) {
       <!-- No income prompt -->
       <div class="p-4 rounded-lg border border-dashed border-[var(--color-border)] text-center">
         <p class="text-[11px] text-[var(--color-text-tertiary)]">
-          Enter your annual income in the top bar to see live calculations for all
-          {{ country().computableRegimes!.length }} available regimes.
+          {{ 'regimeCard.enterIncomePrompt' | translate:{ count: country().computableRegimes!.length } }}
         </p>
       </div>
     } @else {
@@ -65,7 +65,7 @@ import { Country } from '../../core/models/country.model';
                       @if (isWinner) {
                         <span class="inline-flex items-center gap-1 text-[10px] font-semibold px-1.5 py-0.5 rounded-full shrink-0"
                               style="background: color-mix(in srgb, var(--color-accent) 15%, transparent); color: var(--color-accent); border: 1px solid color-mix(in srgb, var(--color-accent) 40%, transparent)">
-                          ✓ BEST
+                          ✓ {{ 'regimeCard.best' | translate }}
                         </span>
                       }
                       <h4 class="text-sm font-medium text-[var(--color-text-primary)] leading-tight">
@@ -81,7 +81,7 @@ import { Country } from '../../core/models/country.model';
                     [style]="r.regimeType === 'employment'
                       ? 'background: color-mix(in srgb, var(--color-text-secondary) 8%, transparent); border-color: var(--color-border); color: var(--color-text-secondary)'
                       : 'background: color-mix(in srgb, var(--color-accent) 8%, transparent); border-color: color-mix(in srgb, var(--color-accent) 30%, transparent); color: var(--color-accent)'"
-                  >{{ r.regimeType === 'employment' ? 'Employed' : 'Self-Empl.' }}</span>
+                  >{{ (r.regimeType === 'employment' ? 'regimeCard.employed' : 'regimeCard.selfEmpl') | translate }}</span>
                 </div>
 
                 <!-- Net income display -->
@@ -92,15 +92,15 @@ import { Country } from '../../core/models/country.model';
                   </div>
                   <div class="flex items-center gap-2 mt-1">
                     <span class="text-xs font-medium" [style.color]="rateColor(r.effectiveRate)">
-                      {{ fmtRate(r.effectiveRate) }} effective
+                      {{ fmtRate(r.effectiveRate) }} {{ 'detail.effectiveRate' | translate }}
                     </span>
                     <span class="text-[10px] text-[var(--color-text-faint)]">
-                      · on {{ fmtEuro(r.gross) }} gross
+                      · {{ 'detail.gross' | translate }} {{ fmtEuro(r.gross) }}
                     </span>
                   </div>
                   @if (r.effectiveRate < 0) {
                     <p class="text-[10px] mt-1" style="color: var(--color-warning)">
-                      ⚠ Negative effective rate — exemptions exceed gross income; displayed as 0%.
+                      {{ 'detail.negativeRateWarning' | translate }}
                     </p>
                   }
                 </div>
@@ -125,7 +125,7 @@ import { Country } from '../../core/models/country.model';
                   (click)="toggleExpand(r.regimeId)"
                 >
                   <span class="text-[10px] leading-none">{{ expanded ? '▲' : '▼' }}</span>
-                  {{ expanded ? 'Hide' : 'Show' }} step-by-step breakdown
+                  {{ (expanded ? 'regimeCard.hideBreakdown' : 'regimeCard.showBreakdown') | translate }}
                 </button>
 
                 <!-- Breakdown steps (expanded) -->
@@ -169,9 +169,9 @@ import { Country } from '../../core/models/country.model';
           }
         </div>
 
-        <!-- Phase 2 accuracy note -->
+        <!-- Accuracy note -->
         <p class="mt-3 text-[10px] text-[var(--color-text-faint)] text-center italic">
-          Calculated from 2026 EY/PwC parameters. Minor approximations apply — see Sources tab.
+          {{ 'detail.breakdownNote' | translate }}
         </p>
 
       }
@@ -201,7 +201,6 @@ export class RegimeCalculatorComponent {
   });
 
   constructor() {
-    // Auto-expand winner card whenever comparison changes
     effect(() => {
       const cmp = this.comparison();
       untracked(() => {
@@ -248,7 +247,6 @@ export class RegimeCalculatorComponent {
   }
 
   fmtRate(r: number): string {
-    // Guard: negative effective rate is treated as 0% (e.g. exemption schemes)
     const clamped = Math.max(0, r);
     return (clamped * 100).toFixed(1) + '%';
   }

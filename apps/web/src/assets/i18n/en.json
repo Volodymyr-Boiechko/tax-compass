@@ -1,0 +1,142 @@
+{
+  "app": {
+    "name": "TaxCompass",
+    "tagline": "Compare income tax across 147 countries"
+  },
+  "topNav": {
+    "searchPlaceholder": "Search {{count}} countries…",
+    "incomeLabel": "Annual income",
+    "themeToggleDark": "Switch to light theme",
+    "themeToggleLight": "Switch to dark theme",
+    "shortcuts": "Keyboard shortcuts (?)"
+  },
+  "sidebar": {
+    "regions": "Regions",
+    "confidence": "Confidence",
+    "view": "View",
+    "table": "Table",
+    "map": "Map",
+    "quickFilters": "Quick Filters",
+    "zeroTax": "Zero Tax",
+    "euOnly": "EU Only",
+    "myList": "My List",
+    "taxHavens": "Tax Havens",
+    "resetAll": "Reset all",
+    "filterActive": "{{count}} filter active",
+    "filtersActive": "{{count}} filters active",
+    "countries": "countries"
+  },
+  "regions": {
+    "africa": "Africa",
+    "caribbean": "Caribbean",
+    "centralAmerica": "Central America",
+    "centralAsia": "Central Asia",
+    "eastAsia": "East Asia",
+    "easternEurope": "Eastern Europe",
+    "middleEast": "Middle East",
+    "northAmerica": "North America",
+    "northernEurope": "Northern Europe",
+    "pacific": "Pacific",
+    "southAmerica": "South America",
+    "southAsia": "South Asia",
+    "southeastAsia": "Southeast Asia",
+    "southernEurope": "Southern Europe",
+    "westernEurope": "Western Europe"
+  },
+  "confidence": {
+    "high": "High",
+    "medPlus": "Med+",
+    "med": "Med",
+    "low": "Low"
+  },
+  "table": {
+    "rank": "#",
+    "country": "Country",
+    "region": "Region",
+    "conf": "Conf.",
+    "employment": "Employment",
+    "bestSe": "Best Self-Employment",
+    "effectiveRate": "effective rate",
+    "net": "Net",
+    "rate": "Rate",
+    "noResults": "No countries match your filters",
+    "clearFilters": "Clear all filters",
+    "emptyMyList": "Click ★ on any country row to add it to My List",
+    "showAll": "Show all countries",
+    "yourListEmpty": "Your list is empty"
+  },
+  "detail": {
+    "tabs": {
+      "overview": "Overview",
+      "brackets": "Tax Brackets",
+      "regimes": "SE Regimes",
+      "sources": "Sources"
+    },
+    "yourIncome": "Your income",
+    "employment": "Employment",
+    "bestSe": "Best SE",
+    "noData": "No data",
+    "roughEstimate": "~ rough estimate",
+    "roughEstimateFull": "~ Rough estimate — detailed regime data pending",
+    "effectiveRate": "effective",
+    "gross": "gross",
+    "topPitRate": "Top PIT rate",
+    "employeeSs": "Employee SS",
+    "cap": "Cap",
+    "regimeCalculator": "Regime Calculator",
+    "changesTitle": "What Changed in 2026",
+    "pitBrackets": "PIT Brackets",
+    "localCurrency": "local currency",
+    "incomeRange": "Income range",
+    "rate": "Rate",
+    "noBracketData": "No bracket data available",
+    "noSpecialRegimes": "No special regimes available",
+    "eySource": "EY Worldwide Personal Tax Guide 2025-26",
+    "pwcSource": "PwC Worldwide Tax Summaries",
+    "openSource": "Open source",
+    "crossVerification": "Cross-verification",
+    "knownGaps": "Known gaps ({{count}})",
+    "compare": "Compare",
+    "added": "Added",
+    "close": "Close country details",
+    "confidence": "confidence",
+    "regimesCount": "{{count}} regimes",
+    "negativeRateWarning": "⚠ Negative effective rate — exemptions exceed gross income; displayed as 0%.",
+    "breakdownNote": "Calculated from 2026 EY/PwC parameters. Minor approximations apply — see Sources tab."
+  },
+  "comparison": {
+    "title": "Side-by-side comparison",
+    "comparing": "Comparing",
+    "addAtLeast2": "Add at least 2 countries to compare.",
+    "compare": "Compare",
+    "clear": "Clear",
+    "metric": "Metric",
+    "yourIncome": "Your income",
+    "employmentNet": "Employment net",
+    "bestSeNet": "Best SE net",
+    "effectiveRates": "Effective rates at standard income levels",
+    "topPitRate": "Top PIT rate",
+    "confidenceLabel": "Confidence"
+  },
+  "regimeCard": {
+    "best": "BEST",
+    "employed": "Employed",
+    "selfEmpl": "Self-Empl.",
+    "showBreakdown": "Show step-by-step breakdown",
+    "hideBreakdown": "Hide step-by-step breakdown",
+    "enterIncomePrompt": "Enter your annual income in the top bar to see live calculations for all {{count}} available regimes."
+  },
+  "shortcuts": {
+    "title": "Keyboard shortcuts",
+    "search": "Focus search",
+    "table": "Table view",
+    "map": "Map view",
+    "theme": "Toggle theme",
+    "close": "Close panels",
+    "shortcuts": "Show shortcuts",
+    "closeBtn": "Close shortcuts"
+  },
+  "map": {
+    "loading": "Loading map…"
+  }
+}

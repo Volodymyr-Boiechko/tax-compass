@@ -1,23 +1,24 @@
 import { Region } from '../models/country.model';
 
-export const REGION_LABELS: Record<Region, string> = {
-  'africa':          'Africa',
-  'caribbean':       'Caribbean',
-  'central-america': 'Central America',
-  'central-asia':    'Central Asia',
-  'east-asia':       'East Asia',
-  'eastern-europe':  'Eastern Europe',
-  'middle-east':     'Middle East',
-  'north-america':   'North America',
-  'northern-europe': 'Northern Europe',
-  'pacific':         'Pacific',
-  'south-america':   'South America',
-  'south-asia':      'South Asia',
-  'southeast-asia':  'Southeast Asia',
-  'southern-europe': 'Southern Europe',
-  'western-europe':  'Western Europe',
+const REGION_KEY_MAP: Record<Region, string> = {
+  'africa':          'regions.africa',
+  'caribbean':       'regions.caribbean',
+  'central-america': 'regions.centralAmerica',
+  'central-asia':    'regions.centralAsia',
+  'east-asia':       'regions.eastAsia',
+  'eastern-europe':  'regions.easternEurope',
+  'middle-east':     'regions.middleEast',
+  'north-america':   'regions.northAmerica',
+  'northern-europe': 'regions.northernEurope',
+  'pacific':         'regions.pacific',
+  'south-america':   'regions.southAmerica',
+  'south-asia':      'regions.southAsia',
+  'southeast-asia':  'regions.southeastAsia',
+  'southern-europe': 'regions.southernEurope',
+  'western-europe':  'regions.westernEurope',
 };
 
+/** Returns a translation key for use with | translate */
 export function regionLabel(r: Region): string {
-  return REGION_LABELS[r] ?? r;
+  return REGION_KEY_MAP[r] ?? r;
 }
