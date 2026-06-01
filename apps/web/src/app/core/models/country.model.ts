@@ -76,6 +76,43 @@ export interface Country {
   knownGaps: string[];
   crossVerification: CrossVerification | null;
   sources: CountrySources | null;
+  computableRegimes?: ComputableRegime[];
+}
+
+export interface ComputableRegimePit {
+  kind: 'progressive' | 'flat' | 'lump-sum' | 'zero';
+  rate?: number;
+  appliesTo: 'gross' | 'taxable' | 'revenue' | 'profit';
+  deductionPercent?: number;
+  cap?: { amount: number; currency: string };
+}
+
+export interface ComputableRegimeSS {
+  kind: 'percentage' | 'fixed-monthly' | 'banded' | 'none';
+  rate?: number;
+  monthly?: number;
+  bands?: { upTo: number; monthly: number }[];
+  cap?: number;
+}
+
+export interface AdditionalLevy {
+  name: string;
+  rate: number;
+  appliesTo: 'gross' | 'taxable' | 'revenue';
+}
+
+export interface ComputableRegime {
+  id: string;
+  name: string;
+  shortName?: string;
+  type: 'employment' | 'self-employment';
+  eligibility?: string;
+  duration?: string;
+  notes?: string;
+  pit: ComputableRegimePit;
+  socialSecurity: ComputableRegimeSS;
+  additionalLevies?: AdditionalLevy[];
+  personalAllowance?: { amount: number; currency: string };
 }
 
 export interface CountriesData {
