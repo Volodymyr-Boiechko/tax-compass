@@ -2,6 +2,7 @@ import { Component, computed, inject } from '@angular/core';
 import { LucideSearchX } from '@lucide/angular';
 import { AppStore, SortField } from '../../state/app.store';
 import { CalculationService, CalculationResult } from '../../core/services/calculation.service';
+import { RegimeCalculationService } from '../../core/services/regime-calculation.service';
 import { Country, Confidence, Region } from '../../core/models/country.model';
 import { regionLabel } from '../../core/utils/region.utils';
 
@@ -9,6 +10,7 @@ interface Row {
   country: Country;
   employment?: CalculationResult;
   selfEmployment?: CalculationResult;
+  hasRegimeCalc?: boolean;
 }
 
 @Component({
@@ -109,6 +111,11 @@ interface Row {
                   <div class="flex items-center gap-2">
                     <span class="text-lg leading-none">{{ row.country.flag ?? '🏳' }}</span>
                     <span class="font-medium text-[var(--color-text-primary)]">{{ row.country.name }}</span>
+                    @if (row.hasRegimeCalc && store.userIncome() !== null) {
+                      <span class="text-[10px] px-1.5 py-0.5 rounded-full shrink-0"
+                            style="background: color-mix(in srgb, var(--color-accent) 12%, transparent); color: var(--color-accent)"
+                            title="Calculated from live regime parameters">⚡</span>
+                    }
                   </div>
                 </td>
 
@@ -193,17 +200,56 @@ interface Row {
 export class RankingTableComponent {
   readonly store = inject(AppStore);
   readonly calc = inject(CalculationService);
+  readonly regimeCalc = inject(RegimeCalculationService);
   readonly regionLabel = regionLabel;
 
   readonly rows = computed<Row[]>(() => {
     const income = this.store.userIncome();
     const countries = this.store.filteredCountries();
     if (income === null) return countries.map(c => ({ country: c }));
-    const mapped = countries.map(c => ({
-      country: c,
-      employment: this.calc.calculateEmployment(c, income),
-      selfEmployment: this.calc.calculateBestSelfEmployment(c, income),
-    }));
+
+    const mapped = countries.map(c => {
+      const hasRegimes = (c.computableRegimes?.length ?? 0) > 0;
+      const employment = this.calc.calculateEmployment(c, income);
+
+      if (hasRegimes) {
+        // Use RegimeCalculationService for the 15 parameterized countries
+        const cmp = this.regimeCalc.calculateAll(c, income);
+        const bestSE = cmp?.regimes.filter(r => r.regimeType === 'self-employment')
+          .reduce<typeof cmp.regimes[0] | null>((best, r) => (!best || r.net > best.net) ? r : best, null);
+        const bestAll = cmp?.best;
+
+        const selfEmployment: CalculationResult | undefined = bestSE
+          ? {
+              gross: bestSE.gross,
+              socialSecurity: bestSE.socialSecurity,
+              incomeTax: bestSE.incomeTax,
+              net: bestSE.net,
+              effectiveRate: bestSE.effectiveRate,
+              method: `self-employment (${bestSE.regimeName})`,
+            }
+          : bestAll
+            ? {
+                gross: bestAll.gross,
+                socialSecurity: bestAll.socialSecurity,
+                incomeTax: bestAll.incomeTax,
+                net: bestAll.net,
+                effectiveRate: bestAll.effectiveRate,
+                method: `self-employment (${bestAll.regimeName})`,
+              }
+            : this.calc.calculateBestSelfEmployment(c, income);
+
+        return { country: c, employment, selfEmployment, hasRegimeCalc: true };
+      }
+
+      return {
+        country: c,
+        employment,
+        selfEmployment: this.calc.calculateBestSelfEmployment(c, income),
+        hasRegimeCalc: false,
+      };
+    });
+
     return [...mapped].sort((a, b) =>
       (a.selfEmployment?.effectiveRate ?? 1) - (b.selfEmployment?.effectiveRate ?? 1)
     );
