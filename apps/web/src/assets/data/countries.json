@@ -518,7 +518,7 @@
           "pit": {
             "kind": "flat",
             "appliesTo": "gross",
-            "rate": 20
+            "rate": 0.2
           },
           "socialSecurity": {
             "kind": "banded",
@@ -541,7 +541,7 @@
           "pit": {
             "kind": "flat",
             "appliesTo": "gross",
-            "rate": 10
+            "rate": 0.1
           },
           "socialSecurity": {
             "kind": "banded",
@@ -564,7 +564,7 @@
           "pit": {
             "kind": "flat",
             "appliesTo": "revenue",
-            "rate": 5
+            "rate": 0.05
           },
           "socialSecurity": {
             "kind": "banded",
@@ -587,7 +587,7 @@
           "pit": {
             "kind": "flat",
             "appliesTo": "profit",
-            "rate": 23
+            "rate": 0.23
           },
           "socialSecurity": {
             "kind": "banded",
@@ -1058,18 +1058,18 @@
               {
                 "from": 52700,
                 "to": null,
-                "rate": 14
+                "rate": 0.14
               }
             ]
           },
           "socialSecurity": {
             "kind": "percentage",
-            "rate": 12.5
+            "rate": 0.125
           },
           "additionalLevies": [
             {
               "name": "Medical insurance",
-              "rate": 2,
+              "rate": 0.02,
               "appliesTo": "gross"
             }
           ]
@@ -1085,23 +1085,23 @@
               {
                 "from": 0,
                 "to": 16500,
-                "rate": 14
+                "rate": 0.14
               },
               {
                 "from": 16500,
                 "to": null,
-                "rate": 25
+                "rate": 0.25
               }
             ]
           },
           "socialSecurity": {
             "kind": "percentage",
-            "rate": 3.5
+            "rate": 0.035
           },
           "additionalLevies": [
             {
               "name": "Medical insurance",
-              "rate": 2,
+              "rate": 0.02,
               "appliesTo": "gross"
             },
             {
@@ -1118,11 +1118,11 @@
           "pit": {
             "kind": "flat",
             "appliesTo": "profit",
-            "rate": 20
+            "rate": 0.2
           },
           "socialSecurity": {
             "kind": "percentage",
-            "rate": 12.5
+            "rate": 0.125
           }
         }
       ]
@@ -1840,11 +1840,11 @@
           "pit": {
             "kind": "flat",
             "appliesTo": "taxable",
-            "rate": 10
+            "rate": 0.1
           },
           "socialSecurity": {
             "kind": "percentage",
-            "rate": 31
+            "rate": 0.31
           },
           "personalAllowance": {
             "amount": 1840,
@@ -1859,11 +1859,11 @@
           "pit": {
             "kind": "flat",
             "appliesTo": "taxable",
-            "rate": 10
+            "rate": 0.1
           },
           "socialSecurity": {
             "kind": "percentage",
-            "rate": 36
+            "rate": 0.36
           },
           "personalAllowance": {
             "amount": 1840,
@@ -1878,12 +1878,12 @@
           "pit": {
             "kind": "flat",
             "appliesTo": "revenue",
-            "rate": 10,
+            "rate": 0.1,
             "deductionPercent": 20
           },
           "socialSecurity": {
             "kind": "percentage",
-            "rate": 10
+            "rate": 0.1
           }
         }
       ]
@@ -6790,69 +6790,54 @@
               {
                 "from": 0,
                 "to": 21300,
-                "rate": 10
+                "rate": 0.1
               },
               {
                 "from": 21300,
                 "to": 30600,
-                "rate": 14
+                "rate": 0.14
               },
               {
                 "from": 30600,
                 "to": 49100,
-                "rate": 20
+                "rate": 0.2
               },
               {
                 "from": 49100,
                 "to": 68200,
-                "rate": 31
+                "rate": 0.31
               },
               {
                 "from": 68200,
                 "to": 141800,
-                "rate": 35
+                "rate": 0.35
               },
               {
                 "from": 141800,
                 "to": 182700,
-                "rate": 47
+                "rate": 0.47
               },
               {
                 "from": 182700,
                 "to": null,
-                "rate": 50
+                "rate": 0.5
               }
             ]
           },
           "socialSecurity": {
-            "kind": "banded",
-            "bands": [
-              {
-                "upTo": 22900,
-                "monthly": 0
-              },
-              {
-                "upTo": 154000,
-                "monthly": 0
-              }
-            ]
+            "kind": "percentage",
+            "rate": 0.095,
+            "cap": 154000
           },
-          "additionalLevies": [
-            {
-              "name": "National Insurance (NIC) lower band 4.27%",
-              "rate": 4.27,
-              "appliesTo": "gross"
-            },
-            {
-              "name": "National Insurance (NIC) upper band 12.7% on income 22900-154000 EUR",
-              "rate": 12.7,
-              "appliesTo": "gross"
-            }
-          ],
           "incompleteData": {
-            "reason": "NIC is banded (4.27% up to EUR 22,900/yr; 12.7% on EUR 22,900-154,000/yr) -- modelled via additionalLevies as approximation; use il-employment for estimates only",
-            "fallbackRate": 20,
-            "source": "EY Israel 2025-26, ILS brackets converted at 3.95"
+            "reason": "NIC-banded",
+            "fallbackRate": 0.22,
+            "source": "EY Israel 2025-26; NIC banded system (4.27%/12.7%) approximated as 9.5% blended; credit points simplified"
+          },
+          "personalAllowance": {
+            "amount": 5335,
+            "currency": "EUR",
+            "notes": "Equivalent deduction for 2.25 credit points (ILS 6,534/yr at 31% marginal ≈ EUR 5,335); NIC simplified as 9.5% blended rate"
           }
         },
         {
@@ -6883,44 +6868,54 @@
               {
                 "from": 0,
                 "to": 21300,
-                "rate": 10
+                "rate": 0.1
               },
               {
                 "from": 21300,
                 "to": 30600,
-                "rate": 14
+                "rate": 0.14
               },
               {
                 "from": 30600,
                 "to": 49100,
-                "rate": 20
+                "rate": 0.2
               },
               {
                 "from": 49100,
                 "to": 68200,
-                "rate": 31
+                "rate": 0.31
               },
               {
                 "from": 68200,
                 "to": 141800,
-                "rate": 35
+                "rate": 0.35
               },
               {
                 "from": 141800,
                 "to": 182700,
-                "rate": 47
+                "rate": 0.47
               },
               {
                 "from": 182700,
                 "to": null,
-                "rate": 50
+                "rate": 0.5
               }
             ]
           },
           "socialSecurity": {
             "kind": "percentage",
-            "rate": 17.83,
+            "rate": 0.153,
             "cap": 154000
+          },
+          "personalAllowance": {
+            "amount": 5335,
+            "currency": "EUR",
+            "notes": "Equivalent deduction for 2.25 credit points; self-employed NIC ~15.3% blended rate"
+          },
+          "incompleteData": {
+            "reason": "NIC-banded",
+            "fallbackRate": 0.25,
+            "source": "EY Israel 2025-26; self-employed NIC (7.7%/19.99%) approximated; credit points simplified"
           }
         }
       ]
@@ -7476,38 +7471,38 @@
               {
                 "from": 0,
                 "to": 6600,
-                "rate": 5
+                "rate": 0.05
               },
               {
                 "from": 6600,
                 "to": 13200,
-                "rate": 10
+                "rate": 0.1
               },
               {
                 "from": 13200,
                 "to": 19700,
-                "rate": 15
+                "rate": 0.15
               },
               {
                 "from": 19700,
                 "to": 26300,
-                "rate": 20
+                "rate": 0.2
               },
               {
                 "from": 26300,
                 "to": 1315800,
-                "rate": 25
+                "rate": 0.25
               },
               {
                 "from": 1315800,
                 "to": null,
-                "rate": 30
+                "rate": 0.3
               }
             ]
           },
           "socialSecurity": {
             "kind": "percentage",
-            "rate": 7.5,
+            "rate": 0.075,
             "cap": 57900
           },
           "personalAllowance": {
@@ -7527,32 +7522,32 @@
               {
                 "from": 0,
                 "to": 6600,
-                "rate": 5
+                "rate": 0.05
               },
               {
                 "from": 6600,
                 "to": 13200,
-                "rate": 10
+                "rate": 0.1
               },
               {
                 "from": 13200,
                 "to": 19700,
-                "rate": 15
+                "rate": 0.15
               },
               {
                 "from": 19700,
                 "to": 26300,
-                "rate": 20
+                "rate": 0.2
               },
               {
                 "from": 26300,
                 "to": 1315800,
-                "rate": 25
+                "rate": 0.25
               },
               {
                 "from": 1315800,
                 "to": null,
-                "rate": 30
+                "rate": 0.3
               }
             ]
           },
@@ -7630,18 +7625,18 @@
               {
                 "from": 0,
                 "to": 72100,
-                "rate": 10
+                "rate": 0.1
               },
               {
                 "from": 72100,
                 "to": null,
-                "rate": 15
+                "rate": 0.15
               }
             ]
           },
           "socialSecurity": {
             "kind": "percentage",
-            "rate": 12,
+            "rate": 0.12,
             "cap": 100000
           },
           "personalAllowance": {
@@ -7652,7 +7647,7 @@
           "additionalLevies": [
             {
               "name": "Mandatory Health Insurance (OSMS)",
-              "rate": 2,
+              "rate": 0.02,
               "appliesTo": "gross"
             }
           ]
@@ -7668,24 +7663,24 @@
               {
                 "from": 0,
                 "to": 72100,
-                "rate": 10
+                "rate": 0.1
               },
               {
                 "from": 72100,
                 "to": null,
-                "rate": 15
+                "rate": 0.15
               }
             ]
           },
           "socialSecurity": {
             "kind": "percentage",
-            "rate": 10,
+            "rate": 0.1,
             "cap": 100000
           },
           "additionalLevies": [
             {
               "name": "Mandatory Health Insurance (OSMS)",
-              "rate": 2,
+              "rate": 0.02,
               "appliesTo": "revenue"
             }
           ]
@@ -8017,18 +8012,18 @@
               {
                 "from": 3000,
                 "to": 5400,
-                "rate": 8
+                "rate": 0.08
               },
               {
                 "from": 5400,
                 "to": null,
-                "rate": 10
+                "rate": 0.1
               }
             ]
           },
           "socialSecurity": {
             "kind": "percentage",
-            "rate": 5
+            "rate": 0.05
           }
         },
         {
@@ -8047,18 +8042,18 @@
               {
                 "from": 3000,
                 "to": 5400,
-                "rate": 8
+                "rate": 0.08
               },
               {
                 "from": 5400,
                 "to": null,
-                "rate": 10
+                "rate": 0.1
               }
             ]
           },
           "socialSecurity": {
             "kind": "percentage",
-            "rate": 10
+            "rate": 0.1
           }
         },
         {
@@ -8068,11 +8063,11 @@
           "pit": {
             "kind": "flat",
             "appliesTo": "revenue",
-            "rate": 9
+            "rate": 0.09
           },
           "socialSecurity": {
             "kind": "percentage",
-            "rate": 10
+            "rate": 0.1
           }
         }
       ]
@@ -8391,54 +8386,60 @@
             "brackets": [
               {
                 "from": 0,
-                "to": 21300,
-                "rate": 10
+                "to": 3600,
+                "rate": 0.02
               },
               {
-                "from": 21300,
-                "to": 30600,
-                "rate": 14
+                "from": 3600,
+                "to": 9000,
+                "rate": 0.04
               },
               {
-                "from": 30600,
-                "to": 49100,
-                "rate": 20
+                "from": 9000,
+                "to": 18000,
+                "rate": 0.07
               },
               {
-                "from": 49100,
-                "to": 68200,
-                "rate": 31
+                "from": 18000,
+                "to": 36000,
+                "rate": 0.11
               },
               {
-                "from": 68200,
-                "to": 141800,
-                "rate": 35
+                "from": 36000,
+                "to": 72000,
+                "rate": 0.15
               },
               {
-                "from": 141800,
-                "to": 182700,
-                "rate": 47
+                "from": 72000,
+                "to": 135000,
+                "rate": 0.2
               },
               {
-                "from": 182700,
+                "from": 135000,
                 "to": null,
-                "rate": 50
+                "rate": 0.25
               }
             ]
           },
           "socialSecurity": {
             "kind": "percentage",
-            "rate": 3
+            "rate": 0.03,
+            "cap": 10800
+          },
+          "personalAllowance": {
+            "amount": 4500,
+            "currency": "EUR",
+            "notes": "LBP 450,000,000/year single exemption at ~100,000 LBP/EUR; LBP highly unstable"
           },
           "incompleteData": {
             "reason": "currency-mismatch",
-            "fallbackRate": 7,
-            "source": "EY Lebanon 2025-26; LBP brackets per Budget Law No.324 (2024); LBP hyperinflationary -- brackets in LBP cannot be reliably converted to EUR; effective rate ~6-8% at EUR 30k-60k per EY examples at parallel rate ~LBP100,000/EUR"
+            "fallbackRate": 0.15,
+            "source": "EY Lebanon 2025-26; brackets in LBP converted at 100,000 LBP/EUR (highly volatile — verify at bdl.gov.lb)"
           }
         },
         {
           "id": "lb-selfemployment",
-          "name": "Self-employment (Sole Trader)",
+          "name": "Self-Employment (Sole Trader)",
           "type": "self-employment",
           "pit": {
             "kind": "progressive",
@@ -8446,38 +8447,33 @@
             "brackets": [
               {
                 "from": 0,
-                "to": 21300,
-                "rate": 10
+                "to": 5400,
+                "rate": 0.04
               },
               {
-                "from": 21300,
-                "to": 30600,
-                "rate": 14
+                "from": 5400,
+                "to": 14400,
+                "rate": 0.07
               },
               {
-                "from": 30600,
-                "to": 49100,
-                "rate": 20
+                "from": 14400,
+                "to": 32400,
+                "rate": 0.12
               },
               {
-                "from": 49100,
-                "to": 68200,
-                "rate": 31
+                "from": 32400,
+                "to": 62400,
+                "rate": 0.16
               },
               {
-                "from": 68200,
-                "to": 141800,
-                "rate": 35
+                "from": 62400,
+                "to": 135000,
+                "rate": 0.21
               },
               {
-                "from": 141800,
-                "to": 182700,
-                "rate": 47
-              },
-              {
-                "from": 182700,
+                "from": 135000,
                 "to": null,
-                "rate": 50
+                "rate": 0.25
               }
             ]
           },
@@ -8486,8 +8482,8 @@
           },
           "incompleteData": {
             "reason": "currency-mismatch",
-            "fallbackRate": 5,
-            "source": "EY Lebanon 2025-26; LBP brackets per Budget Law No.324 (2024); LBP hyperinflationary -- brackets in LBP cannot be reliably converted to EUR; effective rate ~3-9% per EY examples"
+            "fallbackRate": 0.16,
+            "source": "EY Lebanon 2025-26; sole trader brackets in LBP converted at 100,000 LBP/EUR (highly volatile)"
           }
         }
       ]
@@ -12932,11 +12928,11 @@
           "pit": {
             "kind": "flat",
             "appliesTo": "taxable",
-            "rate": 10
+            "rate": 0.1
           },
           "socialSecurity": {
             "kind": "percentage",
-            "rate": 35
+            "rate": 0.35
           }
         },
         {
@@ -12946,7 +12942,7 @@
           "pit": {
             "kind": "flat",
             "appliesTo": "taxable",
-            "rate": 10,
+            "rate": 0.1,
             "deductionPercent": 40
           },
           "socialSecurity": {
@@ -12969,7 +12965,7 @@
           "additionalLevies": [
             {
               "name": "Dividend tax (profit extraction)",
-              "rate": 16,
+              "rate": 0.16,
               "appliesTo": "revenue"
             }
           ]
@@ -16684,11 +16680,11 @@
           "pit": {
             "kind": "flat",
             "appliesTo": "gross",
-            "rate": 12
+            "rate": 0.12
           },
           "socialSecurity": {
             "kind": "percentage",
-            "rate": 4
+            "rate": 0.04
           }
         },
         {
@@ -16715,7 +16711,7 @@
           "pit": {
             "kind": "flat",
             "appliesTo": "profit",
-            "rate": 12
+            "rate": 0.12
           },
           "socialSecurity": {
             "kind": "none"
