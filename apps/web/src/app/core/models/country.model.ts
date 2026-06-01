@@ -85,13 +85,16 @@ export interface ComputableRegimePit {
   appliesTo: 'gross' | 'taxable' | 'revenue' | 'profit';
   deductionPercent?: number;
   cap?: { amount: number; currency: string };
+  /** Per-regime bracket override (EUR-denominated). Takes precedence over country brackets. */
+  brackets?: TaxBracket[];
 }
 
 export interface ComputableRegimeSS {
   kind: 'percentage' | 'fixed-monthly' | 'banded' | 'none';
   rate?: number;
   monthly?: number;
-  bands?: { upTo: number; monthly: number }[];
+  /** upTo null = top (uncapped) band; monthly null = percentage-based (see notes) */
+  bands?: { upTo: number | null; monthly: number | null }[];
   cap?: number;
 }
 

@@ -86,16 +86,28 @@
           "notes": "Progressive PIT: 0% up to ALL 2,040,000 taxable, 13% to ALL 2,040,000, 23% above. Deduction ALL 360,000 (salary > ALL 720,000). Employee SS 11.2% (pension 9.5% + health 1.7%) capped at ALL 176,416/month.",
           "pit": {
             "kind": "progressive",
-            "appliesTo": "taxable"
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 19615,
+                "rate": 0.13
+              },
+              {
+                "from": 19615,
+                "to": null,
+                "rate": 0.23
+              }
+            ]
           },
           "socialSecurity": {
             "kind": "percentage",
             "rate": 0.112,
-            "cap": 2116992
+            "cap": 20356
           },
           "personalAllowance": {
-            "amount": 360000,
-            "currency": "ALL"
+            "amount": 3462,
+            "currency": "EUR"
           }
         },
         {
@@ -110,13 +122,13 @@
             "kind": "zero",
             "appliesTo": "revenue",
             "cap": {
-              "amount": 14000000,
-              "currency": "ALL"
+              "amount": 134615,
+              "currency": "EUR"
             }
           },
           "socialSecurity": {
             "kind": "fixed-monthly",
-            "monthly": 11920
+            "monthly": 115
           }
         }
       ]
@@ -2524,16 +2536,39 @@
           "notes": "Progressive PIT 0%/20%/25%/30%/35% (2026 brackets). Employee: social insurance 8.8% (cap EUR 66,612) + GHS 2.65% (cap EUR 180,000) = 11.45% total.",
           "pit": {
             "kind": "progressive",
-            "appliesTo": "taxable"
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 22000,
+                "rate": 0.0
+              },
+              {
+                "from": 22000,
+                "to": 32000,
+                "rate": 0.2
+              },
+              {
+                "from": 32000,
+                "to": 42000,
+                "rate": 0.25
+              },
+              {
+                "from": 42000,
+                "to": 72000,
+                "rate": 0.3
+              },
+              {
+                "from": 72000,
+                "to": null,
+                "rate": 0.35
+              }
+            ]
           },
           "socialSecurity": {
             "kind": "percentage",
             "rate": 0.1145,
             "cap": 66612
-          },
-          "personalAllowance": {
-            "amount": 22000,
-            "currency": "EUR"
           }
         },
         {
@@ -2543,20 +2578,43 @@
           "type": "employment",
           "eligibility": "Non-resident outside Cyprus for ≥ 15 consecutive years before first employment; first employment in Cyprus from 1 Jan 2022; annual remuneration > EUR 55,000",
           "duration": "Up to 17 years from first employment year",
-          "notes": "50% of employment income exempt from PIT (effective rate halved). Non-Dom status: 0% SDC on dividends and interest. GHS 2.65% still applies. SS as standard employment.",
+          "notes": "50% of employment income exempt from PIT via deductionPercent=50 applied to gross-SS base before bracket lookup. Non-Dom status: 0% SDC on dividends and interest (not modeled separately). Art. 8(23A) requires income > EUR 55,000; Phase 2 applies exemption at all income levels (warn if below EUR 55,000). EUR 22,000 zero-rate embedded in brackets.",
           "pit": {
             "kind": "progressive",
             "appliesTo": "taxable",
-            "deductionPercent": 50
+            "deductionPercent": 50,
+            "brackets": [
+              {
+                "from": 0,
+                "to": 22000,
+                "rate": 0.0
+              },
+              {
+                "from": 22000,
+                "to": 32000,
+                "rate": 0.2
+              },
+              {
+                "from": 32000,
+                "to": 42000,
+                "rate": 0.25
+              },
+              {
+                "from": 42000,
+                "to": 72000,
+                "rate": 0.3
+              },
+              {
+                "from": 72000,
+                "to": null,
+                "rate": 0.35
+              }
+            ]
           },
           "socialSecurity": {
             "kind": "percentage",
             "rate": 0.1145,
             "cap": 66612
-          },
-          "personalAllowance": {
-            "amount": 22000,
-            "currency": "EUR"
           }
         },
         {
@@ -2567,16 +2625,39 @@
           "notes": "Progressive PIT 0%/20%/25%/30%/35% on net income (after allowable expenses). Social insurance 16.6% + GHS 4.0% = 20.6% total on net income (capped at EUR 66,612 for SI; EUR 180,000 for GHS).",
           "pit": {
             "kind": "progressive",
-            "appliesTo": "profit"
+            "appliesTo": "profit",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 22000,
+                "rate": 0.0
+              },
+              {
+                "from": 22000,
+                "to": 32000,
+                "rate": 0.2
+              },
+              {
+                "from": 32000,
+                "to": 42000,
+                "rate": 0.25
+              },
+              {
+                "from": 42000,
+                "to": 72000,
+                "rate": 0.3
+              },
+              {
+                "from": 72000,
+                "to": null,
+                "rate": 0.35
+              }
+            ]
           },
           "socialSecurity": {
             "kind": "percentage",
             "rate": 0.206,
             "cap": 66612
-          },
-          "personalAllowance": {
-            "amount": 22000,
-            "currency": "EUR"
           }
         }
       ]
@@ -3388,7 +3469,34 @@
           "notes": "Progressive IR 0%–45% (2024 brackets; annual indexation). Employee SS ~21.3% total (incl. CSG/CRDS 9.7% on 98.25% of gross + pension CNAV 6.9% + complementary AGIRC-ARRCO ~3.93% + health 0.75%). 10% standard deduction capped EUR 14,426.",
           "pit": {
             "kind": "progressive",
-            "appliesTo": "taxable"
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 11497,
+                "rate": 0.0
+              },
+              {
+                "from": 11497,
+                "to": 29315,
+                "rate": 0.11
+              },
+              {
+                "from": 29315,
+                "to": 83823,
+                "rate": 0.3
+              },
+              {
+                "from": 83823,
+                "to": 180294,
+                "rate": 0.41
+              },
+              {
+                "from": 180294,
+                "to": null,
+                "rate": 0.45
+              }
+            ]
           },
           "socialSecurity": {
             "kind": "percentage",
@@ -3409,7 +3517,34 @@
             "cap": {
               "amount": 77700,
               "currency": "EUR"
-            }
+            },
+            "brackets": [
+              {
+                "from": 0,
+                "to": 11497,
+                "rate": 0.0
+              },
+              {
+                "from": 11497,
+                "to": 29315,
+                "rate": 0.11
+              },
+              {
+                "from": 29315,
+                "to": 83823,
+                "rate": 0.3
+              },
+              {
+                "from": 83823,
+                "to": 180294,
+                "rate": 0.41
+              },
+              {
+                "from": 180294,
+                "to": null,
+                "rate": 0.45
+              }
+            ]
           },
           "socialSecurity": {
             "kind": "percentage",
@@ -3513,8 +3648,8 @@
             "rate": 0.01,
             "appliesTo": "revenue",
             "cap": {
-              "amount": 500000,
-              "currency": "GEL"
+              "amount": 169492,
+              "currency": "EUR"
             }
           },
           "socialSecurity": {
@@ -3597,16 +3732,39 @@
           "notes": "Progressive Einkommensteuer 0%–45%; Grundfreibetrag EUR 12,096; Soli applies for income tax liability > EUR 18,130. Employee SS ~21% (pension 9.3% + unemployment 1.3% + health 8.05% + nursing 2.4% for childless). SS capped: pension/unemployment EUR 101,400; health/nursing EUR 69,750.",
           "pit": {
             "kind": "progressive",
-            "appliesTo": "taxable"
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 12096,
+                "rate": 0.0
+              },
+              {
+                "from": 12096,
+                "to": 30000,
+                "rate": 0.19
+              },
+              {
+                "from": 30000,
+                "to": 68481,
+                "rate": 0.36
+              },
+              {
+                "from": 68481,
+                "to": 277826,
+                "rate": 0.42
+              },
+              {
+                "from": 277826,
+                "to": null,
+                "rate": 0.45
+              }
+            ]
           },
           "socialSecurity": {
             "kind": "percentage",
             "rate": 0.21,
             "cap": 101400
-          },
-          "personalAllowance": {
-            "amount": 12096,
-            "currency": "EUR"
           }
         },
         {
@@ -3615,17 +3773,40 @@
           "shortName": "Freiberufler",
           "type": "self-employment",
           "eligibility": "Qualifying liberal professions: IT consultants, software developers (creative/scientific work), engineers, architects, doctors, lawyers, journalists. Must not be classified as Gewerbebetrieb.",
-          "notes": "Same progressive Einkommensteuer as employment (0%–45%) on net profit after expenses. No Gewerbesteuer (trade tax). No mandatory employer-side SS. Health insurance mandatory (GKV or PKV, fully self-paid). Voluntary pension (DRV or Versorgungswerk for some professions).",
+          "notes": "Same progressive Einkommensteuer as employment (0%–45%) on net profit after expenses. No Gewerbesteuer (trade tax). No mandatory employer-side SS. Health insurance mandatory (GKV or PKV, fully self-paid ~EUR 4,200-8,400/year) — not modeled in Phase 2. Grundfreibetrag EUR 12,096 embedded in 0% bracket band.",
           "pit": {
             "kind": "progressive",
-            "appliesTo": "profit"
+            "appliesTo": "profit",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 12096,
+                "rate": 0.0
+              },
+              {
+                "from": 12096,
+                "to": 30000,
+                "rate": 0.19
+              },
+              {
+                "from": 30000,
+                "to": 68481,
+                "rate": 0.36
+              },
+              {
+                "from": 68481,
+                "to": 277826,
+                "rate": 0.42
+              },
+              {
+                "from": 277826,
+                "to": null,
+                "rate": 0.45
+              }
+            ]
           },
           "socialSecurity": {
             "kind": "none"
-          },
-          "personalAllowance": {
-            "amount": 12096,
-            "currency": "EUR"
           }
         }
       ]
@@ -4834,7 +5015,24 @@
           "notes": "Progressive IRPEF 23%/35%/43% + regional ~1.73% (Lombardia) + municipal ~0.8%. Employee SS ~9.49% (varies by sector). Additional 1% employee SS on income > EUR 55,448.",
           "pit": {
             "kind": "progressive",
-            "appliesTo": "taxable"
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 28000,
+                "rate": 0.2553
+              },
+              {
+                "from": 28000,
+                "to": 50000,
+                "rate": 0.3753
+              },
+              {
+                "from": 50000,
+                "to": null,
+                "rate": 0.4553
+              }
+            ]
           },
           "socialSecurity": {
             "kind": "percentage",
@@ -7346,7 +7544,7 @@
           "name": "Standard Employment (Box 1 — Loonheffing)",
           "shortName": "Employment",
           "type": "employment",
-          "notes": "Box 1 combined rate includes National Insurance (NI) for type B (age < 67): 37.48% up to EUR 76,817 (includes 27.65% NI); 49.50% above. General credit and employment credit reduce tax. Health standard premium ~EUR 1,880/year (paid directly by employee to insurer). No additional SS for employer beyond employee insurance acts.",
+          "notes": "Box 1 combined rate includes National Insurance (NI) for type B (age < 67): 37.48% up to EUR 76,817 (includes 27.65% NI); 49.50% above. Health standard premium ~EUR 1,880/year not modeled in Phase 2. Tax credits (general + employment credit, up to ~EUR 6,900 at lower incomes) not modeled — effective rate will be overstated. No additional SS for NL employment beyond what is in Box 1 rate.",
           "pit": {
             "kind": "progressive",
             "appliesTo": "gross"
@@ -7361,7 +7559,7 @@
           "shortName": "ZZP",
           "type": "self-employment",
           "eligibility": "Meets Belastingdienst 'ondernemerscriteria': multiple clients, financial risk, independence. Minimum 1,225 hours worked in own business for zelfstandigenaftrek.",
-          "notes": "Box 1 progressive (same combined rates as employment) on net profit after: zelfstandigenaftrek EUR 2,470 (2025; EUR 1,200 in 2026; phasing to EUR 900 by 2027), MKB-winstvrijstelling 12.7% of remaining profit. Health insurance income-related contribution 5.26% on profit (capped at EUR 75,864) + standard premium EUR 1,880/year.",
+          "notes": "Box 1 progressive (same combined rates as employment) on net profit after: zelfstandigenaftrek EUR 2,470 (2025; EUR 1,200 in 2026), MKB-winstvrijstelling 12.7%. These deductions not modeled in Phase 2 — effective rate will be overstated. Health insurance income-related 5.26% (capped EUR 75,864) + standard premium EUR 1,880/year modeled separately.",
           "pit": {
             "kind": "progressive",
             "appliesTo": "profit"
@@ -8594,16 +8792,29 @@
           "notes": "Progressive PIT 12%/32% with PLN 30,000 tax-free threshold. Employee ZUS ~13.71% + health 9% (not deductible from PIT since 2022). SS cap PLN 260,190/year for pension/disability.",
           "pit": {
             "kind": "progressive",
-            "appliesTo": "taxable"
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 7059,
+                "rate": 0.0
+              },
+              {
+                "from": 7059,
+                "to": 28235,
+                "rate": 0.12
+              },
+              {
+                "from": 28235,
+                "to": null,
+                "rate": 0.32
+              }
+            ]
           },
           "socialSecurity": {
             "kind": "percentage",
             "rate": 0.1371,
-            "cap": 260190
-          },
-          "personalAllowance": {
-            "amount": 30000,
-            "currency": "PLN"
+            "cap": 61222
           }
         },
         {
@@ -8612,7 +8823,7 @@
           "shortName": "Ryczałt 12%",
           "type": "self-employment",
           "eligibility": "JDG (sole proprietorship), prior-year revenue ≤ EUR 2,000,000; PKWiU 62.x IT activities",
-          "notes": "12% lump-sum tax on revenue (after deducting social ZUS). Healthcare fixed-tier: PLN 468/month (≤ PLN 60k revenue), PLN 781/month (60k–300k), PLN 1,405/month (>300k). Social ZUS minimum PLN 1,773/month.",
+          "notes": "12% lump-sum tax on revenue (after deducting social ZUS). Healthcare fixed-tier (PLN 468-1,405/month per revenue bracket) not separately modeled — included in the fixed monthly SS amount. Social ZUS minimum PLN 1,773/month ≈ EUR 417. EUR/PLN ≈ 4.25.",
           "pit": {
             "kind": "lump-sum",
             "rate": 0.12,
@@ -8620,7 +8831,7 @@
           },
           "socialSecurity": {
             "kind": "fixed-monthly",
-            "monthly": 1773
+            "monthly": 417
           }
         },
         {
@@ -8629,7 +8840,7 @@
           "shortName": "IP Box 5%",
           "type": "self-employment",
           "eligibility": "JDG using Liniowy 19% with qualifying IP income (software copyrights, patents). Strict documentation required.",
-          "notes": "5% rate on IP-sourced income only. SS same as Liniowy: ZUS minimum PLN 1,773/month + health 4.9% of net profit.",
+          "notes": "5% rate on qualifying IP income (software copyrights, patents). SS same as JDG Liniowy: social ZUS minimum EUR 417/month. EUR/PLN ≈ 4.25.",
           "pit": {
             "kind": "flat",
             "rate": 0.05,
@@ -8637,7 +8848,7 @@
           },
           "socialSecurity": {
             "kind": "fixed-monthly",
-            "monthly": 1773
+            "monthly": 417
           }
         }
       ]
@@ -8766,7 +8977,54 @@
           "notes": "Progressive IRS 12.5%–48% (2026 brackets). Employee SS 11% (no cap). Personal deduction EUR 4,462 from taxable income.",
           "pit": {
             "kind": "progressive",
-            "appliesTo": "taxable"
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 8342,
+                "rate": 0.125
+              },
+              {
+                "from": 8342,
+                "to": 12587,
+                "rate": 0.157
+              },
+              {
+                "from": 12587,
+                "to": 17838,
+                "rate": 0.212
+              },
+              {
+                "from": 17838,
+                "to": 23089,
+                "rate": 0.241
+              },
+              {
+                "from": 23089,
+                "to": 29397,
+                "rate": 0.311
+              },
+              {
+                "from": 29397,
+                "to": 43090,
+                "rate": 0.349
+              },
+              {
+                "from": 43090,
+                "to": 46566,
+                "rate": 0.431
+              },
+              {
+                "from": 46566,
+                "to": 86634,
+                "rate": 0.446
+              },
+              {
+                "from": 86634,
+                "to": null,
+                "rate": 0.48
+              }
+            ]
           },
           "socialSecurity": {
             "kind": "percentage",
@@ -8805,7 +9063,54 @@
           "pit": {
             "kind": "progressive",
             "appliesTo": "revenue",
-            "deductionPercent": 25
+            "deductionPercent": 25,
+            "brackets": [
+              {
+                "from": 0,
+                "to": 8342,
+                "rate": 0.125
+              },
+              {
+                "from": 8342,
+                "to": 12587,
+                "rate": 0.157
+              },
+              {
+                "from": 12587,
+                "to": 17838,
+                "rate": 0.212
+              },
+              {
+                "from": 17838,
+                "to": 23089,
+                "rate": 0.241
+              },
+              {
+                "from": 23089,
+                "to": 29397,
+                "rate": 0.311
+              },
+              {
+                "from": 29397,
+                "to": 43090,
+                "rate": 0.349
+              },
+              {
+                "from": 43090,
+                "to": 46566,
+                "rate": 0.431
+              },
+              {
+                "from": 46566,
+                "to": 86634,
+                "rate": 0.446
+              },
+              {
+                "from": 86634,
+                "to": null,
+                "rate": 0.48
+              }
+            ]
           },
           "socialSecurity": {
             "kind": "percentage",
@@ -9733,15 +10038,71 @@
           "name": "Standard Employment",
           "shortName": "Employment",
           "type": "employment",
-          "notes": "Combined Madrid state+autonomous IRPF brackets. Employee SS 6.48% capped at EUR 58,914/year.",
+          "notes": "Combined Madrid state+autonomous IRPEF brackets. Employee SS 6.48% capped at EUR 58,914/year. mínimo personal EUR 5,550 modeled as deduction (actually a tax credit in Spanish law; Phase 2 approximation, error ~EUR 500-1,400).",
           "pit": {
             "kind": "progressive",
-            "appliesTo": "taxable"
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 12450,
+                "rate": 0.18
+              },
+              {
+                "from": 12450,
+                "to": 13362,
+                "rate": 0.205
+              },
+              {
+                "from": 13362,
+                "to": 19005,
+                "rate": 0.227
+              },
+              {
+                "from": 19005,
+                "to": 20200,
+                "rate": 0.248
+              },
+              {
+                "from": 20200,
+                "to": 35200,
+                "rate": 0.278
+              },
+              {
+                "from": 35200,
+                "to": 35426,
+                "rate": 0.313
+              },
+              {
+                "from": 35426,
+                "to": 57320,
+                "rate": 0.359
+              },
+              {
+                "from": 57320,
+                "to": 60000,
+                "rate": 0.39
+              },
+              {
+                "from": 60000,
+                "to": 300000,
+                "rate": 0.43
+              },
+              {
+                "from": 300000,
+                "to": null,
+                "rate": 0.45
+              }
+            ]
           },
           "socialSecurity": {
             "kind": "percentage",
             "rate": 0.0648,
             "cap": 58914
+          },
+          "personalAllowance": {
+            "amount": 5550,
+            "currency": "EUR"
           }
         },
         {
@@ -9771,7 +10132,59 @@
           "notes": "Progressive IRPF on net profit. RETA contributions based on monthly net income in 15 bands (monthly quota ≈ 31.3% × minimum base). Bands show monthly net income upper limit (EUR) → monthly contribution (EUR).",
           "pit": {
             "kind": "progressive",
-            "appliesTo": "taxable"
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 12450,
+                "rate": 0.18
+              },
+              {
+                "from": 12450,
+                "to": 13362,
+                "rate": 0.205
+              },
+              {
+                "from": 13362,
+                "to": 19005,
+                "rate": 0.227
+              },
+              {
+                "from": 19005,
+                "to": 20200,
+                "rate": 0.248
+              },
+              {
+                "from": 20200,
+                "to": 35200,
+                "rate": 0.278
+              },
+              {
+                "from": 35200,
+                "to": 35426,
+                "rate": 0.313
+              },
+              {
+                "from": 35426,
+                "to": 57320,
+                "rate": 0.359
+              },
+              {
+                "from": 57320,
+                "to": 60000,
+                "rate": 0.39
+              },
+              {
+                "from": 60000,
+                "to": 300000,
+                "rate": 0.43
+              },
+              {
+                "from": 300000,
+                "to": null,
+                "rate": 0.45
+              }
+            ]
           },
           "socialSecurity": {
             "kind": "banded",
@@ -9833,6 +10246,10 @@
                 "monthly": 626
               }
             ]
+          },
+          "personalAllowance": {
+            "amount": 5550,
+            "currency": "EUR"
           }
         }
       ]
@@ -10758,19 +11175,19 @@
           "shortName": "ФОП Group 3",
           "type": "self-employment",
           "eligibility": "Annual revenue < UAH 10,091,049 (~€229k). No employee count limit. Most activities permitted.",
-          "notes": "5% single tax on gross revenue (non-VAT) + 1% military levy (special carve-out for Group 3). Fixed ESV UAH 1,902/month. No PIT on simplified-system income.",
+          "notes": "5% single tax on gross revenue (non-VAT) + 1% military levy (Group 3 carve-out). Fixed ESV UAH 1,902/month ≈ EUR 43/month. Revenue cap UAH 10,091,049 ≈ EUR 229k. EUR/UAH ≈ 44. No PIT on simplified-system income.",
           "pit": {
             "kind": "lump-sum",
             "rate": 0.05,
             "appliesTo": "revenue",
             "cap": {
-              "amount": 10091049,
-              "currency": "UAH"
+              "amount": 229342,
+              "currency": "EUR"
             }
           },
           "socialSecurity": {
             "kind": "fixed-monthly",
-            "monthly": 1902
+            "monthly": 43
           },
           "additionalLevies": [
             {
@@ -10982,31 +11399,37 @@
           "name": "PAYE Employment",
           "shortName": "PAYE",
           "type": "employment",
-          "notes": "Progressive IT 20%/40%/45% (England/Wales/NI). Personal allowance GBP 12,570 (tapered above GBP 100,000). Employee Class 1 NIC: 8% on GBP 12,570–50,270; 2% above GBP 50,270.",
+          "notes": "Progressive IT 20%/40%/45% (England/Wales/NI). Personal allowance GBP 12,570 embedded in 0% bracket band (EUR 14,964). Employee Class 1 NIC: 8% on GBP 12,570–50,270 — modeled as 8% with EUR 59,845 cap (2% above UEL not separately modeled). GBP/EUR ≈ 0.84.",
           "pit": {
             "kind": "progressive",
-            "appliesTo": "taxable"
-          },
-          "socialSecurity": {
-            "kind": "banded",
-            "bands": [
+            "appliesTo": "taxable",
+            "brackets": [
               {
-                "upTo": 12570,
-                "monthly": 0
+                "from": 0,
+                "to": 14964,
+                "rate": 0.0
               },
               {
-                "upTo": 50270,
-                "monthly": null
+                "from": 14964,
+                "to": 59845,
+                "rate": 0.2
               },
               {
-                "upTo": null,
-                "monthly": null
+                "from": 59845,
+                "to": 148976,
+                "rate": 0.4
+              },
+              {
+                "from": 148976,
+                "to": null,
+                "rate": 0.45
               }
             ]
           },
-          "personalAllowance": {
-            "amount": 12570,
-            "currency": "GBP"
+          "socialSecurity": {
+            "kind": "percentage",
+            "rate": 0.08,
+            "cap": 59845
           }
         },
         {
@@ -11015,7 +11438,7 @@
           "shortName": "Ltd Co",
           "type": "self-employment",
           "eligibility": "Genuinely self-employed contractor with Status Determination Statement confirming outside IR35",
-          "notes": "Revenue → Ltd Co → CT 19% (≤GBP 50k profit) / 25% (>GBP 250k) with marginal relief. Min salary at personal allowance GBP 12,570 (no employee NIC; employer NIC 15% on salary > GBP 5,000). Remaining profit as dividends: 8.75%/33.75%/39.35% (to Apr 2026); 10.75%/35.75%/39.35% (from Apr 2026). Dividend allowance GBP 500.",
+          "notes": "Revenue → Ltd Co → CT 19% (≤GBP 50k profit) / 25% (>GBP 250k) with marginal relief. Minimum salary at personal allowance GBP 12,570. Remaining profit as dividends: 8.75%/33.75%/39.35% (to Apr 2026); 10.75%/35.75%/39.35% (from Apr 2026). Phase 2 models CT at flat 19% on gross as approximation — dividend tax not separately computed. IR35 risk not modeled.",
           "pit": {
             "kind": "flat",
             "rate": 0.19,
@@ -11023,10 +11446,6 @@
           },
           "socialSecurity": {
             "kind": "none"
-          },
-          "personalAllowance": {
-            "amount": 12570,
-            "currency": "GBP"
           }
         },
         {
@@ -11034,31 +11453,37 @@
           "name": "Sole Trader (Self-Assessment)",
           "shortName": "Sole Trader",
           "type": "self-employment",
-          "notes": "Progressive IT 20%/40%/45% on net profit. Class 4 NIC 8% on profits GBP 12,570–50,270; 2% above. Class 2 NIC abolished April 2024.",
+          "notes": "Progressive IT 20%/40%/45% on net profit. Class 4 NIC 8% on profits GBP 12,570–50,270 (EUR 14,964–59,845); 2% above GBP 50,270 not separately modeled. Personal allowance GBP 12,570 embedded in 0% bracket band. GBP/EUR ≈ 0.84.",
           "pit": {
             "kind": "progressive",
-            "appliesTo": "profit"
-          },
-          "socialSecurity": {
-            "kind": "banded",
-            "bands": [
+            "appliesTo": "profit",
+            "brackets": [
               {
-                "upTo": 12570,
-                "monthly": 0
+                "from": 0,
+                "to": 14964,
+                "rate": 0.0
               },
               {
-                "upTo": 50270,
-                "monthly": null
+                "from": 14964,
+                "to": 59845,
+                "rate": 0.2
               },
               {
-                "upTo": null,
-                "monthly": null
+                "from": 59845,
+                "to": 148976,
+                "rate": 0.4
+              },
+              {
+                "from": 148976,
+                "to": null,
+                "rate": 0.45
               }
             ]
           },
-          "personalAllowance": {
-            "amount": 12570,
-            "currency": "GBP"
+          "socialSecurity": {
+            "kind": "percentage",
+            "rate": 0.08,
+            "cap": 59845
           }
         }
       ]
@@ -11189,15 +11614,52 @@
           "name": "W-2 Employment — California",
           "shortName": "W-2 (CA)",
           "type": "employment",
-          "notes": "Federal progressive 10%–37% + California state 1%–13.3%. Standard deductions: federal $16,100; CA $5,540 (single, 2026). FICA: 6.2% OASDI (capped ~$180,000) + 1.45% Medicare (no cap) = 7.65%. CA SDI 1.1% (no cap since 2024). Additional 0.9% Medicare above $200,000 MAGI.",
+          "notes": "Federal progressive 10%–37% only (California state tax not separately modeled in Phase 2 — add ~6-9% for CA). Standard deduction USD 16,100 ≈ EUR 14,907. FICA 7.65% on gross (capped EUR 166,667 for OASDI). CA SDI 1.1% as additionalLevy. EUR/USD ≈ 1.08. FICA not deductible from federal income tax (minor approximation error).",
           "pit": {
             "kind": "progressive",
-            "appliesTo": "taxable"
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 11250,
+                "rate": 0.1
+              },
+              {
+                "from": 11250,
+                "to": 42870,
+                "rate": 0.12
+              },
+              {
+                "from": 42870,
+                "to": 91157,
+                "rate": 0.22
+              },
+              {
+                "from": 91157,
+                "to": 191435,
+                "rate": 0.24
+              },
+              {
+                "from": 191435,
+                "to": 227361,
+                "rate": 0.32
+              },
+              {
+                "from": 227361,
+                "to": 593148,
+                "rate": 0.35
+              },
+              {
+                "from": 593148,
+                "to": null,
+                "rate": 0.37
+              }
+            ]
           },
           "socialSecurity": {
             "kind": "percentage",
             "rate": 0.0765,
-            "cap": 180000
+            "cap": 166667
           },
           "additionalLevies": [
             {
@@ -11207,8 +11669,8 @@
             }
           ],
           "personalAllowance": {
-            "amount": 16100,
-            "currency": "USD"
+            "amount": 14907,
+            "currency": "EUR"
           }
         },
         {
@@ -11216,19 +11678,56 @@
           "name": "1099 Self-Employed — California",
           "shortName": "1099 (CA)",
           "type": "self-employment",
-          "notes": "Same federal progressive + CA state rates as W-2. SECA 15.3% on 92.35% of net earnings (12.4% OASDI capped ~$180,000 + 2.9% Medicare uncapped). 50% of SE tax deductible from gross income. QBI 20% deduction applies to qualified business income (below phase-out ~$201,000 taxable). No CA SDI for self-employed.",
+          "notes": "Federal progressive 10%–37% only (California state not modeled in Phase 2). Standard deduction USD 16,100 ≈ EUR 14,907. SECA 15.3% on 92.35% of net earnings — modeled as 15.3% of gross (approximation). 50% SECA deductible from gross income not modeled. QBI 20% deduction not modeled. EUR/USD ≈ 1.08.",
           "pit": {
             "kind": "progressive",
-            "appliesTo": "taxable"
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 11250,
+                "rate": 0.1
+              },
+              {
+                "from": 11250,
+                "to": 42870,
+                "rate": 0.12
+              },
+              {
+                "from": 42870,
+                "to": 91157,
+                "rate": 0.22
+              },
+              {
+                "from": 91157,
+                "to": 191435,
+                "rate": 0.24
+              },
+              {
+                "from": 191435,
+                "to": 227361,
+                "rate": 0.32
+              },
+              {
+                "from": 227361,
+                "to": 593148,
+                "rate": 0.35
+              },
+              {
+                "from": 593148,
+                "to": null,
+                "rate": 0.37
+              }
+            ]
           },
           "socialSecurity": {
             "kind": "percentage",
             "rate": 0.153,
-            "cap": 180000
+            "cap": 166667
           },
           "personalAllowance": {
-            "amount": 16100,
-            "currency": "USD"
+            "amount": 14907,
+            "currency": "EUR"
           }
         }
       ]
