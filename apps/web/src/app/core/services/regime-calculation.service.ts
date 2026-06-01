@@ -256,9 +256,16 @@ export class RegimeCalculationService {
     // 1. Regime-level override
     if (pit.brackets && pit.brackets.length > 0) return pit.brackets;
 
-    // 2. Country-level brackets — validate sequential `from` values
+    // 2. Country-level brackets — validate sequential `from` values and EUR denomination.
+    // Non-EUR brackets would be applied as if EUR amounts, producing wrong results.
     const cb = country.personalIncomeTax?.brackets;
-    if (cb && cb.length > 0 && this.bracketsAreValid(cb)) return cb;
+    const cbCurrency = country.personalIncomeTax?.currency ?? null;
+    if (
+      cb &&
+      cb.length > 0 &&
+      this.bracketsAreValid(cb) &&
+      (cbCurrency === null || cbCurrency === 'EUR')
+    ) return cb;
 
     // 3. Fall back to topRate as a single bracket
     const topRate = country.personalIncomeTax?.topRate ?? 0;

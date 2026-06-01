@@ -74,8 +74,25 @@ export class CalculationService {
     const pit = country.personalIncomeTax;
     if (!pit) return 0;
     const brackets = pit.brackets;
-    if (brackets && brackets.length > 0) return this.applyBrackets(brackets, taxable);
+    // Only use brackets when: denominated in EUR (or unspecified) AND strictly increasing `from` values.
+    // Brackets stored in foreign currencies or with all-zero `from` fields (cumulative format artifact)
+    // would apply incorrectly to EUR input — fall through to topRate instead.
+    if (
+      brackets &&
+      brackets.length > 0 &&
+      (pit.currency === null || pit.currency === 'EUR') &&
+      this.bracketsAreValid(brackets)
+    ) {
+      return this.applyBrackets(brackets, taxable);
+    }
     return pit.topRate !== null ? taxable * pit.topRate : 0;
+  }
+
+  private bracketsAreValid(brackets: TaxBracket[]): boolean {
+    for (let i = 1; i < brackets.length; i++) {
+      if (brackets[i].from <= brackets[i - 1].from) return false;
+    }
+    return true;
   }
 
   private applyBrackets(brackets: TaxBracket[], taxable: number): number {
