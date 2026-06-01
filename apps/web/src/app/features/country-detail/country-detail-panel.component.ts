@@ -3,7 +3,7 @@ import {
   LucideX, LucidePlus, LucideCheck, LucideExternalLink, LucideTrendingDown
 } from '@lucide/angular';
 import { AppStore } from '../../state/app.store';
-import { CalculationService, CalculationResult } from '../../core/services/calculation.service';
+import { CalculationResult } from '../../core/services/calculation.service';
 import { RegimeCalculationService } from '../../core/services/regime-calculation.service';
 import { Country, TaxBracket } from '../../core/models/country.model';
 import { regionLabel } from '../../core/utils/region.utils';
@@ -116,8 +116,8 @@ type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
                     @if (calc.employment; as emp) {
                       <p class="text-lg font-semibold font-mono" [style.color]="rateColor(emp.effectiveRate)">{{ fmtRate(emp.effectiveRate) }}</p>
                       <p class="text-xs text-[var(--color-text-secondary)] font-mono">{{ fmtEuro(emp.net) }} net</p>
-                      @if (emp.isDerived) {
-                        <p class="text-[10px] text-[var(--color-text-faint)] mt-0.5">~ EY/PwC rate</p>
+                      @if (emp.isApproximation) {
+                        <p class="text-[10px] text-[var(--color-text-faint)] mt-0.5">~ rough estimate</p>
                       }
                     } @else {
                       <p class="text-lg font-semibold text-[var(--color-text-faint)]">—</p>
@@ -130,8 +130,8 @@ type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
                       <p class="text-lg font-semibold font-mono" [style.color]="rateColor(se.effectiveRate)">{{ fmtRate(se.effectiveRate) }}</p>
                       <p class="text-xs text-[var(--color-text-secondary)] font-mono">{{ fmtEuro(se.net) }} net</p>
                       <p class="text-[10px] text-[var(--color-text-faint)] mt-0.5">{{ regimeLabel(se.method) }}</p>
-                      @if (se.isDerived) {
-                        <p class="text-[10px] text-[var(--color-text-faint)]">~ EY/PwC rate</p>
+                      @if (se.isApproximation) {
+                        <p class="text-[10px] text-[var(--color-text-faint)]">~ rough estimate</p>
                       }
                     } @else {
                       <p class="text-lg font-semibold text-[var(--color-text-faint)]">—</p>
@@ -144,25 +144,6 @@ type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
 
             <!-- Quick stat cards -->
             <div class="grid grid-cols-2 gap-3 mb-4">
-              @if (c.effectiveRates.employment['60k'] != null) {
-                <div class="p-3 bg-[var(--color-surface-hover)] rounded-lg border border-[var(--color-border)]">
-                  <p class="text-[10px] text-[var(--color-text-faint)] mb-1">Employment at €60k</p>
-                  <p class="text-2xl font-semibold font-mono" [style.color]="rateColor(c.effectiveRates.employment['60k'])">
-                    {{ fmtRate(c.effectiveRates.employment['60k']) }}
-                  </p>
-                </div>
-              }
-              @if (c.effectiveRates.bestSelfEmployment['60k'] != null) {
-                <div class="p-3 bg-[var(--color-surface-hover)] rounded-lg border border-[var(--color-border)]">
-                  <p class="text-[10px] text-[var(--color-text-faint)] mb-1">Best SE at €60k</p>
-                  <p class="text-2xl font-semibold font-mono" [style.color]="rateColor(c.effectiveRates.bestSelfEmployment['60k'])">
-                    {{ fmtRate(c.effectiveRates.bestSelfEmployment['60k']) }}
-                  </p>
-                  @if (c.effectiveRates.bestSelfEmployment.regime) {
-                    <p class="text-[10px] text-[var(--color-text-tertiary)] mt-0.5 truncate">{{ c.effectiveRates.bestSelfEmployment.regime }}</p>
-                  }
-                </div>
-              }
               @if (c.personalIncomeTax?.topRate != null) {
                 <div class="p-3 bg-[var(--color-surface-hover)] rounded-lg border border-[var(--color-border)]">
                   <p class="text-[10px] text-[var(--color-text-faint)] mb-1">Top PIT rate</p>
@@ -184,46 +165,20 @@ type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
               }
             </div>
 
-            <!-- Live regime calculator (15 top countries) OR static table fallback -->
-            @if (c.computableRegimes && c.computableRegimes.length > 0) {
-              <div class="mb-4">
-                <h3 class="text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-wider font-medium mb-2 flex items-center gap-1.5">
-                  <svg lucideTrendingDown class="size-3" aria-hidden="true"></svg>
-                  Live Regime Calculator
-                </h3>
-                <app-regime-calculator [country]="c" />
-              </div>
-            } @else {
-              <div class="mb-4">
-                <h3 class="text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-wider font-medium mb-2 flex items-center gap-1.5">
-                  <svg lucideTrendingDown class="size-3" aria-hidden="true"></svg>
-                  Effective rate by income level
-                </h3>
-                @if (store.userIncome() === null) {
-                  <p class="text-[11px] text-[var(--color-text-faint)] italic mb-2">Enter your income above to see exact calculations</p>
-                }
-                <div class="bg-[var(--color-surface-hover)] rounded-lg border border-[var(--color-border)] overflow-hidden">
-                  <table class="w-full text-xs">
-                    <thead>
-                      <tr class="border-b border-[var(--color-border)]">
-                        <th class="px-3 py-2 text-left text-[var(--color-text-tertiary)] font-medium">Income</th>
-                        <th class="px-3 py-2 text-right text-[var(--color-text-tertiary)] font-medium">Employment</th>
-                        <th class="px-3 py-2 text-right text-[var(--color-text-tertiary)] font-medium">Best SE</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      @for (lv of levels; track lv) {
-                        <tr class="border-b border-[var(--color-border)]/50 last:border-0">
-                          <td class="px-3 py-2 text-[var(--color-text-tertiary)] font-mono">€{{ lv }}</td>
-                          <td class="px-3 py-2 text-right font-mono" [style.color]="rateColor(c.effectiveRates.employment[lv])">{{ fmtRate(c.effectiveRates.employment[lv]) }}</td>
-                          <td class="px-3 py-2 text-right font-mono" [style.color]="rateColor(c.effectiveRates.bestSelfEmployment[lv])">{{ fmtRate(c.effectiveRates.bestSelfEmployment[lv]) }}</td>
-                        </tr>
-                      }
-                    </tbody>
-                  </table>
+            <!-- Regime Calculator — all countries now have at least one regime -->
+            <div class="mb-4">
+              <h3 class="text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-wider font-medium mb-2 flex items-center gap-1.5">
+                <svg lucideTrendingDown class="size-3" aria-hidden="true"></svg>
+                Regime Calculator
+              </h3>
+              @if (hasIncompleteRegimes(c)) {
+                <div class="mb-2 px-3 py-2 rounded-md text-[11px]"
+                     style="background: color-mix(in srgb, var(--color-warning) 8%, transparent); border: 1px solid color-mix(in srgb, var(--color-warning) 25%, transparent); color: var(--color-warning)">
+                  ~ Rough estimate — detailed regime data pending
                 </div>
-              </div>
-            }
+              }
+              <app-regime-calculator [country]="c" />
+            </div>
 
             @if (c.changes2026?.length) {
               <div class="mb-4">
@@ -338,14 +293,12 @@ type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
 })
 export class CountryDetailPanelComponent {
   readonly store = inject(AppStore);
-  readonly calcService = inject(CalculationService);
   readonly regimeCalcService = inject(RegimeCalculationService);
   readonly regionLabel = regionLabel;
 
   readonly country = this.store.selectedCountry;
   readonly isVisible = computed(() => this.store.selectedCountry() !== null);
   readonly activeTab = signal<Tab>('overview');
-  readonly levels = ['30k', '60k', '100k'] as const;
 
   private readonly lastOpenedCode = signal<string | null>(null);
 
@@ -388,31 +341,26 @@ export class CountryDetailPanelComponent {
     const c = this.store.selectedCountry();
     if (!income || !c) return null;
 
-    // For countries with computableRegimes, use the accurate regime calculator
-    if ((c.computableRegimes?.length ?? 0) > 0) {
-      const cmp = this.regimeCalcService.calculateAll(c, income);
-      if (!cmp) return null;
-      const empResult = cmp.regimes.find(r => r.regimeType === 'employment');
-      const seResult = cmp.regimes
-        .filter(r => r.regimeType === 'self-employment')
-        .reduce<typeof cmp.regimes[0] | null>((b, r) => (!b || r.net > b.net ? r : b), null);
-      const bestResult = cmp.best;
-      const toResult = (r: typeof cmp.regimes[0]): CalculationResult => ({
-        gross: r.gross, socialSecurity: r.socialSecurity,
-        incomeTax: r.incomeTax, net: r.net, effectiveRate: r.effectiveRate,
-        method: r.regimeName,
-      });
-      return {
-        employment: empResult ? toResult(empResult) : toResult(bestResult),
-        selfEmployment: toResult(seResult ?? bestResult),
-      };
-    }
-
-    const employment = this.calcService.calculateEmployment(c, income);
-    const selfEmployment = this.calcService.calculateBestSelfEmployment(c, income);
-    if (!employment && !selfEmployment) return null;
-    return { employment, selfEmployment };
+    const cmp = this.regimeCalcService.calculateAll(c, income);
+    const empResult = cmp.regimes.find(r => r.regimeType === 'employment');
+    const seResult = cmp.regimes
+      .filter(r => r.regimeType === 'self-employment')
+      .reduce<typeof cmp.regimes[0] | null>((b, r) => (!b || r.net > b.net ? r : b), null);
+    const bestResult = cmp.best;
+    const toResult = (r: typeof cmp.regimes[0]): CalculationResult => ({
+      gross: r.gross, socialSecurity: r.socialSecurity,
+      incomeTax: r.incomeTax, net: r.net, effectiveRate: r.effectiveRate,
+      method: r.regimeName, isApproximation: r.isApproximation,
+    });
+    return {
+      employment: empResult ? toResult(empResult) : toResult(bestResult),
+      selfEmployment: toResult(seResult ?? bestResult),
+    };
   });
+
+  hasIncompleteRegimes(c: Country): boolean {
+    return c.computableRegimes.some(r => !!r.incompleteData);
+  }
 
   close(): void {
     this.store.selectCountry(null);

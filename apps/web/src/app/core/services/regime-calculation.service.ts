@@ -8,6 +8,7 @@ import {
   TaxBracket,
 } from '../models/country.model';
 
+
 // ─── Public types ──────────────────────────────────────────────────────────
 
 export interface CalculationStep {
@@ -29,6 +30,8 @@ export interface RegimeCalculationResult {
   net: number;
   effectiveRate: number;
   warnings: string[];
+  /** True when result is derived from a stored flat rate, not detailed brackets */
+  isApproximation?: boolean;
 }
 
 export interface RegimeComparison {
@@ -85,14 +88,12 @@ export class RegimeCalculationService {
       net,
       effectiveRate: 1 - net / grossEUR,
       warnings,
+      isApproximation: !!regime.incompleteData,
     };
   }
 
-  calculateAll(country: Country, grossEUR: number): RegimeComparison | null {
-    const regimes = country.computableRegimes;
-    if (!regimes || regimes.length === 0) return null;
-
-    const results = regimes.map(r => this.calculate(country, r, grossEUR));
+  calculateAll(country: Country, grossEUR: number): RegimeComparison {
+    const results = country.computableRegimes.map(r => this.calculate(country, r, grossEUR));
     const best = results.reduce((b, c) => (c.net > b.net ? c : b));
     return { regimes: results, best };
   }
