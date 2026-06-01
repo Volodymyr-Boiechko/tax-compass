@@ -5,14 +5,14 @@ import { Country, Confidence, Region } from '../core/models/country.model';
 import { RegimeCalculationService } from '../core/services/regime-calculation.service';
 
 const EU_COUNTRY_CODES = new Set([
-  'AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR',
-  'DE','GR','HU','IE','IT','LV','LT','LU','MT','NL',
-  'PL','PT','RO','SK','SI','ES','SE',
+  'at','be','bg','hr','cy','cz','dk','ee','fi','fr',
+  'de','gr','hu','ie','it','lv','lt','lu','mt','nl',
+  'pl','pt','ro','sk','si','es','se',
 ]);
 
 const TAX_HAVEN_CODES = new Set([
-  'BS','BM','KY','VG','GG','IM','JE','MC','AD','MT',
-  'CY','AE','BH','QA',
+  'bs','bm','ky','vg','gg','im','je','mc','ad','mt',
+  'cy','ae','bh','qa',
 ]);
 
 export type SortField =
