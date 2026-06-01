@@ -1201,7 +1201,7 @@
             },
             {
               "name": "Unemployment insurance",
-              "rate": 0.5,
+              "rate": 0.005,
               "appliesTo": "gross"
             }
           ]
@@ -11808,7 +11808,7 @@
               },
               {
                 "from": 117371,
-                "to": 164319,
+                "to": null,
                 "rate": 0.025
               }
             ],
@@ -15377,7 +15377,7 @@
           "pit": {
             "kind": "flat",
             "appliesTo": "revenue",
-            "rate": 1
+            "rate": 0.01
           },
           "socialSecurity": {
             "kind": "none"
@@ -15386,7 +15386,7 @@
             {
               "name": "Dividend tax (profit extraction)",
               "rate": 0.16,
-              "appliesTo": "revenue"
+              "appliesTo": "profit"
             }
           ]
         }
@@ -18327,17 +18327,16 @@
                 "to": null,
                 "rate": 0.35
               }
-            ],
-            "deductionPercent": 50
+            ]
           },
           "socialSecurity": {
             "kind": "fixed-monthly",
             "monthly": 19.5
           },
           "personalAllowance": {
-            "amount": 1600,
+            "amount": 4155,
             "currency": "EUR",
-            "notes": "THB 60,000/year personal allowance"
+            "notes": "THB 100,000 standard employment deduction (cap) + THB 60,000 personal allowance, converted at 38.5 THB/EUR"
           }
         },
         {
@@ -18388,16 +18387,15 @@
                 "to": null,
                 "rate": 0.35
               }
-            ],
-            "deductionPercent": 60
+            ]
           },
           "socialSecurity": {
             "kind": "none"
           },
           "personalAllowance": {
-            "amount": 1600,
+            "amount": 4155,
             "currency": "EUR",
-            "notes": "THB 60,000/year personal allowance"
+            "notes": "THB 100,000 standard business deduction (cap) + THB 60,000 personal allowance, converted at 38.5 THB/EUR"
           }
         },
         {
