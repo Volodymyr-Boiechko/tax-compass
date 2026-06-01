@@ -9763,11 +9763,6 @@
           "socialSecurity": {
             "kind": "fixed-monthly",
             "monthly": 3
-          },
-          "personalAllowance": {
-            "amount": 16600,
-            "currency": "EUR",
-            "notes": "MOP 144,000 tax-free threshold (converted at 8.7 MOP/EUR); enhanced MOP 198,000 for part-time/age 65+/disability"
           }
         },
         {
@@ -9819,11 +9814,6 @@
           "socialSecurity": {
             "kind": "fixed-monthly",
             "monthly": 3
-          },
-          "personalAllowance": {
-            "amount": 16600,
-            "currency": "EUR",
-            "notes": "MOP 144,000 tax-free threshold (converted at 8.7 MOP/EUR)"
           }
         }
       ]
