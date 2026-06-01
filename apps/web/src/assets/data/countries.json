@@ -718,38 +718,64 @@
       "computableRegimes": [
         {
           "id": "aw-employment",
-          "name": "Employment",
+          "name": "Aruba — Employment (Progressive PIT)",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.287,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": null,
+                "rate": 0.52
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.066,
+            "cap": 43590
+          },
+          "personalAllowance": {
+            "amount": 15385,
+            "currency": "EUR",
+            "notes": "Fixed tax credit AWG 30,000 / 1.95 ≈ EUR 15,385; employment deduction AWG 1,500 / 1.95 ≈ EUR 769 additional"
           },
           "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.287,
-            "source": "EY/PwC stored effective rate at €60k"
+            "reason": "EY does not publish the full AWG bracket thresholds — only confirms 0%–52% progressive range. Exact bracket thresholds unavailable from EY guide.",
+            "fallbackRate": 0.25,
+            "source": "EY Worldwide Tax Guide 2025-26, pp.66-72"
           }
         },
         {
           "id": "aw-self-employment",
-          "name": "Self-Employment (Sole Proprietorship)",
+          "name": "Aruba — Self-Employment / Sole Proprietorship",
           "type": "self-employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.283,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "profit",
+            "brackets": [
+              {
+                "from": 0,
+                "to": null,
+                "rate": 0.52
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.066,
+            "cap": 43590
+          },
+          "personalAllowance": {
+            "amount": 15385,
+            "currency": "EUR",
+            "notes": "Fixed tax credit AWG 30,000 / 1.95; entrepreneur deduction AWG 2,400 / 1.95 ≈ EUR 1,231 additional"
           },
           "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.283,
-            "source": "EY/PwC stored effective rate at €60k"
+            "reason": "EY does not publish the full AWG bracket thresholds — only confirms 0%–52% progressive range. Exact bracket thresholds unavailable from EY guide.",
+            "fallbackRate": 0.25,
+            "source": "EY Worldwide Tax Guide 2025-26, pp.66-72"
           }
         }
       ]
@@ -1679,38 +1705,45 @@
       "computableRegimes": [
         {
           "id": "bm-employment",
-          "name": "Employment",
+          "name": "Bermuda — Employment (No Income Tax)",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.057999999999999996,
+            "kind": "zero",
             "appliesTo": "gross"
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "fixed-monthly",
+            "monthly": 35
           },
+          "additionalLevies": [
+            {
+              "name": "Employee Payroll Tax (progressive, deducted by employer)",
+              "rate": 0.005,
+              "appliesTo": "gross"
+            }
+          ],
           "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.057999999999999996,
-            "source": "EY/PwC stored effective rate at €60k"
+            "reason": "Bermuda has no income tax. Employee payroll tax is progressive (0.5%–12.5%) deducted at source by employer; modelling as minimum 0.5% base levy only. Social insurance is flat BMD 37.65/week ≈ EUR 35/month.",
+            "fallbackRate": 0.065,
+            "source": "EY Worldwide Tax Guide 2025-26, pp.146-148"
           }
         },
         {
           "id": "bm-self-employment",
-          "name": "Self-Employment",
+          "name": "Bermuda — Self-Employment (No Income Tax)",
           "type": "self-employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.03,
+            "kind": "zero",
             "appliesTo": "gross"
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "fixed-monthly",
+            "monthly": 70
           },
           "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.03,
-            "source": "EY/PwC stored effective rate at €60k"
+            "reason": "Bermuda has no income tax. Self-employed pay flat social insurance BMD 75.30/week (both halves) ≈ EUR 70/month. No payroll tax on own drawings if no employees.",
+            "fallbackRate": 0.06,
+            "source": "EY Worldwide Tax Guide 2025-26, pp.146-148"
           }
         }
       ]
@@ -1760,38 +1793,64 @@
       "computableRegimes": [
         {
           "id": "bq-employment",
-          "name": "Employment",
+          "name": "BES Islands — Employment (Progressive PIT)",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.341,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 49257,
+                "rate": 0.294
+              },
+              {
+                "from": 49257,
+                "to": null,
+                "rate": 0.384
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.268,
+            "cap": 35546
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.341,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 20330,
+            "currency": "EUR",
+            "notes": "Fixed tax credit USD 21,956 / 1.08 ≈ EUR 20,330 (residents only)"
           }
         },
         {
           "id": "bq-self-employment",
-          "name": "Self-Employment",
+          "name": "BES Islands — Self-Employment",
           "type": "self-employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.342,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 49257,
+                "rate": 0.294
+              },
+              {
+                "from": 49257,
+                "to": null,
+                "rate": 0.384
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.268,
+            "cap": 35546
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.342,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 20330,
+            "currency": "EUR",
+            "notes": "Fixed tax credit USD 21,956 / 1.08 ≈ EUR 20,330 (residents only)"
           }
         }
       ]
@@ -1838,38 +1897,49 @@
       "computableRegimes": [
         {
           "id": "bo-employment",
-          "name": "Employment",
+          "name": "Bolivia Employment (RC-IVA)",
           "type": "employment",
           "pit": {
             "kind": "flat",
-            "rate": 0.23800000000000002,
-            "appliesTo": "gross"
+            "appliesTo": "gross",
+            "rate": 0.13
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.1271,
+            "cap": 22000
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.23800000000000002,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 8800,
+            "currency": "EUR",
+            "notes": "Effective credit equivalent: 13% of 2 minimum salaries/month (BOB 715/month = BOB 8,580/year credit, equivalent to ~BOB 66,000 exemption). Plus VAT on personal purchases (variable). Long-term SS ceiling BOB 165,000/year (~EUR 22,000)."
           }
         },
         {
           "id": "bo-self-employment",
-          "name": "Self-Employment",
+          "name": "Bolivia Self-Employment (RC-IVA + Transaction Tax)",
           "type": "self-employment",
           "pit": {
             "kind": "flat",
-            "rate": 0.287,
-            "appliesTo": "gross"
+            "appliesTo": "gross",
+            "rate": 0.13
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.1271,
+            "cap": 22000
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.287,
-            "source": "EY/PwC stored effective rate at €60k"
+          "additionalLevies": [
+            {
+              "name": "Transaction Tax (IT)",
+              "rate": 0.03,
+              "appliesTo": "gross"
+            }
+          ],
+          "personalAllowance": {
+            "amount": 8800,
+            "currency": "EUR",
+            "notes": "RC-IVA credit: 13% of 6 minimum salaries/quarter plus VAT on personal purchases. Transaction Tax 3% on each service rendered (monthly). VAT 13% also applies but is passed to clients."
           }
         }
       ]
@@ -2290,38 +2360,54 @@
       "computableRegimes": [
         {
           "id": "vg-employment",
-          "name": "Employment",
+          "name": "British Virgin Islands — Employment (No Income Tax)",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.158,
+            "kind": "zero",
             "appliesTo": "gross"
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.0775,
+            "cap": 47222
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.158,
-            "source": "EY/PwC stored effective rate at €60k"
+          "additionalLevies": [
+            {
+              "name": "Employee Payroll Tax (Class I employer)",
+              "rate": 0.08,
+              "appliesTo": "gross"
+            }
+          ],
+          "personalAllowance": {
+            "amount": 9259,
+            "currency": "EUR",
+            "notes": "Payroll tax exemption first USD 10,000 / 1.08 ≈ EUR 9,259 per year per employee"
           }
         },
         {
           "id": "vg-self-employment",
-          "name": "Self-Employment",
+          "name": "British Virgin Islands — Self-Employment (No Income Tax)",
           "type": "self-employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.158,
+            "kind": "zero",
             "appliesTo": "gross"
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.0775,
+            "cap": 47222
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.158,
-            "source": "EY/PwC stored effective rate at €60k"
+          "additionalLevies": [
+            {
+              "name": "Self-Employed Payroll Tax (Class I — total both halves)",
+              "rate": 0.1,
+              "appliesTo": "gross"
+            }
+          ],
+          "personalAllowance": {
+            "amount": 9259,
+            "currency": "EUR",
+            "notes": "Payroll tax exemption first USD 10,000 / 1.08 ≈ EUR 9,259 per year. Self-employed pay full 10% (Class I) or 14% (Class II) payroll tax."
           }
         }
       ]
@@ -2663,38 +2749,114 @@
       "computableRegimes": [
         {
           "id": "ca-employment",
-          "name": "Employment",
+          "name": "Canada Employment — Federal + Ontario",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.251,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 39543,
+                "rate": 0.1905
+              },
+              {
+                "from": 39543,
+                "to": 72827,
+                "rate": 0.2965
+              },
+              {
+                "from": 72827,
+                "to": 101351,
+                "rate": 0.3716
+              },
+              {
+                "from": 101351,
+                "to": 122595,
+                "rate": 0.4116
+              },
+              {
+                "from": 122595,
+                "to": 148649,
+                "rate": 0.4516
+              },
+              {
+                "from": 148649,
+                "to": 174650,
+                "rate": 0.4716
+              },
+              {
+                "from": 174650,
+                "to": null,
+                "rate": 0.4616
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "banded",
+            "rate": 0.0759,
+            "cap": 48176
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.251,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 11116,
+            "currency": "EUR",
+            "notes": "Federal Basic Personal Amount CAD $16,452 (2026) = ~EUR 11,116 at CAD/EUR 1.48. Delivered as non-refundable 14% federal tax credit (~EUR 1,556 credit value). Ontario BPA ~CAD $12,440 (~EUR 8,405). Combined federal+Ontario rates shown in brackets: first bracket 14%+5.05%=19.05%; CPP 5.95%+EI 1.64%=7.59% capped at YMPE CAD $71,300 (~EUR 48,176). Ontario surtax pushes effective top Ontario rate higher above ~EUR 3,591 Ontario tax."
           }
         },
         {
           "id": "ca-self-employment",
-          "name": "Self-Employment (Sole Proprietor (T1 business))",
+          "name": "Canada Self-Employment (Sole Proprietor) — Federal + Ontario",
           "type": "self-employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.271,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 39543,
+                "rate": 0.1905
+              },
+              {
+                "from": 39543,
+                "to": 72827,
+                "rate": 0.2965
+              },
+              {
+                "from": 72827,
+                "to": 101351,
+                "rate": 0.3716
+              },
+              {
+                "from": 101351,
+                "to": 122595,
+                "rate": 0.4116
+              },
+              {
+                "from": 122595,
+                "to": 148649,
+                "rate": 0.4516
+              },
+              {
+                "from": 148649,
+                "to": 174650,
+                "rate": 0.4716
+              },
+              {
+                "from": 174650,
+                "to": null,
+                "rate": 0.4616
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.119,
+            "cap": 48176
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.271,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 11116,
+            "currency": "EUR",
+            "notes": "Self-employed pay both sides of CPP (11.9%); employer half (5.95%) deductible from income. No mandatory EI. CPP capped at YMPE CAD $71,300 (~EUR 48,176); basic exemption CAD $3,500 (~EUR 2,365). Provincial rates vary significantly; Ontario used as reference. RRSP contributions (18% of prior-year earned income, max CAD $32,490) provide additional deduction not modeled here."
           }
         }
       ]
@@ -2750,38 +2912,88 @@
       "computableRegimes": [
         {
           "id": "cv-employment",
-          "name": "Employment",
+          "name": "Employment (IRPS)",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.32,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 8706.3,
+                "rate": 0.165
+              },
+              {
+                "from": 8706.3,
+                "to": 16324.31,
+                "rate": 0.231
+              },
+              {
+                "from": 16324.31,
+                "to": null,
+                "rate": 0.275
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.085
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.32,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 1995.19,
+            "currency": "EUR",
+            "notes": "CVE 220,000 tax-free threshold subtracted from taxable income before applying rates"
           }
         },
         {
-          "id": "cv-self-employment",
-          "name": "Self-Employment (Simplified Regime (4% on turnover))",
+          "id": "cv-self-employment-simplified",
+          "name": "Self-Employment — Simplified Regime (4% flat)",
           "type": "self-employment",
           "pit": {
             "kind": "flat",
-            "rate": 0.057,
-            "appliesTo": "gross"
+            "appliesTo": "revenue",
+            "rate": 0.04
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.11,
+            "notes": "Restricted regime 11%; extended regime 19.5%; base self-selected by individual"
+          }
+        },
+        {
+          "id": "cv-self-employment-bookkeeping",
+          "name": "Self-Employment — Organized Bookkeeping (progressive)",
+          "type": "self-employment",
+          "pit": {
+            "kind": "progressive",
+            "appliesTo": "profit",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 8706.3,
+                "rate": 0.165
+              },
+              {
+                "from": 8706.3,
+                "to": 16324.31,
+                "rate": 0.231
+              },
+              {
+                "from": 16324.31,
+                "to": null,
+                "rate": 0.275
+              }
+            ]
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.057,
-            "source": "EY/PwC stored effective rate at €60k"
+          "socialSecurity": {
+            "kind": "percentage",
+            "rate": 0.11,
+            "notes": "Restricted regime 11%; extended regime 19.5%; base self-selected by individual"
+          },
+          "personalAllowance": {
+            "amount": 1995.19,
+            "currency": "EUR",
+            "notes": "CVE 220,000 tax-free threshold applies"
           }
         }
       ]
@@ -3109,38 +3321,113 @@
       "computableRegimes": [
         {
           "id": "cn-employment",
-          "name": "Employment",
+          "name": "China — Employment (Salaried, Resident)",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.252,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 4615,
+                "rate": 0.03
+              },
+              {
+                "from": 4615,
+                "to": 18462,
+                "rate": 0.1
+              },
+              {
+                "from": 18462,
+                "to": 38462,
+                "rate": 0.2
+              },
+              {
+                "from": 38462,
+                "to": 53846,
+                "rate": 0.25
+              },
+              {
+                "from": 53846,
+                "to": 84615,
+                "rate": 0.3
+              },
+              {
+                "from": 84615,
+                "to": 123077,
+                "rate": 0.35
+              },
+              {
+                "from": 123077,
+                "to": null,
+                "rate": 0.45
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.11
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.252,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 7692,
+            "currency": "EUR",
+            "notes": "CNY 60,000/year standard deduction (CNY 5,000/month)"
           }
         },
         {
           "id": "cn-self-employment",
-          "name": "Self-Employment (B2B 20% Deduction)",
+          "name": "China — Independent Personal Services (Self-Employed, Resident)",
           "type": "self-employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.204,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "revenue",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 4615,
+                "rate": 0.03
+              },
+              {
+                "from": 4615,
+                "to": 18462,
+                "rate": 0.1
+              },
+              {
+                "from": 18462,
+                "to": 38462,
+                "rate": 0.2
+              },
+              {
+                "from": 38462,
+                "to": 53846,
+                "rate": 0.25
+              },
+              {
+                "from": 53846,
+                "to": 84615,
+                "rate": 0.3
+              },
+              {
+                "from": 84615,
+                "to": 123077,
+                "rate": 0.35
+              },
+              {
+                "from": 123077,
+                "to": null,
+                "rate": 0.45
+              }
+            ],
+            "deductionPercent": 20
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.11
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.204,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 7692,
+            "currency": "EUR",
+            "notes": "CNY 60,000/year standard deduction also applies to consolidated income including independent services"
           }
         }
       ]
@@ -3582,38 +3869,131 @@
       "computableRegimes": [
         {
           "id": "cw-employment",
-          "name": "Employment",
+          "name": "Curaçao — Employment (Progressive PIT)",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.273,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 20048,
+                "rate": 0.0975
+              },
+              {
+                "from": 20048,
+                "to": 26732,
+                "rate": 0.15
+              },
+              {
+                "from": 26732,
+                "to": 40098,
+                "rate": 0.23
+              },
+              {
+                "from": 40098,
+                "to": 56805,
+                "rate": 0.3
+              },
+              {
+                "from": 56805,
+                "to": 83536,
+                "rate": 0.375
+              },
+              {
+                "from": 83536,
+                "to": null,
+                "rate": 0.465
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.118,
+            "cap": 76923
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.273,
-            "source": "EY/PwC stored effective rate at €60k"
+          "additionalLevies": [
+            {
+              "name": "AVBZ Extraordinary Sickness Insurance (employee)",
+              "rate": 0.015,
+              "appliesTo": "gross"
+            }
+          ],
+          "personalAllowance": {
+            "amount": 1495,
+            "currency": "EUR",
+            "notes": "Standard tax credit XCG 2,915 / 1.95 ≈ EUR 1,495 (deducted from tax due, not from taxable income)"
           }
         },
         {
           "id": "cw-self-employment",
-          "name": "Self-Employment (B2B Self-employment)",
+          "name": "Curaçao — Self-Employment",
+          "type": "self-employment",
+          "pit": {
+            "kind": "progressive",
+            "appliesTo": "profit",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 20048,
+                "rate": 0.0975
+              },
+              {
+                "from": 20048,
+                "to": 26732,
+                "rate": 0.15
+              },
+              {
+                "from": 26732,
+                "to": 40098,
+                "rate": 0.23
+              },
+              {
+                "from": 40098,
+                "to": 56805,
+                "rate": 0.3
+              },
+              {
+                "from": 56805,
+                "to": 83536,
+                "rate": 0.375
+              },
+              {
+                "from": 83536,
+                "to": null,
+                "rate": 0.465
+              }
+            ]
+          },
+          "socialSecurity": {
+            "kind": "percentage",
+            "rate": 0.02,
+            "cap": 310896
+          },
+          "personalAllowance": {
+            "amount": 1495,
+            "currency": "EUR",
+            "notes": "Standard tax credit XCG 2,915 / 1.95 ≈ EUR 1,495 (deducted from tax due). Self-employed: only AVBZ 2% confirmed by EY; BVZ/AOV self-employed rates not specified."
+          }
+        },
+        {
+          "id": "cw-penshonado",
+          "name": "Curaçao — Penshonado (Retiree Flat Rate on Foreign Income)",
           "type": "self-employment",
           "pit": {
             "kind": "flat",
-            "rate": 0.202,
-            "appliesTo": "gross"
+            "appliesTo": "revenue",
+            "rate": 0.1
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.02,
+            "cap": 310896
           },
           "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.202,
-            "source": "EY/PwC stored effective rate at €60k"
+            "reason": "Penshonado regime: 10% flat rate on all foreign-source income for qualifying retirees aged 50+ who acquire qualifying Curaçao property. Must apply within 2 months of registration.",
+            "fallbackRate": 0.1,
+            "source": "EY Worldwide Tax Guide 2025-26, pp.315-316"
           }
         }
       ]
@@ -4610,38 +4990,87 @@
       "computableRegimes": [
         {
           "id": "sv-employment",
-          "name": "Employment",
+          "name": "El Salvador Employment (ISR Progressive)",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.311,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 6111,
+                "rate": 0
+              },
+              {
+                "from": 6111,
+                "to": 8466,
+                "rate": 0.1
+              },
+              {
+                "from": 8466,
+                "to": 21164,
+                "rate": 0.2
+              },
+              {
+                "from": 21164,
+                "to": null,
+                "rate": 0.3
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "banded",
+            "rate": 0.1025,
+            "cap": 11111
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.311,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 1481,
+            "currency": "EUR",
+            "notes": "USD used; divided by 1.08 for EUR. Zero band 0–USD 6,600 / 1.08 = EUR 6,111. Medical/educational deduction: USD 800+800 = USD 1,600 (~EUR 1,481) for income > USD 9,100; USD 1,600 deduction for income ≤ USD 9,100. SS: health insurance 3% capped at USD 1,000/month salary (EUR 11,111/year base cap) + AFP pension 7.25% (no cap). Total employee SS ~10.25%."
           }
         },
         {
           "id": "sv-self-employment",
-          "name": "Self-Employment (Standard Self-Employment)",
+          "name": "El Salvador Self-Employment",
           "type": "self-employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.241,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "profit",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 6111,
+                "rate": 0
+              },
+              {
+                "from": 6111,
+                "to": 8466,
+                "rate": 0.1
+              },
+              {
+                "from": 8466,
+                "to": 21164,
+                "rate": 0.2
+              },
+              {
+                "from": 21164,
+                "to": null,
+                "rate": 0.3
+              }
+            ]
           },
           "socialSecurity": {
             "kind": "none"
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.241,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 1481,
+            "currency": "EUR",
+            "notes": "Self-employed SS rates not specified in EY source. Same PIT brackets as employment. Medical/educational deductions apply. Capital gains taxed at flat 10%.",
+            "incompleteData": {
+              "reason": "Self-employed social security contribution rates not specified in source",
+              "fallbackRate": 0.22,
+              "source": "EY Worldwide Tax Guide 2025-26 p.386-392"
+            }
           }
         }
       ]
@@ -4984,38 +5413,136 @@
       "computableRegimes": [
         {
           "id": "fi-employment",
-          "name": "Employment",
+          "name": "Finland — Employment (Standard)",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.31,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 21200,
+                "rate": 0.1264
+              },
+              {
+                "from": 21200,
+                "to": 32600,
+                "rate": 0.19
+              },
+              {
+                "from": 32600,
+                "to": 40100,
+                "rate": 0.3025
+              },
+              {
+                "from": 40100,
+                "to": 52100,
+                "rate": 0.3325
+              },
+              {
+                "from": 52100,
+                "to": null,
+                "rate": 0.375
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.0964
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.31,
-            "source": "EY/PwC stored effective rate at €60k"
+          "additionalLevies": [
+            {
+              "name": "Municipal tax (average)",
+              "rate": 0.08,
+              "appliesTo": "taxable"
+            },
+            {
+              "name": "YLE tax",
+              "rate": 0.025,
+              "appliesTo": "taxable"
+            }
+          ],
+          "personalAllowance": {
+            "amount": 750,
+            "currency": "EUR",
+            "notes": "Standard salary deduction; YLE tax applies on income above EUR 15,150 (capped EUR 160/year)"
           }
         },
         {
           "id": "fi-self-employment",
-          "name": "Self-Employment (Toiminimi (sole trader))",
+          "name": "Finland — Self-Employment (Sole Trader, YEL)",
           "type": "self-employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.38,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "profit",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 21200,
+                "rate": 0.1264
+              },
+              {
+                "from": 21200,
+                "to": 32600,
+                "rate": 0.19
+              },
+              {
+                "from": 32600,
+                "to": 40100,
+                "rate": 0.3025
+              },
+              {
+                "from": 40100,
+                "to": 52100,
+                "rate": 0.3325
+              },
+              {
+                "from": 52100,
+                "to": null,
+                "rate": 0.375
+              }
+            ],
+            "deductionPercent": 5
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.241
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.38,
-            "source": "EY/PwC stored effective rate at €60k"
+          "additionalLevies": [
+            {
+              "name": "Municipal tax (average)",
+              "rate": 0.08,
+              "appliesTo": "taxable"
+            },
+            {
+              "name": "YLE tax",
+              "rate": 0.025,
+              "appliesTo": "taxable"
+            }
+          ],
+          "personalAllowance": {
+            "amount": 0,
+            "currency": "EUR",
+            "notes": "No standard salary deduction for self-employed; 5% entrepreneur deduction (yrittäjävähennys) applied; YEL pension 24.1% (age ≤52) or 25.6% (53–62)"
+          }
+        },
+        {
+          "id": "fi-employment-expat",
+          "name": "Finland — Expatriate Flat-Rate Regime (25%)",
+          "type": "employment",
+          "pit": {
+            "kind": "flat",
+            "appliesTo": "gross",
+            "rate": 0.25
+          },
+          "socialSecurity": {
+            "kind": "percentage",
+            "rate": 0.0964
+          },
+          "personalAllowance": {
+            "amount": 0,
+            "currency": "EUR",
+            "notes": "Flat 25% on Finnish-source salary income; requires special knowledge, min salary EUR 5,800/month, not resident in Finland for 5 prior calendar years; valid up to 84 months"
           }
         }
       ]
@@ -5734,38 +6261,150 @@
       "computableRegimes": [
         {
           "id": "gr-employment",
-          "name": "Employment",
+          "name": "Greece — Employment (Standard)",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.36,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 10000,
+                "rate": 0.09
+              },
+              {
+                "from": 10000,
+                "to": 20000,
+                "rate": 0.2
+              },
+              {
+                "from": 20000,
+                "to": 30000,
+                "rate": 0.26
+              },
+              {
+                "from": 30000,
+                "to": 40000,
+                "rate": 0.34
+              },
+              {
+                "from": 40000,
+                "to": 60000,
+                "rate": 0.39
+              },
+              {
+                "from": 60000,
+                "to": null,
+                "rate": 0.44
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
-          },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.36,
-            "source": "EY/PwC stored effective rate at €60k"
+            "kind": "banded",
+            "rate": 0.1337,
+            "cap": 108667
           }
         },
         {
           "id": "gr-self-employment",
-          "name": "Self-Employment (Employment (standard))",
+          "name": "Greece — Self-Employment / Freelancer (Standard)",
           "type": "self-employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.36,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "profit",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 10000,
+                "rate": 0.09
+              },
+              {
+                "from": 10000,
+                "to": 20000,
+                "rate": 0.2
+              },
+              {
+                "from": 20000,
+                "to": 30000,
+                "rate": 0.26
+              },
+              {
+                "from": 30000,
+                "to": 40000,
+                "rate": 0.34
+              },
+              {
+                "from": 40000,
+                "to": 60000,
+                "rate": 0.39
+              },
+              {
+                "from": 60000,
+                "to": null,
+                "rate": 0.44
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "fixed-monthly",
+            "monthly": 254.65
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.36,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 0,
+            "currency": "EUR",
+            "notes": "EFKA Category 1 fixed monthly contribution ~EUR 254.65; new entrants (<5 years insured) pay ~EUR 156.43/month. Contributions deductible from PIT base."
+          }
+        },
+        {
+          "id": "gr-employment-art5c",
+          "name": "Greece — Article 5C (50% Exemption, New Residents)",
+          "type": "employment",
+          "pit": {
+            "kind": "progressive",
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 10000,
+                "rate": 0.09
+              },
+              {
+                "from": 10000,
+                "to": 20000,
+                "rate": 0.2
+              },
+              {
+                "from": 20000,
+                "to": 30000,
+                "rate": 0.26
+              },
+              {
+                "from": 30000,
+                "to": 40000,
+                "rate": 0.34
+              },
+              {
+                "from": 40000,
+                "to": 60000,
+                "rate": 0.39
+              },
+              {
+                "from": 60000,
+                "to": null,
+                "rate": 0.44
+              }
+            ],
+            "deductionPercent": 50
+          },
+          "socialSecurity": {
+            "kind": "banded",
+            "rate": 0.1337,
+            "cap": 108667
+          },
+          "personalAllowance": {
+            "amount": 0,
+            "currency": "EUR",
+            "notes": "50% of Greek-source employment/business income exempt from PIT; applies for up to 7 tax years; requires not being Greek tax resident for 5 of 6 preceding years; EFKA social security applies in full"
           }
         }
       ]
@@ -5812,38 +6451,121 @@
       "computableRegimes": [
         {
           "id": "gu-employment",
-          "name": "Employment",
+          "name": "Guam Employment",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.171,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 11042,
+                "rate": 0.1
+              },
+              {
+                "from": 11042,
+                "to": 44884,
+                "rate": 0.12
+              },
+              {
+                "from": 44884,
+                "to": 95694,
+                "rate": 0.22
+              },
+              {
+                "from": 95694,
+                "to": 182685,
+                "rate": 0.24
+              },
+              {
+                "from": 182685,
+                "to": 231968,
+                "rate": 0.32
+              },
+              {
+                "from": 231968,
+                "to": 580046,
+                "rate": 0.35
+              },
+              {
+                "from": 580046,
+                "to": null,
+                "rate": 0.37
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.0765,
+            "cap": 163056
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.171,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 14583,
+            "currency": "EUR",
+            "notes": "Standard deduction USD 15,750 (single 2025) converted at USD/EUR=1.08"
           }
         },
         {
           "id": "gu-self-employment",
-          "name": "Self-Employment (Standard Self-Employment (Schedule C))",
+          "name": "Guam Self-Employment",
           "type": "self-employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.259,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "profit",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 11042,
+                "rate": 0.1
+              },
+              {
+                "from": 11042,
+                "to": 44884,
+                "rate": 0.12
+              },
+              {
+                "from": 44884,
+                "to": 95694,
+                "rate": 0.22
+              },
+              {
+                "from": 95694,
+                "to": 182685,
+                "rate": 0.24
+              },
+              {
+                "from": 182685,
+                "to": 231968,
+                "rate": 0.32
+              },
+              {
+                "from": 231968,
+                "to": 580046,
+                "rate": 0.35
+              },
+              {
+                "from": 580046,
+                "to": null,
+                "rate": 0.37
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.153,
+            "cap": 163056
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.259,
-            "source": "EY/PwC stored effective rate at €60k"
+          "additionalLevies": [
+            {
+              "name": "Gross Receipts Tax (GRT)",
+              "rate": 0.05,
+              "appliesTo": "gross"
+            }
+          ],
+          "personalAllowance": {
+            "amount": 14583,
+            "currency": "EUR",
+            "notes": "Standard deduction USD 15,750 (single 2025) converted at USD/EUR=1.08"
           }
         }
       ]
@@ -5896,38 +6618,61 @@
       "computableRegimes": [
         {
           "id": "gt-employment",
-          "name": "Employment",
+          "name": "Guatemala Employment (ISR Progressive)",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.107,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 36854,
+                "rate": 0.05
+              },
+              {
+                "from": 36854,
+                "to": null,
+                "rate": 0.07
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.0483
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.107,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 5898,
+            "currency": "EUR",
+            "notes": "Personal deduction GTQ 48,000 (~EUR 5,898 at GTQ/EUR 8.14). SS contributions also deductible. Additional deductible expenses: life insurance, charitable contributions (max 5% of net income), VAT paid up to GTQ 12,000/year (~EUR 1,474)."
           }
         },
         {
-          "id": "gt-self-employment",
-          "name": "Self-Employment (Optional Simplified Regime (5%/7% gross))",
+          "id": "gt-self-employment-simplified",
+          "name": "Guatemala Self-Employment (Optional Simplified Regime)",
           "type": "self-employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.057,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "revenue",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 44275,
+                "rate": 0.05
+              },
+              {
+                "from": 44275,
+                "to": null,
+                "rate": 0.07
+              }
+            ]
           },
           "socialSecurity": {
             "kind": "none"
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.057,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 0,
+            "currency": "EUR",
+            "notes": "Optional Simplified Regime: gross revenue basis, no expense deductions. Bracket threshold GTQ 30,000/month = GTQ 360,000/year / 8.14 = EUR 44,226; rates 5% on first GTQ 30,000/month, 7% on excess. Final withholding — no annual return needed for this income. Monthly bracket GTQ 30,000 / 8.14 = EUR 3,686/month shown annualized."
           }
         }
       ]
@@ -5985,38 +6730,42 @@
       "computableRegimes": [
         {
           "id": "gg-employment",
-          "name": "Employment",
+          "name": "Guernsey — Employment (Flat 20%)",
           "type": "employment",
           "pit": {
             "kind": "flat",
-            "rate": 0.216,
-            "appliesTo": "gross"
+            "appliesTo": "taxable",
+            "rate": 0.2
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "banded",
+            "rate": 0.075,
+            "cap": 17141
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.216,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 17674,
+            "currency": "EUR",
+            "notes": "GBP 15,200 (2026) converted at GBP/EUR 0.86; allowance withdrawn GBP 1 per GBP 5 of income above GBP 85,000 (~EUR 98,837)"
           }
         },
         {
           "id": "gg-self-employment",
-          "name": "Self-Employment (Standard self-employment (flat 20%))",
+          "name": "Guernsey — Self-Employment (Flat 20%)",
           "type": "self-employment",
           "pit": {
             "kind": "flat",
-            "rate": 0.265,
-            "appliesTo": "gross"
+            "appliesTo": "profit",
+            "rate": 0.2
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "banded",
+            "rate": 0.124,
+            "cap": 228558
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.265,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 17674,
+            "currency": "EUR",
+            "notes": "GBP 15,200 (2026) converted at 0.86; self-employed SS 12.4% on self-employment income up to GBP 196,560 (~EUR 228,558) upper earnings limit"
           }
         }
       ]
@@ -6063,38 +6812,64 @@
       "computableRegimes": [
         {
           "id": "gy-employment",
-          "name": "Employment",
+          "name": "Guyana Employment (PIT Progressive)",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.269,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 13867,
+                "rate": 0.25
+              },
+              {
+                "from": 13867,
+                "to": null,
+                "rate": 0.35
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.056,
+            "cap": 14933
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.269,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 6933,
+            "currency": "EUR",
+            "notes": "Personal allowance = greater of GYD 1,560,000 (~EUR 6,933 at GYD/EUR 225) or 1/3 of total income. NIS capped at max monthly insurable earnings GYD 280,000/month; annual cap base GYD 3,360,000 (~EUR 14,933). PwC shows updated 2026 threshold GYD 3,360,000 vs EY's GYD 3,120,000; EY value used per source. Life/medical insurance deductible up to 10% of income or GYD 600,000. NIS contributions deductible."
           }
         },
         {
           "id": "gy-self-employment",
-          "name": "Self-Employment (Standard Self-Employment)",
+          "name": "Guyana Self-Employment",
           "type": "self-employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.294,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "profit",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 13867,
+                "rate": 0.25
+              },
+              {
+                "from": 13867,
+                "to": null,
+                "rate": 0.35
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.125,
+            "cap": 14933
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.294,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 6933,
+            "currency": "EUR",
+            "notes": "Self-employed NIS 12.5% on earnings up to GYD 280,000/month (~EUR 14,933/year annualized cap base). Same progressive PIT brackets as employment. Personal allowance same as employment."
           }
         }
       ]
@@ -6141,38 +6916,87 @@
       "computableRegimes": [
         {
           "id": "hn-employment",
-          "name": "Employment",
+          "name": "Honduras Employment (ISR Progressive)",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.2,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 8177,
+                "rate": 0
+              },
+              {
+                "from": 8177,
+                "to": 12467,
+                "rate": 0.15
+              },
+              {
+                "from": 12467,
+                "to": 29001,
+                "rate": 0.2
+              },
+              {
+                "from": 29001,
+                "to": null,
+                "rate": 0.25
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "banded",
+            "rate": 0.065,
+            "cap": 5012
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.2,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 0,
+            "currency": "EUR",
+            "notes": "Zero-rate band serves as personal allowance (HNL 217,493 / 26.6 = EUR 8,177). Medical/educational deduction up to HNL 40,000 (~EUR 1,504). IHSS capped at HNL 11,109.30/month salary: 5% (health 2.5% + old age 2.5%) capped, plus Social Housing Fund 1.5% on full salary. Annual cap base HNL 133,312 (~EUR 5,012). PwC 2026 brackets slightly higher (zero-rate band HNL 228,324) — EY 2025 values used."
           }
         },
         {
           "id": "hn-self-employment",
-          "name": "Self-Employment (Standard Self-Employment)",
+          "name": "Honduras Self-Employment",
           "type": "self-employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.195,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "profit",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 8177,
+                "rate": 0
+              },
+              {
+                "from": 8177,
+                "to": 12467,
+                "rate": 0.15
+              },
+              {
+                "from": 12467,
+                "to": 29001,
+                "rate": 0.2
+              },
+              {
+                "from": 29001,
+                "to": null,
+                "rate": 0.25
+              }
+            ]
           },
           "socialSecurity": {
             "kind": "none"
           },
+          "personalAllowance": {
+            "amount": 0,
+            "currency": "EUR",
+            "notes": "Same progressive brackets as employment. IHSS rates for self-employed not specified in EY source. Medical/educational deduction HNL 40,000 (~EUR 1,504) also applicable."
+          },
           "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.195,
-            "source": "EY/PwC stored effective rate at €60k"
+            "reason": "Self-employed IHSS/SS contribution rates not specified in source",
+            "fallbackRate": 0.2,
+            "source": "EY Worldwide Tax Guide 2025-26 p.569-573"
           }
         }
       ]
@@ -7873,38 +8697,56 @@
       "computableRegimes": [
         {
           "id": "je-employment",
-          "name": "Employment",
+          "name": "Jersey — Employment (Flat 20% / Marginal Relief)",
           "type": "employment",
           "pit": {
             "kind": "flat",
-            "rate": 0.23,
-            "appliesTo": "gross"
+            "appliesTo": "taxable",
+            "rate": 0.2
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "banded",
+            "rate": 0.06,
+            "cap": 80930
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.23,
-            "source": "EY/PwC stored effective rate at €60k"
+          "additionalLevies": [
+            {
+              "name": "Long-term care charge",
+              "rate": 0.015,
+              "appliesTo": "taxable"
+            }
+          ],
+          "personalAllowance": {
+            "amount": 24070,
+            "currency": "EUR",
+            "notes": "GBP 20,700 exemption threshold (2025) converted at 0.86; marginal relief applies: tax = lower of 20% on all income OR 26% on income above threshold; employee SS 6% up to SEL GBP 69,600 (~EUR 80,930); no employee SS above SEL"
           }
         },
         {
           "id": "je-self-employment",
-          "name": "Self-Employment (B2B)",
+          "name": "Jersey — Self-Employment (Class 2, Flat 20%)",
           "type": "self-employment",
           "pit": {
             "kind": "flat",
-            "rate": 0.255,
-            "appliesTo": "gross"
+            "appliesTo": "profit",
+            "rate": 0.2
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "banded",
+            "rate": 0.125,
+            "cap": 80930
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.255,
-            "source": "EY/PwC stored effective rate at €60k"
+          "additionalLevies": [
+            {
+              "name": "Long-term care charge",
+              "rate": 0.015,
+              "appliesTo": "taxable"
+            }
+          ],
+          "personalAllowance": {
+            "amount": 24070,
+            "currency": "EUR",
+            "notes": "GBP 20,700 exemption threshold converted at 0.86; Class 2 SS 12.5% up to SEL GBP 69,600; 2.5% above SEL to UEL GBP 317,304; long-term care 1.5% up to UEL cap ~GBP 4,760/year"
           }
         }
       ]
@@ -8685,38 +9527,26 @@
       "computableRegimes": [
         {
           "id": "kw-employment",
-          "name": "Employment",
+          "name": "Kuwait Employment (Expat)",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0,
+            "kind": "zero",
             "appliesTo": "gross"
           },
           "socialSecurity": {
             "kind": "none"
-          },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0,
-            "source": "EY/PwC stored effective rate at €60k"
           }
         },
         {
           "id": "kw-self-employment",
-          "name": "Self-Employment (Zero PIT (expatriates — no income tax or SS))",
+          "name": "Kuwait Self-Employment (Expat)",
           "type": "self-employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.0,
+            "kind": "zero",
             "appliesTo": "gross"
           },
           "socialSecurity": {
             "kind": "none"
-          },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.0,
-            "source": "EY/PwC stored effective rate at €60k"
           }
         }
       ]
@@ -9146,38 +9976,60 @@
       "computableRegimes": [
         {
           "id": "ls-employment",
-          "name": "Employment",
+          "name": "Employment Income",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.285,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 3796.92,
+                "rate": 0.2
+              },
+              {
+                "from": 3796.92,
+                "to": null,
+                "rate": 0.3
+              }
+            ]
           },
           "socialSecurity": {
             "kind": "none"
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.285,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 596.92,
+            "currency": "EUR",
+            "notes": "Non-refundable tax credit of LSL 11,640/year (LSL 970/month) deducted directly from tax liability"
           }
         },
         {
           "id": "ls-self-employment",
-          "name": "Self-Employment (B2B Self-Employment)",
+          "name": "Self-Employment / Business Income",
           "type": "self-employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.285,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "profit",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 3796.92,
+                "rate": 0.2
+              },
+              {
+                "from": 3796.92,
+                "to": null,
+                "rate": 0.3
+              }
+            ]
           },
           "socialSecurity": {
             "kind": "none"
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.285,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 596.92,
+            "currency": "EUR",
+            "notes": "Non-refundable tax credit of LSL 11,640/year deducted directly from tax liability"
           }
         }
       ]
@@ -9625,38 +10477,291 @@
       "computableRegimes": [
         {
           "id": "lu-employment",
-          "name": "Employment",
+          "name": "Luxembourg — Employment (Class 1, Single)",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.32,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 12438,
+                "rate": 0
+              },
+              {
+                "from": 12438,
+                "to": 14508,
+                "rate": 0.08
+              },
+              {
+                "from": 14508,
+                "to": 16578,
+                "rate": 0.1
+              },
+              {
+                "from": 16578,
+                "to": 18648,
+                "rate": 0.12
+              },
+              {
+                "from": 18648,
+                "to": 20718,
+                "rate": 0.14
+              },
+              {
+                "from": 20718,
+                "to": 22788,
+                "rate": 0.16
+              },
+              {
+                "from": 22788,
+                "to": 24939,
+                "rate": 0.18
+              },
+              {
+                "from": 24939,
+                "to": 27090,
+                "rate": 0.2
+              },
+              {
+                "from": 27090,
+                "to": 29241,
+                "rate": 0.22
+              },
+              {
+                "from": 29241,
+                "to": 31392,
+                "rate": 0.24
+              },
+              {
+                "from": 31392,
+                "to": 33543,
+                "rate": 0.26
+              },
+              {
+                "from": 33543,
+                "to": 35694,
+                "rate": 0.28
+              },
+              {
+                "from": 35694,
+                "to": 37845,
+                "rate": 0.3
+              },
+              {
+                "from": 37845,
+                "to": 39996,
+                "rate": 0.32
+              },
+              {
+                "from": 39996,
+                "to": 42147,
+                "rate": 0.34
+              },
+              {
+                "from": 42147,
+                "to": 44298,
+                "rate": 0.36
+              },
+              {
+                "from": 44298,
+                "to": 46449,
+                "rate": 0.38
+              },
+              {
+                "from": 46449,
+                "to": 48600,
+                "rate": 0.39
+              },
+              {
+                "from": 48600,
+                "to": 50751,
+                "rate": 0.4
+              },
+              {
+                "from": 50751,
+                "to": 52902,
+                "rate": 0.41
+              },
+              {
+                "from": 52902,
+                "to": 110403,
+                "rate": 0.42
+              },
+              {
+                "from": 110403,
+                "to": 165603,
+                "rate": 0.43
+              },
+              {
+                "from": 165603,
+                "to": 220803,
+                "rate": 0.44
+              },
+              {
+                "from": 220803,
+                "to": null,
+                "rate": 0.45
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "banded",
+            "rate": 0.1245,
+            "cap": 160905
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.32,
-            "source": "EY/PwC stored effective rate at €60k"
+          "additionalLevies": [
+            {
+              "name": "Unemployment fund contribution",
+              "rate": 0.01,
+              "appliesTo": "gross"
+            }
+          ],
+          "personalAllowance": {
+            "amount": 0,
+            "currency": "EUR",
+            "notes": "Standard employment expense deduction EUR 540; first bracket 0% serves as effective allowance; SS contributions (pension 8% + illness 3.05% + dependence 1.4%) deductible; cap EUR 160,905; top marginal rate 45.78% including max unemployment fund surcharge"
           }
         },
         {
           "id": "lu-self-employment",
-          "name": "Self-Employment (Indépendant / Selbständig)",
+          "name": "Luxembourg — Self-Employment (Net Profit)",
           "type": "self-employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.38,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "profit",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 12438,
+                "rate": 0
+              },
+              {
+                "from": 12438,
+                "to": 14508,
+                "rate": 0.08
+              },
+              {
+                "from": 14508,
+                "to": 16578,
+                "rate": 0.1
+              },
+              {
+                "from": 16578,
+                "to": 18648,
+                "rate": 0.12
+              },
+              {
+                "from": 18648,
+                "to": 20718,
+                "rate": 0.14
+              },
+              {
+                "from": 20718,
+                "to": 22788,
+                "rate": 0.16
+              },
+              {
+                "from": 22788,
+                "to": 24939,
+                "rate": 0.18
+              },
+              {
+                "from": 24939,
+                "to": 27090,
+                "rate": 0.2
+              },
+              {
+                "from": 27090,
+                "to": 29241,
+                "rate": 0.22
+              },
+              {
+                "from": 29241,
+                "to": 31392,
+                "rate": 0.24
+              },
+              {
+                "from": 31392,
+                "to": 33543,
+                "rate": 0.26
+              },
+              {
+                "from": 33543,
+                "to": 35694,
+                "rate": 0.28
+              },
+              {
+                "from": 35694,
+                "to": 37845,
+                "rate": 0.3
+              },
+              {
+                "from": 37845,
+                "to": 39996,
+                "rate": 0.32
+              },
+              {
+                "from": 39996,
+                "to": 42147,
+                "rate": 0.34
+              },
+              {
+                "from": 42147,
+                "to": 44298,
+                "rate": 0.36
+              },
+              {
+                "from": 44298,
+                "to": 46449,
+                "rate": 0.38
+              },
+              {
+                "from": 46449,
+                "to": 48600,
+                "rate": 0.39
+              },
+              {
+                "from": 48600,
+                "to": 50751,
+                "rate": 0.4
+              },
+              {
+                "from": 50751,
+                "to": 52902,
+                "rate": 0.41
+              },
+              {
+                "from": 52902,
+                "to": 110403,
+                "rate": 0.42
+              },
+              {
+                "from": 110403,
+                "to": 165603,
+                "rate": 0.43
+              },
+              {
+                "from": 165603,
+                "to": 220803,
+                "rate": 0.44
+              },
+              {
+                "from": 220803,
+                "to": null,
+                "rate": 0.45
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.235,
+            "cap": 160905
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.38,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 0,
+            "currency": "EUR",
+            "notes": "Self-employed pay combined employer+employee SS rates: pension 16% + illness 6.1% + dependence 1.4% = ~23.5%; municipal business tax ~7.5% applies additionally on trade profit above EUR 40,000 exemption; max marginal 45.78% including unemployment fund"
           }
         }
       ]
@@ -9875,38 +10980,70 @@
       "computableRegimes": [
         {
           "id": "mw-employment",
-          "name": "Employment",
+          "name": "Employment Income (PAYE)",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.335,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "gross",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 1133.33,
+                "rate": 0
+              },
+              {
+                "from": 1133.33,
+                "to": 10466.67,
+                "rate": 0.3
+              },
+              {
+                "from": 10466.67,
+                "to": 66666.67,
+                "rate": 0.35
+              },
+              {
+                "from": 66666.67,
+                "to": null,
+                "rate": 0.4
+              }
+            ]
           },
           "socialSecurity": {
             "kind": "none"
-          },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.335,
-            "source": "EY/PwC stored effective rate at €60k"
           }
         },
         {
           "id": "mw-self-employment",
-          "name": "Self-Employment (Self-employed)",
+          "name": "Self-Employment / Business Income",
           "type": "self-employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.335,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "profit",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 1133.33,
+                "rate": 0
+              },
+              {
+                "from": 1133.33,
+                "to": 10466.67,
+                "rate": 0.3
+              },
+              {
+                "from": 10466.67,
+                "to": 66666.67,
+                "rate": 0.35
+              },
+              {
+                "from": 66666.67,
+                "to": null,
+                "rate": 0.4
+              }
+            ]
           },
           "socialSecurity": {
             "kind": "none"
-          },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.335,
-            "source": "EY/PwC stored effective rate at €60k"
           }
         }
       ]
@@ -10163,38 +11300,86 @@
       "computableRegimes": [
         {
           "id": "mv-employment",
-          "name": "Employment",
+          "name": "Maldives — Employment",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.081,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 40000,
+                "rate": 0
+              },
+              {
+                "from": 40000,
+                "to": 66667,
+                "rate": 0.055
+              },
+              {
+                "from": 66667,
+                "to": 100000,
+                "rate": 0.08
+              },
+              {
+                "from": 100000,
+                "to": 133333,
+                "rate": 0.12
+              },
+              {
+                "from": 133333,
+                "to": null,
+                "rate": 0.15
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.07
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.081,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 0,
+            "currency": "EUR",
+            "notes": "0% bracket up to MVR 720,000/year (EUR 40,000) acts as effective personal allowance; pension 7% deducted before applying withholding tax brackets"
           }
         },
         {
           "id": "mv-self-employment",
-          "name": "Self-Employment (Self-employed)",
+          "name": "Maldives — Self-Employment / Business Income",
           "type": "self-employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.011000000000000001,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "profit",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 40000,
+                "rate": 0
+              },
+              {
+                "from": 40000,
+                "to": 66667,
+                "rate": 0.055
+              },
+              {
+                "from": 66667,
+                "to": 100000,
+                "rate": 0.08
+              },
+              {
+                "from": 100000,
+                "to": 133333,
+                "rate": 0.12
+              },
+              {
+                "from": 133333,
+                "to": null,
+                "rate": 0.15
+              }
+            ]
           },
           "socialSecurity": {
             "kind": "none"
-          },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.011000000000000001,
-            "source": "EY/PwC stored effective rate at €60k"
           }
         }
       ]
@@ -10798,38 +11983,42 @@
       "computableRegimes": [
         {
           "id": "mc-employment",
-          "name": "Employment",
+          "name": "Monaco — Employment (Non-French Residents, Zero PIT)",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.09300000000000001,
+            "kind": "zero",
             "appliesTo": "gross"
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.0925
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.09300000000000001,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 0,
+            "currency": "EUR",
+            "notes": "0% PIT for non-French nationals resident in Monaco; French nationals subject to French PIT rates under 1963 France-Monaco treaty; employee SS ~9.25% (pension 6.85% capped at EUR 72,336/year + unemployment 2.4% capped at EUR 188,400/year + ~1.5-2% supplemental); 2024 rates used"
           }
         },
         {
           "id": "mc-self-employment",
-          "name": "Self-Employment (Self-employed (non-French))",
+          "name": "Monaco — Self-Employment (Non-French Residents, Zero PIT)",
           "type": "self-employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.15,
-            "appliesTo": "gross"
+            "kind": "zero",
+            "appliesTo": "revenue"
           },
           "socialSecurity": {
             "kind": "none"
           },
           "incompleteData": {
-            "reason": "pending-research",
+            "reason": "Self-employed SS rates not specified in EY guide for Monaco; combined employer+employee equivalent estimated; contact Monaco CCSS for exact rates",
             "fallbackRate": 0.15,
-            "source": "EY/PwC stored effective rate at €60k"
+            "source": "EY Worldwide Tax Guide 2025-26, p.1023; estimated from employed person rates"
+          },
+          "personalAllowance": {
+            "amount": 0,
+            "currency": "EUR",
+            "notes": "0% PIT for non-French nationals genuinely established in Monaco; must carry out activities in Monaco; Monaco applies French VAT law (20% standard rate)"
           }
         }
       ]
@@ -10886,38 +12075,59 @@
       "computableRegimes": [
         {
           "id": "mn-employment",
-          "name": "Employment",
+          "name": "Mongolia — Employment",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.183,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "gross",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 31579,
+                "rate": 0.1
+              },
+              {
+                "from": 31579,
+                "to": 47368,
+                "rate": 0.15
+              },
+              {
+                "from": 47368,
+                "to": null,
+                "rate": 0.2
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
-          },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.183,
-            "source": "EY/PwC stored effective rate at €60k"
+            "kind": "percentage",
+            "rate": 0.115,
+            "cap": 2876
           }
         },
         {
-          "id": "mn-self-employment",
-          "name": "Self-Employment (Self-employed 1%)",
+          "id": "mn-self-employment-standard",
+          "name": "Mongolia — Self-Employment (10% on net profit)",
           "type": "self-employment",
           "pit": {
             "kind": "flat",
-            "rate": 0.01,
-            "appliesTo": "gross"
+            "appliesTo": "profit",
+            "rate": 0.1
           },
           "socialSecurity": {
             "kind": "none"
+          }
+        },
+        {
+          "id": "mn-self-employment-1pct",
+          "name": "Mongolia — Self-Employment (1% gross turnover alternative)",
+          "type": "self-employment",
+          "pit": {
+            "kind": "flat",
+            "appliesTo": "revenue",
+            "rate": 0.01
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.01,
-            "source": "EY/PwC stored effective rate at €60k"
+          "socialSecurity": {
+            "kind": "none"
           }
         }
       ]
@@ -11767,38 +12977,91 @@
       "computableRegimes": [
         {
           "id": "ni-employment",
-          "name": "Employment",
+          "name": "Nicaragua Employment (IR Progressive)",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.318,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 2564,
+                "rate": 0
+              },
+              {
+                "from": 2564,
+                "to": 5128,
+                "rate": 0.15
+              },
+              {
+                "from": 5128,
+                "to": 8974,
+                "rate": 0.2
+              },
+              {
+                "from": 8974,
+                "to": 12821,
+                "rate": 0.25
+              },
+              {
+                "from": 12821,
+                "to": null,
+                "rate": 0.3
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.065
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.318,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 1026,
+            "currency": "EUR",
+            "notes": "Personal deduction NIO 40,000 (~EUR 1,026 at NIO/EUR 39). INSS employee 6.5% (pension 4.25% + health 2.25%); no ceiling. INSS contributions deductible. Dependent deduction NIO 25,000/year per dependent also available."
           }
         },
         {
           "id": "ni-self-employment",
-          "name": "Self-Employment",
+          "name": "Nicaragua Self-Employment (Régimen General)",
           "type": "self-employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.258,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "profit",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 2564,
+                "rate": 0
+              },
+              {
+                "from": 2564,
+                "to": 5128,
+                "rate": 0.15
+              },
+              {
+                "from": 5128,
+                "to": 8974,
+                "rate": 0.2
+              },
+              {
+                "from": 8974,
+                "to": 12821,
+                "rate": 0.25
+              },
+              {
+                "from": 12821,
+                "to": null,
+                "rate": 0.3
+              }
+            ]
           },
           "socialSecurity": {
             "kind": "none"
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.258,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 1026,
+            "currency": "EUR",
+            "notes": "INSS affiliation voluntary for self-employed. Same progressive rates as employment. Cuota Fija simplified regime available for annual revenue ≤ NIO 1,200,000 (~EUR 30,769) — fixed monthly payments replacing both IR and IVA."
           }
         }
       ]
@@ -12100,38 +13363,128 @@
       "computableRegimes": [
         {
           "id": "mp-employment",
-          "name": "Employment",
+          "name": "Northern Mariana Islands Employment",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.203,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 11042,
+                "rate": 0.1
+              },
+              {
+                "from": 11042,
+                "to": 44884,
+                "rate": 0.12
+              },
+              {
+                "from": 44884,
+                "to": 95694,
+                "rate": 0.22
+              },
+              {
+                "from": 95694,
+                "to": 182685,
+                "rate": 0.24
+              },
+              {
+                "from": 182685,
+                "to": 231968,
+                "rate": 0.32
+              },
+              {
+                "from": 231968,
+                "to": 580046,
+                "rate": 0.35
+              },
+              {
+                "from": 580046,
+                "to": null,
+                "rate": 0.37
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.0765,
+            "cap": 163056
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.203,
-            "source": "EY/PwC stored effective rate at €60k"
+          "additionalLevies": [
+            {
+              "name": "CNMI Local Surcharge (~5% of federal tax)",
+              "rate": 0.05,
+              "appliesTo": "taxable"
+            }
+          ],
+          "personalAllowance": {
+            "amount": 13889,
+            "currency": "EUR",
+            "notes": "Standard deduction USD 15,000 (single 2025) converted at USD/EUR=1.08"
           }
         },
         {
           "id": "mp-self-employment",
-          "name": "Self-Employment",
+          "name": "Northern Mariana Islands Self-Employment",
           "type": "self-employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.26,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "profit",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 11042,
+                "rate": 0.1
+              },
+              {
+                "from": 11042,
+                "to": 44884,
+                "rate": 0.12
+              },
+              {
+                "from": 44884,
+                "to": 95694,
+                "rate": 0.22
+              },
+              {
+                "from": 95694,
+                "to": 182685,
+                "rate": 0.24
+              },
+              {
+                "from": 182685,
+                "to": 231968,
+                "rate": 0.32
+              },
+              {
+                "from": 231968,
+                "to": 580046,
+                "rate": 0.35
+              },
+              {
+                "from": 580046,
+                "to": null,
+                "rate": 0.37
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.153,
+            "cap": 163056
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.26,
-            "source": "EY/PwC stored effective rate at €60k"
+          "additionalLevies": [
+            {
+              "name": "CNMI Local Surcharge (~5% of federal tax)",
+              "rate": 0.05,
+              "appliesTo": "taxable"
+            }
+          ],
+          "personalAllowance": {
+            "amount": 13889,
+            "currency": "EUR",
+            "notes": "Standard deduction USD 15,000 (single 2025) converted at USD/EUR=1.08"
           }
         }
       ]
@@ -12360,38 +13713,26 @@
       "computableRegimes": [
         {
           "id": "om-employment",
-          "name": "Employment",
+          "name": "Oman Employment (Expat)",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0,
+            "kind": "zero",
             "appliesTo": "gross"
           },
           "socialSecurity": {
             "kind": "none"
-          },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0,
-            "source": "EY/PwC stored effective rate at €60k"
           }
         },
         {
           "id": "om-self-employment",
-          "name": "Self-Employment (Sole proprietor (0% PIT for expatriates))",
+          "name": "Oman Self-Employment (Expat)",
           "type": "self-employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0,
+            "kind": "zero",
             "appliesTo": "gross"
           },
           "socialSecurity": {
             "kind": "none"
-          },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0,
-            "source": "EY/PwC stored effective rate at €60k"
           }
         }
       ]
@@ -12449,38 +13790,91 @@
       "computableRegimes": [
         {
           "id": "pk-employment",
-          "name": "Employment",
+          "name": "Pakistan — Employment (Salaried)",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.311,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "gross",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 1935,
+                "rate": 0
+              },
+              {
+                "from": 1935,
+                "to": 3871,
+                "rate": 0.05
+              },
+              {
+                "from": 3871,
+                "to": 7097,
+                "rate": 0.15
+              },
+              {
+                "from": 7097,
+                "to": 10323,
+                "rate": 0.25
+              },
+              {
+                "from": 10323,
+                "to": 13226,
+                "rate": 0.3
+              },
+              {
+                "from": 13226,
+                "to": null,
+                "rate": 0.35
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
-          },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.311,
-            "source": "EY/PwC stored effective rate at €60k"
+            "kind": "percentage",
+            "rate": 0.01
           }
         },
         {
           "id": "pk-self-employment",
-          "name": "Self-Employment",
+          "name": "Pakistan — Self-Employment / Non-Salaried Business Income",
           "type": "self-employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.01,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "profit",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 1935,
+                "rate": 0
+              },
+              {
+                "from": 1935,
+                "to": 3871,
+                "rate": 0.05
+              },
+              {
+                "from": 3871,
+                "to": 7742,
+                "rate": 0.15
+              },
+              {
+                "from": 7742,
+                "to": 11613,
+                "rate": 0.25
+              },
+              {
+                "from": 11613,
+                "to": 18065,
+                "rate": 0.35
+              },
+              {
+                "from": 18065,
+                "to": null,
+                "rate": 0.45
+              }
+            ]
           },
           "socialSecurity": {
             "kind": "none"
-          },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.01,
-            "source": "EY/PwC stored effective rate at €60k"
           }
         }
       ]
@@ -12536,38 +13930,80 @@
       "computableRegimes": [
         {
           "id": "ps-employment",
-          "name": "Employment",
+          "name": "Palestinian Authority Employment",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.07400000000000001,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 18987,
+                "rate": 0.05
+              },
+              {
+                "from": 18987,
+                "to": 37975,
+                "rate": 0.1
+              },
+              {
+                "from": 37975,
+                "to": null,
+                "rate": 0.15
+              }
+            ]
           },
           "socialSecurity": {
             "kind": "none"
           },
+          "personalAllowance": {
+            "amount": 9114,
+            "currency": "EUR",
+            "notes": "Residency allowance ILS 36,000/year converted at ILS/EUR=3.95"
+          },
           "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.07400000000000001,
-            "source": "EY/PwC stored effective rate at €60k"
+            "reason": "Palestinian Social Security Law (No. 19/2016) under phased implementation; employee contribution rates (~7%) not yet fully in force for private sector as of EY Oct 2025",
+            "fallbackRate": 0.05,
+            "source": "EY 2025 pp.1186-1188"
           }
         },
         {
           "id": "ps-self-employment",
-          "name": "Self-Employment",
+          "name": "Palestinian Authority Self-Employment",
           "type": "self-employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.07400000000000001,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "profit",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 18987,
+                "rate": 0.05
+              },
+              {
+                "from": 18987,
+                "to": 37975,
+                "rate": 0.1
+              },
+              {
+                "from": 37975,
+                "to": null,
+                "rate": 0.15
+              }
+            ]
           },
           "socialSecurity": {
             "kind": "none"
           },
+          "personalAllowance": {
+            "amount": 9114,
+            "currency": "EUR",
+            "notes": "Residency allowance ILS 36,000/year converted at ILS/EUR=3.95"
+          },
           "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.07400000000000001,
-            "source": "EY/PwC stored effective rate at €60k"
+            "reason": "Palestinian Social Security Law (No. 19/2016) under phased implementation; self-employed SSC rates uncertain as of EY Oct 2025",
+            "fallbackRate": 0.05,
+            "source": "EY 2025 pp.1186-1188"
           }
         }
       ]
@@ -13630,38 +15066,119 @@
       "computableRegimes": [
         {
           "id": "pr-employment",
-          "name": "Employment",
+          "name": "Puerto Rico — Employment (Progressive PIT)",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.196,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 8333,
+                "rate": 0
+              },
+              {
+                "from": 8333,
+                "to": 23148,
+                "rate": 0.07
+              },
+              {
+                "from": 23148,
+                "to": 38426,
+                "rate": 0.14
+              },
+              {
+                "from": 38426,
+                "to": 56944,
+                "rate": 0.25
+              },
+              {
+                "from": 56944,
+                "to": null,
+                "rate": 0.33
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.0765,
+            "cap": 163056
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.196,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 3241,
+            "currency": "EUR",
+            "notes": "Personal exemption USD 3,500 / 1.08 ≈ EUR 3,241 (individual filer)"
           }
         },
         {
           "id": "pr-self-employment",
-          "name": "Self-Employment (Optional Fixed Rate (services 6-20%))",
+          "name": "Puerto Rico — Self-Employment (Optional Fixed Rate on Gross Revenue)",
+          "type": "self-employment",
+          "pit": {
+            "kind": "lump-sum",
+            "appliesTo": "revenue",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 92593,
+                "rate": 0.06
+              },
+              {
+                "from": 92593,
+                "to": 185185,
+                "rate": 0.1
+              },
+              {
+                "from": 185185,
+                "to": 277778,
+                "rate": 0.13
+              },
+              {
+                "from": 277778,
+                "to": 370370,
+                "rate": 0.15
+              },
+              {
+                "from": 370370,
+                "to": 462963,
+                "rate": 0.17
+              },
+              {
+                "from": 462963,
+                "to": null,
+                "rate": 0.2
+              }
+            ]
+          },
+          "socialSecurity": {
+            "kind": "percentage",
+            "rate": 0.153,
+            "cap": 163056
+          },
+          "incompleteData": {
+            "reason": "Optional fixed-rate election available only when ≥80% of gross revenue is from services. Standard progressive PIT also available on net income. SE tax 15.3% applies in addition (both halves self-paid; 50% deductible).",
+            "fallbackRate": 0.2,
+            "source": "EY Worldwide Tax Guide 2025-26, pp.1302-1303, 1307"
+          }
+        },
+        {
+          "id": "pr-act60",
+          "name": "Puerto Rico — Act 60 Individual Investors (Bona Fide Resident)",
           "type": "self-employment",
           "pit": {
             "kind": "flat",
-            "rate": 0.201,
-            "appliesTo": "gross"
+            "appliesTo": "revenue",
+            "rate": 0.04
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.153,
+            "cap": 163056
           },
           "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.201,
-            "source": "EY/PwC stored effective rate at €60k"
+            "reason": "Act 60 Export Services: 4% PR corporate rate on qualifying export income; 0% on PR-source capital gains and dividends post-move. Requires bona fide PR residency (183+ days/year), Act 60 decree, and genuine relocation. US federal tax still applies to non-PR-source income.",
+            "fallbackRate": 0.04,
+            "source": "EY Worldwide Tax Guide 2025-26, pp.1301-1302, 1304, 1311-1312; Act 60-2019"
           }
         }
       ]
@@ -13711,38 +15228,26 @@
       "computableRegimes": [
         {
           "id": "qa-employment",
-          "name": "Employment",
+          "name": "Qatar Employment (Expat)",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0,
+            "kind": "zero",
             "appliesTo": "gross"
           },
           "socialSecurity": {
             "kind": "none"
-          },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0,
-            "source": "EY/PwC stored effective rate at €60k"
           }
         },
         {
           "id": "qa-self-employment",
-          "name": "Self-Employment (Sole trader (10% corporate tax on net profit))",
+          "name": "Qatar Self-Employment (Expat)",
           "type": "self-employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.07,
+            "kind": "zero",
             "appliesTo": "gross"
           },
           "socialSecurity": {
             "kind": "none"
-          },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.07,
-            "source": "EY/PwC stored effective rate at €60k"
           }
         }
       ]
@@ -14009,38 +15514,103 @@
       "computableRegimes": [
         {
           "id": "st-employment",
-          "name": "Employment",
+          "name": "Employment Income — Category A (IRPS)",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.309,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 477551.02,
+                "rate": 0
+              },
+              {
+                "from": 477551.02,
+                "to": 2040816.33,
+                "rate": 0.1
+              },
+              {
+                "from": 2040816.33,
+                "to": 4081632.65,
+                "rate": 0.13
+              },
+              {
+                "from": 4081632.65,
+                "to": 6122448.98,
+                "rate": 0.15
+              },
+              {
+                "from": 6122448.98,
+                "to": 9795918.37,
+                "rate": 0.2
+              },
+              {
+                "from": 9795918.37,
+                "to": 17142857.14,
+                "rate": 0.25
+              },
+              {
+                "from": 17142857.14,
+                "to": null,
+                "rate": 0.3
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
-          },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.309,
-            "source": "EY/PwC stored effective rate at €60k"
+            "kind": "percentage",
+            "rate": 0.04,
+            "notes": "Employee INSS contribution 4%; employer 6%"
           }
         },
         {
           "id": "st-self-employment",
-          "name": "Self-Employment (Category B Self-employment)",
+          "name": "Self-Employment — Category B (IRPS)",
           "type": "self-employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.269,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "profit",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 477551.02,
+                "rate": 0
+              },
+              {
+                "from": 477551.02,
+                "to": 2040816.33,
+                "rate": 0.1
+              },
+              {
+                "from": 2040816.33,
+                "to": 4081632.65,
+                "rate": 0.13
+              },
+              {
+                "from": 4081632.65,
+                "to": 6122448.98,
+                "rate": 0.15
+              },
+              {
+                "from": 6122448.98,
+                "to": 9795918.37,
+                "rate": 0.2
+              },
+              {
+                "from": 9795918.37,
+                "to": 17142857.14,
+                "rate": 0.25
+              },
+              {
+                "from": 17142857.14,
+                "to": null,
+                "rate": 0.3
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
-          },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.269,
-            "source": "EY/PwC stored effective rate at €60k"
+            "kind": "none",
+            "notes": "Self-employed INSS treatment not specified in EY source"
           }
         }
       ]
@@ -14094,38 +15664,34 @@
       "computableRegimes": [
         {
           "id": "sa-employment",
-          "name": "Employment",
+          "name": "Saudi Arabia Employment (Expat)",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0,
+            "kind": "zero",
             "appliesTo": "gross"
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0,
-            "source": "EY/PwC stored effective rate at €60k"
-          }
+          "additionalLevies": [
+            {
+              "name": "GOSI Occupational Hazard (employer only)",
+              "rate": 0.02,
+              "appliesTo": "gross"
+            }
+          ]
         },
         {
           "id": "sa-self-employment",
-          "name": "Self-Employment (Sole trader (20% corporate tax on net profit, 30% expenses assumed))",
+          "name": "Saudi Arabia Self-Employment (Expat)",
           "type": "self-employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.14,
+            "kind": "zero",
             "appliesTo": "gross"
           },
           "socialSecurity": {
             "kind": "none"
-          },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.14,
-            "source": "EY/PwC stored effective rate at €60k"
           }
         }
       ]
@@ -14615,38 +16181,104 @@
       "computableRegimes": [
         {
           "id": "sx-employment",
-          "name": "Employment",
+          "name": "Sint Maarten — Employment (Progressive PIT)",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.343,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 18375,
+                "rate": 0.125
+              },
+              {
+                "from": 18375,
+                "to": 27562,
+                "rate": 0.2
+              },
+              {
+                "from": 27562,
+                "to": 38282,
+                "rate": 0.2625
+              },
+              {
+                "from": 38282,
+                "to": 57421,
+                "rate": 0.3375
+              },
+              {
+                "from": 57421,
+                "to": 81155,
+                "rate": 0.4
+              },
+              {
+                "from": 81155,
+                "to": null,
+                "rate": 0.475
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.122,
+            "cap": 70239
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.343,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 1196,
+            "currency": "EUR",
+            "notes": "Standard tax credit XCG 2,332 / 1.95 ≈ EUR 1,196 (deducted from tax due, not taxable income)"
           }
         },
         {
           "id": "sx-self-employment",
-          "name": "Self-Employment (B2B (30% expenses))",
+          "name": "Sint Maarten — Self-Employment",
           "type": "self-employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.307,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "profit",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 18375,
+                "rate": 0.125
+              },
+              {
+                "from": 18375,
+                "to": 27562,
+                "rate": 0.2
+              },
+              {
+                "from": 27562,
+                "to": 38282,
+                "rate": 0.2625
+              },
+              {
+                "from": 38282,
+                "to": 57421,
+                "rate": 0.3375
+              },
+              {
+                "from": 57421,
+                "to": 81155,
+                "rate": 0.4
+              },
+              {
+                "from": 81155,
+                "to": null,
+                "rate": 0.475
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.285,
+            "cap": 70239
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.307,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 1196,
+            "currency": "EUR",
+            "notes": "Standard tax credit XCG 2,332 / 1.95 ≈ EUR 1,196. Self-employed SS: AOV/AWW 14% + AVBZ 2% + ZV 12.5% = 28.5% combined (both employer+employee shares)."
           }
         }
       ]
@@ -14701,38 +16333,83 @@
       "computableRegimes": [
         {
           "id": "sk-employment",
-          "name": "Employment",
+          "name": "Slovakia — Employment (Standard, 2026)",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.282,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 43983.32,
+                "rate": 0.19
+              },
+              {
+                "from": 43983.32,
+                "to": 60349.21,
+                "rate": 0.25
+              },
+              {
+                "from": 60349.21,
+                "to": 75009.72,
+                "rate": 0.3
+              },
+              {
+                "from": 75009.72,
+                "to": null,
+                "rate": 0.35
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.134
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.282,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 5966.73,
+            "currency": "EUR",
+            "notes": "2026 personal allowance EUR 5,966.73/year (full allowance for tax base ≤ EUR 26,367.26; phased out above EUR 50,234.18); SS deductible from PIT base; employee SS: sickness 1.4% + health 4% + old-age 4% + disability 3% + unemployment 1% = 13.4%"
           }
         },
         {
-          "id": "sk-self-employment",
-          "name": "Self-Employment (B2B živnostník (60% deduction, micro 15%))",
+          "id": "sk-self-employment-lump",
+          "name": "Slovakia — Self-Employment (60% Flat Expense Deduction)",
           "type": "self-employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.306,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "revenue",
+            "deductionPercent": 60,
+            "brackets": [
+              {
+                "from": 0,
+                "to": 43983.32,
+                "rate": 0.19
+              },
+              {
+                "from": 43983.32,
+                "to": 60349.21,
+                "rate": 0.25
+              },
+              {
+                "from": 60349.21,
+                "to": 75009.72,
+                "rate": 0.3
+              },
+              {
+                "from": 75009.72,
+                "to": null,
+                "rate": 0.35
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.4915
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.306,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 5966.73,
+            "currency": "EUR",
+            "notes": "60% flat expense deduction (paušálne výdavky) capped at EUR 20,000/year; available only to non-VAT payers; micro-rate of 15% flat applies if revenue ≤ EUR 100,000; 2026 self-employed SS: sickness 4.4% + health 16% + old-age 18% + disability 6% + reserve 4.75% = ~49.15%; minimum monthly contributions ~EUR 425/month combined from 2026"
           }
         }
       ]
@@ -15138,38 +16815,93 @@
       "computableRegimes": [
         {
           "id": "ss-employment",
-          "name": "Employment",
+          "name": "Employment Income",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.275,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 160,
+                "rate": 0
+              },
+              {
+                "from": 160,
+                "to": 320,
+                "rate": 0.05
+              },
+              {
+                "from": 320,
+                "to": 456,
+                "rate": 0.1
+              },
+              {
+                "from": 456,
+                "to": 720,
+                "rate": 0.15
+              },
+              {
+                "from": 720,
+                "to": null,
+                "rate": 0.2
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.08,
+            "notes": "National Social Insurance Fund (pension) employee contribution; government staff 5%"
           },
           "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.275,
-            "source": "EY/PwC stored effective rate at €60k"
+            "reason": "currency-mismatch",
+            "fallbackRate": 0.2,
+            "source": "EY Worldwide Tax Guide 2025-26, pp.1428-1432; SSP/EUR=1500 highly volatile; 30% surtax legally exists but suspended by SSRA circular Feb 2025; bracket thresholds in EUR are very low due to SSP hyperinflation"
           }
         },
         {
           "id": "ss-self-employment",
-          "name": "Self-Employment (B2B Direct Assessment)",
+          "name": "Self-Employment (Audited Accounts)",
           "type": "self-employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.195,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "profit",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 160,
+                "rate": 0
+              },
+              {
+                "from": 160,
+                "to": 320,
+                "rate": 0.05
+              },
+              {
+                "from": 320,
+                "to": 456,
+                "rate": 0.1
+              },
+              {
+                "from": 456,
+                "to": 720,
+                "rate": 0.15
+              },
+              {
+                "from": 720,
+                "to": null,
+                "rate": 0.2
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "none",
+            "notes": "Self-employed social security treatment not specified in source"
           },
           "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.195,
-            "source": "EY/PwC stored effective rate at €60k"
+            "reason": "currency-mismatch",
+            "fallbackRate": 0.2,
+            "source": "EY Worldwide Tax Guide 2025-26, pp.1428-1432; SSP/EUR=1500 highly volatile; ongoing conflict creates significant uncertainty around actual tax enforcement"
           }
         }
       ]
@@ -15624,38 +17356,74 @@
       "computableRegimes": [
         {
           "id": "lc-employment",
-          "name": "Employment",
+          "name": "Saint Lucia — Employment (Progressive PIT)",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.245,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 5137,
+                "rate": 0.15
+              },
+              {
+                "from": 5137,
+                "to": 10274,
+                "rate": 0.2
+              },
+              {
+                "from": 10274,
+                "to": null,
+                "rate": 0.3
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.05,
+            "cap": 20548
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.245,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 8562,
+            "currency": "EUR",
+            "notes": "Personal allowance XCD 25,000 / 2.92 ≈ EUR 8,562"
           }
         },
         {
           "id": "lc-self-employment",
-          "name": "Self-Employment (B2B (30% expenses))",
+          "name": "Saint Lucia — Self-Employment",
           "type": "self-employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.172,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "profit",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 5137,
+                "rate": 0.15
+              },
+              {
+                "from": 5137,
+                "to": 10274,
+                "rate": 0.2
+              },
+              {
+                "from": 10274,
+                "to": null,
+                "rate": 0.3
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.05,
+            "cap": 20548
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.172,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 8562,
+            "currency": "EUR",
+            "notes": "Personal allowance XCD 25,000 / 2.92 ≈ EUR 8,562"
           }
         }
       ]
@@ -15707,38 +17475,92 @@
       "computableRegimes": [
         {
           "id": "sr-employment",
-          "name": "Employment",
+          "name": "Suriname Employment (PIT Progressive)",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.384,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 2919,
+                "rate": 0
+              },
+              {
+                "from": 2919,
+                "to": 4054,
+                "rate": 0.08
+              },
+              {
+                "from": 4054,
+                "to": 5189,
+                "rate": 0.18
+              },
+              {
+                "from": 5189,
+                "to": 6324,
+                "rate": 0.28
+              },
+              {
+                "from": 6324,
+                "to": null,
+                "rate": 0.38
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.05
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.384,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 2919,
+            "currency": "EUR",
+            "notes": "Tax-free amount SRD 108,000 (~EUR 2,919 at SRD/EUR 37) for residents; nonresidents get no exemption. SS: AOV (old-age insurance) 4% + ZV (health) 0.5% + pension 0.5% ≈ 5% combined employee-side. SRD volatile — verify current exchange rate at Central Bank of Suriname."
           }
         },
         {
           "id": "sr-self-employment",
-          "name": "Self-Employment (B2B (30% expenses))",
+          "name": "Suriname Self-Employment",
           "type": "self-employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.248,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "profit",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 2919,
+                "rate": 0
+              },
+              {
+                "from": 2919,
+                "to": 4054,
+                "rate": 0.08
+              },
+              {
+                "from": 4054,
+                "to": 5189,
+                "rate": 0.18
+              },
+              {
+                "from": 5189,
+                "to": 6324,
+                "rate": 0.28
+              },
+              {
+                "from": 6324,
+                "to": null,
+                "rate": 0.38
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.04
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.248,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 2919,
+            "currency": "EUR",
+            "notes": "Self-employed pay AOV 4%; ZV/pension obligations unclear for self-employed. Tax-free amount SRD 108,000 (~EUR 2,919) applies to residents. Losses carried forward 7 years (indefinitely for first 3 years of business). All EUR values subject to SRD exchange rate volatility."
           }
         }
       ]
@@ -15956,38 +17778,177 @@
       "computableRegimes": [
         {
           "id": "ch-employment",
-          "name": "Employment",
+          "name": "Switzerland — Employment (Federal + Zurich Canton, Reference)",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.21,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 18542,
+                "rate": 0.0077
+              },
+              {
+                "from": 18542,
+                "to": 32917,
+                "rate": 0.0088
+              },
+              {
+                "from": 32917,
+                "to": 43125,
+                "rate": 0.022
+              },
+              {
+                "from": 43125,
+                "to": 57500,
+                "rate": 0.022
+              },
+              {
+                "from": 57500,
+                "to": 75521,
+                "rate": 0.033
+              },
+              {
+                "from": 75521,
+                "to": 81354,
+                "rate": 0.033
+              },
+              {
+                "from": 81354,
+                "to": 107917,
+                "rate": 0.044
+              },
+              {
+                "from": 107917,
+                "to": 140208,
+                "rate": 0.066
+              },
+              {
+                "from": 140208,
+                "to": 183333,
+                "rate": 0.088
+              },
+              {
+                "from": 183333,
+                "to": 786667,
+                "rate": 0.11
+              },
+              {
+                "from": 786667,
+                "to": null,
+                "rate": 0.115
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "banded",
+            "rate": 0.064,
+            "cap": 154375
           },
+          "additionalLevies": [
+            {
+              "name": "Zurich cantonal + municipal tax (reference, effective ~14-22%)",
+              "rate": 0.18,
+              "appliesTo": "taxable"
+            }
+          ],
           "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.21,
-            "source": "EY/PwC stored effective rate at €60k"
+            "reason": "jurisdiction-varies: cantonal and municipal tax rates vary widely across 26 cantons; Zurich used as mid-range reference (combined effective ~25-37%); Zug lowest ~22-24%, Geneva highest ~44-46%; federal brackets in EUR (CHF/EUR=0.96) are exact; cantonal levy is approximate",
+            "fallbackRate": 0.3,
+            "source": "EY Worldwide Tax Guide 2025-26, pp.1480-1498; Zurich canton reference rates"
+          },
+          "personalAllowance": {
+            "amount": 0,
+            "currency": "EUR",
+            "notes": "SS contributions (AHV 5.3% + ALV 1.1% up to CHF 148,200/EUR 154,375 ceiling) deductible from taxable income; BVG occupational pension additionally deductible; federal brackets shown are CHF converted to EUR at 0.96; cantonal levy of 18% is Zurich-city approximation"
           }
         },
         {
           "id": "ch-self-employment",
-          "name": "Self-Employment (Selbständig (Zurich canton))",
+          "name": "Switzerland — Self-Employment (Sole Trader, Zurich Reference)",
           "type": "self-employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.25,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "profit",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 18542,
+                "rate": 0.0077
+              },
+              {
+                "from": 18542,
+                "to": 32917,
+                "rate": 0.0088
+              },
+              {
+                "from": 32917,
+                "to": 43125,
+                "rate": 0.022
+              },
+              {
+                "from": 43125,
+                "to": 57500,
+                "rate": 0.022
+              },
+              {
+                "from": 57500,
+                "to": 75521,
+                "rate": 0.033
+              },
+              {
+                "from": 75521,
+                "to": 81354,
+                "rate": 0.033
+              },
+              {
+                "from": 81354,
+                "to": 107917,
+                "rate": 0.044
+              },
+              {
+                "from": 107917,
+                "to": 140208,
+                "rate": 0.066
+              },
+              {
+                "from": 140208,
+                "to": 183333,
+                "rate": 0.088
+              },
+              {
+                "from": 183333,
+                "to": 786667,
+                "rate": 0.11
+              },
+              {
+                "from": 786667,
+                "to": null,
+                "rate": 0.115
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.1
           },
+          "additionalLevies": [
+            {
+              "name": "Zurich cantonal + municipal tax (reference)",
+              "rate": 0.18,
+              "appliesTo": "taxable"
+            }
+          ],
           "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.25,
-            "source": "EY/PwC stored effective rate at €60k"
+            "reason": "jurisdiction-varies: cantonal rates vary significantly by canton; Zurich used as reference; self-employed AHV 10% on net income (no ceiling); reduced scale applies below CHF 57,400 (~EUR 59,792); no mandatory BVG (pillar 2) for self-employed",
+            "fallbackRate": 0.32,
+            "source": "EY Worldwide Tax Guide 2025-26, pp.1486-1487; Zurich canton reference"
+          },
+          "personalAllowance": {
+            "amount": 0,
+            "currency": "EUR",
+            "notes": "AHV 10% on net business income (no ceiling; reduced scale below EUR 59,792); ALV not applicable to self-employed; federal brackets in EUR (CHF/EUR=0.96); cantonal 18% levy is Zurich-city approximation; private health insurance mandatory (~CHF 6,000/year, not employer-paid)"
           }
         }
       ]
@@ -17710,38 +19671,170 @@
       "computableRegimes": [
         {
           "id": "vi-employment",
-          "name": "Employment",
+          "name": "US Virgin Islands — Employment (Mirrors US Federal PIT)",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.165,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 11042,
+                "rate": 0.1
+              },
+              {
+                "from": 11042,
+                "to": 44884,
+                "rate": 0.12
+              },
+              {
+                "from": 44884,
+                "to": 95694,
+                "rate": 0.22
+              },
+              {
+                "from": 95694,
+                "to": 182685,
+                "rate": 0.24
+              },
+              {
+                "from": 182685,
+                "to": 231968,
+                "rate": 0.32
+              },
+              {
+                "from": 231968,
+                "to": 579954,
+                "rate": 0.35
+              },
+              {
+                "from": 579954,
+                "to": null,
+                "rate": 0.37
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.0765,
+            "cap": 163056
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.165,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 13889,
+            "currency": "EUR",
+            "notes": "Standard deduction USD 15,000 / 1.08 ≈ EUR 13,889 (single filer, 2025)"
           }
         },
         {
           "id": "vi-self-employment",
-          "name": "Self-Employment (Sole Proprietor (Schedule C))",
+          "name": "US Virgin Islands — Self-Employment (Mirrors US Federal, Schedule C)",
           "type": "self-employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.223,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "profit",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 11042,
+                "rate": 0.1
+              },
+              {
+                "from": 11042,
+                "to": 44884,
+                "rate": 0.12
+              },
+              {
+                "from": 44884,
+                "to": 95694,
+                "rate": 0.22
+              },
+              {
+                "from": 95694,
+                "to": 182685,
+                "rate": 0.24
+              },
+              {
+                "from": 182685,
+                "to": 231968,
+                "rate": 0.32
+              },
+              {
+                "from": 231968,
+                "to": 579954,
+                "rate": 0.35
+              },
+              {
+                "from": 579954,
+                "to": null,
+                "rate": 0.37
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.153,
+            "cap": 163056
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.223,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 13889,
+            "currency": "EUR",
+            "notes": "Standard deduction USD 15,000 / 1.08 ≈ EUR 13,889 (single filer, 2025). SE tax 15.3% (both halves); 50% of SE tax deductible from AGI."
+          }
+        },
+        {
+          "id": "vi-edp",
+          "name": "US Virgin Islands — Economic Development Program (EDP)",
+          "type": "self-employment",
+          "pit": {
+            "kind": "progressive",
+            "appliesTo": "profit",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 11042,
+                "rate": 0.01
+              },
+              {
+                "from": 11042,
+                "to": 44884,
+                "rate": 0.012
+              },
+              {
+                "from": 44884,
+                "to": 95694,
+                "rate": 0.022
+              },
+              {
+                "from": 95694,
+                "to": 182685,
+                "rate": 0.024
+              },
+              {
+                "from": 182685,
+                "to": 231968,
+                "rate": 0.032
+              },
+              {
+                "from": 231968,
+                "to": 579954,
+                "rate": 0.035
+              },
+              {
+                "from": 579954,
+                "to": null,
+                "rate": 0.037
+              }
+            ]
+          },
+          "socialSecurity": {
+            "kind": "percentage",
+            "rate": 0.153,
+            "cap": 163056
+          },
+          "personalAllowance": {
+            "amount": 13889,
+            "currency": "EUR",
+            "notes": "Standard deduction USD 15,000 / 1.08 ≈ EUR 13,889. EDP grants up to 90% reduction in USVI income tax — brackets shown at 10% of normal federal rates. Requires genuine USVI business operations, local employment, and minimum investment."
           }
         }
       ]
@@ -17885,38 +19978,131 @@
       "computableRegimes": [
         {
           "id": "ve-employment",
-          "name": "Employment",
+          "name": "Venezuela Employment (ISLR Progressive — UT-based)",
           "type": "employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.348,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "taxable",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 840,
+                "rate": 0.06
+              },
+              {
+                "from": 840,
+                "to": 1260,
+                "rate": 0.09
+              },
+              {
+                "from": 1260,
+                "to": 1680,
+                "rate": 0.12
+              },
+              {
+                "from": 1680,
+                "to": 2100,
+                "rate": 0.16
+              },
+              {
+                "from": 2100,
+                "to": 2520,
+                "rate": 0.2
+              },
+              {
+                "from": 2520,
+                "to": 3360,
+                "rate": 0.24
+              },
+              {
+                "from": 3360,
+                "to": 5040,
+                "rate": 0.29
+              },
+              {
+                "from": 5040,
+                "to": null,
+                "rate": 0.34
+              }
+            ]
           },
           "socialSecurity": {
-            "kind": "none"
+            "kind": "percentage",
+            "rate": 0.055
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.348,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 648,
+            "currency": "EUR",
+            "notes": "UT-based brackets converted at 2025 UT=VES 42, VES/EUR=50. Standard deduction 774 UT = VES 32,508 = ~EUR 650. Personal rebate 10 UT = ~EUR 8. Deduction total ~EUR 648. SS: IVSS 4% + unemployment 0.5% + housing 1% = ~5.5%; capped at 5x minimum salary (very low cap in EUR terms). UT value adjusted annually by SENIAT — all EUR values will change.",
+            "incompleteData": {
+              "reason": "VES/EUR highly volatile; UT value changes annually; brackets effectively near-zero in EUR terms at hyperinflationary official rate",
+              "fallbackRate": 0.34,
+              "source": "EY Worldwide Tax Guide 2025-26 p.1700-1706; UT=VES 42 (2025)"
+            }
           }
         },
         {
           "id": "ve-self-employment",
-          "name": "Self-Employment (Independent Business (Tariff No. 1))",
+          "name": "Venezuela Self-Employment (ISLR Progressive — UT-based)",
           "type": "self-employment",
           "pit": {
-            "kind": "flat",
-            "rate": 0.32,
-            "appliesTo": "gross"
+            "kind": "progressive",
+            "appliesTo": "profit",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 840,
+                "rate": 0.06
+              },
+              {
+                "from": 840,
+                "to": 1260,
+                "rate": 0.09
+              },
+              {
+                "from": 1260,
+                "to": 1680,
+                "rate": 0.12
+              },
+              {
+                "from": 1680,
+                "to": 2100,
+                "rate": 0.16
+              },
+              {
+                "from": 2100,
+                "to": 2520,
+                "rate": 0.2
+              },
+              {
+                "from": 2520,
+                "to": 3360,
+                "rate": 0.24
+              },
+              {
+                "from": 3360,
+                "to": 5040,
+                "rate": 0.29
+              },
+              {
+                "from": 5040,
+                "to": null,
+                "rate": 0.34
+              }
+            ]
           },
           "socialSecurity": {
             "kind": "none"
           },
-          "incompleteData": {
-            "reason": "pending-research",
-            "fallbackRate": 0.32,
-            "source": "EY/PwC stored effective rate at €60k"
+          "personalAllowance": {
+            "amount": 648,
+            "currency": "EUR",
+            "notes": "Same progressive Tariff No. 1 as employment. Business losses may be carried forward 3 years (max 25% of income/year). SS for pure self-employed not clearly specified.",
+            "incompleteData": {
+              "reason": "VES/EUR highly volatile; UT value changes annually; self-employed SS structure not fully specified",
+              "fallbackRate": 0.34,
+              "source": "EY Worldwide Tax Guide 2025-26 p.1700-1706; UT=VES 42 (2025)"
+            }
           }
         }
       ]
