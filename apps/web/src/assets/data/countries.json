@@ -16694,7 +16694,7 @@
           "pit": {
             "kind": "flat",
             "appliesTo": "revenue",
-            "rate": 1,
+            "rate": 0.01,
             "cap": {
               "amount": 76900,
               "currency": "EUR"
