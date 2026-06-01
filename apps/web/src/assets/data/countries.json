@@ -9434,24 +9434,8 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0,
-        "brackets": [
-          {
-            "from": 0,
-            "to": null,
-            "rate": 0
-          },
-          {
-            "from": 0,
-            "to": null,
-            "rate": 0
-          },
-          {
-            "from": 0,
-            "to": null,
-            "rate": 0.2
-          }
-        ],
-        "currency": "USD"
+        "brackets": null,
+        "currency": null
       },
       "socialSecurity": {
         "employeeRate": null,
@@ -10527,34 +10511,8 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.4,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 50000,
-            "rate": 0.19
-          },
-          {
-            "from": 0,
-            "to": 100000,
-            "rate": 0.27
-          },
-          {
-            "from": 0,
-            "to": 150000,
-            "rate": 0.32
-          },
-          {
-            "from": 0,
-            "to": 200000,
-            "rate": 0.36
-          },
-          {
-            "from": 0,
-            "to": null,
-            "rate": 0.42
-          }
-        ],
-        "currency": "AHV"
+        "brackets": null,
+        "currency": "CHF"
       },
       "socialSecurity": {
         "employeeRate": null,
