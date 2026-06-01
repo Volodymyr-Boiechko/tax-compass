@@ -3,7 +3,7 @@ import {
   LucideX, LucidePlus, LucideCheck, LucideExternalLink, LucideTrendingDown
 } from '@lucide/angular';
 import { AppStore } from '../../state/app.store';
-import { CalculationService } from '../../core/services/calculation.service';
+import { CalculationService, CalculationResult } from '../../core/services/calculation.service';
 import { RegimeCalculationService } from '../../core/services/regime-calculation.service';
 import { Country, TaxBracket } from '../../core/models/country.model';
 import { regionLabel } from '../../core/utils/region.utils';
@@ -113,14 +113,30 @@ type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
                 <div class="grid grid-cols-2 gap-3">
                   <div>
                     <p class="text-[10px] text-[var(--color-text-faint)] mb-1">Employment</p>
-                    <p class="text-lg font-semibold font-mono" [style.color]="rateColor(calc.employment.effectiveRate)">{{ fmtRate(calc.employment.effectiveRate) }}</p>
-                    <p class="text-xs text-[var(--color-text-secondary)] font-mono">{{ fmtEuro(calc.employment.net) }} net</p>
+                    @if (calc.employment; as emp) {
+                      <p class="text-lg font-semibold font-mono" [style.color]="rateColor(emp.effectiveRate)">{{ fmtRate(emp.effectiveRate) }}</p>
+                      <p class="text-xs text-[var(--color-text-secondary)] font-mono">{{ fmtEuro(emp.net) }} net</p>
+                      @if (emp.isDerived) {
+                        <p class="text-[10px] text-[var(--color-text-faint)] mt-0.5">~ EY/PwC rate</p>
+                      }
+                    } @else {
+                      <p class="text-lg font-semibold text-[var(--color-text-faint)]">—</p>
+                      <p class="text-xs text-[var(--color-text-faint)]">No data</p>
+                    }
                   </div>
                   <div>
                     <p class="text-[10px] text-[var(--color-text-faint)] mb-1">Best SE</p>
-                    <p class="text-lg font-semibold font-mono" [style.color]="rateColor(calc.selfEmployment.effectiveRate)">{{ fmtRate(calc.selfEmployment.effectiveRate) }}</p>
-                    <p class="text-xs text-[var(--color-text-secondary)] font-mono">{{ fmtEuro(calc.selfEmployment.net) }} net</p>
-                    <p class="text-[10px] text-[var(--color-text-faint)] mt-0.5">{{ regimeLabel(calc.selfEmployment.method) }}</p>
+                    @if (calc.selfEmployment; as se) {
+                      <p class="text-lg font-semibold font-mono" [style.color]="rateColor(se.effectiveRate)">{{ fmtRate(se.effectiveRate) }}</p>
+                      <p class="text-xs text-[var(--color-text-secondary)] font-mono">{{ fmtEuro(se.net) }} net</p>
+                      <p class="text-[10px] text-[var(--color-text-faint)] mt-0.5">{{ regimeLabel(se.method) }}</p>
+                      @if (se.isDerived) {
+                        <p class="text-[10px] text-[var(--color-text-faint)]">~ EY/PwC rate</p>
+                      }
+                    } @else {
+                      <p class="text-lg font-semibold text-[var(--color-text-faint)]">—</p>
+                      <p class="text-xs text-[var(--color-text-faint)]">No data</p>
+                    }
                   </div>
                 </div>
               </div>
@@ -381,7 +397,7 @@ export class CountryDetailPanelComponent {
         .filter(r => r.regimeType === 'self-employment')
         .reduce<typeof cmp.regimes[0] | null>((b, r) => (!b || r.net > b.net ? r : b), null);
       const bestResult = cmp.best;
-      const toResult = (r: typeof cmp.regimes[0]) => ({
+      const toResult = (r: typeof cmp.regimes[0]): CalculationResult => ({
         gross: r.gross, socialSecurity: r.socialSecurity,
         incomeTax: r.incomeTax, net: r.net, effectiveRate: r.effectiveRate,
         method: r.regimeName,
@@ -392,10 +408,10 @@ export class CountryDetailPanelComponent {
       };
     }
 
-    return {
-      employment: this.calcService.calculateEmployment(c, income),
-      selfEmployment: this.calcService.calculateBestSelfEmployment(c, income),
-    };
+    const employment = this.calcService.calculateEmployment(c, income);
+    const selfEmployment = this.calcService.calculateBestSelfEmployment(c, income);
+    if (!employment && !selfEmployment) return null;
+    return { employment, selfEmployment };
   });
 
   close(): void {

@@ -212,7 +212,8 @@ export class RankingTableComponent {
 
     const mapped = countries.map(c => {
       const hasRegimes = (c.computableRegimes?.length ?? 0) > 0;
-      const employment = this.calc.calculateEmployment(c, income);
+      // calculateEmployment now returns null when no data is available
+      const employment = this.calc.calculateEmployment(c, income) ?? undefined;
 
       if (hasRegimes) {
         // Use RegimeCalculationService for the 15 parameterized countries
@@ -239,7 +240,7 @@ export class RankingTableComponent {
                 effectiveRate: bestAll.effectiveRate,
                 method: `self-employment (${bestAll.regimeName})`,
               }
-            : this.calc.calculateBestSelfEmployment(c, income);
+            : this.calc.calculateBestSelfEmployment(c, income) ?? undefined;
 
         return { country: c, employment, selfEmployment, hasRegimeCalc: true };
       }
@@ -247,7 +248,7 @@ export class RankingTableComponent {
       return {
         country: c,
         employment,
-        selfEmployment: this.calc.calculateBestSelfEmployment(c, income),
+        selfEmployment: this.calc.calculateBestSelfEmployment(c, income) ?? undefined,
         hasRegimeCalc: false,
       };
     });

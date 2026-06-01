@@ -3946,13 +3946,7 @@
       "lastReviewed": "1 October 2025",
       "personalIncomeTax": {
         "topRate": 0.4,
-        "brackets": [
-          {
-            "from": 0,
-            "to": null,
-            "rate": 0.2
-          }
-        ],
+        "brackets": null,
         "currency": "EUR"
       },
       "socialSecurity": {
@@ -6551,13 +6545,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.1,
-        "brackets": [
-          {
-            "from": 0,
-            "to": null,
-            "rate": 0.1
-          }
-        ],
+        "brackets": null,
         "currency": "EUR"
       },
       "socialSecurity": {
@@ -7945,13 +7933,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.2,
-        "brackets": [
-          {
-            "from": 0,
-            "to": null,
-            "rate": 0.1
-          }
-        ],
+        "brackets": null,
         "currency": "EUR"
       },
       "socialSecurity": {

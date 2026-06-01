@@ -17,7 +17,7 @@ const METRICS: Array<{ key: MetricKey; get: (c: Country) => number | null | unde
   { key: 'topPIT',   get: c => c.personalIncomeTax?.topRate },
 ];
 
-interface IncomeRow { country: Country; employment: CalculationResult; selfEmployment: CalculationResult; }
+interface IncomeRow { country: Country; employment: CalculationResult | null; selfEmployment: CalculationResult | null; }
 
 @Component({
   selector: 'app-comparison-view',
@@ -66,12 +66,12 @@ interface IncomeRow { country: Country; employment: CalculationResult; selfEmplo
                   <td class="px-4 py-2.5 text-xs text-[var(--color-text-tertiary)]">Employment net</td>
                   @for (r of ir.results; track r.country.code) {
                     <td class="px-4 py-2.5 font-mono text-sm"
-                        [style]="r.employment.net === ir.maxEmplNet ? 'background: color-mix(in srgb, var(--color-accent) 8%, transparent)' : ''">
-                      <span [style.color]="r.employment.net === ir.maxEmplNet ? 'var(--color-accent)' : 'var(--color-text-secondary)'" class="font-semibold">
-                        {{ fmtEuro(r.employment.net) }}
+                        [style]="r.employment?.net === ir.maxEmplNet ? 'background: color-mix(in srgb, var(--color-accent) 8%, transparent)' : ''">
+                      <span [style.color]="r.employment?.net === ir.maxEmplNet ? 'var(--color-accent)' : 'var(--color-text-secondary)'" class="font-semibold">
+                        {{ fmtEuro(r.employment?.net) }}
                       </span>
-                      <span class="block text-[10px]" [style.color]="rateColor(r.employment.effectiveRate)">
-                        {{ fmtRate(r.employment.effectiveRate) }}
+                      <span class="block text-[10px]" [style.color]="rateColor(r.employment?.effectiveRate ?? null)">
+                        {{ fmtRate(r.employment?.effectiveRate ?? null) }}
                       </span>
                     </td>
                   }
@@ -80,10 +80,10 @@ interface IncomeRow { country: Country; employment: CalculationResult; selfEmplo
                   <td class="px-4 py-2.5 text-xs text-[var(--color-text-tertiary)]">Best SE net</td>
                   @for (r of ir.results; track r.country.code) {
                     <td class="px-4 py-2.5 font-mono text-sm">
-                      <span [style.color]="r.selfEmployment.net === ir.maxSeNet ? 'var(--color-accent)' : 'var(--color-text-secondary)'" class="font-semibold">
-                        {{ fmtEuro(r.selfEmployment.net) }}
+                      <span [style.color]="r.selfEmployment?.net === ir.maxSeNet ? 'var(--color-accent)' : 'var(--color-text-secondary)'" class="font-semibold">
+                        {{ fmtEuro(r.selfEmployment?.net) }}
                       </span>
-                      <span class="block text-[10px] text-[var(--color-text-faint)]">{{ r.selfEmployment.method }}</span>
+                      <span class="block text-[10px] text-[var(--color-text-faint)]">{{ r.selfEmployment?.method }}</span>
                     </td>
                   }
                 </tr>
@@ -175,8 +175,8 @@ export class ComparisonViewComponent {
     return {
       income,
       results,
-      maxEmplNet: Math.max(...results.map(r => r.employment.net)),
-      maxSeNet: Math.max(...results.map(r => r.selfEmployment.net)),
+      maxEmplNet: Math.max(...results.map(r => r.employment?.net ?? 0)),
+      maxSeNet: Math.max(...results.map(r => r.selfEmployment?.net ?? 0)),
     };
   });
 
@@ -198,7 +198,7 @@ export class ComparisonViewComponent {
     return (r * 100).toFixed(1) + '%';
   }
 
-  fmtEuro(n: number): string { return '€' + Math.round(n).toLocaleString('en-US'); }
+  fmtEuro(n: number | null | undefined): string { return n != null ? '€' + Math.round(n).toLocaleString('en-US') : '—'; }
   fmtNum(n: number): string  { return n.toLocaleString('en-US'); }
 
   confLabel(c: string | null): string {
