@@ -1,0 +1,33 @@
+{
+  "note": "Fixed reference rates for 2026 tax bracket EUR conversion. Used to pre-convert local-currency brackets to EUR equivalents in countries.json.",
+  "rates": {
+    "ILS_per_EUR": 3.95,
+    "THB_per_EUR": 38.5,
+    "VND_per_EUR": 27500,
+    "IDR_per_EUR": 17000,
+    "PHP_per_EUR": 62,
+    "KZT_per_EUR": 510,
+    "NZD_per_EUR": 1.64,
+    "TWD_per_EUR": 34,
+    "MYR_per_EUR": 4.7,
+    "MDL_per_EUR": 19.5,
+    "EGP_per_EUR": 56,
+    "MAD_per_EUR": 10.8,
+    "TND_per_EUR": 3.1,
+    "DZD_per_EUR": 145,
+    "AMD_per_EUR": 420,
+    "AZN_per_EUR": 1.82,
+    "UZS_per_EUR": 13000,
+    "JOD_per_EUR": 0.76,
+    "RSD_per_EUR": 117,
+    "MKD_per_EUR": 61.5,
+    "BAM_per_EUR": 1.956,
+    "PAB_per_EUR": 1.08,
+    "USD_per_EUR": 1.08,
+    "PEN_per_EUR": 3.93,
+    "NGN_per_EUR": 1600,
+    "CRC_per_EUR": 550,
+    "PYG_per_EUR": 7800,
+    "UYU_per_EUR": 44
+  }
+}
