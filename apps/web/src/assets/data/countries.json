@@ -2793,7 +2793,7 @@
             ]
           },
           "socialSecurity": {
-            "kind": "banded",
+            "kind": "percentage",
             "rate": 0.0759,
             "cap": 48176
           },
@@ -6738,7 +6738,7 @@
             "rate": 0.2
           },
           "socialSecurity": {
-            "kind": "banded",
+            "kind": "percentage",
             "rate": 0.075,
             "cap": 17141
           },
@@ -6758,9 +6758,9 @@
             "rate": 0.2
           },
           "socialSecurity": {
-            "kind": "banded",
-            "rate": 0.124,
-            "cap": 228558
+            "kind": "percentage",
+            "rate": 0.075,
+            "cap": 17141
           },
           "personalAllowance": {
             "amount": 17674,
@@ -8705,7 +8705,7 @@
             "rate": 0.2
           },
           "socialSecurity": {
-            "kind": "banded",
+            "kind": "percentage",
             "rate": 0.06,
             "cap": 80930
           },
@@ -8732,8 +8732,8 @@
             "rate": 0.2
           },
           "socialSecurity": {
-            "kind": "banded",
-            "rate": 0.125,
+            "kind": "percentage",
+            "rate": 0.06,
             "cap": 80930
           },
           "additionalLevies": [
@@ -10606,7 +10606,7 @@
             ]
           },
           "socialSecurity": {
-            "kind": "banded",
+            "kind": "percentage",
             "rate": 0.1245,
             "cap": 160905
           },
