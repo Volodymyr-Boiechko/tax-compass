@@ -3,6 +3,7 @@ import * as L from 'leaflet';
 import { AppStore } from '../../state/app.store';
 import { ThemeService } from '../../core/services/theme.service';
 import { Country } from '../../core/models/country.model';
+import { RegimeCalculationService } from '../../core/services/regime-calculation.service';
 import { matchGeoFeature } from './iso-matcher';
 
 type GeoLayer = L.GeoJSON & { feature?: GeoJSON.Feature };
@@ -32,6 +33,7 @@ let geoJSONFetchPromise: Promise<GeoJSON.FeatureCollection | null> | null = null
 export class WorldMapComponent implements AfterViewInit, OnDestroy {
   private readonly store = inject(AppStore);
   private readonly themeService = inject(ThemeService);
+  private readonly regimeCalc = inject(RegimeCalculationService);
   private readonly mapEl = viewChild.required<ElementRef<HTMLDivElement>>('mapEl');
 
   private map!: L.Map;
@@ -178,7 +180,11 @@ export class WorldMapComponent implements AfterViewInit, OnDestroy {
   }
 
   private bestRate(c: Country): number | null {
-    return c.effectiveRates.bestSelfEmployment['60k'] ?? c.effectiveRates.employment['60k'];
+    const cmp = this.regimeCalc.calculateAll(c, 60000);
+    const se = cmp.regimes
+      .filter(r => r.regimeType === 'self-employment')
+      .reduce<typeof cmp.regimes[0] | null>((b, r) => (!b || r.net > b.net ? r : b), null);
+    return (se ?? cmp.regimes.find(r => r.regimeType === 'employment') ?? cmp.best).effectiveRate;
   }
 
   private rateToColor(rate: number | null, theme: 'dark' | 'light'): string {

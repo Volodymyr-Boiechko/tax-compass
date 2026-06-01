@@ -1,23 +1,15 @@
 import { Component, computed, inject } from '@angular/core';
 import { LucideX } from '@lucide/angular';
 import { AppStore } from '../../state/app.store';
-import { CalculationService, CalculationResult } from '../../core/services/calculation.service';
+import { RegimeCalculationService } from '../../core/services/regime-calculation.service';
 import { Country } from '../../core/models/country.model';
 import { regionLabel } from '../../core/utils/region.utils';
 
-type MetricKey = 'empl30k' | 'empl60k' | 'empl100k' | 'se30k' | 'se60k' | 'se100k' | 'topPIT';
-
-const METRICS: Array<{ key: MetricKey; get: (c: Country) => number | null | undefined }> = [
-  { key: 'empl30k',  get: c => c.effectiveRates.employment['30k'] },
-  { key: 'empl60k',  get: c => c.effectiveRates.employment['60k'] },
-  { key: 'empl100k', get: c => c.effectiveRates.employment['100k'] },
-  { key: 'se30k',    get: c => c.effectiveRates.bestSelfEmployment['30k'] },
-  { key: 'se60k',    get: c => c.effectiveRates.bestSelfEmployment['60k'] },
-  { key: 'se100k',   get: c => c.effectiveRates.bestSelfEmployment['100k'] },
-  { key: 'topPIT',   get: c => c.personalIncomeTax?.topRate },
-];
-
-interface IncomeRow { country: Country; employment: CalculationResult | null; selfEmployment: CalculationResult | null; }
+interface IncomeRow {
+  country: Country;
+  employment: { net: number; effectiveRate: number; isApproximation?: boolean } | null;
+  selfEmployment: { net: number; effectiveRate: number; method: string; isApproximation?: boolean } | null;
+}
 
 @Component({
   selector: 'app-comparison-view',
@@ -72,6 +64,7 @@ interface IncomeRow { country: Country; employment: CalculationResult | null; se
                       </span>
                       <span class="block text-[10px]" [style.color]="rateColor(r.employment?.effectiveRate ?? null)">
                         {{ fmtRate(r.employment?.effectiveRate ?? null) }}
+                        @if (r.employment?.isApproximation) { <span style="color: var(--color-warning)"> ~</span> }
                       </span>
                     </td>
                   }
@@ -83,7 +76,10 @@ interface IncomeRow { country: Country; employment: CalculationResult | null; se
                       <span [style.color]="r.selfEmployment?.net === ir.maxSeNet ? 'var(--color-accent)' : 'var(--color-text-secondary)'" class="font-semibold">
                         {{ fmtEuro(r.selfEmployment?.net) }}
                       </span>
-                      <span class="block text-[10px] text-[var(--color-text-faint)]">{{ r.selfEmployment?.method }}</span>
+                      <span class="block text-[10px] text-[var(--color-text-faint)]">
+                        {{ r.selfEmployment?.method }}
+                        @if (r.selfEmployment?.isApproximation) { <span style="color: var(--color-warning)"> ~</span> }
+                      </span>
                     </td>
                   }
                 </tr>
@@ -91,7 +87,7 @@ interface IncomeRow { country: Country; employment: CalculationResult | null; se
 
               <tr class="bg-[var(--color-surface-hover)]/50">
                 <td class="px-4 py-2.5 text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-wider font-medium" colspan="999">
-                  Pre-computed effective rates
+                  Effective rates at standard income levels
                 </td>
               </tr>
 
@@ -99,10 +95,11 @@ interface IncomeRow { country: Country; employment: CalculationResult | null; se
                 <tr class="border-b border-[var(--color-border)]/40 hover:bg-[var(--color-surface-hover)]/30 transition-colors">
                   <td class="px-4 py-2.5 text-xs text-[var(--color-text-tertiary)]">{{ row.label }}</td>
                   @for (c of countries(); track c.code) {
+                    @let rate = computedRate(c.code, row.income, row.type) ;
                     <td class="px-4 py-2.5 font-mono text-sm"
-                        [style]="isWinner(c.code, row.metric) ? 'background: color-mix(in srgb, var(--color-accent) 6%, transparent)' : ''">
-                      <span [style.color]="rateColor(row.get(c))" [class]="isWinner(c.code, row.metric) ? 'font-semibold' : ''">
-                        {{ fmtRate(row.get(c)) }}
+                        [style]="isWinner(c.code, row.label) ? 'background: color-mix(in srgb, var(--color-accent) 6%, transparent)' : ''">
+                      <span [style.color]="rateColor(rate)" [class]="isWinner(c.code, row.label) ? 'font-semibold' : ''">
+                        {{ fmtRate(rate) }}
                       </span>
                     </td>
                   }
@@ -110,18 +107,18 @@ interface IncomeRow { country: Country; employment: CalculationResult | null; se
               }
 
               <tr class="border-b border-[var(--color-border)]/40">
-                <td class="px-4 py-2.5 text-xs text-[var(--color-text-tertiary)]">Confidence</td>
+                <td class="px-4 py-2.5 text-xs text-[var(--color-text-tertiary)]">Top PIT rate</td>
                 @for (c of countries(); track c.code) {
-                  <td class="px-4 py-2.5 text-xs text-[var(--color-text-secondary)]">{{ confLabel(c.confidence) }}</td>
+                  <td class="px-4 py-2.5 font-mono text-sm">
+                    <span [style.color]="rateColor(c.personalIncomeTax?.topRate ?? null)">{{ fmtRate(c.personalIncomeTax?.topRate ?? null) }}</span>
+                  </td>
                 }
               </tr>
 
               <tr class="border-b border-[var(--color-border)]/40">
-                <td class="px-4 py-2.5 text-xs text-[var(--color-text-tertiary)]">Best SE regime</td>
+                <td class="px-4 py-2.5 text-xs text-[var(--color-text-tertiary)]">Confidence</td>
                 @for (c of countries(); track c.code) {
-                  <td class="px-4 py-2.5 text-xs text-[var(--color-text-secondary)]">
-                    {{ c.effectiveRates.bestSelfEmployment.regime ?? '—' }}
-                  </td>
+                  <td class="px-4 py-2.5 text-xs text-[var(--color-text-secondary)]">{{ confLabel(c.confidence) }}</td>
                 }
               </tr>
             </tbody>
@@ -133,32 +130,45 @@ interface IncomeRow { country: Country; employment: CalculationResult | null; se
 })
 export class ComparisonViewComponent {
   readonly store = inject(AppStore);
-  readonly calcService = inject(CalculationService);
+  readonly regimeCalc = inject(RegimeCalculationService);
   readonly regionLabel = regionLabel;
 
   readonly countries = this.store.comparedCountries;
 
-  readonly rateRows: Array<{ label: string; metric: MetricKey; get: (c: Country) => number | null | undefined }> = [
-    { label: 'Employment 30k',  metric: 'empl30k',  get: c => c.effectiveRates.employment['30k'] },
-    { label: 'Employment 60k',  metric: 'empl60k',  get: c => c.effectiveRates.employment['60k'] },
-    { label: 'Employment 100k', metric: 'empl100k', get: c => c.effectiveRates.employment['100k'] },
-    { label: 'Best SE 30k',     metric: 'se30k',    get: c => c.effectiveRates.bestSelfEmployment['30k'] },
-    { label: 'Best SE 60k',     metric: 'se60k',    get: c => c.effectiveRates.bestSelfEmployment['60k'] },
-    { label: 'Best SE 100k',    metric: 'se100k',   get: c => c.effectiveRates.bestSelfEmployment['100k'] },
-    { label: 'Top PIT',         metric: 'topPIT',   get: c => c.personalIncomeTax?.topRate },
+  readonly rateRows: Array<{ label: string; income: number; type: 'employment' | 'se' }> = [
+    { label: 'Employment 30k',  income: 30000,  type: 'employment' },
+    { label: 'Employment 60k',  income: 60000,  type: 'employment' },
+    { label: 'Employment 100k', income: 100000, type: 'employment' },
+    { label: 'Best SE 30k',     income: 30000,  type: 'se' },
+    { label: 'Best SE 60k',     income: 60000,  type: 'se' },
+    { label: 'Best SE 100k',    income: 100000, type: 'se' },
   ];
+
+  computedRate(code: string, income: number, type: 'employment' | 'se'): number | null {
+    const c = this.countries().find(x => x.code === code);
+    if (!c) return null;
+    const cmp = this.regimeCalc.calculateAll(c, income);
+    if (type === 'employment') {
+      return (cmp.regimes.find(r => r.regimeType === 'employment') ?? cmp.best).effectiveRate;
+    }
+    const se = cmp.regimes
+      .filter(r => r.regimeType === 'self-employment')
+      .reduce<typeof cmp.regimes[0] | null>((b, r) => (!b || r.net > b.net ? r : b), null)
+      ?? cmp.best;
+    return se.effectiveRate;
+  }
 
   readonly winners = computed(() => {
     const list = this.countries();
     const result = new Map<string, Set<string>>();
-    for (const m of METRICS) {
-      const vals = list.map(c => ({ code: c.code, val: m.get(c) ?? null }))
+    for (const row of this.rateRows) {
+      const vals = list.map(c => ({ code: c.code, val: this.computedRate(c.code, row.income, row.type) }))
         .filter((x): x is { code: string; val: number } => x.val !== null);
       if (!vals.length) continue;
       const min = Math.min(...vals.map(v => v.val));
       for (const { code } of vals.filter(v => v.val === min)) {
         if (!result.has(code)) result.set(code, new Set());
-        result.get(code)!.add(m.key);
+        result.get(code)!.add(row.label);
       }
     }
     return result;
@@ -167,11 +177,19 @@ export class ComparisonViewComponent {
   readonly incomeResults = computed(() => {
     const income = this.store.userIncome();
     if (!income || this.countries().length < 2) return null;
-    const results: IncomeRow[] = this.countries().map(c => ({
-      country: c,
-      employment: this.calcService.calculateEmployment(c, income),
-      selfEmployment: this.calcService.calculateBestSelfEmployment(c, income),
-    }));
+    const results: IncomeRow[] = this.countries().map(c => {
+      const cmp = this.regimeCalc.calculateAll(c, income);
+      const emp = cmp.regimes.find(r => r.regimeType === 'employment') ?? cmp.best;
+      const se = cmp.regimes
+        .filter(r => r.regimeType === 'self-employment')
+        .reduce<typeof cmp.regimes[0] | null>((b, r) => (!b || r.net > b.net ? r : b), null)
+        ?? cmp.best;
+      return {
+        country: c,
+        employment: { net: emp.net, effectiveRate: emp.effectiveRate, isApproximation: emp.isApproximation },
+        selfEmployment: { net: se.net, effectiveRate: se.effectiveRate, method: se.regimeName, isApproximation: se.isApproximation },
+      };
+    });
     return {
       income,
       results,
@@ -180,8 +198,8 @@ export class ComparisonViewComponent {
     };
   });
 
-  isWinner(code: string, metric: string): boolean {
-    return this.winners().get(code)?.has(metric) ?? false;
+  isWinner(code: string, label: string): boolean {
+    return this.winners().get(code)?.has(label) ?? false;
   }
 
   rateColor(r: number | null | undefined): string {

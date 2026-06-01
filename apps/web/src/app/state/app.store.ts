@@ -2,6 +2,7 @@ import { computed, inject, Injectable, signal } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 import { CountriesService } from '../core/services/countries.service';
 import { Country, Confidence, Region } from '../core/models/country.model';
+import { RegimeCalculationService } from '../core/services/regime-calculation.service';
 
 export type SortField =
   | 'name'
@@ -13,9 +14,17 @@ export type SortField =
 
 export type SortDir = 'asc' | 'desc';
 
+export interface PrecomputedRates {
+  e30k: number | null;
+  e60k: number | null;
+  e100k: number | null;
+  se60k: number | null;
+}
+
 @Injectable({ providedIn: 'root' })
 export class AppStore {
   private countriesService = inject(CountriesService);
+  private regimeCalc = inject(RegimeCalculationService);
 
   // --- Raw data ---
   readonly countries = signal<Country[]>([]);
@@ -30,6 +39,30 @@ export class AppStore {
   // --- Sort ---
   readonly sortField = signal<SortField>('employment60k');
   readonly sortDir = signal<SortDir>('asc');
+
+  // --- Precomputed rates from regimes (used for static ranking table + sort) ---
+  readonly precomputedRates = computed(() => {
+    const map = new Map<string, PrecomputedRates>();
+    for (const c of this.countries()) {
+      const r30 = this.regimeCalc.calculateAll(c, 30000);
+      const r60 = this.regimeCalc.calculateAll(c, 60000);
+      const r100 = this.regimeCalc.calculateAll(c, 100000);
+      const empl30 = r30.regimes.find(r => r.regimeType === 'employment') ?? r30.best;
+      const empl60 = r60.regimes.find(r => r.regimeType === 'employment') ?? r60.best;
+      const empl100 = r100.regimes.find(r => r.regimeType === 'employment') ?? r100.best;
+      const se60 = r60.regimes
+        .filter(r => r.regimeType === 'self-employment')
+        .reduce<typeof r60.regimes[0] | null>((b, r) => (!b || r.net > b.net ? r : b), null)
+        ?? r60.best;
+      map.set(c.code, {
+        e30k: empl30.effectiveRate,
+        e60k: empl60.effectiveRate,
+        e100k: empl100.effectiveRate,
+        se60k: se60.effectiveRate,
+      });
+    }
+    return map;
+  });
 
   // --- Computed stats ---
   readonly countryCount = computed(() => this.countries().length);
@@ -77,19 +110,20 @@ export class AppStore {
 
     const field = this.sortField();
     const dir = this.sortDir();
+    const rates = this.precomputedRates();
 
     const val = (c: Country): number | string | null => {
       switch (field) {
         case 'name':
           return c.name;
         case 'employment30k':
-          return c.effectiveRates.employment['30k'];
+          return rates.get(c.code)?.e30k ?? null;
         case 'employment60k':
-          return c.effectiveRates.employment['60k'];
+          return rates.get(c.code)?.e60k ?? null;
         case 'employment100k':
-          return c.effectiveRates.employment['100k'];
+          return rates.get(c.code)?.e100k ?? null;
         case 'bestSE60k':
-          return c.effectiveRates.bestSelfEmployment['60k'];
+          return rates.get(c.code)?.se60k ?? null;
         case 'topPIT':
           return c.personalIncomeTax?.topRate ?? null;
       }

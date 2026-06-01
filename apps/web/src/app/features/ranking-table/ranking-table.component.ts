@@ -2,7 +2,6 @@ import { Component, computed, inject } from '@angular/core';
 import { LucideSearchX } from '@lucide/angular';
 import { AppStore, SortField } from '../../state/app.store';
 import { CalculationService, CalculationResult } from '../../core/services/calculation.service';
-import { RegimeCalculationService } from '../../core/services/regime-calculation.service';
 import { Country, Confidence, Region } from '../../core/models/country.model';
 import { regionLabel } from '../../core/utils/region.utils';
 
@@ -10,7 +9,7 @@ interface Row {
   country: Country;
   employment?: CalculationResult;
   selfEmployment?: CalculationResult;
-  hasRegimeCalc?: boolean;
+  isApproximation?: boolean;
 }
 
 @Component({
@@ -111,12 +110,20 @@ interface Row {
                   <div class="flex items-center gap-2">
                     <span class="text-lg leading-none">{{ row.country.flag ?? '🏳' }}</span>
                     <span class="font-medium text-[var(--color-text-primary)]">{{ row.country.name }}</span>
-                    @if (row.hasRegimeCalc && store.userIncome() !== null) {
-                      <span class="text-[10px] px-1.5 py-0.5 rounded-full shrink-0"
-                            style="background: color-mix(in srgb, var(--color-accent) 12%, transparent); color: var(--color-accent)"
-                            title="Calculated from live regime parameters"
-                            aria-label="Live regime calculation"
-                            role="img">⚡</span>
+                    @if (store.userIncome() !== null) {
+                      @if (row.isApproximation) {
+                        <span class="text-[10px] px-1.5 py-0.5 rounded-full shrink-0"
+                              style="background: color-mix(in srgb, var(--color-warning) 12%, transparent); color: var(--color-warning)"
+                              title="Rough estimate — detailed regime data pending"
+                              aria-label="Rough estimate"
+                              role="img">~</span>
+                      } @else {
+                        <span class="text-[10px] px-1.5 py-0.5 rounded-full shrink-0"
+                              style="background: color-mix(in srgb, var(--color-accent) 12%, transparent); color: var(--color-accent)"
+                              title="Calculated from live regime parameters"
+                              aria-label="Live regime calculation"
+                              role="img">⚡</span>
+                      }
                     }
                   </div>
                 </td>
@@ -156,20 +163,17 @@ interface Row {
                   </td>
                 } @else {
                   <td class="px-3 py-2.5 text-right font-mono text-sm border-l border-[var(--color-border)]/50">
-                    <span [style.color]="rateColor(row.country.effectiveRates.employment['30k'])">{{ fmtRate(row.country.effectiveRates.employment['30k']) }}</span>
+                    <span [style.color]="rateColor(store.precomputedRates().get(row.country.code)?.e30k ?? null)">{{ fmtRate(store.precomputedRates().get(row.country.code)?.e30k ?? null) }}</span>
                   </td>
                   <td class="px-3 py-2.5 text-right font-mono text-sm">
-                    <span [style.color]="rateColor(row.country.effectiveRates.employment['60k'])">{{ fmtRate(row.country.effectiveRates.employment['60k']) }}</span>
+                    <span [style.color]="rateColor(store.precomputedRates().get(row.country.code)?.e60k ?? null)">{{ fmtRate(store.precomputedRates().get(row.country.code)?.e60k ?? null) }}</span>
                   </td>
                   <td class="px-3 py-2.5 text-right font-mono text-sm">
-                    <span [style.color]="rateColor(row.country.effectiveRates.employment['100k'])">{{ fmtRate(row.country.effectiveRates.employment['100k']) }}</span>
+                    <span [style.color]="rateColor(store.precomputedRates().get(row.country.code)?.e100k ?? null)">{{ fmtRate(store.precomputedRates().get(row.country.code)?.e100k ?? null) }}</span>
                   </td>
                   <td class="px-3 py-2.5 text-right font-mono text-sm border-l border-[var(--color-border)]/50">
-                    @if (row.country.effectiveRates.bestSelfEmployment['60k'] != null) {
-                      <span [style.color]="rateColor(row.country.effectiveRates.bestSelfEmployment['60k'])">{{ fmtRate(row.country.effectiveRates.bestSelfEmployment['60k']) }}</span>
-                      @if (row.country.effectiveRates.bestSelfEmployment.regime) {
-                        <span class="block text-[10px] text-[var(--color-text-faint)] truncate max-w-[100px] ml-auto">{{ row.country.effectiveRates.bestSelfEmployment.regime }}</span>
-                      }
+                    @if (store.precomputedRates().get(row.country.code)?.se60k != null) {
+                      <span [style.color]="rateColor(store.precomputedRates().get(row.country.code)?.se60k ?? null)">{{ fmtRate(store.precomputedRates().get(row.country.code)?.se60k ?? null) }}</span>
                     } @else {
                       <span class="text-[var(--color-text-faint)]">—</span>
                     }
@@ -202,7 +206,6 @@ interface Row {
 export class RankingTableComponent {
   readonly store = inject(AppStore);
   readonly calc = inject(CalculationService);
-  readonly regimeCalc = inject(RegimeCalculationService);
   readonly regionLabel = regionLabel;
 
   readonly rows = computed<Row[]>(() => {
@@ -211,46 +214,10 @@ export class RankingTableComponent {
     if (income === null) return countries.map(c => ({ country: c }));
 
     const mapped = countries.map(c => {
-      const hasRegimes = (c.computableRegimes?.length ?? 0) > 0;
-      // calculateEmployment now returns null when no data is available
       const employment = this.calc.calculateEmployment(c, income) ?? undefined;
-
-      if (hasRegimes) {
-        // Use RegimeCalculationService for the 15 parameterized countries
-        const cmp = this.regimeCalc.calculateAll(c, income);
-        const bestSE = cmp?.regimes.filter(r => r.regimeType === 'self-employment')
-          .reduce<typeof cmp.regimes[0] | null>((best, r) => (!best || r.net > best.net) ? r : best, null);
-        const bestAll = cmp?.best;
-
-        const selfEmployment: CalculationResult | undefined = bestSE
-          ? {
-              gross: bestSE.gross,
-              socialSecurity: bestSE.socialSecurity,
-              incomeTax: bestSE.incomeTax,
-              net: bestSE.net,
-              effectiveRate: bestSE.effectiveRate,
-              method: `self-employment (${bestSE.regimeName})`,
-            }
-          : bestAll
-            ? {
-                gross: bestAll.gross,
-                socialSecurity: bestAll.socialSecurity,
-                incomeTax: bestAll.incomeTax,
-                net: bestAll.net,
-                effectiveRate: bestAll.effectiveRate,
-                method: `self-employment (${bestAll.regimeName})`,
-              }
-            : this.calc.calculateBestSelfEmployment(c, income) ?? undefined;
-
-        return { country: c, employment, selfEmployment, hasRegimeCalc: true };
-      }
-
-      return {
-        country: c,
-        employment,
-        selfEmployment: this.calc.calculateBestSelfEmployment(c, income) ?? undefined,
-        hasRegimeCalc: false,
-      };
+      const selfEmployment = this.calc.calculateBestSelfEmployment(c, income) ?? undefined;
+      const isApproximation = employment?.isApproximation || selfEmployment?.isApproximation;
+      return { country: c, employment, selfEmployment, isApproximation };
     });
 
     return [...mapped].sort((a, b) =>

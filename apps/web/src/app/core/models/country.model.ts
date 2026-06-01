@@ -71,12 +71,13 @@ export interface Country {
   personalIncomeTax: PersonalIncomeTax | null;
   socialSecurity: SocialSecurity | null;
   specialRegimes: SpecialRegime[] | null;
-  effectiveRates: EffectiveRates;
+  /** @deprecated Removed in Phase A. Use computableRegimes instead. */
+  effectiveRates?: EffectiveRates;
   changes2026: string[];
   knownGaps: string[];
   crossVerification: CrossVerification | null;
   sources: CountrySources | null;
-  computableRegimes?: ComputableRegime[];
+  computableRegimes: ComputableRegime[];
 }
 
 export interface ComputableRegimePit {
@@ -104,6 +105,13 @@ export interface AdditionalLevy {
   appliesTo: 'gross' | 'taxable' | 'revenue';
 }
 
+export interface IncompleteRegimeData {
+  reason: 'no-brackets' | 'no-ss-data' | 'currency-mismatch' | 'pending-research';
+  /** Rough all-in effective rate to use as display hint */
+  fallbackRate?: number;
+  source?: string;
+}
+
 export interface ComputableRegime {
   id: string;
   name: string;
@@ -116,6 +124,8 @@ export interface ComputableRegime {
   socialSecurity: ComputableRegimeSS;
   additionalLevies?: AdditionalLevy[];
   personalAllowance?: { amount: number; currency: string };
+  /** Present when data is too sparse for reliable full computation */
+  incompleteData?: IncompleteRegimeData;
 }
 
 export interface CountriesData {
