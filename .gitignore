@@ -53,7 +53,7 @@ secrets/
 data/raw/
 data/processed/
 data/cache/
+data/sources/
 
-
-./claude/
+.claude
 .vercel
