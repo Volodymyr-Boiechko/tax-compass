@@ -125,6 +125,16 @@ interface Row {
                               role="img">⚡</span>
                       }
                     }
+                    <span class="flex-1"></span>
+                    <button
+                      class="shrink-0 text-base leading-none px-0.5 transition-opacity focus:outline-none"
+                      [class]="store.isInMyList(row.country.code)
+                        ? 'text-amber-400'
+                        : 'opacity-0 group-hover:opacity-100 text-[var(--color-text-faint)] hover:text-amber-400'"
+                      (click)="$event.stopPropagation(); store.toggleMyList(row.country.code)"
+                      [attr.aria-label]="store.isInMyList(row.country.code) ? 'Remove ' + row.country.name + ' from My List' : 'Add ' + row.country.name + ' to My List'"
+                      title="Toggle My List"
+                    >{{ store.isInMyList(row.country.code) ? '★' : '☆' }}</button>
                   </div>
                 </td>
 
@@ -186,14 +196,26 @@ interface Row {
             } @empty {
               <tr>
                 <td colspan="10">
-                  <div class="flex flex-col items-center justify-center py-20 gap-3 anim-fade-in-up">
-                    <svg lucideSearchX class="size-10 text-[var(--color-text-faint)]" aria-hidden="true"></svg>
-                    <p class="text-sm text-[var(--color-text-tertiary)]">No countries match your filters</p>
-                    <button
-                      class="text-xs text-[var(--color-accent)] hover:opacity-80 transition-opacity underline"
-                      (click)="store.clearFilters()"
-                    >Clear all filters</button>
-                  </div>
+                  @if (store.quickFilter() === 'my-list' && store.myList().length === 0) {
+                    <div class="flex flex-col items-center justify-center py-20 gap-3 anim-fade-in-up">
+                      <span class="text-4xl" aria-hidden="true">⭐</span>
+                      <p class="text-sm text-[var(--color-text-tertiary)]">Your list is empty</p>
+                      <p class="text-xs text-[var(--color-text-faint)]">Click ★ on any country row to add it to My List</p>
+                      <button
+                        class="text-xs text-[var(--color-accent)] hover:opacity-80 transition-opacity underline"
+                        (click)="store.setQuickFilter(null)"
+                      >Show all countries</button>
+                    </div>
+                  } @else {
+                    <div class="flex flex-col items-center justify-center py-20 gap-3 anim-fade-in-up">
+                      <svg lucideSearchX class="size-10 text-[var(--color-text-faint)]" aria-hidden="true"></svg>
+                      <p class="text-sm text-[var(--color-text-tertiary)]">No countries match your filters</p>
+                      <button
+                        class="text-xs text-[var(--color-accent)] hover:opacity-80 transition-opacity underline"
+                        (click)="store.clearFilters()"
+                      >Clear all filters</button>
+                    </div>
+                  }
                 </td>
               </tr>
             }

@@ -4,6 +4,17 @@ import { CountriesService } from '../core/services/countries.service';
 import { Country, Confidence, Region } from '../core/models/country.model';
 import { RegimeCalculationService } from '../core/services/regime-calculation.service';
 
+const EU_COUNTRY_CODES = new Set([
+  'AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR',
+  'DE','GR','HU','IE','IT','LV','LT','LU','MT','NL',
+  'PL','PT','RO','SK','SI','ES','SE',
+]);
+
+const TAX_HAVEN_CODES = new Set([
+  'BS','BM','KY','VG','GG','IM','JE','MC','AD','MT',
+  'CY','AE','BH','QA',
+]);
+
 export type SortField =
   | 'name'
   | 'employment30k'
@@ -35,6 +46,8 @@ export class AppStore {
   readonly searchQuery = signal<string>('');
   readonly selectedRegions = signal<Region[]>([]);
   readonly selectedConfidence = signal<Confidence[]>([]);
+  readonly quickFilter = signal<string | null>(null);
+  readonly myList = signal<string[]>([]);
 
   // --- Sort ---
   readonly sortField = signal<SortField>('employment60k');
@@ -86,6 +99,7 @@ export class AppStore {
   // --- Filtered + sorted dataset ---
   readonly filteredCountries = computed<Country[]>(() => {
     let list = this.countries();
+    const rates = this.precomputedRates();
 
     const q = this.searchQuery().trim().toLowerCase();
     if (q) {
@@ -108,9 +122,20 @@ export class AppStore {
       );
     }
 
+    const qf = this.quickFilter();
+    if (qf === 'zero-tax') {
+      list = list.filter(c => (rates.get(c.code)?.e60k ?? 1) < 0.01);
+    } else if (qf === 'eu') {
+      list = list.filter(c => EU_COUNTRY_CODES.has(c.code));
+    } else if (qf === 'my-list') {
+      const ml = this.myList();
+      list = list.filter(c => ml.includes(c.code));
+    } else if (qf === 'tax-havens') {
+      list = list.filter(c => TAX_HAVEN_CODES.has(c.code));
+    }
+
     const field = this.sortField();
     const dir = this.sortDir();
-    const rates = this.precomputedRates();
 
     const val = (c: Country): number | string | null => {
       switch (field) {
@@ -170,6 +195,7 @@ export class AppStore {
     if (this.searchQuery().trim()) n++;
     if (this.selectedRegions().length) n++;
     if (this.selectedConfidence().length) n++;
+    if (this.quickFilter()) n++;
     return n;
   });
 
@@ -177,6 +203,7 @@ export class AppStore {
     this.loadComparison();
     this.loadIncome();
     this.loadActiveView();
+    this.loadMyList();
   }
 
   // --- Actions ---
@@ -205,6 +232,28 @@ export class AppStore {
     this.searchQuery.set('');
     this.selectedRegions.set([]);
     this.selectedConfidence.set([]);
+    this.quickFilter.set(null);
+  }
+
+  setQuickFilter(filter: string | null): void {
+    if (filter !== null) {
+      this.searchQuery.set('');
+      this.selectedRegions.set([]);
+      this.selectedConfidence.set([]);
+    }
+    this.quickFilter.set(filter);
+  }
+
+  toggleMyList(code: string): void {
+    const current = this.myList();
+    this.myList.set(
+      current.includes(code) ? current.filter(c => c !== code) : [...current, code]
+    );
+    this.saveMyList();
+  }
+
+  isInMyList(code: string): boolean {
+    return this.myList().includes(code);
   }
 
   selectCountry(country: Country | null): void {
@@ -280,6 +329,24 @@ export class AppStore {
         if (!isNaN(n) && n > 0) this.userIncome.set(n);
       }
     } catch { /* ignore */ }
+  }
+
+  private saveMyList(): void {
+    try {
+      localStorage.setItem('tax-compass-my-list', JSON.stringify(this.myList()));
+    } catch {}
+  }
+
+  private loadMyList(): void {
+    try {
+      const stored = localStorage.getItem('tax-compass-my-list');
+      if (stored) {
+        const codes = JSON.parse(stored);
+        if (Array.isArray(codes)) {
+          this.myList.set(codes.filter(c => typeof c === 'string'));
+        }
+      }
+    } catch {}
   }
 
   private saveComparison(): void {

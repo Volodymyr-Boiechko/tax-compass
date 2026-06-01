@@ -19,8 +19,6 @@ const CONFIDENCE_OPTS: Array<{ value: Confidence; label: string }> = [
   { value: 'low', label: 'Low' },
 ];
 
-const EU_REGIONS: Region[] = ['western-europe', 'northern-europe', 'southern-europe', 'eastern-europe'];
-
 @Component({
   selector: 'app-sidebar',
   standalone: true,
@@ -98,7 +96,11 @@ const EU_REGIONS: Region[] = ['western-europe', 'northern-europe', 'southern-eur
         <div class="flex flex-col gap-1">
           @for (f of quickFilters; track f.action) {
             <button
-              class="text-left px-2 py-1.5 rounded text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface-hover)] transition-colors"
+              class="text-left px-2 py-1.5 rounded text-sm transition-colors"
+              [class]="store.quickFilter() === f.action
+                ? 'bg-[var(--color-accent)]/10 text-[var(--color-accent)] border border-[var(--color-accent)]/30'
+                : 'text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface-hover)] border border-transparent'"
+              [attr.aria-pressed]="store.quickFilter() === f.action"
               (click)="applyQuickFilter(f.action)"
             >{{ f.label }}</button>
           }
@@ -158,10 +160,10 @@ export class SidebarComponent {
   }
 
   applyQuickFilter(action: string): void {
-    this.store.clearFilters();
-    switch (action) {
-      case 'eu':         this.store.setRegions(EU_REGIONS); break;
-      case 'tax-havens': this.store.setRegions(['caribbean', 'pacific']); break;
+    if (this.store.quickFilter() === action) {
+      this.store.setQuickFilter(null);
+    } else {
+      this.store.setQuickFilter(action);
     }
   }
 }
