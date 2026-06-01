@@ -12754,7 +12754,19 @@
           "notes": "Box 1 combined rate includes National Insurance (NI) for type B (age < 67): 37.48% up to EUR 76,817 (includes 27.65% NI); 49.50% above. Health standard premium ~EUR 1,880/year not modeled in Phase 2. Tax credits (general + employment credit, up to ~EUR 6,900 at lower incomes) not modeled — effective rate will be overstated. No additional SS for NL employment beyond what is in Box 1 rate.",
           "pit": {
             "kind": "progressive",
-            "appliesTo": "gross"
+            "appliesTo": "gross",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 76817,
+                "rate": 0.3748
+              },
+              {
+                "from": 76817,
+                "to": null,
+                "rate": 0.495
+              }
+            ]
           },
           "socialSecurity": {
             "kind": "none"
@@ -12769,7 +12781,19 @@
           "notes": "Box 1 progressive (same combined rates as employment) on net profit after: zelfstandigenaftrek EUR 2,470 (2025; EUR 1,200 in 2026), MKB-winstvrijstelling 12.7%. These deductions not modeled in Phase 2 — effective rate will be overstated. Health insurance income-related 5.26% (capped EUR 75,864) + standard premium EUR 1,880/year modeled separately.",
           "pit": {
             "kind": "progressive",
-            "appliesTo": "profit"
+            "appliesTo": "profit",
+            "brackets": [
+              {
+                "from": 0,
+                "to": 76817,
+                "rate": 0.3748
+              },
+              {
+                "from": 76817,
+                "to": null,
+                "rate": 0.495
+              }
+            ]
           },
           "socialSecurity": {
             "kind": "percentage",
@@ -12788,7 +12812,19 @@
           "pit": {
             "kind": "progressive",
             "appliesTo": "taxable",
-            "deductionPercent": 30
+            "deductionPercent": 30,
+            "brackets": [
+              {
+                "from": 0,
+                "to": 76817,
+                "rate": 0.3748
+              },
+              {
+                "from": 76817,
+                "to": null,
+                "rate": 0.495
+              }
+            ]
           },
           "socialSecurity": {
             "kind": "none"
