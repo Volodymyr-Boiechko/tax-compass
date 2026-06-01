@@ -114,7 +114,9 @@ interface Row {
                     @if (row.hasRegimeCalc && store.userIncome() !== null) {
                       <span class="text-[10px] px-1.5 py-0.5 rounded-full shrink-0"
                             style="background: color-mix(in srgb, var(--color-accent) 12%, transparent); color: var(--color-accent)"
-                            title="Calculated from live regime parameters">⚡</span>
+                            title="Calculated from live regime parameters"
+                            aria-label="Live regime calculation"
+                            role="img">⚡</span>
                     }
                   </div>
                 </td>
@@ -181,7 +183,7 @@ interface Row {
               <tr>
                 <td colspan="10">
                   <div class="flex flex-col items-center justify-center py-20 gap-3 anim-fade-in-up">
-                    <svg lucideSearchX class="size-10 text-[var(--color-text-faint)]"></svg>
+                    <svg lucideSearchX class="size-10 text-[var(--color-text-faint)]" aria-hidden="true"></svg>
                     <p class="text-sm text-[var(--color-text-tertiary)]">No countries match your filters</p>
                     <button
                       class="text-xs text-[var(--color-accent)] hover:opacity-80 transition-opacity underline"

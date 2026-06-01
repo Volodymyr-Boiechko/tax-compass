@@ -28,8 +28,8 @@ interface IncomeRow { country: Country; employment: CalculationResult; selfEmplo
 
       <div class="flex items-center justify-between px-5 py-4 border-b border-[var(--color-border)]">
         <h2 class="text-base font-semibold text-[var(--color-text-primary)]">Side-by-side comparison</h2>
-        <button class="p-1.5 rounded text-[var(--color-text-tertiary)] hover:text-[var(--color-text-primary)] transition-colors" (click)="store.closeComparison()">
-          <svg lucideX class="size-4"></svg>
+        <button class="p-1.5 rounded text-[var(--color-text-tertiary)] hover:text-[var(--color-text-primary)] transition-colors" aria-label="Close comparison" (click)="store.closeComparison()">
+          <svg lucideX class="size-4" aria-hidden="true"></svg>
         </button>
       </div>
 

@@ -66,10 +66,10 @@ type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
               (click)="toggleComparison(c)"
             >
               @if (isAdded()) {
-                <svg lucideCheck class="size-3.5"></svg>
+                <svg lucideCheck class="size-3.5" aria-hidden="true"></svg>
                 Added
               } @else {
-                <svg lucidePlus class="size-3.5"></svg>
+                <svg lucidePlus class="size-3.5" aria-hidden="true"></svg>
                 Compare
               }
             </button>
@@ -79,16 +79,18 @@ type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
               data-detail-close
               (click)="close()"
             >
-              <svg lucideX class="size-5 md:size-4"></svg>
+              <svg lucideX class="size-5 md:size-4" aria-hidden="true"></svg>
             </button>
           </div>
         </div>
 
         <!-- Tabs -->
-        <div class="flex border-b border-[var(--color-border)] shrink-0">
+        <div class="flex border-b border-[var(--color-border)] shrink-0" role="tablist" aria-label="Country detail sections">
           @for (tab of tabs; track tab.id) {
             <button
               class="px-4 py-3 text-xs font-medium transition-colors border-b-2 -mb-px"
+              role="tab"
+              [attr.aria-selected]="activeTab() === tab.id"
               [class]="activeTab() === tab.id
                 ? 'border-[var(--color-accent)] text-[var(--color-text-primary)]'
                 : 'border-transparent text-[var(--color-text-tertiary)] hover:text-[var(--color-text-secondary)]'"
@@ -98,7 +100,7 @@ type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
         </div>
 
         <!-- Content -->
-        <div class="flex-1 overflow-y-auto p-4">
+        <div class="flex-1 overflow-y-auto p-4" role="tabpanel" [attr.aria-label]="activeTab() + ' tab content'">
 
           <!-- OVERVIEW -->
           @if (activeTab() === 'overview') {
@@ -170,7 +172,7 @@ type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
             @if (c.computableRegimes && c.computableRegimes.length > 0) {
               <div class="mb-4">
                 <h3 class="text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-wider font-medium mb-2 flex items-center gap-1.5">
-                  <svg lucideTrendingDown class="size-3"></svg>
+                  <svg lucideTrendingDown class="size-3" aria-hidden="true"></svg>
                   Live Regime Calculator
                 </h3>
                 <app-regime-calculator [country]="c" />
@@ -178,7 +180,7 @@ type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
             } @else {
               <div class="mb-4">
                 <h3 class="text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-wider font-medium mb-2 flex items-center gap-1.5">
-                  <svg lucideTrendingDown class="size-3"></svg>
+                  <svg lucideTrendingDown class="size-3" aria-hidden="true"></svg>
                   Effective rate by income level
                 </h3>
                 @if (store.userIncome() === null) {
@@ -288,7 +290,7 @@ type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
                   <p class="text-xs font-medium text-[var(--color-text-primary)] mb-2">PwC Worldwide Tax Summaries</p>
                   <a [href]="c.sources!.pwc" target="_blank" rel="noopener"
                      class="inline-flex items-center gap-1.5 text-xs text-[var(--color-accent)] hover:opacity-80 transition-opacity">
-                    <svg lucideExternalLink class="size-3"></svg>
+                    <svg lucideExternalLink class="size-3" aria-hidden="true"></svg>
                     Open source
                   </a>
                 </div>

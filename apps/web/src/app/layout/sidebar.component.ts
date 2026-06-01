@@ -35,7 +35,7 @@ const EU_REGIONS: Region[] = ['western-europe', 'northern-europe', 'southern-eur
           aria-label="Close navigation"
           (click)="closeRequest.emit()"
         >
-          <svg lucideX class="size-5"></svg>
+          <svg lucideX class="size-5" aria-hidden="true"></svg>
         </button>
       </div>
 
@@ -59,7 +59,7 @@ const EU_REGIONS: Region[] = ['western-europe', 'northern-europe', 'southern-eur
                 (click)="toggleRegion(r)"
               >
                 @if (isRegionSelected(r)) {
-                  <svg viewBox="0 0 12 12" class="w-2.5 h-2.5" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round">
+                  <svg viewBox="0 0 12 12" class="w-2.5 h-2.5" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" aria-hidden="true">
                     <path d="M2 6l3 3 5-5" />
                   </svg>
                 }
@@ -114,9 +114,10 @@ const EU_REGIONS: Region[] = ['western-europe', 'northern-europe', 'southern-eur
             </span>
             <button
               class="text-xs text-[var(--color-text-secondary)] hover:text-[var(--color-danger)] transition-colors flex items-center gap-1"
+              aria-label="Reset all filters"
               (click)="store.clearFilters()"
             >
-              <svg lucideX class="size-3"></svg>
+              <svg lucideX class="size-3" aria-hidden="true"></svg>
               Reset all
             </button>
           </div>

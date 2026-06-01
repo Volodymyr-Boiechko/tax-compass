@@ -28,7 +28,12 @@ import { ComparisonViewComponent } from '../features/comparison/comparison-view.
 
         <!-- Mobile drawer -->
         @if (store.sidebarOpen()) {
-          <div class="fixed inset-0 z-[60] md:hidden">
+          <div
+            class="fixed inset-0 z-[60] md:hidden"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Navigation filters"
+          >
             <!-- Backdrop -->
             <div
               class="absolute inset-0 anim-fade-in"

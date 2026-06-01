@@ -28,7 +28,7 @@ import { AppStore } from '../../state/app.store';
               [attr.aria-label]="'Remove ' + country.name + ' from comparison'"
               (click)="store.removeFromComparison(country.code)"
             >
-              <svg lucideX class="size-3"></svg>
+              <svg lucideX class="size-3" aria-hidden="true"></svg>
             </button>
           </div>
         }
@@ -43,11 +43,12 @@ import { AppStore } from '../../state/app.store';
           [disabled]="store.comparedCodes().length < 2"
           (click)="store.openComparison()"
         >
-          <svg lucideBarChart2 class="size-3.5"></svg>
+          <svg lucideBarChart2 class="size-3.5" aria-hidden="true"></svg>
           <span class="hidden sm:inline">Compare</span>
         </button>
         <button
           class="text-xs text-[var(--color-text-tertiary)] hover:text-[var(--color-text-secondary)] transition-colors"
+          aria-label="Clear all countries from comparison"
           (click)="store.clearComparison()"
         >Clear</button>
       </div>

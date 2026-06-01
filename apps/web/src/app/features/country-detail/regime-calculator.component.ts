@@ -98,6 +98,11 @@ import { Country } from '../../core/models/country.model';
                       · on {{ fmtEuro(r.gross) }} gross
                     </span>
                   </div>
+                  @if (r.effectiveRate < 0) {
+                    <p class="text-[10px] mt-1" style="color: var(--color-warning)">
+                      ⚠ Negative effective rate — exemptions exceed gross income; displayed as 0%.
+                    </p>
+                  }
                 </div>
 
                 <!-- Quick deduction summary (always visible) -->
@@ -230,6 +235,7 @@ export class RegimeCalculatorComponent {
   }
 
   rateColor(r: number): string {
+    if (r <= 0) return 'var(--rate-low)';
     if (r < 0.10) return 'var(--rate-low)';
     if (r < 0.20) return 'var(--rate-low-mid)';
     if (r < 0.30) return 'var(--rate-mid)';
@@ -242,7 +248,9 @@ export class RegimeCalculatorComponent {
   }
 
   fmtRate(r: number): string {
-    return (r * 100).toFixed(1) + '%';
+    // Guard: negative effective rate is treated as 0% (e.g. exemption schemes)
+    const clamped = Math.max(0, r);
+    return (clamped * 100).toFixed(1) + '%';
   }
 
   fmtSigned(n: number): string {

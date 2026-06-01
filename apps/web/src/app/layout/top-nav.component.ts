@@ -32,18 +32,18 @@ const SHORTCUTS = [
         aria-label="Toggle navigation menu"
         (click)="store.toggleSidebar()"
       >
-        <svg lucideMenu class="size-5"></svg>
+        <svg lucideMenu class="size-5" aria-hidden="true"></svg>
       </button>
 
       <!-- Logo -->
       <a class="flex items-center gap-2 shrink-0 mr-1 md:mr-2 text-[var(--color-text-primary)] no-underline" href="/" aria-label="TaxCompass home">
-        <svg lucideGlobe class="size-5 text-[var(--color-accent)]" [strokeWidth]="1.5"></svg>
+        <svg lucideGlobe class="size-5 text-[var(--color-accent)]" [strokeWidth]="1.5" aria-hidden="true"></svg>
         <span class="font-semibold text-sm tracking-tight hidden sm:inline">TaxCompass</span>
       </a>
 
       <!-- Search (full-width center on desktop) -->
       <div class="flex-1 max-w-sm md:max-w-md relative">
-        <svg lucideSearch class="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-[var(--color-text-tertiary)] pointer-events-none"></svg>
+        <svg lucideSearch class="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-[var(--color-text-tertiary)] pointer-events-none" aria-hidden="true"></svg>
         <input
           type="text"
           placeholder="Search 147 countries…"
@@ -59,7 +59,7 @@ const SHORTCUTS = [
             aria-label="Clear search"
             (click)="store.setSearch('')"
           >
-            <svg lucideX class="size-3.5"></svg>
+            <svg lucideX class="size-3.5" aria-hidden="true"></svg>
           </button>
         }
       </div>
@@ -89,9 +89,9 @@ const SHORTCUTS = [
         (click)="themeService.toggle()"
       >
         @if (themeService.theme() === 'dark') {
-          <svg lucideSun class="size-4"></svg>
+          <svg lucideSun class="size-4" aria-hidden="true"></svg>
         } @else {
-          <svg lucideMoon class="size-4"></svg>
+          <svg lucideMoon class="size-4" aria-hidden="true"></svg>
         }
       </button>
 
@@ -102,7 +102,7 @@ const SHORTCUTS = [
         title="Keyboard shortcuts (?)"
         (click)="shortcuts.showHelp.set(!shortcuts.showHelp())"
       >
-        <svg lucideHelpCircle class="size-4"></svg>
+        <svg lucideHelpCircle class="size-4" aria-hidden="true"></svg>
       </button>
 
       <!-- Lang toggle (desktop) -->
@@ -144,7 +144,7 @@ const SHORTCUTS = [
               aria-label="Close shortcuts"
               (click)="shortcuts.showHelp.set(false)"
             >
-              <svg lucideX class="size-4"></svg>
+              <svg lucideX class="size-4" aria-hidden="true"></svg>
             </button>
           </div>
           <div class="space-y-2">

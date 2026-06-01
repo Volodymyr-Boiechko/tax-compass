@@ -15,10 +15,10 @@ const TILE_ATTR   = '© OpenStreetMap contributors © CARTO';
   selector: 'app-world-map',
   standalone: true,
   template: `
-    <div class="w-full h-full relative">
+    <div class="w-full h-full relative" role="img" aria-label="World tax rate choropleth map. Countries are color-coded by effective self-employment tax rate. Click a country to view details.">
       <div #mapEl class="w-full h-full"></div>
       @if (loading) {
-        <div class="absolute inset-0 flex items-center justify-center bg-[var(--color-surface)]">
+        <div class="absolute inset-0 flex items-center justify-center bg-[var(--color-surface)]" aria-hidden="true">
           <div class="text-[var(--color-text-tertiary)] text-sm">Loading map…</div>
         </div>
       }
