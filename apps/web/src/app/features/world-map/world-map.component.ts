@@ -11,14 +11,18 @@ const DARK_TILES  = 'https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}
 const LIGHT_TILES = 'https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png';
 const TILE_ATTR   = '© OpenStreetMap contributors © CARTO';
 
+/** Module-level GeoJSON cache — survives view toggles without re-fetching. */
+let geoJSONCache: GeoJSON.FeatureCollection | null = null;
+let geoJSONFetchPromise: Promise<GeoJSON.FeatureCollection | null> | null = null;
+
 @Component({
   selector: 'app-world-map',
   standalone: true,
   template: `
-    <div class="w-full h-full relative" role="img" aria-label="World tax rate choropleth map. Countries are color-coded by effective self-employment tax rate. Click a country to view details.">
+    <div class="w-full h-full relative">
       <div #mapEl class="w-full h-full"></div>
       @if (loading) {
-        <div class="absolute inset-0 flex items-center justify-center bg-[var(--color-surface)]" aria-hidden="true">
+        <div class="absolute inset-0 flex items-center justify-center bg-[var(--color-surface)]">
           <div class="text-[var(--color-text-tertiary)] text-sm">Loading map…</div>
         </div>
       }
@@ -103,12 +107,17 @@ export class WorldMapComponent implements AfterViewInit, OnDestroy {
 
   private async loadGeoJSON(): Promise<void> {
     try {
-      const res = await fetch('assets/data/world.geojson');
-      if (!res.ok) throw new Error('GeoJSON load failed');
-      const data: GeoJSON.FeatureCollection = await res.json();
-      this.renderGeoJSON(data);
-    } catch {
-      console.warn('World map GeoJSON unavailable — using empty map.');
+      if (!geoJSONFetchPromise) {
+        geoJSONFetchPromise = fetch('assets/data/world.geojson')
+          .then(res => {
+            if (!res.ok) throw new Error('GeoJSON load failed');
+            return res.json() as Promise<GeoJSON.FeatureCollection>;
+          })
+          .then(data => { geoJSONCache = data; return data; })
+          .catch(() => { console.warn('World map GeoJSON unavailable — using empty map.'); return null; });
+      }
+      const data = geoJSONCache ?? await geoJSONFetchPromise;
+      if (data) this.renderGeoJSON(data);
     } finally {
       this.loading = false;
     }
@@ -116,7 +125,6 @@ export class WorldMapComponent implements AfterViewInit, OnDestroy {
 
   private renderGeoJSON(data: GeoJSON.FeatureCollection): void {
     const store = this.store;
-    const theme = this.themeService.theme();
 
     this.geoLayer = L.geoJSON(data, {
       style: (feature) => {

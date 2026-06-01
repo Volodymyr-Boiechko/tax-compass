@@ -18,7 +18,8 @@ const { countries } = JSON.parse(raw);
 
 // ── peer groups ──────────────────────────────────────────────────────────────
 const ZERO_PIT_EXPECTED = new Set([
-  'ae','bh','qa','sa','kw','om','bn','bs','ky','vg','bm','mc','kh','py'
+  'ae','bh','qa','sa','kw','om','bn','bs','ky','vg','bm','mc'
+  // kh (Cambodia) and py (Paraguay) removed — both have genuine progressive PIT per EY/PwC
 ]);
 
 const HIGH_TAX_EXPECTED = new Set([

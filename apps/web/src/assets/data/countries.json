@@ -13,13 +13,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.23,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 600000,
-            "rate": 0
-          }
-        ],
+        "brackets": null,
         "currency": "EUR"
       },
       "socialSecurity": {
@@ -142,38 +136,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.35,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 20000,
-            "rate": 0
-          },
-          {
-            "from": 0,
-            "to": 40000,
-            "rate": 0.23
-          },
-          {
-            "from": 0,
-            "to": 80000,
-            "rate": 0.27
-          },
-          {
-            "from": 0,
-            "to": 160000,
-            "rate": 0.3
-          },
-          {
-            "from": 0,
-            "to": 320000,
-            "rate": 0.33
-          },
-          {
-            "from": 0,
-            "to": 320001,
-            "rate": 0.35
-          }
-        ],
+        "brackets": null,
         "currency": "EUR"
       },
       "socialSecurity": {
@@ -221,68 +184,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.25,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 70000,
-            "rate": 0
-          },
-          {
-            "from": 0,
-            "to": 100000,
-            "rate": 0.1
-          },
-          {
-            "from": 0,
-            "to": 150000,
-            "rate": 0.13
-          },
-          {
-            "from": 0,
-            "to": 200000,
-            "rate": 0.16
-          },
-          {
-            "from": 0,
-            "to": 300000,
-            "rate": 0.18
-          },
-          {
-            "from": 0,
-            "to": 500000,
-            "rate": 0.19
-          },
-          {
-            "from": 0,
-            "to": 1000000,
-            "rate": 0.2
-          },
-          {
-            "from": 0,
-            "to": 1500000,
-            "rate": 0.21
-          },
-          {
-            "from": 0,
-            "to": 2000000,
-            "rate": 0.22
-          },
-          {
-            "from": 0,
-            "to": 2500000,
-            "rate": 0.23
-          },
-          {
-            "from": 0,
-            "to": 5000000,
-            "rate": 0.24
-          },
-          {
-            "from": 0,
-            "to": 10000000,
-            "rate": 0.245
-          }
-        ],
+        "brackets": null,
         "currency": "EUR"
       },
       "socialSecurity": {
@@ -333,7 +235,7 @@
       "personalIncomeTax": {
         "topRate": 0.35,
         "brackets": null,
-        "currency": "MEP"
+        "currency": "ARS"
       },
       "socialSecurity": {
         "employeeRate": null,
@@ -464,18 +366,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.25,
-        "brackets": [
-          {
-            "from": 0,
-            "to": null,
-            "rate": 0
-          },
-          {
-            "from": 0,
-            "to": null,
-            "rate": 0.52
-          }
-        ],
+        "brackets": null,
         "currency": "USD"
       },
       "socialSecurity": {
@@ -530,23 +421,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.45,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 135000,
-            "rate": 0.3
-          },
-          {
-            "from": 0,
-            "to": 190000,
-            "rate": 0.37
-          },
-          {
-            "from": 0,
-            "to": 190000,
-            "rate": 0.45
-          }
-        ],
+        "brackets": null,
         "currency": "USD"
       },
       "socialSecurity": {
@@ -616,28 +491,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.55,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 620,
-            "rate": 0
-          },
-          {
-            "from": 0,
-            "to": 24380,
-            "rate": 0.06
-          },
-          {
-            "from": 0,
-            "to": 25000,
-            "rate": 0.27
-          },
-          {
-            "from": 0,
-            "to": 33333,
-            "rate": 0.3575
-          }
-        ],
+        "brackets": null,
         "currency": "EUR"
       },
       "socialSecurity": {
@@ -864,18 +718,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.285,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 500000,
-            "rate": 0.1
-          },
-          {
-            "from": 0,
-            "to": 500000,
-            "rate": 0.5
-          }
-        ],
+        "brackets": null,
         "currency": "USD"
       },
       "socialSecurity": {
@@ -944,28 +787,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.5,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 16310,
-            "rate": 0.25
-          },
-          {
-            "from": 0,
-            "to": 28790,
-            "rate": 0.4
-          },
-          {
-            "from": 0,
-            "to": 49820,
-            "rate": 0.45
-          },
-          {
-            "from": 0,
-            "to": 49820,
-            "rate": 0.5
-          }
-        ],
+        "brackets": null,
         "currency": "EUR"
       },
       "socialSecurity": {
@@ -1073,18 +895,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.384,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 53198,
-            "rate": 0.294
-          },
-          {
-            "from": 0,
-            "to": 53198,
-            "rate": 0.384
-          }
-        ],
+        "brackets": null,
         "currency": "USD"
       },
       "socialSecurity": {
@@ -1245,28 +1056,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.25,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 84000,
-            "rate": 0.05
-          },
-          {
-            "from": 0,
-            "to": 120000,
-            "rate": 0.125
-          },
-          {
-            "from": 0,
-            "to": 156000,
-            "rate": 0.1875
-          },
-          {
-            "from": 0,
-            "to": 156001,
-            "rate": 0.25
-          }
-        ],
+        "brackets": null,
         "currency": "BWP"
       },
       "socialSecurity": {
@@ -1325,7 +1115,7 @@
       "personalIncomeTax": {
         "topRate": 0.275,
         "brackets": null,
-        "currency": "VAT"
+        "currency": "BRL"
       },
       "socialSecurity": {
         "employeeRate": null,
@@ -1599,33 +1389,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.2,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 1500000,
-            "rate": 0
-          },
-          {
-            "from": 0,
-            "to": 2000000,
-            "rate": 0.05
-          },
-          {
-            "from": 0,
-            "to": 8500000,
-            "rate": 0.1
-          },
-          {
-            "from": 0,
-            "to": 12500000,
-            "rate": 0.15
-          },
-          {
-            "from": 0,
-            "to": 12500001,
-            "rate": 0.2
-          }
-        ],
+        "brackets": null,
         "currency": "KHR"
       },
       "socialSecurity": {
@@ -1677,33 +1441,7 @@
       "lastReviewed": "2025-09-01",
       "personalIncomeTax": {
         "topRate": 0.33,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 53891,
-            "rate": 0.050499999999999996
-          },
-          {
-            "from": 0,
-            "to": 107785,
-            "rate": 0.0915
-          },
-          {
-            "from": 0,
-            "to": 150000,
-            "rate": 0.1116
-          },
-          {
-            "from": 0,
-            "to": 220000,
-            "rate": 0.1216
-          },
-          {
-            "from": 0,
-            "to": 220000,
-            "rate": 0.1316
-          }
-        ],
+        "brackets": null,
         "currency": "USD"
       },
       "socialSecurity": {
@@ -1773,23 +1511,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.275,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 960000,
-            "rate": 0.165
-          },
-          {
-            "from": 0,
-            "to": 1800000,
-            "rate": 0.231
-          },
-          {
-            "from": 0,
-            "to": 1800000,
-            "rate": 0.275
-          }
-        ],
+        "brackets": null,
         "currency": "EUR"
       },
       "socialSecurity": {
@@ -1899,49 +1621,8 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.4,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 952938,
-            "rate": 0
-          },
-          {
-            "from": 0,
-            "to": 2117640,
-            "rate": 0.04
-          },
-          {
-            "from": 0,
-            "to": 3529400,
-            "rate": 0.08
-          },
-          {
-            "from": 0,
-            "to": 4941160,
-            "rate": 0.135
-          },
-          {
-            "from": 0,
-            "to": 6352920,
-            "rate": 0.23
-          },
-          {
-            "from": 0,
-            "to": 8470560,
-            "rate": 0.304
-          },
-          {
-            "from": 0,
-            "to": 21882280,
-            "rate": 0.35
-          },
-          {
-            "from": 0,
-            "to": 21882280,
-            "rate": 0.4
-          }
-        ],
-        "currency": "AFP"
+        "brackets": null,
+        "currency": "CLP"
       },
       "socialSecurity": {
         "employeeRate": null,
@@ -2005,43 +1686,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.45,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 3000,
-            "rate": 0.03
-          },
-          {
-            "from": 0,
-            "to": 3001,
-            "rate": 0.1
-          },
-          {
-            "from": 0,
-            "to": 12001,
-            "rate": 0.2
-          },
-          {
-            "from": 0,
-            "to": 25001,
-            "rate": 0.25
-          },
-          {
-            "from": 0,
-            "to": 35001,
-            "rate": 0.3
-          },
-          {
-            "from": 0,
-            "to": 55001,
-            "rate": 0.35
-          },
-          {
-            "from": 0,
-            "to": 80000,
-            "rate": 0.45
-          }
-        ],
+        "brackets": null,
         "currency": "CNY"
       },
       "socialSecurity": {
@@ -2115,39 +1760,8 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.39,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 95,
-            "rate": 0.19
-          },
-          {
-            "from": 0,
-            "to": 150,
-            "rate": 0.28
-          },
-          {
-            "from": 0,
-            "to": 360,
-            "rate": 0.33
-          },
-          {
-            "from": 0,
-            "to": 640,
-            "rate": 0.35
-          },
-          {
-            "from": 0,
-            "to": 945,
-            "rate": 0.37
-          },
-          {
-            "from": 0,
-            "to": 2300,
-            "rate": 0.39
-          }
-        ],
-        "currency": "UVT"
+        "brackets": null,
+        "currency": "COP"
       },
       "socialSecurity": {
         "employeeRate": null,
@@ -2211,33 +1825,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.25,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 918000,
-            "rate": 0
-          },
-          {
-            "from": 0,
-            "to": 1347000,
-            "rate": 0.1
-          },
-          {
-            "from": 0,
-            "to": 2364000,
-            "rate": 0.15
-          },
-          {
-            "from": 0,
-            "to": 4727000,
-            "rate": 0.2
-          },
-          {
-            "from": 0,
-            "to": 4727000,
-            "rate": 0.25
-          }
-        ],
+        "brackets": null,
         "currency": "CRC"
       },
       "socialSecurity": {
@@ -2290,33 +1878,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.2,
-        "brackets": [
-          {
-            "from": 0,
-            "to": null,
-            "rate": 0.25
-          },
-          {
-            "from": 0,
-            "to": 30000,
-            "rate": 0.25
-          },
-          {
-            "from": 0,
-            "to": 30000,
-            "rate": 0.25
-          },
-          {
-            "from": 0,
-            "to": null,
-            "rate": 0.25
-          },
-          {
-            "from": 0,
-            "to": 30,
-            "rate": 0.3
-          }
-        ],
+        "brackets": null,
         "currency": "EUR"
       },
       "socialSecurity": {
@@ -2372,38 +1934,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.465,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 39094,
-            "rate": 0.0975
-          },
-          {
-            "from": 0,
-            "to": 52127,
-            "rate": 0.15
-          },
-          {
-            "from": 0,
-            "to": 78190,
-            "rate": 0.23
-          },
-          {
-            "from": 0,
-            "to": 110769,
-            "rate": 0.3
-          },
-          {
-            "from": 0,
-            "to": 162894,
-            "rate": 0.375
-          },
-          {
-            "from": 162894,
-            "to": null,
-            "rate": 0.465
-          }
-        ],
+        "brackets": null,
         "currency": "EUR"
       },
       "socialSecurity": {
@@ -2672,7 +2203,7 @@
       "personalIncomeTax": {
         "topRate": 0.23,
         "brackets": null,
-        "currency": "PIT"
+        "currency": "CZK"
       },
       "socialSecurity": {
         "employeeRate": null,
@@ -2792,28 +2323,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.25,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 416220,
-            "rate": 0
-          },
-          {
-            "from": 0,
-            "to": 624329,
-            "rate": 0.15
-          },
-          {
-            "from": 624329,
-            "to": 867123,
-            "rate": 0.2
-          },
-          {
-            "from": 867123,
-            "to": null,
-            "rate": 0.25
-          }
-        ],
+        "brackets": null,
         "currency": "DOP"
       },
       "socialSecurity": {
@@ -2870,58 +2380,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.37,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 12081,
-            "rate": 0
-          },
-          {
-            "from": 0,
-            "to": 15387,
-            "rate": 0.05
-          },
-          {
-            "from": 15387,
-            "to": 19978,
-            "rate": 0.1
-          },
-          {
-            "from": 19978,
-            "to": 26422,
-            "rate": 0.12
-          },
-          {
-            "from": 0,
-            "to": 34770,
-            "rate": 0.15
-          },
-          {
-            "from": 0,
-            "to": 46089,
-            "rate": 0.2
-          },
-          {
-            "from": 0,
-            "to": 61359,
-            "rate": 0.25
-          },
-          {
-            "from": 61359,
-            "to": 81817,
-            "rate": 0.3
-          },
-          {
-            "from": 0,
-            "to": 108810,
-            "rate": 0.35
-          },
-          {
-            "from": 0,
-            "to": 108810,
-            "rate": 0.37
-          }
-        ],
+        "brackets": null,
         "currency": "USD"
       },
       "socialSecurity": {
@@ -2983,38 +2442,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.275,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 600000,
-            "rate": 0
-          },
-          {
-            "from": 0,
-            "to": 700000,
-            "rate": 0.1
-          },
-          {
-            "from": 0,
-            "to": 800000,
-            "rate": 0.15
-          },
-          {
-            "from": 0,
-            "to": 900000,
-            "rate": 0.2
-          },
-          {
-            "from": 0,
-            "to": 1200000,
-            "rate": 0.225
-          },
-          {
-            "from": 0,
-            "to": 1200000,
-            "rate": 0.25
-          }
-        ],
+        "brackets": null,
         "currency": "EGP"
       },
       "socialSecurity": {
@@ -3073,28 +2501,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.3,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 6600,
-            "rate": 0
-          },
-          {
-            "from": 0,
-            "to": 1,
-            "rate": 0.1
-          },
-          {
-            "from": 9142,
-            "to": 87,
-            "rate": 0.2
-          },
-          {
-            "from": 22857,
-            "to": null,
-            "rate": 0.3
-          }
-        ],
+        "brackets": null,
         "currency": "USD"
       },
       "socialSecurity": {
@@ -3208,33 +2615,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.2,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 30000,
-            "rate": 0.2
-          },
-          {
-            "from": 0,
-            "to": 50000,
-            "rate": 0.2
-          },
-          {
-            "from": 0,
-            "to": 270000,
-            "rate": 0.2
-          },
-          {
-            "from": 0,
-            "to": 300000,
-            "rate": 0.33
-          },
-          {
-            "from": 0,
-            "to": 300000,
-            "rate": 0.34
-          }
-        ],
+        "brackets": null,
         "currency": "FJD"
       },
       "socialSecurity": {
@@ -3291,33 +2672,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.375,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 21200,
-            "rate": 0.1264
-          },
-          {
-            "from": 0,
-            "to": 32600,
-            "rate": 0.19
-          },
-          {
-            "from": 0,
-            "to": 40100,
-            "rate": 0.3025
-          },
-          {
-            "from": 0,
-            "to": 52100,
-            "rate": 0.3325
-          },
-          {
-            "from": 0,
-            "to": 52100,
-            "rate": 0.375
-          }
-        ],
+        "brackets": null,
         "currency": "EUR"
       },
       "socialSecurity": {
@@ -3378,33 +2733,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.45,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 11497,
-            "rate": 0
-          },
-          {
-            "from": 11497,
-            "to": 29315,
-            "rate": 0.11
-          },
-          {
-            "from": 29315,
-            "to": 83823,
-            "rate": 0.3
-          },
-          {
-            "from": 0,
-            "to": 180294,
-            "rate": 0.41
-          },
-          {
-            "from": 0,
-            "to": 180294,
-            "rate": 0.45
-          }
-        ],
+        "brackets": null,
         "currency": "EUR"
       },
       "socialSecurity": {
@@ -3563,7 +2892,7 @@
       "personalIncomeTax": {
         "topRate": 0.2,
         "brackets": null,
-        "currency": "III"
+        "currency": "GEL"
       },
       "socialSecurity": {
         "employeeRate": null,
@@ -4009,43 +3338,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.37,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 11925,
-            "rate": 0.1
-          },
-          {
-            "from": 11925,
-            "to": 48475,
-            "rate": 0.12
-          },
-          {
-            "from": 0,
-            "to": 103350,
-            "rate": 0.22
-          },
-          {
-            "from": 0,
-            "to": 197300,
-            "rate": 0.24
-          },
-          {
-            "from": 0,
-            "to": 250525,
-            "rate": 0.32
-          },
-          {
-            "from": 0,
-            "to": 626350,
-            "rate": 0.35
-          },
-          {
-            "from": 0,
-            "to": 626350,
-            "rate": 0.37
-          }
-        ],
+        "brackets": null,
         "currency": "USD"
       },
       "socialSecurity": {
@@ -4098,18 +3391,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.07,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 300000,
-            "rate": 0.05
-          },
-          {
-            "from": 0,
-            "to": 300000,
-            "rate": 0.07
-          }
-        ],
+        "brackets": null,
         "currency": "USD"
       },
       "socialSecurity": {
@@ -4232,18 +3514,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.35,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 3120000,
-            "rate": 0.25
-          },
-          {
-            "from": 0,
-            "to": 3120000,
-            "rate": 0.35
-          }
-        ],
+        "brackets": null,
         "currency": "USD"
       },
       "socialSecurity": {
@@ -4296,28 +3567,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.25,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 217493,
-            "rate": 0
-          },
-          {
-            "from": 0,
-            "to": 16,
-            "rate": 0.15
-          },
-          {
-            "from": 0,
-            "to": 50,
-            "rate": 0.2
-          },
-          {
-            "from": 771252,
-            "to": null,
-            "rate": 0.25
-          }
-        ],
+        "brackets": null,
         "currency": "USD"
       },
       "socialSecurity": {
@@ -4505,29 +3755,8 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.37,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 10000000,
-            "rate": 0.1
-          },
-          {
-            "from": 0,
-            "to": 20000000,
-            "rate": 0.15
-          },
-          {
-            "from": 0,
-            "to": 50000000,
-            "rate": 0.25
-          },
-          {
-            "from": 0,
-            "to": 50000000,
-            "rate": 0.37
-          }
-        ],
-        "currency": "VAT"
+        "brackets": null,
+        "currency": "INR"
       },
       "socialSecurity": {
         "employeeRate": null,
@@ -4600,7 +3829,7 @@
       "personalIncomeTax": {
         "topRate": 0.35,
         "brackets": null,
-        "currency": "TER"
+        "currency": "IDR"
       },
       "socialSecurity": {
         "employeeRate": null,
@@ -4658,29 +3887,8 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.15,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 250000,
-            "rate": 0.03
-          },
-          {
-            "from": 0,
-            "to": 500000,
-            "rate": 0.05
-          },
-          {
-            "from": 0,
-            "to": 1000000,
-            "rate": 0.1
-          },
-          {
-            "from": 0,
-            "to": 1000000,
-            "rate": 0.15
-          }
-        ],
-        "currency": "VAT"
+        "brackets": null,
+        "currency": "IQD"
       },
       "socialSecurity": {
         "employeeRate": 0.05,
@@ -4934,23 +4142,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.43,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 28000,
-            "rate": 0.23
-          },
-          {
-            "from": 0,
-            "to": 50000,
-            "rate": 0.35
-          },
-          {
-            "from": 0,
-            "to": 50000,
-            "rate": 0.43
-          }
-        ],
+        "brackets": null,
         "currency": "EUR"
       },
       "socialSecurity": {
@@ -5098,24 +4290,8 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.25,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 1774554,
-            "rate": 0
-          },
-          {
-            "from": 0,
-            "to": 6000000,
-            "rate": 0.25
-          },
-          {
-            "from": 0,
-            "to": 6000000,
-            "rate": 0.3
-          }
-        ],
-        "currency": "NIS"
+        "brackets": null,
+        "currency": "JMD"
       },
       "socialSecurity": {
         "employeeRate": null,
@@ -5173,23 +4349,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.45945,
-        "brackets": [
-          {
-            "from": 1,
-            "to": 95,
-            "rate": 0.15
-          },
-          {
-            "from": 9,
-            "to": 18,
-            "rate": 0.43700000000000006
-          },
-          {
-            "from": 0,
-            "to": 40,
-            "rate": 0.55945
-          }
-        ],
+        "brackets": null,
         "currency": "EUR"
       },
       "socialSecurity": {
@@ -5320,38 +4480,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.3,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 5000,
-            "rate": 0.05
-          },
-          {
-            "from": 0,
-            "to": 10000,
-            "rate": 0.1
-          },
-          {
-            "from": 0,
-            "to": 15000,
-            "rate": 0.15
-          },
-          {
-            "from": 0,
-            "to": 20000,
-            "rate": 0.2
-          },
-          {
-            "from": 0,
-            "to": 1000000,
-            "rate": 0.25
-          },
-          {
-            "from": 0,
-            "to": 1000000,
-            "rate": 0.3
-          }
-        ],
+        "brackets": null,
         "currency": "USD"
       },
       "socialSecurity": {
@@ -5528,48 +4657,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.45,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 14000000,
-            "rate": 0.006
-          },
-          {
-            "from": 0,
-            "to": 14,
-            "rate": 0.015
-          },
-          {
-            "from": 0,
-            "to": 50,
-            "rate": 0.024
-          },
-          {
-            "from": 0,
-            "to": 88,
-            "rate": 0.035
-          },
-          {
-            "from": 0,
-            "to": 150,
-            "rate": 0.038
-          },
-          {
-            "from": 0,
-            "to": 300,
-            "rate": 0.04
-          },
-          {
-            "from": 0,
-            "to": 500,
-            "rate": 0.042
-          },
-          {
-            "from": 0,
-            "to": 1000,
-            "rate": 0.045
-          }
-        ],
+        "brackets": null,
         "currency": "EUR"
       },
       "socialSecurity": {
@@ -5638,18 +4726,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.1,
-        "brackets": [
-          {
-            "from": 0,
-            "to": null,
-            "rate": 0.1
-          },
-          {
-            "from": 0,
-            "to": null,
-            "rate": 0.1
-          }
-        ],
+        "brackets": null,
         "currency": "EUR"
       },
       "socialSecurity": {
@@ -5771,28 +4848,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.25,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 50000000,
-            "rate": 0
-          },
-          {
-            "from": 0,
-            "to": 400000000,
-            "rate": 0.01
-          },
-          {
-            "from": 0,
-            "to": 400000000,
-            "rate": 0.02
-          },
-          {
-            "from": 0,
-            "to": 400000000,
-            "rate": 0.03
-          }
-        ],
+        "brackets": null,
         "currency": "USD"
       },
       "socialSecurity": {
@@ -5899,43 +4955,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.25,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 360000000,
-            "rate": 0.02
-          },
-          {
-            "from": 0,
-            "to": 900000000,
-            "rate": 0.04
-          },
-          {
-            "from": 0,
-            "to": 1800000000,
-            "rate": 0.07
-          },
-          {
-            "from": 0,
-            "to": 3600000000,
-            "rate": 0.11
-          },
-          {
-            "from": 0,
-            "to": 7200000000,
-            "rate": 0.15
-          },
-          {
-            "from": 0,
-            "to": 13500000000,
-            "rate": 0.2
-          },
-          {
-            "from": 0,
-            "to": 13500000000,
-            "rate": 0.25
-          }
-        ],
+        "brackets": null,
         "currency": "USD"
       },
       "socialSecurity": {
@@ -6050,18 +5070,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.1,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 12000,
-            "rate": 0.05
-          },
-          {
-            "from": 0,
-            "to": 12000,
-            "rate": 0.1
-          }
-        ],
+        "brackets": null,
         "currency": "USD"
       },
       "socialSecurity": {
@@ -6120,24 +5129,8 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.22399999999999998,
-        "brackets": [
-          {
-            "from": 0,
-            "to": null,
-            "rate": 0
-          },
-          {
-            "from": 0,
-            "to": null,
-            "rate": 1.5
-          },
-          {
-            "from": 0,
-            "to": 180,
-            "rate": 0.22399999999999998
-          }
-        ],
-        "currency": "AHV"
+        "brackets": null,
+        "currency": "CHF"
       },
       "socialSecurity": {
         "employeeRate": null,
@@ -6198,23 +5191,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.32,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 36,
-            "rate": 0.2
-          },
-          {
-            "from": 0,
-            "to": 60,
-            "rate": 0.25
-          },
-          {
-            "from": 0,
-            "to": 60,
-            "rate": 0.32
-          }
-        ],
+        "brackets": null,
         "currency": "EUR"
       },
       "socialSecurity": {
@@ -6282,58 +5259,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.33409999999999995,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 20000,
-            "rate": 0.030600000000000002
-          },
-          {
-            "from": 0,
-            "to": 40000,
-            "rate": 0.1058
-          },
-          {
-            "from": 0,
-            "to": 60000,
-            "rate": 0.18600000000000003
-          },
-          {
-            "from": 0,
-            "to": 80000,
-            "rate": 0.237
-          },
-          {
-            "from": 0,
-            "to": 100000,
-            "rate": 0.2676
-          },
-          {
-            "from": 0,
-            "to": 120000,
-            "rate": 0.2882
-          },
-          {
-            "from": 0,
-            "to": 140000,
-            "rate": 0.3042
-          },
-          {
-            "from": 0,
-            "to": 160000,
-            "rate": 0.3161
-          },
-          {
-            "from": 0,
-            "to": 180000,
-            "rate": 0.3257
-          },
-          {
-            "from": 0,
-            "to": 200000,
-            "rate": 0.33409999999999995
-          }
-        ],
+        "brackets": null,
         "currency": "EUR"
       },
       "socialSecurity": {
@@ -6399,23 +5325,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.12,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 2000000,
-            "rate": 0.01
-          },
-          {
-            "from": 0,
-            "to": 4000000,
-            "rate": 0.02
-          },
-          {
-            "from": 0,
-            "to": 4000000,
-            "rate": 0.03
-          }
-        ],
+        "brackets": null,
         "currency": "EUR"
       },
       "socialSecurity": {
@@ -6481,28 +5391,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.4,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 170000,
-            "rate": 0
-          },
-          {
-            "from": 0,
-            "to": 1400000,
-            "rate": 0.3
-          },
-          {
-            "from": 0,
-            "to": 8430000,
-            "rate": 0.35
-          },
-          {
-            "from": 0,
-            "to": 10000000,
-            "rate": 0.4
-          }
-        ],
+        "brackets": null,
         "currency": "MWK"
       },
       "socialSecurity": {
@@ -6647,33 +5536,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.15,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 720000,
-            "rate": 0
-          },
-          {
-            "from": 0,
-            "to": 1200000,
-            "rate": 0.055
-          },
-          {
-            "from": 0,
-            "to": 1800000,
-            "rate": 0.08
-          },
-          {
-            "from": 0,
-            "to": 2400000,
-            "rate": 0.12
-          },
-          {
-            "from": 0,
-            "to": 2400000,
-            "rate": 0.15
-          }
-        ],
+        "brackets": null,
         "currency": "USD"
       },
       "socialSecurity": {
@@ -6731,28 +5594,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.35,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 13000,
-            "rate": 0
-          },
-          {
-            "from": 0,
-            "to": 4500,
-            "rate": 0.15
-          },
-          {
-            "from": 0,
-            "to": 42500,
-            "rate": 0.25
-          },
-          {
-            "from": 0,
-            "to": 60000,
-            "rate": 0.35
-          }
-        ],
+        "brackets": null,
         "currency": "EUR"
       },
       "socialSecurity": {
@@ -6814,23 +5656,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.2,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 500000,
-            "rate": 0
-          },
-          {
-            "from": 0,
-            "to": 500001,
-            "rate": 0.1
-          },
-          {
-            "from": 0,
-            "to": 1000000,
-            "rate": 0.2
-          }
-        ],
+        "brackets": null,
         "currency": "MUR"
       },
       "socialSecurity": {
@@ -6902,23 +5728,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.3,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 125900,
-            "rate": 0
-          },
-          {
-            "from": 0,
-            "to": 1000000,
-            "rate": 0.15
-          },
-          {
-            "from": 0,
-            "to": 1000000,
-            "rate": 0.3
-          }
-        ],
+        "brackets": null,
         "currency": "EUR"
       },
       "socialSecurity": {
@@ -7048,7 +5858,7 @@
         "currency": null
       },
       "socialSecurity": {
-        "employeeRate": null,
+        "employeeRate": 0.1255,
         "annualCap": null
       },
       "specialRegimes": [
@@ -7110,23 +5920,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.2,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 120000000,
-            "rate": 0.1
-          },
-          {
-            "from": 0,
-            "to": 180000000,
-            "rate": 0.15
-          },
-          {
-            "from": 0,
-            "to": 180000000,
-            "rate": 0.2
-          }
-        ],
+        "brackets": null,
         "currency": "MNT"
       },
       "socialSecurity": {
@@ -7189,23 +5983,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.15,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 700,
-            "rate": 0
-          },
-          {
-            "from": 0,
-            "to": 1,
-            "rate": 0.09
-          },
-          {
-            "from": 0,
-            "to": 1,
-            "rate": 0.15
-          }
-        ],
+        "brackets": null,
         "currency": "EUR"
       },
       "socialSecurity": {
@@ -7258,7 +6036,7 @@
       "personalIncomeTax": {
         "topRate": 0.37,
         "brackets": null,
-        "currency": "RNR"
+        "currency": "MAD"
       },
       "socialSecurity": {
         "employeeRate": null,
@@ -7598,33 +6376,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.39,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 15600,
-            "rate": 0.105
-          },
-          {
-            "from": 0,
-            "to": 53500,
-            "rate": 0.175
-          },
-          {
-            "from": 0,
-            "to": 78100,
-            "rate": 0.3
-          },
-          {
-            "from": 0,
-            "to": 180000,
-            "rate": 0.33
-          },
-          {
-            "from": 0,
-            "to": 180000,
-            "rate": 0.39
-          }
-        ],
+        "brackets": null,
         "currency": "NZD"
       },
       "socialSecurity": {
@@ -7683,33 +6435,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.3,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 100000,
-            "rate": 0
-          },
-          {
-            "from": 0,
-            "to": 200000,
-            "rate": 0.15
-          },
-          {
-            "from": 0,
-            "to": 350000,
-            "rate": 0.2
-          },
-          {
-            "from": 0,
-            "to": 500000,
-            "rate": 0.25
-          },
-          {
-            "from": 0,
-            "to": 500000,
-            "rate": 0.3
-          }
-        ],
+        "brackets": null,
         "currency": "NIO"
       },
       "socialSecurity": {
@@ -7761,38 +6487,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.25,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 800000,
-            "rate": 0
-          },
-          {
-            "from": 0,
-            "to": 800001,
-            "rate": 0.15
-          },
-          {
-            "from": 0,
-            "to": 3000001,
-            "rate": 0.18
-          },
-          {
-            "from": 0,
-            "to": 12000001,
-            "rate": 0.21
-          },
-          {
-            "from": 0,
-            "to": 25000001,
-            "rate": 0.23
-          },
-          {
-            "from": 0,
-            "to": 50000000,
-            "rate": 0.25
-          }
-        ],
+        "brackets": null,
         "currency": "NGN"
       },
       "socialSecurity": {
@@ -7914,43 +6609,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.37,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 11925,
-            "rate": 0.1
-          },
-          {
-            "from": 11926,
-            "to": 48475,
-            "rate": 0.12
-          },
-          {
-            "from": 0,
-            "to": 103350,
-            "rate": 0.22
-          },
-          {
-            "from": 0,
-            "to": 197300,
-            "rate": 0.24
-          },
-          {
-            "from": 0,
-            "to": 250525,
-            "rate": 0.32
-          },
-          {
-            "from": 0,
-            "to": 626350,
-            "rate": 0.35
-          },
-          {
-            "from": 0,
-            "to": 626350,
-            "rate": 0.37
-          }
-        ],
+        "brackets": null,
         "currency": "USD"
       },
       "socialSecurity": {
@@ -8075,7 +6734,7 @@
       "personalIncomeTax": {
         "topRate": 0,
         "brackets": null,
-        "currency": "LLC"
+        "currency": "OMR"
       },
       "socialSecurity": {
         "employeeRate": null,
@@ -8132,38 +6791,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.45,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 600000,
-            "rate": 0
-          },
-          {
-            "from": 0,
-            "to": 1200000,
-            "rate": 0.05
-          },
-          {
-            "from": 0,
-            "to": 2200000,
-            "rate": 0.15
-          },
-          {
-            "from": 0,
-            "to": 3200000,
-            "rate": 0.25
-          },
-          {
-            "from": 0,
-            "to": 4100000,
-            "rate": 0.3
-          },
-          {
-            "from": 0,
-            "to": 4100000,
-            "rate": 0.35
-          }
-        ],
+        "brackets": null,
         "currency": "EUR"
       },
       "socialSecurity": {
@@ -8289,23 +6917,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.25,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 11000,
-            "rate": 0
-          },
-          {
-            "from": 0,
-            "to": 50000,
-            "rate": 0.15
-          },
-          {
-            "from": 0,
-            "to": 50000,
-            "rate": 0.25
-          }
-        ],
+        "brackets": null,
         "currency": "USD"
       },
       "socialSecurity": {
@@ -8376,33 +6988,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.42,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 20000,
-            "rate": 0
-          },
-          {
-            "from": 0,
-            "to": 33000,
-            "rate": 0.3
-          },
-          {
-            "from": 0,
-            "to": 70000,
-            "rate": 0.35
-          },
-          {
-            "from": 0,
-            "to": 250000,
-            "rate": 0.4
-          },
-          {
-            "from": 0,
-            "to": 250000,
-            "rate": 0.42
-          }
-        ],
+        "brackets": null,
         "currency": "PGK"
       },
       "socialSecurity": {
@@ -8464,23 +7050,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.1,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 50000000,
-            "rate": 0.08
-          },
-          {
-            "from": 0,
-            "to": 150000000,
-            "rate": 0.09
-          },
-          {
-            "from": 0,
-            "to": 150000001,
-            "rate": 0.1
-          }
-        ],
+        "brackets": null,
         "currency": "EUR"
       },
       "socialSecurity": {
@@ -8542,34 +7112,8 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.3,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 5,
-            "rate": 0.08
-          },
-          {
-            "from": 0,
-            "to": 20,
-            "rate": 0.14
-          },
-          {
-            "from": 0,
-            "to": 35,
-            "rate": 0.17
-          },
-          {
-            "from": 35,
-            "to": 45,
-            "rate": 0.2
-          },
-          {
-            "from": 45,
-            "to": null,
-            "rate": 0.3
-          }
-        ],
-        "currency": "ONP"
+        "brackets": null,
+        "currency": "PEN"
       },
       "socialSecurity": {
         "employeeRate": null,
@@ -8630,39 +7174,8 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.35,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 250000,
-            "rate": 0
-          },
-          {
-            "from": 0,
-            "to": 400000,
-            "rate": 0.15
-          },
-          {
-            "from": 0,
-            "to": 800000,
-            "rate": 0.2
-          },
-          {
-            "from": 0,
-            "to": 2000000,
-            "rate": 0.25
-          },
-          {
-            "from": 0,
-            "to": 8000000,
-            "rate": 0.3
-          },
-          {
-            "from": 0,
-            "to": 8000000,
-            "rate": 0.35
-          }
-        ],
-        "currency": "MPF"
+        "brackets": null,
+        "currency": "PHP"
       },
       "socialSecurity": {
         "employeeRate": null,
@@ -8731,7 +7244,7 @@
       "personalIncomeTax": {
         "topRate": 0.32,
         "brackets": null,
-        "currency": "PIT"
+        "currency": "PLN"
       },
       "socialSecurity": {
         "employeeRate": null,
@@ -8862,53 +7375,7 @@
       "lastReviewed": "2025-12-01",
       "personalIncomeTax": {
         "topRate": 0.48,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 8342,
-            "rate": 0.125
-          },
-          {
-            "from": 8342,
-            "to": 12587,
-            "rate": 0.157
-          },
-          {
-            "from": 12587,
-            "to": 17838,
-            "rate": 0.212
-          },
-          {
-            "from": 0,
-            "to": 23089,
-            "rate": 0.24100000000000002
-          },
-          {
-            "from": 0,
-            "to": 29397,
-            "rate": 0.311
-          },
-          {
-            "from": 0,
-            "to": 43090,
-            "rate": 0.349
-          },
-          {
-            "from": 0,
-            "to": 46566,
-            "rate": 0.431
-          },
-          {
-            "from": 46566,
-            "to": 86634,
-            "rate": 0.446
-          },
-          {
-            "from": 86634,
-            "to": null,
-            "rate": 0.48
-          }
-        ],
+        "brackets": null,
         "currency": "EUR"
       },
       "socialSecurity": {
@@ -9186,23 +7653,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0,
-        "brackets": [
-          {
-            "from": 0,
-            "to": null,
-            "rate": 0
-          },
-          {
-            "from": 0,
-            "to": null,
-            "rate": 0
-          },
-          {
-            "from": 0,
-            "to": null,
-            "rate": 0.1
-          }
-        ],
+        "brackets": null,
         "currency": "QAR"
       },
       "socialSecurity": {
@@ -9640,7 +8091,7 @@
       "personalIncomeTax": {
         "topRate": 0.475,
         "brackets": null,
-        "currency": "AOV"
+        "currency": "ANG"
       },
       "socialSecurity": {
         "employeeRate": null,
@@ -9761,13 +8212,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.5,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 25000,
-            "rate": 0.15
-          }
-        ],
+        "brackets": null,
         "currency": "EUR"
       },
       "socialSecurity": {
@@ -9826,7 +8271,7 @@
       "personalIncomeTax": {
         "topRate": 0.45,
         "brackets": null,
-        "currency": "UIF"
+        "currency": "ZAR"
       },
       "socialSecurity": {
         "employeeRate": null,
@@ -9883,7 +8328,7 @@
       "personalIncomeTax": {
         "topRate": 0.2,
         "brackets": null,
-        "currency": "NGO"
+        "currency": null
       },
       "socialSecurity": {
         "employeeRate": null,
@@ -9936,38 +8381,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.5,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 12450,
-            "rate": 0.095
-          },
-          {
-            "from": 0,
-            "to": 20200,
-            "rate": 0.12
-          },
-          {
-            "from": 0,
-            "to": 35200,
-            "rate": 0.15
-          },
-          {
-            "from": 0,
-            "to": 60000,
-            "rate": 0.185
-          },
-          {
-            "from": 0,
-            "to": 300000,
-            "rate": 0.225
-          },
-          {
-            "from": 0,
-            "to": 300000,
-            "rate": 0.245
-          }
-        ],
+        "brackets": null,
         "currency": "EUR"
       },
       "socialSecurity": {
@@ -10248,7 +8662,7 @@
       "personalIncomeTax": {
         "topRate": 0.1,
         "brackets": null,
-        "currency": "EPF"
+        "currency": "LKR"
       },
       "socialSecurity": {
         "employeeRate": null,
@@ -10363,18 +8777,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.38,
-        "brackets": [
-          {
-            "from": 0,
-            "to": null,
-            "rate": 0.1
-          },
-          {
-            "from": 0,
-            "to": null,
-            "rate": 0.04
-          }
-        ],
+        "brackets": null,
         "currency": "EUR"
       },
       "socialSecurity": {
@@ -10432,24 +8835,8 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.3,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 24800,
-            "rate": 0
-          },
-          {
-            "from": 0,
-            "to": 643100,
-            "rate": 0.36
-          },
-          {
-            "from": 0,
-            "to": 643100,
-            "rate": 0.56
-          }
-        ],
-        "currency": "EEA"
+        "brackets": null,
+        "currency": "SEK"
       },
       "socialSecurity": {
         "employeeRate": null,
@@ -10634,23 +9021,7 @@
       "lastReviewed": "1 October 2025",
       "personalIncomeTax": {
         "topRate": 0.3,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 4000000,
-            "rate": 0.03
-          },
-          {
-            "from": 0,
-            "to": 7000000,
-            "rate": 0.03
-          },
-          {
-            "from": 0,
-            "to": 11000000,
-            "rate": 0.035
-          }
-        ],
+        "brackets": null,
         "currency": "TZS"
       },
       "socialSecurity": {
@@ -10773,18 +9144,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.3,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 1000000,
-            "rate": 0.25
-          },
-          {
-            "from": 0,
-            "to": 1000000,
-            "rate": 0.3
-          }
-        ],
+        "brackets": null,
         "currency": "USD"
       },
       "socialSecurity": {
@@ -10837,43 +9197,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.4,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 5000,
-            "rate": 0
-          },
-          {
-            "from": 0,
-            "to": 10000,
-            "rate": 0.075
-          },
-          {
-            "from": 0,
-            "to": 20000,
-            "rate": 0.1625
-          },
-          {
-            "from": 0,
-            "to": 30000,
-            "rate": 0.20829999999999999
-          },
-          {
-            "from": 0,
-            "to": 40000,
-            "rate": 0.23879999999999998
-          },
-          {
-            "from": 0,
-            "to": 50000,
-            "rate": 0.263
-          },
-          {
-            "from": 0,
-            "to": 70000,
-            "rate": 0.2964
-          }
-        ],
+        "brackets": null,
         "currency": "USD"
       },
       "socialSecurity": {
@@ -11190,7 +9514,7 @@
       "personalIncomeTax": {
         "topRate": 0,
         "brackets": null,
-        "currency": "SME"
+        "currency": "AED"
       },
       "socialSecurity": {
         "employeeRate": null,
@@ -11455,58 +9779,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.37,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 10412,
-            "rate": 0.01
-          },
-          {
-            "from": 0,
-            "to": 24684,
-            "rate": 0.02
-          },
-          {
-            "from": 24684,
-            "to": 38959,
-            "rate": 0.04
-          },
-          {
-            "from": 0,
-            "to": 54081,
-            "rate": 0.06
-          },
-          {
-            "from": 0,
-            "to": 68350,
-            "rate": 0.08
-          },
-          {
-            "from": 0,
-            "to": 349137,
-            "rate": 0.09300000000000001
-          },
-          {
-            "from": 349137,
-            "to": 418961,
-            "rate": 0.10300000000000001
-          },
-          {
-            "from": 418961,
-            "to": 698271,
-            "rate": 0.113
-          },
-          {
-            "from": 0,
-            "to": 1000000,
-            "rate": 0.12300000000000001
-          },
-          {
-            "from": 0,
-            "to": 1000000,
-            "rate": 0.133
-          }
-        ],
+        "brackets": null,
         "currency": "USD"
       },
       "socialSecurity": {
@@ -11699,48 +9972,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.36,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 109932,
-            "rate": 0
-          },
-          {
-            "from": 0,
-            "to": null,
-            "rate": 0.1
-          },
-          {
-            "from": 0,
-            "to": null,
-            "rate": 0.15
-          },
-          {
-            "from": 0,
-            "to": null,
-            "rate": 0.2
-          },
-          {
-            "from": 0,
-            "to": null,
-            "rate": 0.24
-          },
-          {
-            "from": 0,
-            "to": null,
-            "rate": 0.25
-          },
-          {
-            "from": 0,
-            "to": null,
-            "rate": 0.27
-          },
-          {
-            "from": 0,
-            "to": null,
-            "rate": 0.36
-          }
-        ],
+        "brackets": null,
         "currency": "USD"
       },
       "socialSecurity": {
@@ -11793,43 +10025,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.37,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 11925,
-            "rate": 0.1
-          },
-          {
-            "from": 11926,
-            "to": 48475,
-            "rate": 0.12
-          },
-          {
-            "from": 0,
-            "to": 103350,
-            "rate": 0.22
-          },
-          {
-            "from": 0,
-            "to": 197300,
-            "rate": 0.24
-          },
-          {
-            "from": 0,
-            "to": 250525,
-            "rate": 0.32
-          },
-          {
-            "from": 0,
-            "to": 626350,
-            "rate": 0.35
-          },
-          {
-            "from": 0,
-            "to": 626350,
-            "rate": 0.37
-          }
-        ],
+        "brackets": null,
         "currency": "USD"
       },
       "socialSecurity": {
@@ -11951,48 +10147,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.34,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 1000,
-            "rate": 0.06
-          },
-          {
-            "from": 0,
-            "to": 1500,
-            "rate": 0.09
-          },
-          {
-            "from": 0,
-            "to": 2000,
-            "rate": 0.12
-          },
-          {
-            "from": 0,
-            "to": 2500,
-            "rate": 0.16
-          },
-          {
-            "from": 0,
-            "to": 3000,
-            "rate": 0.2
-          },
-          {
-            "from": 0,
-            "to": 4000,
-            "rate": 0.24
-          },
-          {
-            "from": 0,
-            "to": 6000,
-            "rate": 0.29
-          },
-          {
-            "from": 0,
-            "to": 6000,
-            "rate": 0.34
-          }
-        ],
+        "brackets": null,
         "currency": "EUR"
       },
       "socialSecurity": {
@@ -12050,13 +10205,7 @@
       "lastReviewed": "2025-10-01",
       "personalIncomeTax": {
         "topRate": 0.35,
-        "brackets": [
-          {
-            "from": 0,
-            "to": 60000,
-            "rate": 0.2
-          }
-        ],
+        "brackets": null,
         "currency": "USD"
       },
       "socialSecurity": {
