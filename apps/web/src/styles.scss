@@ -134,6 +134,9 @@ html, body {
   font-size: 10px;
 }
 
+/* Dataset countries get a pointer cursor; non-dataset countries inherit the map's default */
+.tc-geo-clickable { cursor: pointer !important; }
+
 /* Suppress Leaflet's popup wrapper styling (we use .map-popup directly) */
 .leaflet-tooltip {
   background: transparent !important;

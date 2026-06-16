@@ -1,10 +1,10 @@
-import { Component, inject, OnDestroy, AfterViewInit, ElementRef, viewChild, effect } from '@angular/core';
+import { Component, inject, OnDestroy, AfterViewInit, ElementRef, viewChild, effect, isDevMode, untracked } from '@angular/core';
 import * as L from 'leaflet';
 import { AppStore } from '../../state/app.store';
 import { ThemeService } from '../../core/services/theme.service';
 import { Country } from '../../core/models/country.model';
 import { RegimeCalculationService } from '../../core/services/regime-calculation.service';
-import { matchGeoFeature } from './iso-matcher';
+import { matchGeoFeature, logCoverageWarnings } from './iso-matcher';
 
 type GeoLayer = L.GeoJSON & { feature?: GeoJSON.Feature };
 
@@ -42,6 +42,16 @@ export class WorldMapComponent implements AfterViewInit, OnDestroy {
   private tooltip!: L.Tooltip;
   private mapReady = false;
 
+  private layersByCode = new Map<string, L.Path>();
+  private _prevSelectedCode: string | null = null;
+
+  private readonly SELECTION_STYLE: L.PathOptions = {
+    color: '#60a5fa',
+    weight: 2.5,
+    opacity: 1,
+    fillOpacity: 0.9,
+  };
+
   loading = true;
 
   constructor() {
@@ -51,6 +61,35 @@ export class WorldMapComponent implements AfterViewInit, OnDestroy {
       if (!this.mapReady) return;
       this.swapTiles(theme);
       this.recolorChoropleth(theme);
+    });
+
+    // Persistently highlight the selected country on the map
+    effect(() => {
+      const selected = this.store.selectedCountry();
+      if (!this.mapReady || !this.geoLayer) return;
+
+      // Restore previous selection to normal choropleth style
+      if (this._prevSelectedCode) {
+        const prevLayer = this.layersByCode.get(this._prevSelectedCode);
+        if (prevLayer) {
+          const prevCode = this._prevSelectedCode;
+          const prevCountry = untracked(() => this.store.countries()).find(c => c.code === prevCode);
+          if (prevCountry) {
+            prevLayer.setStyle(this.defaultLayerStyle(prevCountry));
+          } else {
+            this.geoLayer.resetStyle(prevLayer);
+          }
+        }
+      }
+
+      // Apply accent outline to the newly selected country
+      if (selected) {
+        const layer = this.layersByCode.get(selected.code);
+        if (layer) layer.setStyle(this.SELECTION_STYLE);
+        this._prevSelectedCode = selected.code;
+      } else {
+        this._prevSelectedCode = null;
+      }
     });
   }
 
@@ -93,17 +132,37 @@ export class WorldMapComponent implements AfterViewInit, OnDestroy {
     }).addTo(this.map);
   }
 
+  private defaultLayerStyle(country: Country): L.PathOptions {
+    const t = this.themeService.theme();
+    return {
+      fillColor: this.rateToColor(this.bestRate(country), t),
+      fillOpacity: 0.8,
+      color: t === 'dark' ? '#27272a' : '#d4d4d8',
+      weight: 0.5,
+      opacity: 1,
+    };
+  }
+
   private recolorChoropleth(theme: 'dark' | 'light'): void {
     if (!this.geoLayer) return;
+    const selectedCode = untracked(() => this.store.selectedCountry())?.code ?? null;
     this.geoLayer.eachLayer((layer) => {
       const feature = (layer as GeoLayer).feature;
       const country = this.findCountry(feature);
-      (layer as L.Path).setStyle({
-        fillColor: country ? this.rateToColor(this.bestRate(country), theme) : (theme === 'dark' ? '#18181b' : '#e4e4e7'),
-        fillOpacity: country ? 0.8 : 0.3,
-        color: theme === 'dark' ? '#27272a' : '#d4d4d8',
-        weight: 0.5,
-      });
+      if (country && country.code === selectedCode) {
+        // Keep the selection highlight, only update fill
+        (layer as L.Path).setStyle({
+          fillColor: this.rateToColor(this.bestRate(country), theme),
+          fillOpacity: 0.9,
+        });
+      } else {
+        (layer as L.Path).setStyle({
+          fillColor: country ? this.rateToColor(this.bestRate(country), theme) : (theme === 'dark' ? '#18181b' : '#e4e4e7'),
+          fillOpacity: country ? 0.8 : 0.3,
+          color: theme === 'dark' ? '#27272a' : '#d4d4d8',
+          weight: 0.5,
+        });
+      }
     });
   }
 
@@ -128,6 +187,13 @@ export class WorldMapComponent implements AfterViewInit, OnDestroy {
   private renderGeoJSON(data: GeoJSON.FeatureCollection): void {
     const store = this.store;
 
+    if (isDevMode()) {
+      logCoverageWarnings(
+        store.countries().map(c => c.code),
+        data.features as Array<{ properties: Record<string, unknown> | null }>,
+      );
+    }
+
     this.geoLayer = L.geoJSON(data, {
       style: (feature) => {
         const country = this.findCountry(feature);
@@ -138,10 +204,16 @@ export class WorldMapComponent implements AfterViewInit, OnDestroy {
           color: t === 'dark' ? '#27272a' : '#d4d4d8',
           weight: 0.5,
           opacity: 1,
+          // Pointer cursor only for dataset countries
+          className: country ? 'tc-geo-clickable' : '',
         };
       },
       onEachFeature: (feature, layer) => {
         const country = this.findCountry(feature);
+
+        if (country) {
+          this.layersByCode.set(country.code, layer as L.Path);
+        }
 
         layer.on('mouseover', (e: L.LeafletMouseEvent) => {
           (e.target as GeoLayer).setStyle({ weight: 1.5, color: '#a3e635', fillOpacity: 0.9 });
@@ -161,7 +233,13 @@ export class WorldMapComponent implements AfterViewInit, OnDestroy {
         });
 
         layer.on('mouseout', (e: L.LeafletMouseEvent) => {
-          this.geoLayer.resetStyle(e.target as GeoLayer);
+          // If this country is currently selected, restore its selection style instead of full reset
+          const selected = store.selectedCountry();
+          if (country && selected?.code === country.code) {
+            (e.target as L.Path).setStyle(this.SELECTION_STYLE);
+          } else {
+            this.geoLayer.resetStyle(e.target as GeoLayer);
+          }
           this.tooltip.remove();
         });
 
