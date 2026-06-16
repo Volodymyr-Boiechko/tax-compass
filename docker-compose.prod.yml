@@ -1,0 +1,13 @@
+# Production preview — builds the nginx image and serves on port 8080
+#
+# Usage:
+#   docker compose -f docker-compose.prod.yml up --build
+#   Open http://localhost:8080
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"

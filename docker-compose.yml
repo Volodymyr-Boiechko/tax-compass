@@ -1,0 +1,40 @@
+# Dev server with hot reload — Angular 19 / tax-compass
+#
+# Usage:
+#   docker compose up
+#   Open http://localhost:4200
+#
+# After any package.json change, rebuild the volume:
+#   docker compose down -v && docker compose up
+#
+# Named volume `web_node_modules`:
+#   Docker bind-mounts overlay the host's macOS node_modules into the Linux
+#   container, but native deps (esbuild, rollup) are compiled for the wrong
+#   arch and crash.  The named volume shadows /app/node_modules so the
+#   container keeps its own Linux build, untouched by the host.
+#
+# --poll 2000:
+#   inotify doesn't propagate across Docker volume mounts on macOS.
+#   Polling every 2 s is the reliable alternative; slower but correct.
+#
+# No `platform: linux/amd64` here:
+#   Running arm64 natively on Apple Silicon is ~3-5× faster for HMR than
+#   emulating x86.  The amd64 flag belongs only in the production Dockerfile
+#   when you're targeting an x86 host.
+
+services:
+  web:
+    image: node:22-slim
+    working_dir: /app
+    environment:
+      NODE_ENV: development
+    command: sh -c "npm install && npm start -- --host 0.0.0.0 --poll 2000"
+    ports:
+      - "4200:4200"
+    tty: true
+    volumes:
+      - ./apps/web:/app
+      - web_node_modules:/app/node_modules
+
+volumes:
+  web_node_modules:
