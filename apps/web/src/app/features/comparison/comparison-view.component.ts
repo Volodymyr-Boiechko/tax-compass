@@ -6,6 +6,7 @@ import { RegimeCalculationService } from '../../core/services/regime-calculation
 import { Country } from '../../core/models/country.model';
 import { regionLabel } from '../../core/utils/region.utils';
 import { CurrencyService } from '../../core/services/currency.service';
+import { ProgressionChartComponent } from './progression-chart.component';
 
 interface IncomeRow {
   country: Country;
@@ -16,7 +17,7 @@ interface IncomeRow {
 @Component({
   selector: 'app-comparison-view',
   standalone: true,
-  imports: [LucideX, LucideLink2, TranslatePipe],
+  imports: [LucideX, LucideLink2, TranslatePipe, ProgressionChartComponent],
   template: `
     <div class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl overflow-hidden">
 
@@ -140,6 +141,11 @@ interface IncomeRow {
           </table>
         </div>
       }
+
+      <!-- Progression chart -->
+      <div class="px-4 pb-4">
+        <app-progression-chart />
+      </div>
     </div>
   `,
 })

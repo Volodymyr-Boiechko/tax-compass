@@ -141,6 +141,15 @@
   "map": {
     "loading": "Loading map…"
   },
+  "chart": {
+    "title": "Effective Rate by Income",
+    "caption": "See where lines cross — the income level where one country beats another.",
+    "rate": "Effective rate",
+    "net": "Net income",
+    "incomeAxis": "Gross income (annual EUR equivalent)",
+    "yourIncome": "Your income",
+    "emptyState": "Add countries to the comparison to see the progression chart."
+  },
   "currency": {
     "perYear": "/yr",
     "perMonth": "/mo",
