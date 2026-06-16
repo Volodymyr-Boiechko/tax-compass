@@ -9,6 +9,7 @@ import { RegimeCalculationService } from '../../core/services/regime-calculation
 import { Country, TaxBracket } from '../../core/models/country.model';
 import { regionLabel } from '../../core/utils/region.utils';
 import { RegimeCalculatorComponent } from './regime-calculator.component';
+import { CurrencyService } from '../../core/services/currency.service';
 
 type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
 
@@ -108,15 +109,18 @@ type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
 
             @if (incomeCalc(); as calc) {
               <div class="mb-4 p-3 bg-[var(--color-surface-hover)] rounded-lg border border-[var(--color-border)]">
-                <p class="text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-wider font-medium mb-2">
-                  {{ 'detail.yourIncome' | translate }} · €{{ fmtNum(store.userIncome()!) }}
+                <p class="text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-wider font-medium mb-1">
+                  {{ 'detail.yourIncome' | translate }} · {{ currency.format(store.userIncome()!) }}
+                </p>
+                <p class="text-[10px] text-[var(--color-text-faint)] mb-2">
+                  {{ currency.format(store.userIncome()!, {monthly:true}) }} {{ 'currency.perMonth' | translate }}
                 </p>
                 <div class="grid grid-cols-2 gap-3">
                   <div>
                     <p class="text-[10px] text-[var(--color-text-faint)] mb-1">{{ 'detail.employment' | translate }}</p>
                     @if (calc.employment; as emp) {
                       <p class="text-lg font-semibold font-mono" [style.color]="rateColor(emp.effectiveRate)">{{ fmtRate(emp.effectiveRate) }}</p>
-                      <p class="text-xs text-[var(--color-text-secondary)] font-mono">{{ fmtEuro(emp.net) }} {{ 'detail.effectiveRate' | translate }}</p>
+                      <p class="text-xs text-[var(--color-text-secondary)] font-mono">{{ currency.format(emp.net) }} {{ 'detail.effectiveRate' | translate }}</p>
                       @if (emp.isApproximation) {
                         <p class="text-[10px] text-[var(--color-text-faint)] mt-0.5">{{ 'detail.roughEstimate' | translate }}</p>
                       }
@@ -129,7 +133,7 @@ type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
                     <p class="text-[10px] text-[var(--color-text-faint)] mb-1">{{ 'detail.bestSe' | translate }}</p>
                     @if (calc.selfEmployment; as se) {
                       <p class="text-lg font-semibold font-mono" [style.color]="rateColor(se.effectiveRate)">{{ fmtRate(se.effectiveRate) }}</p>
-                      <p class="text-xs text-[var(--color-text-secondary)] font-mono">{{ fmtEuro(se.net) }} {{ 'detail.effectiveRate' | translate }}</p>
+                      <p class="text-xs text-[var(--color-text-secondary)] font-mono">{{ currency.format(se.net) }} {{ 'detail.effectiveRate' | translate }}</p>
                       <p class="text-[10px] text-[var(--color-text-faint)] mt-0.5">{{ regimeLabel(se.method) }}</p>
                       @if (se.isApproximation) {
                         <p class="text-[10px] text-[var(--color-text-faint)]">{{ 'detail.roughEstimate' | translate }}</p>
@@ -160,7 +164,7 @@ type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
                     {{ fmtRate(c.socialSecurity!.employeeRate) }}
                   </p>
                   @if (c.socialSecurity!.annualCap) {
-                    <p class="text-[10px] text-[var(--color-text-tertiary)] mt-0.5">{{ 'detail.cap' | translate }}: {{ fmtEuro(c.socialSecurity!.annualCap) }}</p>
+                    <p class="text-[10px] text-[var(--color-text-tertiary)] mt-0.5">{{ 'detail.cap' | translate }}: {{ currency.format(c.socialSecurity!.annualCap) }}</p>
                   }
                 </div>
               }
@@ -295,6 +299,7 @@ type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
 export class CountryDetailPanelComponent {
   readonly store = inject(AppStore);
   readonly regimeCalcService = inject(RegimeCalculationService);
+  readonly currency = inject(CurrencyService);
   readonly regionLabel = regionLabel;
 
   readonly country = this.store.selectedCountry;
@@ -398,13 +403,6 @@ export class CountryDetailPanelComponent {
     if (r == null) return '—';
     return (r * 100).toFixed(1) + '%';
   }
-
-  fmtEuro(n: number | null | undefined): string {
-    if (n == null) return '—';
-    return '€' + Math.round(n).toLocaleString('en-US');
-  }
-
-  fmtNum(n: number): string { return n.toLocaleString('en-US'); }
 
   fmtRange(b: TaxBracket, currency: string | null): string {
     const fmt = (n: number) => {

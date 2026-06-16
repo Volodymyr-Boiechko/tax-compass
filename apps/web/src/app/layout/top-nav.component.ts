@@ -5,6 +5,7 @@ import { AppStore } from '../state/app.store';
 import { ThemeService } from '../core/services/theme.service';
 import { ShortcutsService } from '../core/services/shortcuts.service';
 import { LanguageService } from '../core/services/language.service';
+import { IncomeInputComponent } from './income-input.component';
 
 const SHORTCUTS = [
   { keys: '/',   labelKey: 'shortcuts.search' },
@@ -19,7 +20,7 @@ const SHORTCUTS = [
 @Component({
   selector: 'app-top-nav',
   standalone: true,
-  imports: [LucideGlobe, LucideSearch, LucideX, LucideSun, LucideMoon, LucideMenu, LucideHelpCircle, TranslatePipe],
+  imports: [LucideGlobe, LucideSearch, LucideX, LucideSun, LucideMoon, LucideMenu, LucideHelpCircle, TranslatePipe, IncomeInputComponent],
   template: `
     <!-- Skip to content link (a11y) -->
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -69,19 +70,7 @@ const SHORTCUTS = [
       <div class="hidden md:block flex-1"></div>
 
       <!-- Income input (desktop only) -->
-      <div class="relative hidden md:block">
-        <span class="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--color-text-tertiary)] text-sm pointer-events-none">€</span>
-        <input
-          type="number"
-          [placeholder]="'topNav.incomeLabel' | translate"
-          min="0"
-          step="1000"
-          aria-label="Your annual income in euros"
-          class="w-36 bg-[var(--color-surface-hover)] border border-[var(--color-border)] rounded-md pl-7 pr-3 py-2 text-sm text-[var(--color-text-primary)] placeholder-[var(--color-text-tertiary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:border-[var(--color-accent)] transition-colors"
-          [value]="store.userIncome() ?? ''"
-          (input)="onIncomeInput($event)"
-        />
-      </div>
+      <app-income-input />
 
       <!-- Theme toggle -->
       <button
@@ -169,18 +158,7 @@ export class TopNavComponent {
   readonly langService = inject(LanguageService);
   readonly shortcutsList = SHORTCUTS;
 
-  private incomeTimer: ReturnType<typeof setTimeout> | null = null;
-
   onSearch(e: Event): void {
     this.store.setSearch((e.target as HTMLInputElement).value);
-  }
-
-  onIncomeInput(e: Event): void {
-    if (this.incomeTimer) clearTimeout(this.incomeTimer);
-    const raw = (e.target as HTMLInputElement).value;
-    this.incomeTimer = setTimeout(() => {
-      const n = Number(raw);
-      this.store.setIncome(!raw || isNaN(n) || n <= 0 ? null : n);
-    }, 300);
   }
 }

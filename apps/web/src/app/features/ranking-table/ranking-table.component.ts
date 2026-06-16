@@ -5,6 +5,7 @@ import { AppStore, SortField } from '../../state/app.store';
 import { CalculationService, CalculationResult } from '../../core/services/calculation.service';
 import { Country, Confidence, Region } from '../../core/models/country.model';
 import { regionLabel } from '../../core/utils/region.utils';
+import { CurrencyService } from '../../core/services/currency.service';
 
 interface Row {
   country: Country;
@@ -28,10 +29,10 @@ interface Row {
             <tr>
               <th class="px-3 py-2 text-left" colspan="4"></th>
               <th class="px-3 py-2 text-center text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-wider border-l border-[var(--color-border)]" colspan="2">
-                {{ 'table.employment' | translate }} · €{{ fmtNum(store.userIncome()!) }}
+                {{ 'table.employment' | translate }} · {{ currency.format(store.userIncome()!) }}
               </th>
               <th class="px-3 py-2 text-center text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-wider border-l border-[var(--color-border)]" colspan="2">
-                {{ 'table.bestSe' | translate }} · €{{ fmtNum(store.userIncome()!) }}
+                {{ 'table.bestSe' | translate }} · {{ currency.format(store.userIncome()!) }}
               </th>
             </tr>
           } @else {
@@ -156,13 +157,13 @@ interface Row {
 
                 @if (store.userIncome() !== null) {
                   <td class="px-3 py-2.5 text-right font-mono text-sm border-l border-[var(--color-border)]/50">
-                    <span [style.color]="row.employment?.net != null ? 'var(--color-accent)' : 'var(--color-text-faint)'">{{ fmtEuro(row.employment?.net) }}</span>
+                    <span [style.color]="row.employment?.net != null ? 'var(--color-accent)' : 'var(--color-text-faint)'">{{ currency.format(row.employment?.net) }}</span>
                   </td>
                   <td class="px-3 py-2.5 text-right font-mono text-sm">
                     <span [style.color]="rateColor(row.employment?.effectiveRate ?? null)">{{ fmtRate(row.employment?.effectiveRate ?? null) }}</span>
                   </td>
                   <td class="px-3 py-2.5 text-right font-mono text-sm border-l border-[var(--color-border)]/50">
-                    <span [style.color]="row.selfEmployment?.net != null ? 'var(--color-accent)' : 'var(--color-text-faint)'">{{ fmtEuro(row.selfEmployment?.net) }}</span>
+                    <span [style.color]="row.selfEmployment?.net != null ? 'var(--color-accent)' : 'var(--color-text-faint)'">{{ currency.format(row.selfEmployment?.net) }}</span>
                     @if (row.selfEmployment?.method) {
                       <span class="block text-[10px] text-[var(--color-text-faint)] truncate max-w-[100px] ml-auto">
                         {{ regimeShort(row.selfEmployment!.method) }}
@@ -229,6 +230,7 @@ interface Row {
 export class RankingTableComponent {
   readonly store = inject(AppStore);
   readonly calc = inject(CalculationService);
+  readonly currency = inject(CurrencyService);
   readonly regionLabel = regionLabel;
 
   readonly rows = computed<Row[]>(() => {
@@ -281,13 +283,6 @@ export class RankingTableComponent {
     if (r == null) return '—';
     return (r * 100).toFixed(1) + '%';
   }
-
-  fmtEuro(n: number | null | undefined): string {
-    if (n == null) return '—';
-    return '€' + Math.round(n).toLocaleString('en-US');
-  }
-
-  fmtNum(n: number): string { return n.toLocaleString('en-US'); }
 
   regimeShort(method: string): string {
     const m = method.match(/\((.+)\)$/);

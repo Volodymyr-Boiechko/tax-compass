@@ -138,5 +138,14 @@
   },
   "map": {
     "loading": "Завантаження мапи…"
+  },
+  "currency": {
+    "perYear": "/рік",
+    "perMonth": "/міс",
+    "year": "Рік",
+    "month": "Місяць",
+    "ratesLive": "Актуальний курс",
+    "ratesApprox": "Приблизний курс",
+    "ratesUpdated": "Оновлено {{date}}"
   }
 }

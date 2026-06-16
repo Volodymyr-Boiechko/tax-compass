@@ -3,6 +3,7 @@ import { TranslatePipe } from '@ngx-translate/core';
 import { AppStore } from '../../state/app.store';
 import { RegimeCalculationService, RegimeCalculationResult, CalculationStep } from '../../core/services/regime-calculation.service';
 import { Country } from '../../core/models/country.model';
+import { CurrencyService } from '../../core/services/currency.service';
 
 @Component({
   selector: 'app-regime-calculator',
@@ -26,16 +27,16 @@ import { Country } from '../../core/models/country.model';
             <div>
               <span class="text-[var(--color-text-faint)]">Best: </span>
               <span class="font-medium text-[var(--color-text-secondary)] truncate">{{ shortName(cmp.best) }}</span>
-              <span class="font-mono font-semibold ml-1" [style.color]="rateColor(cmp.best.effectiveRate)">{{ fmtEuro(cmp.best.net) }}</span>
+              <span class="font-mono font-semibold ml-1" [style.color]="rateColor(cmp.best.effectiveRate)">{{ currency.format(cmp.best.net) }}</span>
               <span class="text-[var(--color-text-faint)] ml-1">({{ fmtRate(cmp.best.effectiveRate) }})</span>
             </div>
             @if (worst(); as w) {
               @if (w.regimeId !== cmp.best.regimeId) {
                 <div class="text-right shrink-0">
                   <span class="text-[var(--color-text-faint)]">Worst: </span>
-                  <span class="font-mono text-[var(--color-text-secondary)]">{{ fmtEuro(w.net) }}</span>
+                  <span class="font-mono text-[var(--color-text-secondary)]">{{ currency.format(w.net) }}</span>
                   <p class="text-[10px] text-[var(--color-text-faint)] mt-0.5">
-                    Δ {{ fmtEuro(cmp.best.net - w.net) }}/yr
+                    Δ {{ currency.format(cmp.best.net - w.net) }}/yr
                   </p>
                 </div>
               }
@@ -88,14 +89,18 @@ import { Country } from '../../core/models/country.model';
                 <div class="mb-3">
                   <div class="text-[28px] leading-none font-mono font-semibold"
                        [style.color]="rateColor(r.effectiveRate)">
-                    {{ fmtEuro(r.net) }}
+                    {{ currency.format(r.net) }}
+                  </div>
+                  <div class="text-sm font-mono text-[var(--color-text-tertiary)] mt-0.5">
+                    {{ currency.format(r.net, {monthly:true}) }}
+                    <span class="text-[10px]">{{ 'currency.perMonth' | translate }}</span>
                   </div>
                   <div class="flex items-center gap-2 mt-1">
                     <span class="text-xs font-medium" [style.color]="rateColor(r.effectiveRate)">
                       {{ fmtRate(r.effectiveRate) }} {{ 'detail.effectiveRate' | translate }}
                     </span>
                     <span class="text-[10px] text-[var(--color-text-faint)]">
-                      · {{ 'detail.gross' | translate }} {{ fmtEuro(r.gross) }}
+                      · {{ 'detail.gross' | translate }} {{ currency.format(r.gross) }}
                     </span>
                   </div>
                   @if (r.effectiveRate < 0) {
@@ -108,13 +113,13 @@ import { Country } from '../../core/models/country.model';
                 <!-- Quick deduction summary (always visible) -->
                 <div class="flex items-center gap-3 text-[11px] text-[var(--color-text-tertiary)] mb-2">
                   @if (r.socialSecurity > 0) {
-                    <span class="font-mono" style="color: var(--color-danger)">SS −{{ fmtEuro(r.socialSecurity) }}</span>
+                    <span class="font-mono" style="color: var(--color-danger)">SS −{{ currency.format(r.socialSecurity) }}</span>
                   }
                   @if (r.incomeTax > 0) {
-                    <span class="font-mono" style="color: var(--color-danger)">Tax −{{ fmtEuro(r.incomeTax) }}</span>
+                    <span class="font-mono" style="color: var(--color-danger)">Tax −{{ currency.format(r.incomeTax) }}</span>
                   }
                   @if (r.additionalLevies > 0) {
-                    <span class="font-mono" style="color: var(--color-danger)">Levy −{{ fmtEuro(r.additionalLevies) }}</span>
+                    <span class="font-mono" style="color: var(--color-danger)">Levy −{{ currency.format(r.additionalLevies) }}</span>
                   }
                 </div>
 
@@ -148,7 +153,7 @@ import { Country } from '../../core/models/country.model';
                           class="font-mono shrink-0 font-medium"
                           [style.color]="stepAmountColor(step, r)"
                         >
-                          {{ step.label === 'Gross income' ? fmtEuro(step.amount) : fmtSigned(step.amount) }}
+                          {{ step.label === 'Gross income' ? currency.format(step.amount) : currency.format(step.amount, {signed:true}) }}
                         </span>
                       </div>
                     }
@@ -181,6 +186,7 @@ import { Country } from '../../core/models/country.model';
 export class RegimeCalculatorComponent {
   private readonly store = inject(AppStore);
   private readonly regimeCalc = inject(RegimeCalculationService);
+  readonly currency = inject(CurrencyService);
 
   readonly country = input.required<Country>();
   readonly income = this.store.userIncome;
@@ -242,19 +248,9 @@ export class RegimeCalculatorComponent {
     return 'var(--rate-high)';
   }
 
-  fmtEuro(n: number): string {
-    return '€' + Math.round(n).toLocaleString('en-US');
-  }
-
   fmtRate(r: number): string {
     const clamped = Math.max(0, r);
     return (clamped * 100).toFixed(1) + '%';
-  }
-
-  fmtSigned(n: number): string {
-    if (Math.round(n) === 0) return '€0';
-    const abs = '€' + Math.round(Math.abs(n)).toLocaleString('en-US');
-    return n < 0 ? '−' + abs : '+' + abs;
   }
 
   shortName(r: RegimeCalculationResult): string {

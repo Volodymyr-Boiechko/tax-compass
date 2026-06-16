@@ -138,5 +138,14 @@
   },
   "map": {
     "loading": "Loading map…"
+  },
+  "currency": {
+    "perYear": "/yr",
+    "perMonth": "/mo",
+    "year": "Year",
+    "month": "Month",
+    "ratesLive": "Live rates",
+    "ratesApprox": "Approx. rates",
+    "ratesUpdated": "Updated {{date}}"
   }
 }

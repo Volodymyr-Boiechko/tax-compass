@@ -5,6 +5,7 @@ import { AppStore } from '../../state/app.store';
 import { RegimeCalculationService } from '../../core/services/regime-calculation.service';
 import { Country } from '../../core/models/country.model';
 import { regionLabel } from '../../core/utils/region.utils';
+import { CurrencyService } from '../../core/services/currency.service';
 
 interface IncomeRow {
   country: Country;
@@ -52,7 +53,7 @@ interface IncomeRow {
               @if (incomeResults(); as ir) {
                 <tr class="bg-[var(--color-surface-hover)]/50">
                   <td class="px-4 py-2.5 text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-wider font-medium" colspan="999">
-                    {{ 'comparison.yourIncome' | translate }} · €{{ fmtNum(ir.income) }}
+                    {{ 'comparison.yourIncome' | translate }} · {{ currency.format(ir.income) }}
                   </td>
                 </tr>
                 <tr class="border-b border-[var(--color-border)]/40">
@@ -61,7 +62,7 @@ interface IncomeRow {
                     <td class="px-4 py-2.5 font-mono text-sm"
                         [style]="r.employment?.net === ir.maxEmplNet ? 'background: color-mix(in srgb, var(--color-accent) 8%, transparent)' : ''">
                       <span [style.color]="r.employment?.net === ir.maxEmplNet ? 'var(--color-accent)' : 'var(--color-text-secondary)'" class="font-semibold">
-                        {{ fmtEuro(r.employment?.net) }}
+                        {{ currency.format(r.employment?.net) }}
                       </span>
                       <span class="block text-[10px]" [style.color]="rateColor(r.employment?.effectiveRate ?? null)">
                         {{ fmtRate(r.employment?.effectiveRate ?? null) }}
@@ -75,7 +76,7 @@ interface IncomeRow {
                   @for (r of ir.results; track r.country.code) {
                     <td class="px-4 py-2.5 font-mono text-sm">
                       <span [style.color]="r.selfEmployment?.net === ir.maxSeNet ? 'var(--color-accent)' : 'var(--color-text-secondary)'" class="font-semibold">
-                        {{ fmtEuro(r.selfEmployment?.net) }}
+                        {{ currency.format(r.selfEmployment?.net) }}
                       </span>
                       <span class="block text-[10px] text-[var(--color-text-faint)]">
                         {{ r.selfEmployment?.method }}
@@ -132,6 +133,7 @@ interface IncomeRow {
 export class ComparisonViewComponent {
   readonly store = inject(AppStore);
   readonly regimeCalc = inject(RegimeCalculationService);
+  readonly currency = inject(CurrencyService);
   readonly regionLabel = regionLabel;
 
   readonly countries = this.store.comparedCountries;
@@ -216,9 +218,6 @@ export class ComparisonViewComponent {
     if (r == null) return '—';
     return (r * 100).toFixed(1) + '%';
   }
-
-  fmtEuro(n: number | null | undefined): string { return n != null ? '€' + Math.round(n).toLocaleString('en-US') : '—'; }
-  fmtNum(n: number): string  { return n.toLocaleString('en-US'); }
 
   confKey(c: string | null): string {
     const MAP: Record<string, string> = {
