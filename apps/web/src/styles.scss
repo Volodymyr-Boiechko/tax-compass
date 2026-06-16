@@ -147,9 +147,10 @@ html, body {
 .leaflet-tooltip::before { display: none !important; }
 
 /* ── Detail panel: responsive slide animation ──────────── */
+/* z-index must exceed Leaflet's ceiling (~1000 for .leaflet-top/.leaflet-bottom controls) */
 .detail-panel {
   position: fixed;
-  z-index: 40;
+  z-index: 1200;
   display: flex;
   flex-direction: column;
   overflow: hidden;

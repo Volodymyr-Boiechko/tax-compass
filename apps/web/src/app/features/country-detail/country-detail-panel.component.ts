@@ -20,7 +20,7 @@ type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
   template: `
     @if (isVisible()) {
       <div
-        class="fixed inset-0 z-30 md:hidden"
+        class="fixed inset-0 z-[1200] md:hidden"
         style="background: color-mix(in srgb, var(--color-bg) 60%, transparent)"
         (click)="close()"
       ></div>
