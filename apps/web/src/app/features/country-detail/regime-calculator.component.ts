@@ -95,6 +95,9 @@ import { CurrencyService } from '../../core/services/currency.service';
                     {{ currency.format(r.net, {monthly:true}) }}
                     <span class="text-[10px]">{{ 'currency.perMonth' | translate }}</span>
                   </div>
+                  @if (currency.equivalentsLine(r.net); as eq) {
+                    <div class="text-[10px] font-mono text-[var(--color-text-faint)] mt-0.5">{{ eq }}</div>
+                  }
                   <div class="flex items-center gap-2 mt-1">
                     <span class="text-xs font-medium" [style.color]="rateColor(r.effectiveRate)">
                       {{ fmtRate(r.effectiveRate) }} {{ 'detail.effectiveRate' | translate }}

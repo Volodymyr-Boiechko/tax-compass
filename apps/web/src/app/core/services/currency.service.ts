@@ -23,6 +23,8 @@ const CURRENCY_META: Record<CurrencyCode, { symbol: string; symbolBefore: boolea
   UAH: { symbol: '₴', symbolBefore: false, locale: 'uk-UA' },
 };
 
+const REFERENCE_CURRENCIES: CurrencyCode[] = ['EUR', 'UAH'];
+
 @Injectable({ providedIn: 'root' })
 export class CurrencyService {
   readonly currency      = signal<CurrencyCode>('EUR');
@@ -121,6 +123,15 @@ export class CurrencyService {
       return (rounded < 0 ? '−' : '+') + formatted;
     }
     return formatted;
+  }
+
+  equivalentsLine(eur: number | null | undefined, opts?: { monthly?: boolean }): string {
+    if (eur == null || isNaN(eur as number)) return '';
+    const active = this.currency();
+    const parts = REFERENCE_CURRENCIES
+      .filter(code => code !== active)
+      .map(code => this.format(eur, { monthly: opts?.monthly, code }));
+    return parts.length ? '≈ ' + parts.join(' · ') : '';
   }
 
   setCurrency(c: CurrencyCode): void {

@@ -112,9 +112,12 @@ type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
                 <p class="text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-wider font-medium mb-1">
                   {{ 'detail.yourIncome' | translate }} · {{ currency.format(store.userIncome()!) }}
                 </p>
-                <p class="text-[10px] text-[var(--color-text-faint)] mb-2">
+                <p class="text-[10px] text-[var(--color-text-faint)] mb-0.5">
                   {{ currency.format(store.userIncome()!, {monthly:true}) }} {{ 'currency.perMonth' | translate }}
                 </p>
+                @if (currency.equivalentsLine(store.userIncome()!); as eq) {
+                  <p class="text-[10px] font-mono text-[var(--color-text-faint)] mb-2">{{ eq }}</p>
+                }
                 <div class="grid grid-cols-2 gap-3">
                   <div>
                     <p class="text-[10px] text-[var(--color-text-faint)] mb-1">{{ 'detail.employment' | translate }}</p>
