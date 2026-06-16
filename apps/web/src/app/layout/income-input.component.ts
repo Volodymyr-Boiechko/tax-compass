@@ -8,78 +8,88 @@ import { CurrencyService, CurrencyCode } from '../core/services/currency.service
   standalone: true,
   imports: [TranslatePipe],
   template: `
-    <div class="hidden md:flex items-center gap-1.5">
+    <!-- Outer: stacks vertically on mobile, single row on desktop -->
+    <div class="flex flex-col md:flex-row md:items-center gap-2 w-full">
 
-      <!-- Currency selector -->
-      <div class="flex items-center bg-[var(--color-surface-hover)] border border-[var(--color-border)] rounded-md p-0.5"
-           role="group" aria-label="Currency selection">
-        @for (c of currencies; track c) {
+      <!-- Row 1: currency pills + period toggle -->
+      <div class="flex flex-wrap gap-2">
+
+        <!-- Currency selector -->
+        <div class="flex items-center bg-[var(--color-surface-hover)] border border-[var(--color-border)] rounded-md p-0.5"
+             role="group" aria-label="Currency selection">
+          @for (c of currencies; track c) {
+            <button
+              class="px-2.5 py-2 rounded text-xs font-medium transition-colors min-w-[40px] text-center"
+              [class]="currency.currency() === c
+                ? 'bg-[var(--color-border-bright)] text-[var(--color-text-primary)]'
+                : 'text-[var(--color-text-tertiary)] hover:text-[var(--color-text-secondary)]'"
+              [attr.aria-pressed]="currency.currency() === c"
+              (click)="currency.setCurrency(c)"
+            >{{ c }}</button>
+          }
+        </div>
+
+        <!-- Period toggle -->
+        <div class="flex items-center bg-[var(--color-surface-hover)] border border-[var(--color-border)] rounded-md p-0.5"
+             role="group" aria-label="Period selection">
           <button
-            class="px-2 py-1 rounded text-xs font-medium transition-colors"
-            [class]="currency.currency() === c
+            class="px-2.5 py-2 rounded text-xs font-medium transition-colors min-w-[40px] text-center"
+            [class]="currency.period() === 'annual'
               ? 'bg-[var(--color-border-bright)] text-[var(--color-text-primary)]'
               : 'text-[var(--color-text-tertiary)] hover:text-[var(--color-text-secondary)]'"
-            [attr.aria-pressed]="currency.currency() === c"
-            (click)="currency.setCurrency(c)"
-          >{{ c }}</button>
-        }
+            [attr.aria-pressed]="currency.period() === 'annual'"
+            (click)="currency.setPeriod('annual')"
+          >{{ 'currency.year' | translate }}</button>
+          <button
+            class="px-2.5 py-2 rounded text-xs font-medium transition-colors min-w-[40px] text-center"
+            [class]="currency.period() === 'monthly'
+              ? 'bg-[var(--color-border-bright)] text-[var(--color-text-primary)]'
+              : 'text-[var(--color-text-tertiary)] hover:text-[var(--color-text-secondary)]'"
+            [attr.aria-pressed]="currency.period() === 'monthly'"
+            (click)="currency.setPeriod('monthly')"
+          >{{ 'currency.month' | translate }}</button>
+        </div>
       </div>
 
-      <!-- Period toggle -->
-      <div class="flex items-center bg-[var(--color-surface-hover)] border border-[var(--color-border)] rounded-md p-0.5"
-           role="group" aria-label="Period selection">
-        <button
-          class="px-2 py-1 rounded text-xs font-medium transition-colors"
-          [class]="currency.period() === 'annual'
-            ? 'bg-[var(--color-border-bright)] text-[var(--color-text-primary)]'
-            : 'text-[var(--color-text-tertiary)] hover:text-[var(--color-text-secondary)]'"
-          [attr.aria-pressed]="currency.period() === 'annual'"
-          (click)="currency.setPeriod('annual')"
-        >{{ 'currency.year' | translate }}</button>
-        <button
-          class="px-2 py-1 rounded text-xs font-medium transition-colors"
-          [class]="currency.period() === 'monthly'
-            ? 'bg-[var(--color-border-bright)] text-[var(--color-text-primary)]'
-            : 'text-[var(--color-text-tertiary)] hover:text-[var(--color-text-secondary)]'"
-          [attr.aria-pressed]="currency.period() === 'monthly'"
-          (click)="currency.setPeriod('monthly')"
-        >{{ 'currency.month' | translate }}</button>
-      </div>
+      <!-- Row 2: amount input + rates note -->
+      <div class="flex items-center gap-2">
 
-      <!-- Amount input -->
-      <div class="relative">
-        @if (currency.meta().symbolBefore) {
-          <span class="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--color-text-tertiary)] text-sm pointer-events-none select-none">
-            {{ currency.meta().symbol }}
+        <!-- Input with leading/trailing symbol -->
+        <div class="relative flex-1 md:flex-none">
+          @if (currency.meta().symbolBefore) {
+            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--color-text-tertiary)] text-sm pointer-events-none select-none">
+              {{ currency.meta().symbol }}
+            </span>
+          }
+          <input
+            type="number"
+            inputmode="decimal"
+            [placeholder]="'topNav.incomeLabel' | translate"
+            min="0"
+            step="1000"
+            aria-label="Your income"
+            class="w-full md:w-32 bg-[var(--color-surface-hover)] border border-[var(--color-border)] rounded-md py-2 text-sm text-[var(--color-text-primary)] placeholder-[var(--color-text-tertiary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:border-[var(--color-accent)] transition-colors"
+            [class]="currency.meta().symbolBefore ? 'pl-7 pr-3' : 'pl-3 pr-7'"
+            [value]="draft()"
+            (input)="onInput($event)"
+          />
+          @if (!currency.meta().symbolBefore) {
+            <span class="absolute right-3 top-1/2 -translate-y-1/2 text-[var(--color-text-tertiary)] text-sm pointer-events-none select-none">
+              {{ currency.meta().symbol }}
+            </span>
+          }
+        </div>
+
+        <!-- Rates status note (only when not EUR) -->
+        @if (currency.currency() !== 'EUR') {
+          <span
+            class="text-[10px] text-[var(--color-text-faint)] cursor-default shrink-0"
+            [title]="ratesTitle()"
+          >
+            {{ (currency.ratesStatus() === 'live' ? 'currency.ratesLive' : 'currency.ratesApprox') | translate }}
           </span>
         }
-        <input
-          type="number"
-          [placeholder]="'topNav.incomeLabel' | translate"
-          min="0"
-          step="1000"
-          aria-label="Your income"
-          class="w-32 bg-[var(--color-surface-hover)] border border-[var(--color-border)] rounded-md py-2 text-sm text-[var(--color-text-primary)] placeholder-[var(--color-text-tertiary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:border-[var(--color-accent)] transition-colors"
-          [class]="currency.meta().symbolBefore ? 'pl-7 pr-3' : 'pl-3 pr-7'"
-          [value]="draft()"
-          (input)="onInput($event)"
-        />
-        @if (!currency.meta().symbolBefore) {
-          <span class="absolute right-3 top-1/2 -translate-y-1/2 text-[var(--color-text-tertiary)] text-sm pointer-events-none select-none">
-            {{ currency.meta().symbol }}
-          </span>
-        }
       </div>
-
-      <!-- Rates status note (only when not EUR) -->
-      @if (currency.currency() !== 'EUR') {
-        <span
-          class="text-[10px] text-[var(--color-text-faint)] cursor-default"
-          [title]="ratesTitle()"
-        >
-          {{ (currency.ratesStatus() === 'live' ? 'currency.ratesLive' : 'currency.ratesApprox') | translate }}
-        </span>
-      }
     </div>
   `,
 })

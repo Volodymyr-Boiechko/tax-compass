@@ -3,6 +3,7 @@ import { LucideX } from '@lucide/angular';
 import { TranslatePipe } from '@ngx-translate/core';
 import { AppStore } from '../state/app.store';
 import { ViewToggleComponent } from '../features/view-toggle/view-toggle.component';
+import { IncomeInputComponent } from './income-input.component';
 import { Confidence, Region } from '../core/models/country.model';
 import { regionLabel } from '../core/utils/region.utils';
 
@@ -23,7 +24,7 @@ const CONFIDENCE_OPTS: Array<{ value: Confidence; labelKey: string }> = [
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [LucideX, ViewToggleComponent, TranslatePipe],
+  imports: [LucideX, ViewToggleComponent, IncomeInputComponent, TranslatePipe],
   template: `
     <aside class="w-[260px] md:w-[260px] h-full bg-[var(--color-surface)] border-r border-[var(--color-border)] overflow-y-auto flex flex-col shrink-0 transition-colors duration-150">
 
@@ -37,6 +38,14 @@ const CONFIDENCE_OPTS: Array<{ value: Confidence; labelKey: string }> = [
           <svg lucideX class="size-5" aria-hidden="true"></svg>
         </button>
       </div>
+
+      <!-- Income / currency / period (mobile drawer only) -->
+      <section class="md:hidden p-4 border-b border-[var(--color-border)]">
+        <p class="text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-widest font-medium mb-3">
+          {{ 'topNav.incomeLabel' | translate }}
+        </p>
+        <app-income-input />
+      </section>
 
       <!-- View -->
       <section class="p-4 border-b border-[var(--color-border)]">

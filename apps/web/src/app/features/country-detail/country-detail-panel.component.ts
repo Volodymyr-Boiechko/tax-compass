@@ -87,7 +87,7 @@ type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
         </div>
 
         <!-- Tabs -->
-        <div class="flex border-b border-[var(--color-border)] shrink-0" role="tablist" aria-label="Country detail sections">
+        <div class="flex border-b border-[var(--color-border)] shrink-0 overflow-x-auto" role="tablist" aria-label="Country detail sections">
           @for (tab of tabs; track tab.id) {
             <button
               class="px-4 py-3 text-xs font-medium transition-colors border-b-2 -mb-px"
@@ -209,8 +209,8 @@ type Tab = 'overview' | 'brackets' | 'regimes' | 'sources';
               <h3 class="text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-wider font-medium mb-3">
                 {{ 'detail.pitBrackets' | translate }} ({{ c.personalIncomeTax!.currency ?? ('detail.localCurrency' | translate) }})
               </h3>
-              <div class="bg-[var(--color-surface-hover)] rounded-lg border border-[var(--color-border)] overflow-hidden">
-                <table class="w-full text-xs">
+              <div class="bg-[var(--color-surface-hover)] rounded-lg border border-[var(--color-border)] overflow-x-auto">
+                <table class="w-full text-xs min-w-[280px]">
                   <thead>
                     <tr class="border-b border-[var(--color-border)]">
                       <th class="px-3 py-2 text-left text-[var(--color-text-tertiary)] font-medium">{{ 'detail.incomeRange' | translate }}</th>

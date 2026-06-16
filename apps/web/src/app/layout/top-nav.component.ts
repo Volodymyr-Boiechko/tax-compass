@@ -70,7 +70,9 @@ const SHORTCUTS = [
       <div class="hidden md:block flex-1"></div>
 
       <!-- Income input (desktop only) -->
-      <app-income-input />
+      <div class="hidden md:block">
+        <app-income-input />
+      </div>
 
       <!-- Theme toggle -->
       <button

@@ -114,7 +114,7 @@ import { CurrencyService } from '../../core/services/currency.service';
                 </div>
 
                 <!-- Quick deduction summary (always visible) -->
-                <div class="flex items-center gap-3 text-[11px] text-[var(--color-text-tertiary)] mb-2">
+                <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-[var(--color-text-tertiary)] mb-2">
                   @if (r.socialSecurity > 0) {
                     <span class="font-mono" style="color: var(--color-danger)">SS −{{ currency.format(r.socialSecurity) }}</span>
                   }
