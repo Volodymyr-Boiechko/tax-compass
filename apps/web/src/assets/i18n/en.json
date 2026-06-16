@@ -116,7 +116,9 @@
     "bestSeNet": "Best SE net",
     "effectiveRates": "Effective rates at standard income levels",
     "topPitRate": "Top PIT rate",
-    "confidenceLabel": "Confidence"
+    "confidenceLabel": "Confidence",
+    "share": "Share",
+    "copied": "Copied!"
   },
   "regimeCard": {
     "best": "BEST",

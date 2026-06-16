@@ -1,5 +1,7 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, effect, inject, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AppStore } from '../state/app.store';
+import { CurrencyService } from '../core/services/currency.service';
 import { TopNavComponent } from './top-nav.component';
 import { SidebarComponent } from './sidebar.component';
 import { RankingTableComponent } from '../features/ranking-table/ranking-table.component';
@@ -104,7 +106,54 @@ import { ComparisonViewComponent } from '../features/comparison/comparison-view.
 })
 export class ShellComponent implements OnInit {
   readonly store = inject(AppStore);
+  private readonly route = inject(ActivatedRoute);
+  private readonly router = inject(Router);
+  private readonly currency = inject(CurrencyService);
+
   readonly skeletonRows = Array.from({ length: 12 }, (_, i) => i);
 
-  ngOnInit(): void { void this.store.loadAll(); }
+  constructor() {
+    effect(() => {
+      const codes  = this.store.comparedCodes();
+      const income = this.store.userIncome();
+      const cur    = this.currency.currency();
+      const per    = this.currency.period();
+
+      const params: Record<string, string> = {};
+      if (codes.length > 0)              params['c']     = codes.join(',');
+      if (income != null && income > 0)  params['gross'] = String(Math.round(income));
+      if (cur !== 'EUR')                 params['cur']   = cur;
+      if (per !== 'annual')              params['per']   = per;
+
+      void this.router.navigate([], {
+        relativeTo:  this.route,
+        queryParams: params,
+        replaceUrl:  true,
+      });
+    });
+  }
+
+  ngOnInit(): void {
+    const qp = this.route.snapshot.queryParamMap;
+
+    const c = qp.get('c');
+    if (c) {
+      const codes = c.split(',').map(s => s.trim().toLowerCase()).filter(Boolean).slice(0, 3);
+      if (codes.length > 0) this.store.setComparedCodes(codes);
+    }
+
+    const gross = qp.get('gross');
+    if (gross) {
+      const n = parseInt(gross, 10);
+      if (!isNaN(n) && n > 0) this.store.setIncome(n);
+    }
+
+    const cur = qp.get('cur');
+    if (cur === 'EUR' || cur === 'USD' || cur === 'UAH') this.currency.setCurrency(cur);
+
+    const per = qp.get('per');
+    if (per === 'annual' || per === 'monthly') this.currency.setPeriod(per);
+
+    void this.store.loadAll();
+  }
 }

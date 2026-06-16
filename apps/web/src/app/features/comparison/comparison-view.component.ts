@@ -1,5 +1,5 @@
-import { Component, computed, inject } from '@angular/core';
-import { LucideX } from '@lucide/angular';
+import { Component, computed, inject, signal } from '@angular/core';
+import { LucideX, LucideLink2 } from '@lucide/angular';
 import { TranslatePipe } from '@ngx-translate/core';
 import { AppStore } from '../../state/app.store';
 import { RegimeCalculationService } from '../../core/services/regime-calculation.service';
@@ -16,15 +16,28 @@ interface IncomeRow {
 @Component({
   selector: 'app-comparison-view',
   standalone: true,
-  imports: [LucideX, TranslatePipe],
+  imports: [LucideX, LucideLink2, TranslatePipe],
   template: `
     <div class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl overflow-hidden">
 
       <div class="flex items-center justify-between px-5 py-4 border-b border-[var(--color-border)]">
         <h2 class="text-base font-semibold text-[var(--color-text-primary)]">{{ 'comparison.title' | translate }}</h2>
-        <button class="p-1.5 rounded text-[var(--color-text-tertiary)] hover:text-[var(--color-text-primary)] transition-colors" aria-label="Close comparison" (click)="store.closeComparison()">
-          <svg lucideX class="size-4" aria-hidden="true"></svg>
-        </button>
+        <div class="flex items-center gap-1">
+          <button
+            class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-medium border transition-colors"
+            [class]="copied()
+              ? 'bg-[var(--color-accent)]/10 border-[var(--color-accent)]/30 text-[var(--color-accent)]'
+              : 'border-[var(--color-border)] text-[var(--color-text-tertiary)] hover:border-[var(--color-border-bright)] hover:text-[var(--color-text-secondary)]'"
+            [attr.aria-label]="'comparison.share' | translate"
+            (click)="share()"
+          >
+            <svg lucideLink2 class="size-3.5 shrink-0" aria-hidden="true"></svg>
+            {{ (copied() ? 'comparison.copied' : 'comparison.share') | translate }}
+          </button>
+          <button class="p-1.5 rounded text-[var(--color-text-tertiary)] hover:text-[var(--color-text-primary)] transition-colors" aria-label="Close comparison" (click)="store.closeComparison()">
+            <svg lucideX class="size-4" aria-hidden="true"></svg>
+          </button>
+        </div>
       </div>
 
       @if (countries().length < 2) {
@@ -135,6 +148,17 @@ export class ComparisonViewComponent {
   readonly regimeCalc = inject(RegimeCalculationService);
   readonly currency = inject(CurrencyService);
   readonly regionLabel = regionLabel;
+
+  readonly copied = signal(false);
+  private _copyTimer: ReturnType<typeof setTimeout> | null = null;
+
+  share(): void {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      this.copied.set(true);
+      if (this._copyTimer) clearTimeout(this._copyTimer);
+      this._copyTimer = setTimeout(() => this.copied.set(false), 2000);
+    }).catch(() => { /* clipboard unavailable */ });
+  }
 
   readonly countries = this.store.comparedCountries;
 

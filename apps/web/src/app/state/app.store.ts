@@ -283,6 +283,11 @@ export class AppStore {
     this.saveIncome();
   }
 
+  setComparedCodes(codes: string[]): void {
+    this.comparedCodes.set(codes.slice(0, 3));
+    this.saveComparison();
+  }
+
   addToComparison(code: string): boolean {
     const current = this.comparedCodes();
     if (current.includes(code)) return false;
